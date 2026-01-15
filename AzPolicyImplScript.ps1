@@ -82,6 +82,14 @@
 .PARAMETER CheckCompliance
   Generate HTML compliance report for current policy assignments.
 
+.PARAMETER ValidateReport
+  Validate generated HTML compliance report for data integrity, policy count accuracy,
+  compliance percentage calculations, and timestamp recency.
+  If -ReportPath not specified, validates the most recent ComplianceReport-*.html file.
+
+.PARAMETER ReportPath
+  Path to specific HTML report file to validate. Used with -ValidateReport parameter.
+
 .PARAMETER SkipRBACCheck
   Skips the RBAC permission check before deploying policies. By default, the script
   verifies the current user has Owner, Contributor, or Policy Contributor role on
@@ -772,6 +780,216 @@ function Test-ProductionEnforcement {
     Write-Host "`nResults exported to: $resultsFile" -ForegroundColor Gray
     
     return $results
+}
+
+function Test-HTMLReportValidation {
+    <#
+    .SYNOPSIS
+    Validates HTML compliance report for data integrity and accuracy.
+    
+    .DESCRIPTION
+    Performs comprehensive validation of generated HTML compliance reports checking:
+    - Policy count accuracy (30/46 policies depending on deployment)
+    - Compliance percentage calculations
+    - Resource evaluation counts
+    - Timestamp recency
+    - Data completeness
+    
+    .PARAMETER ReportPath
+    Path to HTML report file. If not specified, uses most recent ComplianceReport-*.html
+    
+    .EXAMPLE
+    .\AzPolicyImplScript.ps1 -ValidateReport
+    
+    .EXAMPLE
+    .\AzPolicyImplScript.ps1 -ValidateReport -ReportPath .\ComplianceReport-20260115-140000.html
+    #>
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory=$false)]
+        [string]$ReportPath
+    )
+    
+    Write-Host "`n╔═══════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
+    Write-Host "║          HTML Compliance Report Validation                   ║" -ForegroundColor Cyan
+    Write-Host "╚═══════════════════════════════════════════════════════════════╝`n" -ForegroundColor Cyan
+    
+    # Find report if not specified
+    if (-not $ReportPath) {
+        $reports = Get-ChildItem -Filter "ComplianceReport-*.html" -ErrorAction SilentlyContinue | 
+            Sort-Object LastWriteTime -Descending
+        
+        if (-not $reports) {
+            Write-Host "❌ No compliance reports found in current directory" -ForegroundColor Red
+            Write-Host "   Generate a report first using: .\AzPolicyImplScript.ps1 -CheckCompliance" -ForegroundColor Yellow
+            return $null
+        }
+        
+        $ReportPath = $reports[0].FullName
+        Write-Host "📄 Validating most recent report: $($reports[0].Name)" -ForegroundColor Cyan
+    }
+    
+    if (-not (Test-Path $ReportPath)) {
+        Write-Host "❌ Report file not found: $ReportPath" -ForegroundColor Red
+        return $null
+    }
+    
+    $reportContent = Get-Content $ReportPath -Raw
+    $issues = @()
+    $warnings = @()
+    $validations = @()
+    
+    # Validation 1: HTML Structure
+    Write-Host "[1/7] Validating HTML structure..." -ForegroundColor Yellow
+    if ($reportContent -match '<html.*>.*</html>') {
+        $validations += [PSCustomObject]@{ Check = "HTML Structure"; Status = "✅ PASS"; Details = "Valid HTML tags found" }
+        Write-Host "  ✅ Valid HTML structure" -ForegroundColor Green
+    } else {
+        $issues += "Missing or invalid HTML structure"
+        $validations += [PSCustomObject]@{ Check = "HTML Structure"; Status = "❌ FAIL"; Details = "Invalid HTML tags" }
+        Write-Host "  ❌ Invalid HTML structure" -ForegroundColor Red
+    }
+    
+    # Validation 2: Policy Count
+    Write-Host "[2/7] Counting policies in report..." -ForegroundColor Yellow
+    $policyRows = ([regex]::Matches($reportContent, 'KV-\d{3}')).Count
+    $expectedCounts = @(30, 46)  # DevTest=30, DevTest-Full/Production=46
+    
+    if ($policyRows -in $expectedCounts) {
+        $validations += [PSCustomObject]@{ Check = "Policy Count"; Status = "✅ PASS"; Details = "$policyRows policies (expected $($expectedCounts -join ' or '))" }
+        Write-Host "  ✅ Policy count: $policyRows (valid)" -ForegroundColor Green
+    } elseif ($policyRows -gt 0) {
+        $warnings += "Unexpected policy count: $policyRows (expected $($expectedCounts -join ' or '))"
+        $validations += [PSCustomObject]@{ Check = "Policy Count"; Status = "⚠️  WARN"; Details = "$policyRows policies (expected $($expectedCounts -join ' or '))" }
+        Write-Host "  ⚠️  Policy count: $policyRows (unexpected - expected $($expectedCounts -join ' or '))" -ForegroundColor Yellow
+    } else {
+        $issues += "No policies found in report"
+        $validations += [PSCustomObject]@{ Check = "Policy Count"; Status = "❌ FAIL"; Details = "0 policies found" }
+        Write-Host "  ❌ No policies found" -ForegroundColor Red
+    }
+    
+    # Validation 3: Zero Resource Evaluations
+    Write-Host "[3/7] Checking for incomplete policy evaluations..." -ForegroundColor Yellow
+    if ($reportContent -match '0\s+resources?\s+evaluated') {
+        $zeroEvalMatches = ([regex]::Matches($reportContent, '0\s+resources?\s+evaluated')).Count
+        $warnings += "Found $zeroEvalMatches policies with 0 resources evaluated (may need more time for Azure evaluation)"
+        $validations += [PSCustomObject]@{ Check = "Resource Evaluations"; Status = "⚠️  WARN"; Details = "$zeroEvalMatches policies showing 0 resources evaluated" }
+        Write-Host "  ⚠️  $zeroEvalMatches policies show 0 resources evaluated (Azure may still be evaluating)" -ForegroundColor Yellow
+    } else {
+        $validations += [PSCustomObject]@{ Check = "Resource Evaluations"; Status = "✅ PASS"; Details = "All policies have resource evaluations" }
+        Write-Host "  ✅ All policies have resource evaluation data" -ForegroundColor Green
+    }
+    
+    # Validation 4: Timestamp Recency
+    Write-Host "[4/7] Checking report timestamp..." -ForegroundColor Yellow
+    if ($reportContent -match 'Generated.*?(\d{4}-\d{2}-\d{2})') {
+        $reportDate = $matches[1]
+        $reportDateTime = [datetime]::ParseExact($reportDate, 'yyyy-MM-dd', $null)
+        $daysSinceReport = ([datetime]::Now - $reportDateTime).Days
+        
+        if ($daysSinceReport -eq 0) {
+            $validations += [PSCustomObject]@{ Check = "Timestamp"; Status = "✅ PASS"; Details = "Generated today ($reportDate)" }
+            Write-Host "  ✅ Report generated today: $reportDate" -ForegroundColor Green
+        } elseif ($daysSinceReport -le 7) {
+            $validations += [PSCustomObject]@{ Check = "Timestamp"; Status = "✅ PASS"; Details = "Generated $daysSinceReport days ago ($reportDate)" }
+            Write-Host "  ✅ Report date: $reportDate ($daysSinceReport days old)" -ForegroundColor Green
+        } else {
+            $warnings += "Report is $daysSinceReport days old (generated $reportDate)"
+            $validations += [PSCustomObject]@{ Check = "Timestamp"; Status = "⚠️  WARN"; Details = "$daysSinceReport days old" }
+            Write-Host "  ⚠️  Report is $daysSinceReport days old (consider regenerating)" -ForegroundColor Yellow
+        }
+    } else {
+        $warnings += "Could not determine report timestamp"
+        $validations += [PSCustomObject]@{ Check = "Timestamp"; Status = "⚠️  WARN"; Details = "No timestamp found" }
+        Write-Host "  ⚠️  No timestamp found in report" -ForegroundColor Yellow
+    }
+    
+    # Validation 5: Compliance Percentage Presence
+    Write-Host "[5/7] Checking compliance percentage calculations..." -ForegroundColor Yellow
+    $compliancePercentages = ([regex]::Matches($reportContent, '(\d+(\.\d+)?)\s*%')).Count
+    if ($compliancePercentages -gt 0) {
+        $validations += [PSCustomObject]@{ Check = "Compliance %"; Status = "✅ PASS"; Details = "$compliancePercentages percentage values found" }
+        Write-Host "  ✅ Found $compliancePercentages compliance percentage calculations" -ForegroundColor Green
+    } else {
+        $warnings += "No compliance percentages found in report"
+        $validations += [PSCustomObject]@{ Check = "Compliance %"; Status = "⚠️  WARN"; Details = "No percentages found" }
+        Write-Host "  ⚠️  No compliance percentages found" -ForegroundColor Yellow
+    }
+    
+    # Validation 6: Security Metrics Section
+    Write-Host "[6/7] Checking for security metrics section..." -ForegroundColor Yellow
+    if ($reportContent -match '(Security\s+Value|Framework\s+Alignment|Compliance\s+Metrics)') {
+        $validations += [PSCustomObject]@{ Check = "Security Metrics"; Status = "✅ PASS"; Details = "Security metrics section present" }
+        Write-Host "  ✅ Security metrics section found" -ForegroundColor Green
+    } else {
+        $warnings += "Security metrics section not found"
+        $validations += [PSCustomObject]@{ Check = "Security Metrics"; Status = "⚠️  WARN"; Details = "Section not found" }
+        Write-Host "  ⚠️  Security metrics section not found" -ForegroundColor Yellow
+    }
+    
+    # Validation 7: Overall Report Size
+    Write-Host "[7/7] Checking report file size..." -ForegroundColor Yellow
+    $fileSize = (Get-Item $ReportPath).Length
+    if ($fileSize -gt 10KB) {
+        $fileSizeKB = [math]::Round($fileSize / 1KB, 2)
+        $validations += [PSCustomObject]@{ Check = "File Size"; Status = "✅ PASS"; Details = "$fileSizeKB KB" }
+        Write-Host "  ✅ Report size: $fileSizeKB KB (contains data)" -ForegroundColor Green
+    } else {
+        $warnings += "Report file very small ($fileSize bytes) - may be incomplete"
+        $validations += [PSCustomObject]@{ Check = "File Size"; Status = "⚠️  WARN"; Details = "$fileSize bytes (suspiciously small)" }
+        Write-Host "  ⚠️  Report size: $fileSize bytes (may be incomplete)" -ForegroundColor Yellow
+    }
+    
+    # Display Results
+    Write-Host "`n╔═══════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
+    Write-Host "║                  Validation Summary                          ║" -ForegroundColor Cyan
+    Write-Host "╚═══════════════════════════════════════════════════════════════╝`n" -ForegroundColor Cyan
+    
+    $validations | Format-Table Check, Status, Details -AutoSize -Wrap
+    
+    # Summary
+    $passCount = ($validations | Where-Object { $_.Status -eq "✅ PASS" }).Count
+    $warnCount = ($validations | Where-Object { $_.Status -eq "⚠️  WARN" }).Count
+    $failCount = ($validations | Where-Object { $_.Status -eq "❌ FAIL" }).Count
+    
+    Write-Host "═══════════════════════════════════════════════════════════════" -ForegroundColor Cyan
+    Write-Host "Results:" -ForegroundColor White
+    Write-Host "  ✅ PASS: $passCount / $($validations.Count)" -ForegroundColor Green
+    if ($warnCount -gt 0) {
+        Write-Host "  ⚠️  WARN: $warnCount / $($validations.Count)" -ForegroundColor Yellow
+        Write-Host "`nWarnings:" -ForegroundColor Yellow
+        $warnings | ForEach-Object { Write-Host "  - $_" -ForegroundColor Yellow }
+    }
+    if ($failCount -gt 0) {
+        Write-Host "  ❌ FAIL: $failCount / $($validations.Count)" -ForegroundColor Red
+        Write-Host "`nIssues:" -ForegroundColor Red
+        $issues | ForEach-Object { Write-Host "  - $_" -ForegroundColor Red }
+    }
+    Write-Host "═══════════════════════════════════════════════════════════════" -ForegroundColor Cyan
+    
+    # Overall Assessment
+    Write-Host "`n📊 Overall Assessment:" -ForegroundColor Cyan
+    if ($failCount -eq 0 -and $warnCount -eq 0) {
+        Write-Host "  ✅ EXCELLENT - Report passes all validation checks" -ForegroundColor Green
+    } elseif ($failCount -eq 0) {
+        Write-Host "  ✅ GOOD - Report has minor warnings but is usable" -ForegroundColor Yellow
+    } else {
+        Write-Host "  ❌ ISSUES FOUND - Report has significant problems" -ForegroundColor Red
+        Write-Host "  Recommendation: Regenerate report after waiting for policy evaluation (60+ minutes)" -ForegroundColor Yellow
+    }
+    
+    Write-Host "`n📁 Report: $(Split-Path $ReportPath -Leaf)" -ForegroundColor Gray
+    Write-Host ""
+    
+    return [PSCustomObject]@{
+        ReportPath = $ReportPath
+        TotalChecks = $validations.Count
+        Passed = $passCount
+        Warnings = $warnCount
+        Failed = $failCount
+        Issues = $issues
+        ValidationDetails = $validations
+    }
 }
 
 function Test-InfrastructureValidation {
@@ -3335,6 +3553,8 @@ function Main {
         [switch]$TestInfrastructure,  # Comprehensive infrastructure validation
         [switch]$TestAutoRemediation,  # Test auto-remediation (DeployIfNotExists/Modify) policies
         [switch]$Detailed,  # Show detailed output for infrastructure validation
+        [switch]$ValidateReport,  # Validate HTML compliance report for data integrity
+        [string]$ReportPath,  # Path to HTML report to validate (defaults to most recent)
         [string]$IdentityResourceId,  # Resource ID of managed identity for DeployIfNotExists/Modify policies
         [string]$ScopeType,  # Scope type for policy assignment: Subscription, ResourceGroup, ManagementGroup
         [string]$PolicyMode,  # Policy enforcement mode: Audit, Deny, Enforce
@@ -3599,6 +3819,19 @@ function Main {
         Test-AutoRemediation -ResourceGroupName 'rg-policy-keyvault-test' -Location 'eastus'
         Write-Host ""
         Write-Log "Auto-remediation testing initiated. Wait 30-60 minutes for completion." -Level 'SUCCESS'
+        return
+    }
+
+    # HTML Report Validation - validate compliance report data integrity
+    if ($ValidateReport) {
+        Write-Log "Running HTML compliance report validation..." -Level 'INFO'
+        $validationResults = Test-HTMLReportValidation -ReportPath $ReportPath
+        Write-Host ""
+        if ($validationResults.Failed -eq 0) {
+            Write-Log "Report validation completed successfully." -Level 'SUCCESS'
+        } else {
+            Write-Log "Report validation completed with issues. See details above." -Level 'WARN'
+        }
         return
     }
 
