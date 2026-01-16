@@ -1,0 +1,46 @@
+[
+  {
+    "Test": "Purge Protection",
+    "RiskLevel": "HIGH",
+    "Phase": "Phase 3",
+    "Expected": "Blocked",
+    "Actual": "Blocked",
+    "Status": "✅ PASS",
+    "PolicyWorking": true,
+    "PolicyName": "Unknown",
+    "Notes": "Deny mode working correctly"
+  },
+  {
+    "Test": "Firewall Required",
+    "RiskLevel": "MEDIUM",
+    "Phase": "Phase 2",
+    "Expected": "Blocked",
+    "Actual": "Blocked",
+    "Status": "✅ PASS",
+    "PolicyWorking": true,
+    "PolicyName": "Unknown",
+    "Notes": "Deny mode working correctly"
+  },
+  {
+    "Test": "RBAC Required",
+    "RiskLevel": "MEDIUM",
+    "Phase": "Phase 2",
+    "Expected": "Blocked",
+    "Actual": "Blocked",
+    "Status": "✅ PASS",
+    "PolicyWorking": true,
+    "PolicyName": "Unknown",
+    "Notes": "Deny mode working correctly"
+  },
+  {
+    "Test": "Compliant Vault",
+    "RiskLevel": "BASELINE",
+    "Phase": "All",
+    "Expected": "Created",
+    "Actual": "Created",
+    "Status": "✅ PASS",
+    "PolicyWorking": true,
+    "VaultName": "val-compliant-6570",
+    "Notes": "Production-ready: Purge protection, RBAC, Soft delete (90d), Public access disabled"
+  }
+]

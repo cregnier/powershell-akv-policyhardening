@@ -1,0 +1,33 @@
+{
+  "Assignments": [
+    {
+      "Name": "Key vaults should have deletion protection enabled",
+      "Status": "Failed",
+      "Error": "[PolicyParameterValueNotAllowed] : The value '{\r\n  \"value\": \"Audit\"\r\n}' is not allowed for policy parameter 'effect' in policy definition '0b60c0b2-2dc2-4e1c-b5c9-abbed971de53 version 2.1.0'. The allowed values are 'Audit, Deny, Disabled'."
+    },
+    {
+      "Name": "Key vaults should have soft delete enabled",
+      "Status": "Failed",
+      "Error": "[PolicyParameterValueNotAllowed] : The value '{\r\n  \"value\": \"Audit\"\r\n}' is not allowed for policy parameter 'effect' in policy definition '1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d version 3.1.0'. The allowed values are 'Audit, Deny, Disabled'."
+    },
+    {
+      "Name": "Azure Key Vault should disable public network access",
+      "Status": "Failed",
+      "Error": "[PolicyParameterValueNotAllowed] : The value '{\r\n  \"value\": \"Audit\"\r\n}' is not allowed for policy parameter 'effect' in policy definition '405c5871-3e91-4644-8a63-58e19d68ff5b version 1.1.0'. The allowed values are 'Audit, Deny, Disabled'."
+    }
+  ],
+  "Compliance": null,
+  "OperationalTests": {
+    "FailedTests": [
+      "No policies successfully assigned"
+    ],
+    "ComplianceDataAvailable": false,
+    "AssignmentsVerified": 0,
+    "PoliciesGeneratingData": 0,
+    "EffectivePolicies": 0,
+    "AssignmentsCreated": 0
+  },
+  "Preview": false,
+  "Verification": null,
+  "DryRun": false
+}

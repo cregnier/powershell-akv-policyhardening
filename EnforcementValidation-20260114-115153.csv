@@ -1,0 +1,2 @@
+"Test","RiskLevel","Phase","Expected","Actual","Status","PolicyWorking","PolicyName","Notes"
+"Purge Protection","HIGH","Phase 3","Blocked","Blocked","✅ PASS","True","Unknown","Deny mode working correctly"

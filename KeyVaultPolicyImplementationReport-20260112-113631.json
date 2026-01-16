@@ -1,0 +1,13 @@
+{
+  "Verification": null,
+  "Compliance": null,
+  "Preview": false,
+  "DryRun": false,
+  "Assignments": [
+    {
+      "Name": "Key vaults should have soft delete enabled",
+      "Status": "Failed",
+      "Error": "[PolicyParameterValueNotAllowed] : The value '{\r\n  \"value\": \"Audit\"\r\n}' is not allowed for policy parameter 'effect' in policy definition '1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d version 3.1.0'. The allowed values are 'Audit, Deny, Disabled'."
+    }
+  ]
+}

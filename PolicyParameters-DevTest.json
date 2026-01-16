@@ -1,0 +1,132 @@
+{
+  "_comment": "Dev/Test environment - Relaxed parameters for faster iteration",
+  
+  "Key vaults should have soft delete enabled": {
+    "effect": "Audit"
+  },
+  "Key vaults should have deletion protection enabled": {
+    "effect": "Audit"
+  },
+  "Azure Key Vault should disable public network access": {
+    "effect": "Audit"
+  },
+  "Azure Key Vault should have firewall enabled or public network access disabled": {
+    "allowedIPAddresses": [],
+    "forbiddenIPAddresses": [],
+    "effect": "Audit"
+  },
+  
+  "Certificates should have the specified maximum validity period": {
+    "maximumValidityInMonths": 36,
+    "effect": "Audit"
+  },
+  "Keys should have the specified maximum validity period": {
+    "maximumValidityInDays": 1095,
+    "effect": "Audit"
+  },
+  "Secrets should have the specified maximum validity period": {
+    "maximumValidityInDays": 1095,
+    "effect": "Audit"
+  },
+  
+  "Key Vault secrets should have an expiration date": {
+    "effect": "Audit"
+  },
+  "Key Vault keys should have an expiration date": {
+    "effect": "Audit"
+  },
+  
+  "Keys should have more than the specified number of days before expiration": {
+    "minimumDaysBeforeExpiration": 30,
+    "effect": "Audit"
+  },
+  "Secrets should have more than the specified number of days before expiration": {
+    "minimumDaysBeforeExpiration": 30,
+    "effect": "Audit"
+  },
+  
+  "Certificates should have the specified lifetime action triggers": {
+    "maximumPercentageLife": 80,
+    "minimumDaysBeforeExpiry": 30,
+    "effect": "Audit"
+  },
+  
+  "Certificates should not expire within the specified number of days": {
+    "daysToExpire": 30,
+    "effect": "Audit"
+  },
+  
+  "Keys should not be active for longer than the specified number of days": {
+    "maximumValidityInDays": 730,
+    "effect": "Audit"
+  },
+  "Secrets should not be active for longer than the specified number of days": {
+    "maximumValidityInDays": 730,
+    "effect": "Audit"
+  },
+  
+  "Certificates should be issued by the specified non-integrated certificate authority": {
+    "caCommonName": "CN=ContosoCA",
+    "effect": "Audit"
+  },
+  
+  "Certificates should be issued by one of the specified non-integrated certificate authorities": {
+    "caCommonNames": ["CN=ContosoCA", "CN=InternalCA"],
+    "effect": "Audit"
+  },
+  
+  "Keys should have a rotation policy ensuring that their rotation is scheduled within the specified number of days after creation.": {
+    "maximumDaysToRotate": 180,
+    "effect": "Audit"
+  },
+  
+  "Keys using RSA cryptography should have a specified minimum key size": {
+    "minimumRSAKeySize": 2048,
+    "effect": "Audit"
+  },
+  "Certificates using RSA cryptography should have the specified minimum key size": {
+    "minimumRSAKeySize": 2048,
+    "effect": "Audit"
+  },
+  
+  "Resource logs in Key Vault should be enabled": {
+    "effect": "AuditIfNotExists",
+    "requiredRetentionDays": "30"
+  },
+  "Resource logs in Azure Key Vault Managed HSM should be enabled": {
+    "effect": "AuditIfNotExists"
+  },
+  
+  "[Preview]: Configure Azure Key Vault Managed HSM to disable public network access": {
+    "effect": "Modify"
+  },
+  "Deploy - Configure diagnostic settings for Azure Key Vault to Log Analytics workspace": {
+    "effect": "DeployIfNotExists",
+    "logAnalytics": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.OperationalInsights/workspaces/law-policy-test-6827"
+  },
+  "Configure Azure Key Vaults with private endpoints": {
+    "effect": "DeployIfNotExists",
+    "privateEndpointSubnetId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.Network/virtualNetworks/vnet-policy-test/subnets/snet-privateendpoints"
+  },
+  "Deploy - Configure diagnostic settings to an Event Hub to be enabled on Azure Key Vault Managed HSM": {
+    "effect": "DeployIfNotExists",
+    "eventHubRuleId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.EventHub/namespaces/eh-policy-test-6513/authorizationrules/RootManageSharedAccessKey",
+    "eventHubLocation": "eastus"
+  },
+  "Configure Azure Key Vaults to use private DNS zones": {
+    "effect": "DeployIfNotExists",
+    "privateDnsZoneId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
+  },
+  "Configure key vaults to enable firewall": {
+    "effect": "Modify"
+  },
+  "[Preview]: Configure Azure Key Vault Managed HSM with private endpoints": {
+    "effect": "DeployIfNotExists",
+    "privateEndpointSubnetId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.Network/virtualNetworks/vnet-policy-test/subnets/snet-privateendpoints"
+  },
+  "Deploy Diagnostic Settings for Key Vault to Event Hub": {
+    "effect": "DeployIfNotExists",
+    "eventHubRuleId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.EventHub/namespaces/eh-policy-test-6513/authorizationrules/RootManageSharedAccessKey",
+    "eventHubLocation": "eastus"
+  }
+}

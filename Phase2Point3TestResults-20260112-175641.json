@@ -1,0 +1,35 @@
+{
+  "Scope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+  "Issues": [],
+  "TestName": "Phase 2.3 Enforcement Validation",
+  "Tests": {
+    "EnforceAssignmentsExist": {
+      "Count": 13,
+      "Message": "Found 13 Enforce-mode assignments",
+      "Result": "PASS"
+    },
+    "IdentityPermissions": {
+      "HasRequiredRole": true,
+      "Roles": [
+        "Contributor",
+        "Key Vault Contributor",
+        "Log Analytics Contributor",
+        "Monitoring Contributor"
+      ],
+      "Result": "PASS"
+    },
+    "ComplianceDataAvailable": {
+      "StateCount": 100,
+      "ResourceCount": 13,
+      "PolicyCount": 33,
+      "Result": "PASS"
+    },
+    "RemediationTasks": {
+      "Count": 0,
+      "Message": "No active remediations detected",
+      "Result": "INFO"
+    }
+  },
+  "TestDate": "2026-01-12 17:56:39 UTC",
+  "Summary": {}
+}

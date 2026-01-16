@@ -1,0 +1,104 @@
+{
+  "_comment": "Tier 2: Moderate-Impact Lifecycle Policies - Deny Mode (Months 6-7)",
+  "_description": "25 policies with Deny enforcement. Deploy only after Audit mode shows <10% violations.",
+  "_timeline": "Months 6-7: Deny mode (60 days) → Months 8-9: Full enforcement",
+  "_prerequisites": "Audit mode deployed for 60 days, violation rate <10%, rotation processes documented, stakeholders trained",
+  "_reference": "See ProductionRolloutPlan.md - Tier 2 section",
+  
+  "Keys should not be active for longer than the specified number of days": {
+    "maximumValidityInDays": 365,
+    "effect": "Deny"
+  },
+  "Keys should have more than the specified number of days before expiration": {
+    "minimumDaysBeforeExpiration": 30,
+    "effect": "Deny"
+  },
+  "Keys should have a rotation policy ensuring that their rotation is scheduled within the specified number of days after creation.": {
+    "maximumDaysToRotate": 90,
+    "effect": "Audit"
+  },
+  "Keys should have the specified maximum validity period": {
+    "maximumValidityInDays": 730,
+    "effect": "Deny"
+  },
+  "Keys should be the specified cryptographic type RSA or EC": {
+    "cryptographicType": ["RSA", "EC"],
+    "effect": "Deny"
+  },
+  "Keys using elliptic curve cryptography should have the specified curve names": {
+    "allowedECNames": ["P-256", "P-256K", "P-384", "P-521"],
+    "effect": "Deny"
+  },
+  "Resource logs in Key Vault should be enabled": {
+    "effect": "AuditIfNotExists",
+    "requiredRetentionDays": "365"
+  },
+  "Secrets should not be active for longer than the specified number of days": {
+    "maximumValidityInDays": 365,
+    "effect": "Deny"
+  },
+  "Secrets should have more than the specified number of days before expiration": {
+    "minimumDaysBeforeExpiration": 30,
+    "effect": "Deny"
+  },
+  "Secrets should have content type set": {
+    "effect": "Deny"
+  },
+  "Secrets should have the specified maximum validity period": {
+    "maximumValidityInDays": 365,
+    "effect": "Deny"
+  },
+  "Certificates using RSA cryptography should have the specified minimum key size": {
+    "minimumRSAKeySize": 2048,
+    "effect": "Deny"
+  },
+  "Certificates should use allowed key types": {
+    "allowedKeyTypes": ["RSA", "EC"],
+    "effect": "Deny"
+  },
+  "Certificates using elliptic curve cryptography should have allowed curve names": {
+    "allowedECNames": ["P-256", "P-256K", "P-384", "P-521"],
+    "effect": "Deny"
+  },
+  "Certificates should have the specified lifetime action triggers": {
+    "maximumPercentageLife": 80,
+    "minimumDaysBeforeExpiry": 30,
+    "effect": "Deny"
+  },
+  "Certificates should be issued by the specified integrated certificate authority": {
+    "allowedCAs": ["DigiCert", "GlobalSign"],
+    "effect": "Deny"
+  },
+  "Certificates should be issued by the specified non-integrated certificate authority": {
+    "caCommonName": "ContosoCA",
+    "effect": "Deny"
+  },
+  "Certificates should be issued by one of the specified non-integrated certificate authorities": {
+    "caCommonNames": ["ContosoCA", "FabrikamCA"],
+    "effect": "Deny"
+  },
+  "Azure Key Vault Managed HSM should have purge protection enabled": {
+    "effect": "Deny"
+  },
+  "Azure Key Vault should disable public network access": {
+    "effect": "Deny"
+  },
+  "[Preview]: Azure Key Vault Managed HSM keys should have an expiration date": {
+    "effect": "Deny"
+  },
+  "[Preview]: Azure Key Vault Managed HSM Keys should have more than the specified number of days before expiration": {
+    "minimumDaysBeforeExpiration": 30,
+    "effect": "Deny"
+  },
+  "[Preview]: Azure Key Vault Managed HSM keys using RSA cryptography should have a specified minimum key size": {
+    "minimumRSAKeySize": 2048,
+    "effect": "Deny"
+  },
+  "[Preview]: Azure Key Vault Managed HSM keys using elliptic curve cryptography should have the specified curve names": {
+    "allowedECNames": ["P-256", "P-256K", "P-384", "P-521"],
+    "effect": "Deny"
+  },
+  "Resource logs in Azure Key Vault Managed HSM should be enabled": {
+    "effect": "AuditIfNotExists"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "Description": "Deleting a key vault without soft delete enabled permanently deletes all secrets, keys, and certificates stored in the key vault. Accidental deletion of a key vault can lead to permanent data loss. Soft delete allows you to recover an accidentally deleted key vault for a configurable retention period.",
+  "DisplayName": "Key vaults should have soft delete enabled",
+  "Id": "/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d",
+  "Metadata": {},
+  "Mode": "Indexed",
+  "Name": "1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d",
+  "Parameter": {},
+  "PolicyRule": {},
+  "PolicyType": "BuiltIn",
+  "SystemDataCreatedAt": null,
+  "SystemDataCreatedBy": null,
+  "SystemDataCreatedByType": null,
+  "SystemDataLastModifiedAt": null,
+  "SystemDataLastModifiedBy": null,
+  "SystemDataLastModifiedByType": null,
+  "Type": "Microsoft.Authorization/policyDefinitions",
+  "Version": "3.1.0",
+  "Versions": [
+    "3.1.0",
+    "3.0.0"
+  ]
+}

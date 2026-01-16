@@ -1,0 +1,18 @@
+{
+  "Verification": [],
+  "Compliance": null,
+  "Preview": true,
+  "DryRun": true,
+  "Assignments": [
+    {
+      "Name": "Key vaults should have soft delete enabled",
+      "Parameters": {
+        "effect": {
+          "value": "Audit"
+        }
+      },
+      "IntendedAssignmentName": "Keyvaultsshouldhavesoftdeleteenabled-1898386612",
+      "Status": "DryRun"
+    }
+  ]
+}

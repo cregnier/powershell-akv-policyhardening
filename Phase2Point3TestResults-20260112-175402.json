@@ -1,0 +1,29 @@
+{
+  "Scope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+  "Issues": [
+    "Failed to retrieve compliance data: A parameter cannot be found that matches parameter name 'Scope'."
+  ],
+  "TestName": "Phase 2.3 Enforcement Validation",
+  "Tests": {
+    "EnforceAssignmentsExist": {
+      "Count": 13,
+      "Message": "Found 13 Enforce-mode assignments",
+      "Result": "PASS"
+    },
+    "IdentityPermissions": {
+      "Result": "SKIPPED",
+      "Message": "Principal ID required for role verification"
+    },
+    "ComplianceDataAvailable": {
+      "Result": "ERROR",
+      "Message": "A parameter cannot be found that matches parameter name 'Scope'."
+    },
+    "RemediationTasks": {
+      "Count": 0,
+      "Message": "No active remediations detected",
+      "Result": "INFO"
+    }
+  },
+  "TestDate": "2026-01-12 17:54:02 UTC",
+  "Summary": {}
+}

@@ -1,0 +1,1073 @@
+{
+  "Assignments": [
+    {
+      "Name": "Azure Key Vault should use RBAC permission model",
+      "Assignment": {
+        "DefinitionVersion": "1.*.*",
+        "Description": "Audit mode - detects non-compliant Key Vaults. Frameworks: CIS 8.6, MCSB PA-7",
+        "DisplayName": "KV-RBAC-Audit",
+        "EnforcementMode": "Default",
+        "Id": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/KV-RBAC-Audit",
+        "IdentityPrincipalId": null,
+        "IdentityTenantId": null,
+        "IdentityType": null,
+        "IdentityUserAssignedIdentity": {},
+        "Location": null,
+        "Metadata": {},
+        "Name": "KV-RBAC-Audit",
+        "NonComplianceMessage": null,
+        "NotScope": null,
+        "Override": null,
+        "Parameter": {},
+        "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "ResourceSelector": null,
+        "Scope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "SystemDataCreatedAt": "2026-01-06T17:44:21.6797772Z",
+        "SystemDataCreatedBy": "theregniers@hotmail.com",
+        "SystemDataCreatedByType": "User",
+        "SystemDataLastModifiedAt": "2026-01-06T17:44:21.6797772Z",
+        "SystemDataLastModifiedBy": "theregniers@hotmail.com",
+        "SystemDataLastModifiedByType": "User",
+        "Type": "Microsoft.Authorization/policyAssignments"
+      },
+      "Status": "Assigned",
+      "IsExisting": true,
+      "DefinitionType": "Policy"
+    }
+  ],
+  "Compliance": {
+    "ReportGeneratedAt": "2026-01-12T17:57:49.186769Z",
+    "NonCompliantReasons": {
+      "Reason": "",
+      "Count": 396
+    },
+    "Raw": [
+      {
+        "AdditionalProperties": {
+          "complianceReasonCode": ""
+        },
+        "Timestamp": "2026-01-12T17:50:22.7902352Z",
+        "ResourceId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.keyvault/vaults/kv-bl-sec-xgkrsnua",
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-rbac-audit",
+        "PolicyDefinitionId": "/providers/microsoft.authorization/policydefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "EffectiveParameters": "",
+        "IsCompliant": true,
+        "SubscriptionId": "ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "ResourceType": "Microsoft.KeyVault/vaults",
+        "ResourceLocation": "eastus",
+        "ResourceGroup": "rg-policy-keyvault-test",
+        "ResourceTags": "tbd",
+        "PolicyAssignmentName": "KV-RBAC-Audit",
+        "PolicyAssignmentOwner": "tbd",
+        "PolicyAssignmentParameters": "",
+        "PolicyAssignmentScope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "PolicyDefinitionName": "12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "PolicyDefinitionAction": "audit",
+        "PolicyDefinitionCategory": "tbd",
+        "PolicySetDefinitionId": "",
+        "PolicySetDefinitionName": "",
+        "PolicySetDefinitionOwner": "",
+        "PolicySetDefinitionCategory": "",
+        "PolicySetDefinitionParameters": "",
+        "ManagementGroupIds": "21bd262e-3255-411e-8345-51102d9d9e9e",
+        "PolicyDefinitionReferenceId": "",
+        "ComplianceState": "Compliant",
+        "PolicyEvaluationDetails": null,
+        "PolicyDefinitionGroupNames": [
+          ""
+        ],
+        "PolicyDefinitionVersion": "1.0.1",
+        "PolicySetDefinitionVersion": "",
+        "PolicyAssignmentVersion": ""
+      },
+      {
+        "AdditionalProperties": {
+          "complianceReasonCode": ""
+        },
+        "Timestamp": "2026-01-12T17:50:22.6393018Z",
+        "ResourceId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.keyvault/vaults/kv-bl-rbac-xgkrsnua",
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-rbac-audit",
+        "PolicyDefinitionId": "/providers/microsoft.authorization/policydefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "EffectiveParameters": "",
+        "IsCompliant": true,
+        "SubscriptionId": "ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "ResourceType": "Microsoft.KeyVault/vaults",
+        "ResourceLocation": "eastus",
+        "ResourceGroup": "rg-policy-keyvault-test",
+        "ResourceTags": "tbd",
+        "PolicyAssignmentName": "KV-RBAC-Audit",
+        "PolicyAssignmentOwner": "tbd",
+        "PolicyAssignmentParameters": "",
+        "PolicyAssignmentScope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "PolicyDefinitionName": "12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "PolicyDefinitionAction": "audit",
+        "PolicyDefinitionCategory": "tbd",
+        "PolicySetDefinitionId": "",
+        "PolicySetDefinitionName": "",
+        "PolicySetDefinitionOwner": "",
+        "PolicySetDefinitionCategory": "",
+        "PolicySetDefinitionParameters": "",
+        "ManagementGroupIds": "21bd262e-3255-411e-8345-51102d9d9e9e",
+        "PolicyDefinitionReferenceId": "",
+        "ComplianceState": "Compliant",
+        "PolicyEvaluationDetails": null,
+        "PolicyDefinitionGroupNames": [
+          ""
+        ],
+        "PolicyDefinitionVersion": "1.0.1",
+        "PolicySetDefinitionVersion": "",
+        "PolicyAssignmentVersion": ""
+      },
+      {
+        "AdditionalProperties": {
+          "complianceReasonCode": ""
+        },
+        "Timestamp": "2026-01-12T17:50:22.3748323Z",
+        "ResourceId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.keyvault/vaults/kv-bl-pub-xgkrsnua",
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-rbac-audit",
+        "PolicyDefinitionId": "/providers/microsoft.authorization/policydefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "EffectiveParameters": "",
+        "IsCompliant": true,
+        "SubscriptionId": "ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "ResourceType": "Microsoft.KeyVault/vaults",
+        "ResourceLocation": "eastus",
+        "ResourceGroup": "rg-policy-keyvault-test",
+        "ResourceTags": "tbd",
+        "PolicyAssignmentName": "KV-RBAC-Audit",
+        "PolicyAssignmentOwner": "tbd",
+        "PolicyAssignmentParameters": "",
+        "PolicyAssignmentScope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "PolicyDefinitionName": "12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "PolicyDefinitionAction": "audit",
+        "PolicyDefinitionCategory": "tbd",
+        "PolicySetDefinitionId": "",
+        "PolicySetDefinitionName": "",
+        "PolicySetDefinitionOwner": "",
+        "PolicySetDefinitionCategory": "",
+        "PolicySetDefinitionParameters": "",
+        "ManagementGroupIds": "21bd262e-3255-411e-8345-51102d9d9e9e",
+        "PolicyDefinitionReferenceId": "",
+        "ComplianceState": "Compliant",
+        "PolicyEvaluationDetails": null,
+        "PolicyDefinitionGroupNames": [
+          ""
+        ],
+        "PolicyDefinitionVersion": "1.0.1",
+        "PolicySetDefinitionVersion": "",
+        "PolicyAssignmentVersion": ""
+      },
+      {
+        "AdditionalProperties": {
+          "complianceReasonCode": ""
+        },
+        "Timestamp": "2026-01-12T17:50:22.3731723Z",
+        "ResourceId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.keyvault/vaults/kv-bl-log-xgkrsnua",
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-rbac-audit",
+        "PolicyDefinitionId": "/providers/microsoft.authorization/policydefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "EffectiveParameters": "",
+        "IsCompliant": true,
+        "SubscriptionId": "ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "ResourceType": "Microsoft.KeyVault/vaults",
+        "ResourceLocation": "eastus",
+        "ResourceGroup": "rg-policy-keyvault-test",
+        "ResourceTags": "tbd",
+        "PolicyAssignmentName": "KV-RBAC-Audit",
+        "PolicyAssignmentOwner": "tbd",
+        "PolicyAssignmentParameters": "",
+        "PolicyAssignmentScope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "PolicyDefinitionName": "12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "PolicyDefinitionAction": "audit",
+        "PolicyDefinitionCategory": "tbd",
+        "PolicySetDefinitionId": "",
+        "PolicySetDefinitionName": "",
+        "PolicySetDefinitionOwner": "",
+        "PolicySetDefinitionCategory": "",
+        "PolicySetDefinitionParameters": "",
+        "ManagementGroupIds": "21bd262e-3255-411e-8345-51102d9d9e9e",
+        "PolicyDefinitionReferenceId": "",
+        "ComplianceState": "Compliant",
+        "PolicyEvaluationDetails": null,
+        "PolicyDefinitionGroupNames": [
+          ""
+        ],
+        "PolicyDefinitionVersion": "1.0.1",
+        "PolicySetDefinitionVersion": "",
+        "PolicyAssignmentVersion": ""
+      },
+      {
+        "AdditionalProperties": {
+          "complianceReasonCode": ""
+        },
+        "Timestamp": "2026-01-12T17:50:22.215455Z",
+        "ResourceId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.keyvault/vaults/kv-bl-leg-xgkrsnua",
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-rbac-audit",
+        "PolicyDefinitionId": "/providers/microsoft.authorization/policydefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "EffectiveParameters": "",
+        "IsCompliant": false,
+        "SubscriptionId": "ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "ResourceType": "Microsoft.KeyVault/vaults",
+        "ResourceLocation": "eastus",
+        "ResourceGroup": "rg-policy-keyvault-test",
+        "ResourceTags": "tbd",
+        "PolicyAssignmentName": "KV-RBAC-Audit",
+        "PolicyAssignmentOwner": "tbd",
+        "PolicyAssignmentParameters": "",
+        "PolicyAssignmentScope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "PolicyDefinitionName": "12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "PolicyDefinitionAction": "audit",
+        "PolicyDefinitionCategory": "tbd",
+        "PolicySetDefinitionId": "",
+        "PolicySetDefinitionName": "",
+        "PolicySetDefinitionOwner": "",
+        "PolicySetDefinitionCategory": "",
+        "PolicySetDefinitionParameters": "",
+        "ManagementGroupIds": "21bd262e-3255-411e-8345-51102d9d9e9e",
+        "PolicyDefinitionReferenceId": "",
+        "ComplianceState": "NonCompliant",
+        "PolicyEvaluationDetails": null,
+        "PolicyDefinitionGroupNames": [
+          ""
+        ],
+        "PolicyDefinitionVersion": "1.0.1",
+        "PolicySetDefinitionVersion": "",
+        "PolicyAssignmentVersion": ""
+      },
+      {
+        "AdditionalProperties": {
+          "complianceReasonCode": ""
+        },
+        "Timestamp": "2026-01-12T17:50:22.1599133Z",
+        "ResourceId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-akv-audit-test/providers/microsoft.keyvault/vaults/kv-weakaccess-1820486r",
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-rbac-audit",
+        "PolicyDefinitionId": "/providers/microsoft.authorization/policydefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "EffectiveParameters": "",
+        "IsCompliant": true,
+        "SubscriptionId": "ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "ResourceType": "Microsoft.KeyVault/vaults",
+        "ResourceLocation": "eastus",
+        "ResourceGroup": "rg-akv-audit-test",
+        "ResourceTags": "tbd",
+        "PolicyAssignmentName": "KV-RBAC-Audit",
+        "PolicyAssignmentOwner": "tbd",
+        "PolicyAssignmentParameters": "",
+        "PolicyAssignmentScope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "PolicyDefinitionName": "12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "PolicyDefinitionAction": "audit",
+        "PolicyDefinitionCategory": "tbd",
+        "PolicySetDefinitionId": "",
+        "PolicySetDefinitionName": "",
+        "PolicySetDefinitionOwner": "",
+        "PolicySetDefinitionCategory": "",
+        "PolicySetDefinitionParameters": "",
+        "ManagementGroupIds": "21bd262e-3255-411e-8345-51102d9d9e9e",
+        "PolicyDefinitionReferenceId": "",
+        "ComplianceState": "Compliant",
+        "PolicyEvaluationDetails": null,
+        "PolicyDefinitionGroupNames": [
+          ""
+        ],
+        "PolicyDefinitionVersion": "1.0.1",
+        "PolicySetDefinitionVersion": "",
+        "PolicyAssignmentVersion": ""
+      },
+      {
+        "AdditionalProperties": {
+          "complianceReasonCode": ""
+        },
+        "Timestamp": "2026-01-12T17:50:22.0496242Z",
+        "ResourceId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-akv-audit-test/providers/microsoft.keyvault/vaults/kv-rbac-1820486r",
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-rbac-audit",
+        "PolicyDefinitionId": "/providers/microsoft.authorization/policydefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "EffectiveParameters": "",
+        "IsCompliant": true,
+        "SubscriptionId": "ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "ResourceType": "Microsoft.KeyVault/vaults",
+        "ResourceLocation": "eastus",
+        "ResourceGroup": "rg-akv-audit-test",
+        "ResourceTags": "tbd",
+        "PolicyAssignmentName": "KV-RBAC-Audit",
+        "PolicyAssignmentOwner": "tbd",
+        "PolicyAssignmentParameters": "",
+        "PolicyAssignmentScope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "PolicyDefinitionName": "12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "PolicyDefinitionAction": "audit",
+        "PolicyDefinitionCategory": "tbd",
+        "PolicySetDefinitionId": "",
+        "PolicySetDefinitionName": "",
+        "PolicySetDefinitionOwner": "",
+        "PolicySetDefinitionCategory": "",
+        "PolicySetDefinitionParameters": "",
+        "ManagementGroupIds": "21bd262e-3255-411e-8345-51102d9d9e9e",
+        "PolicyDefinitionReferenceId": "",
+        "ComplianceState": "Compliant",
+        "PolicyEvaluationDetails": null,
+        "PolicyDefinitionGroupNames": [
+          ""
+        ],
+        "PolicyDefinitionVersion": "1.0.1",
+        "PolicySetDefinitionVersion": "",
+        "PolicyAssignmentVersion": ""
+      },
+      {
+        "AdditionalProperties": {
+          "complianceReasonCode": ""
+        },
+        "Timestamp": "2026-01-12T17:50:21.973348Z",
+        "ResourceId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-akv-audit-test/providers/microsoft.keyvault/vaults/kv-ok-1820486r",
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-rbac-audit",
+        "PolicyDefinitionId": "/providers/microsoft.authorization/policydefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "EffectiveParameters": "",
+        "IsCompliant": true,
+        "SubscriptionId": "ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "ResourceType": "Microsoft.KeyVault/vaults",
+        "ResourceLocation": "eastus",
+        "ResourceGroup": "rg-akv-audit-test",
+        "ResourceTags": "tbd",
+        "PolicyAssignmentName": "KV-RBAC-Audit",
+        "PolicyAssignmentOwner": "tbd",
+        "PolicyAssignmentParameters": "",
+        "PolicyAssignmentScope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "PolicyDefinitionName": "12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "PolicyDefinitionAction": "audit",
+        "PolicyDefinitionCategory": "tbd",
+        "PolicySetDefinitionId": "",
+        "PolicySetDefinitionName": "",
+        "PolicySetDefinitionOwner": "",
+        "PolicySetDefinitionCategory": "",
+        "PolicySetDefinitionParameters": "",
+        "ManagementGroupIds": "21bd262e-3255-411e-8345-51102d9d9e9e",
+        "PolicyDefinitionReferenceId": "",
+        "ComplianceState": "Compliant",
+        "PolicyEvaluationDetails": null,
+        "PolicyDefinitionGroupNames": [
+          ""
+        ],
+        "PolicyDefinitionVersion": "1.0.1",
+        "PolicySetDefinitionVersion": "",
+        "PolicyAssignmentVersion": ""
+      },
+      {
+        "AdditionalProperties": {
+          "complianceReasonCode": ""
+        },
+        "Timestamp": "2026-01-12T17:50:21.864077Z",
+        "ResourceId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-akv-audit-test/providers/microsoft.keyvault/vaults/kv-no-purge-1820486r",
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-rbac-audit",
+        "PolicyDefinitionId": "/providers/microsoft.authorization/policydefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "EffectiveParameters": "",
+        "IsCompliant": true,
+        "SubscriptionId": "ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "ResourceType": "Microsoft.KeyVault/vaults",
+        "ResourceLocation": "eastus",
+        "ResourceGroup": "rg-akv-audit-test",
+        "ResourceTags": "tbd",
+        "PolicyAssignmentName": "KV-RBAC-Audit",
+        "PolicyAssignmentOwner": "tbd",
+        "PolicyAssignmentParameters": "",
+        "PolicyAssignmentScope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "PolicyDefinitionName": "12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "PolicyDefinitionAction": "audit",
+        "PolicyDefinitionCategory": "tbd",
+        "PolicySetDefinitionId": "",
+        "PolicySetDefinitionName": "",
+        "PolicySetDefinitionOwner": "",
+        "PolicySetDefinitionCategory": "",
+        "PolicySetDefinitionParameters": "",
+        "ManagementGroupIds": "21bd262e-3255-411e-8345-51102d9d9e9e",
+        "PolicyDefinitionReferenceId": "",
+        "ComplianceState": "Compliant",
+        "PolicyEvaluationDetails": null,
+        "PolicyDefinitionGroupNames": [
+          ""
+        ],
+        "PolicyDefinitionVersion": "1.0.1",
+        "PolicySetDefinitionVersion": "",
+        "PolicyAssignmentVersion": ""
+      },
+      {
+        "AdditionalProperties": {
+          "complianceReasonCode": ""
+        },
+        "Timestamp": "2026-01-12T17:50:21.7832005Z",
+        "ResourceId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-akv-audit-test/providers/microsoft.keyvault/vaults/kv-no-diag-1820486r",
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-rbac-audit",
+        "PolicyDefinitionId": "/providers/microsoft.authorization/policydefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "EffectiveParameters": "",
+        "IsCompliant": true,
+        "SubscriptionId": "ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "ResourceType": "Microsoft.KeyVault/vaults",
+        "ResourceLocation": "eastus",
+        "ResourceGroup": "rg-akv-audit-test",
+        "ResourceTags": "tbd",
+        "PolicyAssignmentName": "KV-RBAC-Audit",
+        "PolicyAssignmentOwner": "tbd",
+        "PolicyAssignmentParameters": "",
+        "PolicyAssignmentScope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "PolicyDefinitionName": "12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "PolicyDefinitionAction": "audit",
+        "PolicyDefinitionCategory": "tbd",
+        "PolicySetDefinitionId": "",
+        "PolicySetDefinitionName": "",
+        "PolicySetDefinitionOwner": "",
+        "PolicySetDefinitionCategory": "",
+        "PolicySetDefinitionParameters": "",
+        "ManagementGroupIds": "21bd262e-3255-411e-8345-51102d9d9e9e",
+        "PolicyDefinitionReferenceId": "",
+        "ComplianceState": "Compliant",
+        "PolicyEvaluationDetails": null,
+        "PolicyDefinitionGroupNames": [
+          ""
+        ],
+        "PolicyDefinitionVersion": "1.0.1",
+        "PolicySetDefinitionVersion": "",
+        "PolicyAssignmentVersion": ""
+      },
+      {
+        "AdditionalProperties": {
+          "complianceReasonCode": ""
+        },
+        "Timestamp": "2026-01-12T17:50:20.893798Z",
+        "ResourceId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-akv-audit-test/providers/microsoft.keyvault/vaults/kv-accesspolicy-1820486r",
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-rbac-audit",
+        "PolicyDefinitionId": "/providers/microsoft.authorization/policydefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "EffectiveParameters": "",
+        "IsCompliant": true,
+        "SubscriptionId": "ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "ResourceType": "Microsoft.KeyVault/vaults",
+        "ResourceLocation": "eastus",
+        "ResourceGroup": "rg-akv-audit-test",
+        "ResourceTags": "tbd",
+        "PolicyAssignmentName": "KV-RBAC-Audit",
+        "PolicyAssignmentOwner": "tbd",
+        "PolicyAssignmentParameters": "",
+        "PolicyAssignmentScope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "PolicyDefinitionName": "12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "PolicyDefinitionAction": "audit",
+        "PolicyDefinitionCategory": "tbd",
+        "PolicySetDefinitionId": "",
+        "PolicySetDefinitionName": "",
+        "PolicySetDefinitionOwner": "",
+        "PolicySetDefinitionCategory": "",
+        "PolicySetDefinitionParameters": "",
+        "ManagementGroupIds": "21bd262e-3255-411e-8345-51102d9d9e9e",
+        "PolicyDefinitionReferenceId": "",
+        "ComplianceState": "Compliant",
+        "PolicyEvaluationDetails": null,
+        "PolicyDefinitionGroupNames": [
+          ""
+        ],
+        "PolicyDefinitionVersion": "1.0.1",
+        "PolicySetDefinitionVersion": "",
+        "PolicyAssignmentVersion": ""
+      },
+      {
+        "AdditionalProperties": {
+          "complianceReasonCode": ""
+        },
+        "Timestamp": "2026-01-12T17:50:20.8933642Z",
+        "ResourceId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/inteltesting/providers/microsoft.keyvault/vaults/testakv-sm",
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-rbac-audit",
+        "PolicyDefinitionId": "/providers/microsoft.authorization/policydefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "EffectiveParameters": "",
+        "IsCompliant": true,
+        "SubscriptionId": "ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "ResourceType": "Microsoft.KeyVault/vaults",
+        "ResourceLocation": "eastus",
+        "ResourceGroup": "IntelTesting",
+        "ResourceTags": "tbd",
+        "PolicyAssignmentName": "KV-RBAC-Audit",
+        "PolicyAssignmentOwner": "tbd",
+        "PolicyAssignmentParameters": "",
+        "PolicyAssignmentScope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "PolicyDefinitionName": "12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "PolicyDefinitionAction": "audit",
+        "PolicyDefinitionCategory": "tbd",
+        "PolicySetDefinitionId": "",
+        "PolicySetDefinitionName": "",
+        "PolicySetDefinitionOwner": "",
+        "PolicySetDefinitionCategory": "",
+        "PolicySetDefinitionParameters": "",
+        "ManagementGroupIds": "21bd262e-3255-411e-8345-51102d9d9e9e",
+        "PolicyDefinitionReferenceId": "",
+        "ComplianceState": "Compliant",
+        "PolicyEvaluationDetails": null,
+        "PolicyDefinitionGroupNames": [
+          ""
+        ],
+        "PolicyDefinitionVersion": "1.0.1",
+        "PolicySetDefinitionVersion": "",
+        "PolicyAssignmentVersion": ""
+      },
+      {
+        "AdditionalProperties": {
+          "complianceReasonCode": ""
+        },
+        "Timestamp": "2026-01-12T17:50:20.891651Z",
+        "ResourceId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-akv-audit-test/providers/microsoft.keyvault/vaults/kv-expired-1820486r",
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-rbac-audit",
+        "PolicyDefinitionId": "/providers/microsoft.authorization/policydefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "EffectiveParameters": "",
+        "IsCompliant": true,
+        "SubscriptionId": "ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "ResourceType": "Microsoft.KeyVault/vaults",
+        "ResourceLocation": "eastus",
+        "ResourceGroup": "rg-akv-audit-test",
+        "ResourceTags": "tbd",
+        "PolicyAssignmentName": "KV-RBAC-Audit",
+        "PolicyAssignmentOwner": "tbd",
+        "PolicyAssignmentParameters": "",
+        "PolicyAssignmentScope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "PolicyDefinitionName": "12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "PolicyDefinitionAction": "audit",
+        "PolicyDefinitionCategory": "tbd",
+        "PolicySetDefinitionId": "",
+        "PolicySetDefinitionName": "",
+        "PolicySetDefinitionOwner": "",
+        "PolicySetDefinitionCategory": "",
+        "PolicySetDefinitionParameters": "",
+        "ManagementGroupIds": "21bd262e-3255-411e-8345-51102d9d9e9e",
+        "PolicyDefinitionReferenceId": "",
+        "ComplianceState": "Compliant",
+        "PolicyEvaluationDetails": null,
+        "PolicyDefinitionGroupNames": [
+          ""
+        ],
+        "PolicyDefinitionVersion": "1.0.1",
+        "PolicySetDefinitionVersion": "",
+        "PolicyAssignmentVersion": ""
+      },
+      {
+        "AdditionalProperties": {
+          "complianceReasonCode": ""
+        },
+        "Timestamp": "2026-01-12T17:50:20.8895589Z",
+        "ResourceId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-akv-audit-test/providers/microsoft.keyvault/vaults/kv-netrestrict-1820486r",
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-rbac-audit",
+        "PolicyDefinitionId": "/providers/microsoft.authorization/policydefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "EffectiveParameters": "",
+        "IsCompliant": true,
+        "SubscriptionId": "ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "ResourceType": "Microsoft.KeyVault/vaults",
+        "ResourceLocation": "eastus",
+        "ResourceGroup": "rg-akv-audit-test",
+        "ResourceTags": "tbd",
+        "PolicyAssignmentName": "KV-RBAC-Audit",
+        "PolicyAssignmentOwner": "tbd",
+        "PolicyAssignmentParameters": "",
+        "PolicyAssignmentScope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "PolicyDefinitionName": "12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+        "PolicyDefinitionAction": "audit",
+        "PolicyDefinitionCategory": "tbd",
+        "PolicySetDefinitionId": "",
+        "PolicySetDefinitionName": "",
+        "PolicySetDefinitionOwner": "",
+        "PolicySetDefinitionCategory": "",
+        "PolicySetDefinitionParameters": "",
+        "ManagementGroupIds": "21bd262e-3255-411e-8345-51102d9d9e9e",
+        "PolicyDefinitionReferenceId": "",
+        "ComplianceState": "Compliant",
+        "PolicyEvaluationDetails": null,
+        "PolicyDefinitionGroupNames": [
+          ""
+        ],
+        "PolicyDefinitionVersion": "1.0.1",
+        "PolicySetDefinitionVersion": "",
+        "PolicyAssignmentVersion": ""
+      }
+    ],
+    "Summary": [
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/azurekeyvaultshoulddisablepublicnetworkaccess-1166245502",
+        "PolicyAssignmentName": "AzureKeyVaultshoulddisablepublicnetworkaccess-1166245502",
+        "Total": 14,
+        "Compliant": 0,
+        "NonCompliant": 14,
+        "CompliancePercent": 0.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/azurekeyvaultshoulddisablepublicnetworkaccess-1492394439",
+        "PolicyAssignmentName": "AzureKeyVaultshoulddisablepublicnetworkaccess-1492394439",
+        "Total": 14,
+        "Compliant": 0,
+        "NonCompliant": 14,
+        "CompliancePercent": 0.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/azurekeyvaultshoulddisablepublicnetworkaccess-1558126535",
+        "PolicyAssignmentName": "AzureKeyVaultshoulddisablepublicnetworkaccess-1558126535",
+        "Total": 14,
+        "Compliant": 0,
+        "NonCompliant": 14,
+        "CompliancePercent": 0.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/azurekeyvaultshoulddisablepublicnetworkaccess-692463386",
+        "PolicyAssignmentName": "AzureKeyVaultshoulddisablepublicnetworkaccess-692463386",
+        "Total": 14,
+        "Compliant": 0,
+        "NonCompliant": 14,
+        "CompliancePercent": 0.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/azurekeyvaultshouldhavefirewallenabledorpublicnetwork-1239235861",
+        "PolicyAssignmentName": "AzureKeyVaultshouldhavefirewallenabledorpublicnetwork-1239235861",
+        "Total": 14,
+        "Compliant": 1,
+        "NonCompliant": 13,
+        "CompliancePercent": 7.14,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/azurekeyvaultshouldhavefirewallenabledorpublicnetworka-154208943",
+        "PolicyAssignmentName": "AzureKeyVaultshouldhavefirewallenabledorpublicnetworka-154208943",
+        "Total": 14,
+        "Compliant": 1,
+        "NonCompliant": 13,
+        "CompliancePercent": 7.14,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/azurekeyvaultshoulduserbacpermissionmodel-1595736295",
+        "PolicyAssignmentName": "AzureKeyVaultshoulduseRBACpermissionmodel-1595736295",
+        "Total": 14,
+        "Compliant": 13,
+        "NonCompliant": 1,
+        "CompliancePercent": 92.86,
+        "EffectivenessRating": "Good"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/azurekeyvaultshoulduserbacpermissionmodel-1736319735",
+        "PolicyAssignmentName": "AzureKeyVaultshoulduseRBACpermissionmodel-1736319735",
+        "Total": 14,
+        "Compliant": 13,
+        "NonCompliant": 1,
+        "CompliancePercent": 92.86,
+        "EffectivenessRating": "Good"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/azurekeyvaultsshoulduseprivatelink-1332514498",
+        "PolicyAssignmentName": "AzureKeyVaultsshoulduseprivatelink-1332514498",
+        "Total": 14,
+        "Compliant": 0,
+        "NonCompliant": 14,
+        "CompliancePercent": 0.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/azurekeyvaultsshoulduseprivatelink-1541239311",
+        "PolicyAssignmentName": "AzureKeyVaultsshoulduseprivatelink-1541239311",
+        "Total": 14,
+        "Compliant": 0,
+        "NonCompliant": 14,
+        "CompliancePercent": 0.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/keyvaultsshouldhavesoftdeleteenabled-102842608",
+        "PolicyAssignmentName": "Keyvaultsshouldhavesoftdeleteenabled-102842608",
+        "Total": 14,
+        "Compliant": 14,
+        "NonCompliant": 0,
+        "CompliancePercent": 100.0,
+        "EffectivenessRating": "Excellent"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/keyvaultsshouldhavesoftdeleteenabled-1509693634",
+        "PolicyAssignmentName": "Keyvaultsshouldhavesoftdeleteenabled-1509693634",
+        "Total": 14,
+        "Compliant": 14,
+        "NonCompliant": 0,
+        "CompliancePercent": 100.0,
+        "EffectivenessRating": "Excellent"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/keyvaultsshouldhavesoftdeleteenabled-98286787",
+        "PolicyAssignmentName": "Keyvaultsshouldhavesoftdeleteenabled-98286787",
+        "Total": 14,
+        "Compliant": 14,
+        "NonCompliant": 0,
+        "CompliancePercent": 100.0,
+        "EffectivenessRating": "Excellent"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-certca-audit",
+        "PolicyAssignmentName": "KV-CertCA-Audit",
+        "Total": 12,
+        "Compliant": 0,
+        "NonCompliant": 12,
+        "CompliancePercent": 0.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-certvalidity-audit",
+        "PolicyAssignmentName": "KV-CertValidity-Audit",
+        "Total": 12,
+        "Compliant": 9,
+        "NonCompliant": 3,
+        "CompliancePercent": 75.0,
+        "EffectivenessRating": "Fair"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-diagnosticlogging-audit",
+        "PolicyAssignmentName": "KV-DiagnosticLogging-Audit",
+        "Total": 14,
+        "Compliant": 0,
+        "NonCompliant": 14,
+        "CompliancePercent": 0.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-eccurve-audit",
+        "PolicyAssignmentName": "KV-ECCurve-Audit",
+        "Total": 13,
+        "Compliant": 12,
+        "NonCompliant": 1,
+        "CompliancePercent": 92.31,
+        "EffectivenessRating": "Good"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-firewall-audit",
+        "PolicyAssignmentName": "KV-Firewall-Audit",
+        "Total": 14,
+        "Compliant": 1,
+        "NonCompliant": 13,
+        "CompliancePercent": 7.14,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-keyexpiration-audit",
+        "PolicyAssignmentName": "KV-KeyExpiration-Audit",
+        "Total": 13,
+        "Compliant": 2,
+        "NonCompliant": 11,
+        "CompliancePercent": 15.38,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-keytype-audit",
+        "PolicyAssignmentName": "KV-KeyType-Audit",
+        "Total": 12,
+        "Compliant": 12,
+        "NonCompliant": 0,
+        "CompliancePercent": 100.0,
+        "EffectivenessRating": "Excellent"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-privatelink-audit",
+        "PolicyAssignmentName": "KV-PrivateLink-Audit",
+        "Total": 14,
+        "Compliant": 0,
+        "NonCompliant": 14,
+        "CompliancePercent": 0.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-purgeprotection-audit",
+        "PolicyAssignmentName": "KV-PurgeProtection-Audit",
+        "Total": 14,
+        "Compliant": 13,
+        "NonCompliant": 1,
+        "CompliancePercent": 92.86,
+        "EffectivenessRating": "Good"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-rbac-audit",
+        "PolicyAssignmentName": "KV-RBAC-Audit",
+        "Total": 14,
+        "Compliant": 13,
+        "NonCompliant": 1,
+        "CompliancePercent": 92.86,
+        "EffectivenessRating": "Good"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-secretexpiration-audit",
+        "PolicyAssignmentName": "KV-SecretExpiration-Audit",
+        "Total": 13,
+        "Compliant": 2,
+        "NonCompliant": 11,
+        "CompliancePercent": 15.38,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/kv-softdelete-audit",
+        "PolicyAssignmentName": "KV-SoftDelete-Audit",
+        "Total": 14,
+        "Compliant": 14,
+        "NonCompliant": 0,
+        "CompliancePercent": 100.0,
+        "EffectivenessRating": "Excellent"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/resourcelogsinkeyvaultshouldbeenabled-1387878641",
+        "PolicyAssignmentName": "ResourcelogsinKeyVaultshouldbeenabled-1387878641",
+        "Total": 14,
+        "Compliant": 0,
+        "NonCompliant": 14,
+        "CompliancePercent": 0.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/resourcelogsinkeyvaultshouldbeenabled-1406127594",
+        "PolicyAssignmentName": "ResourcelogsinKeyVaultshouldbeenabled-1406127594",
+        "Total": 14,
+        "Compliant": 0,
+        "NonCompliant": 14,
+        "CompliancePercent": 0.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/microsoft.authorization/policyassignments/securitycenterbuiltin",
+        "PolicyAssignmentName": "SecurityCenterBuiltIn",
+        "Total": 189,
+        "Compliant": 60,
+        "NonCompliant": 129,
+        "CompliancePercent": 31.75,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-akv-audit-test/providers/microsoft.authorization/policyassignments/audit-kv-purge-protection-assignment",
+        "PolicyAssignmentName": "audit-kv-purge-protection-assignment",
+        "Total": 8,
+        "Compliant": 8,
+        "NonCompliant": 0,
+        "CompliancePercent": 100.0,
+        "EffectivenessRating": "Excellent"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.authorization/policyassignments/kv-certca-audit",
+        "PolicyAssignmentName": "KV-CertCA-Audit",
+        "Total": 4,
+        "Compliant": 0,
+        "NonCompliant": 4,
+        "CompliancePercent": 0.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.authorization/policyassignments/kv-certvalidity-audit",
+        "PolicyAssignmentName": "KV-CertValidity-Audit",
+        "Total": 4,
+        "Compliant": 1,
+        "NonCompliant": 3,
+        "CompliancePercent": 25.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.authorization/policyassignments/kv-diagnosticlogging-audit",
+        "PolicyAssignmentName": "KV-DiagnosticLogging-Audit",
+        "Total": 5,
+        "Compliant": 0,
+        "NonCompliant": 5,
+        "CompliancePercent": 0.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.authorization/policyassignments/kv-eccurve-audit",
+        "PolicyAssignmentName": "KV-ECCurve-Audit",
+        "Total": 5,
+        "Compliant": 4,
+        "NonCompliant": 1,
+        "CompliancePercent": 80.0,
+        "EffectivenessRating": "Good"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.authorization/policyassignments/kv-firewall-audit",
+        "PolicyAssignmentName": "KV-Firewall-Audit",
+        "Total": 5,
+        "Compliant": 1,
+        "NonCompliant": 4,
+        "CompliancePercent": 20.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.authorization/policyassignments/kv-keyeccurve-audit",
+        "PolicyAssignmentName": "KV-KeyECCurve-Audit",
+        "Total": 4,
+        "Compliant": 4,
+        "NonCompliant": 0,
+        "CompliancePercent": 100.0,
+        "EffectivenessRating": "Excellent"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.authorization/policyassignments/kv-keyexpiration-audit",
+        "PolicyAssignmentName": "KV-KeyExpiration-Audit",
+        "Total": 5,
+        "Compliant": 2,
+        "NonCompliant": 3,
+        "CompliancePercent": 40.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.authorization/policyassignments/kv-keyhsmbacked-audit",
+        "PolicyAssignmentName": "KV-KeyHSMBacked-Audit",
+        "Total": 5,
+        "Compliant": 0,
+        "NonCompliant": 5,
+        "CompliancePercent": 0.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.authorization/policyassignments/kv-keytype-audit",
+        "PolicyAssignmentName": "KV-KeyType-Audit",
+        "Total": 4,
+        "Compliant": 4,
+        "NonCompliant": 0,
+        "CompliancePercent": 100.0,
+        "EffectivenessRating": "Excellent"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.authorization/policyassignments/kv-privatelink-audit",
+        "PolicyAssignmentName": "KV-PrivateLink-Audit",
+        "Total": 5,
+        "Compliant": 0,
+        "NonCompliant": 5,
+        "CompliancePercent": 0.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.authorization/policyassignments/kv-publicnetworkaccessdisabled-audit",
+        "PolicyAssignmentName": "KV-PublicNetworkAccessDisabled-Audit",
+        "Total": 5,
+        "Compliant": 0,
+        "NonCompliant": 5,
+        "CompliancePercent": 0.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.authorization/policyassignments/kv-purgeprotection-audit",
+        "PolicyAssignmentName": "KV-PurgeProtection-Audit",
+        "Total": 5,
+        "Compliant": 5,
+        "NonCompliant": 0,
+        "CompliancePercent": 100.0,
+        "EffectivenessRating": "Excellent"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.authorization/policyassignments/kv-rbac-audit",
+        "PolicyAssignmentName": "KV-RBAC-Audit",
+        "Total": 5,
+        "Compliant": 4,
+        "NonCompliant": 1,
+        "CompliancePercent": 80.0,
+        "EffectivenessRating": "Good"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.authorization/policyassignments/kv-resourcelogsenabled-audit",
+        "PolicyAssignmentName": "KV-ResourceLogsEnabled-Audit",
+        "Total": 5,
+        "Compliant": 0,
+        "NonCompliant": 5,
+        "CompliancePercent": 0.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.authorization/policyassignments/kv-secretcontenttype-audit",
+        "PolicyAssignmentName": "KV-SecretContentType-Audit",
+        "Total": 5,
+        "Compliant": 3,
+        "NonCompliant": 2,
+        "CompliancePercent": 60.0,
+        "EffectivenessRating": "Fair"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.authorization/policyassignments/kv-secretexpiration-audit",
+        "PolicyAssignmentName": "KV-SecretExpiration-Audit",
+        "Total": 5,
+        "Compliant": 2,
+        "NonCompliant": 3,
+        "CompliancePercent": 40.0,
+        "EffectivenessRating": "NeedsAttention"
+      },
+      {
+        "PolicyAssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-keyvault-test/providers/microsoft.authorization/policyassignments/kv-softdelete-audit",
+        "PolicyAssignmentName": "KV-SoftDelete-Audit",
+        "Total": 5,
+        "Compliant": 5,
+        "NonCompliant": 0,
+        "CompliancePercent": 100.0,
+        "EffectivenessRating": "Excellent"
+      }
+    ],
+    "OperationalStatus": {
+      "TotalPoliciesReporting": 1,
+      "TotalResourcesEvaluated": 14,
+      "CompliantResourceCount": 13,
+      "NonCompliantResourceCount": 1,
+      "OverallCompliancePercent": 92.86,
+      "EffectivenessRating": "Good ⭐⭐⭐⭐",
+      "LastEvaluationTime": "2026-01-12T17:51:44Z",
+      "PoliciesNeedingAttention": 29
+    },
+    "ResourceBreakdown": [
+      {
+        "ResourceType": "Microsoft.KeyVault/vaults",
+        "Total": 542,
+        "Compliant": 232,
+        "NonCompliant": 310
+      },
+      {
+        "ResourceType": "Microsoft.Compute/virtualMachines",
+        "Total": 44,
+        "Compliant": 7,
+        "NonCompliant": 37
+      },
+      {
+        "ResourceType": "Microsoft.Resources/subscriptions",
+        "Total": 21,
+        "Compliant": 0,
+        "NonCompliant": 21
+      },
+      {
+        "ResourceType": "Microsoft.Storage/storageAccounts",
+        "Total": 27,
+        "Compliant": 9,
+        "NonCompliant": 18
+      },
+      {
+        "ResourceType": "Microsoft.CognitiveServices/accounts",
+        "Total": 4,
+        "Compliant": 0,
+        "NonCompliant": 4
+      },
+      {
+        "ResourceType": "Microsoft.Network/virtualNetworks",
+        "Total": 6,
+        "Compliant": 3,
+        "NonCompliant": 3
+      },
+      {
+        "ResourceType": "Microsoft.Authorization/roleDefinitions",
+        "Total": 2,
+        "Compliant": 0,
+        "NonCompliant": 2
+      },
+      {
+        "ResourceType": "Microsoft.EventHub/namespaces",
+        "Total": 1,
+        "Compliant": 0,
+        "NonCompliant": 1
+      }
+    ]
+  },
+  "OperationalTests": {
+    "FailedTests": [
+      "Assignment verification failed: Azure Key Vault should use RBAC permission model"
+    ],
+    "ComplianceDataAvailable": true,
+    "AssignmentsVerified": 0,
+    "PoliciesGeneratingData": 15,
+    "EffectivePolicies": 15,
+    "AssignmentsCreated": 5
+  },
+  "Preview": false,
+  "Verification": {
+    "Name": "KV-RBAC-Audit",
+    "AssignmentId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/KV-RBAC-Audit",
+    "Scope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+    "Exists": true
+  },
+  "DryRun": false
+}

@@ -8,6 +8,23 @@
   reporting artifacts, and scaffold alerting. It documents actions as it runs
   and emits detailed reports with headers and footers.
 
+  POLICY SELECTION ARCHITECTURE:
+  
+  The script uses a **two-file approach** for policy deployment:
+  
+  1. **Parameter JSON Files** (PolicyParameters-*.json)
+     - PRIMARY SOURCE: Defines WHICH policies to deploy
+     - Contains only the policies relevant to that scenario
+     - Example: Tier1-Audit.json contains 9 policies (subset of 46)
+     - Each policy name becomes a key in the JSON with parameter values
+  
+  2. **Definition CSV File** (DefinitionListExport.csv)
+     - REFERENCE ONLY: Metadata for all 46 available Azure Key Vault policies
+     - Used to look up policy definition IDs, versions, and metadata
+     - Never used as source of which policies to deploy
+  
+  This ensures Tier deployments (9 policies) don't attempt all 46 policies.
+
   6 PARAMETER FILES FOR ALL TESTING SCENARIOS:
   
   DevTest Environment (30 policies):
@@ -4004,7 +4021,25 @@ function Main {
         Write-Host ""
     }
 
-    $names = Import-PolicyListFromCsv -CsvPath $CsvPath
+    # Load policy names from parameter file (JSON determines WHICH policies to deploy)
+    # CSV is used only as reference metadata for policy definitions
+    if ($parameterOverrides -and ($parameterOverrides -is [hashtable] -or $parameterOverrides -is [System.Management.Automation.PSCustomObject])) {
+        if ($parameterOverrides -is [hashtable]) {
+            # Filter out metadata fields (starting with _)
+            $names = @($parameterOverrides.Keys | Where-Object { -not $_.StartsWith('_') })
+        } else {
+            # Filter out metadata fields (starting with _)
+            $names = @($parameterOverrides.PSObject.Properties.Name | Where-Object { -not $_.StartsWith('_') })
+        }
+        Write-Log "Loaded $($names.Count) policies from parameter file: $ParameterOverridesPath" -Level 'SUCCESS'
+        if ($names.Count -eq 0) {
+            Write-Log "WARNING: No policy names found in parameter file (all entries may be metadata)" -Level 'WARN'
+        }
+    } else {
+        # Fallback: use CSV if no parameter file (backward compatibility)
+        Write-Log "No parameter overrides found. Loading all policies from CSV." -Level 'WARN'
+        $names = Import-PolicyListFromCsv -CsvPath $CsvPath
+    }
     
     # Apply include/exclude filters
     if ($IncludePolicies.Count -gt 0) {
@@ -4251,6 +4286,7 @@ if ($PSCommandPath -eq $MyInvocation.MyCommand.Path) {
             }
             '^-CsvPath$' { if ($i+1 -lt $args.Count) { $callParams['CsvPath'] = $args[$i+1]; $i++ } }
             '^-ParameterOverridesPath$' { if ($i+1 -lt $args.Count) { $callParams['ParameterOverridesPath'] = $args[$i+1]; $i++ } }
+            '^-ParameterFile$' { if ($i+1 -lt $args.Count) { $callParams['ParameterOverridesPath'] = $args[$i+1]; $i++ } }
             '^-MappingPath$' { if ($i+1 -lt $args.Count) { $callParams['MappingPath'] = $args[$i+1]; $i++ } }
             '^-IncludePolicies$' { if ($i+1 -lt $args.Count) { $callParams['IncludePolicies'] = $args[$i+1] -split ','; $i++ } }
             '^-ExcludePolicies$' { if ($i+1 -lt $args.Count) { $callParams['ExcludePolicies'] = $args[$i+1] -split ','; $i++ } }

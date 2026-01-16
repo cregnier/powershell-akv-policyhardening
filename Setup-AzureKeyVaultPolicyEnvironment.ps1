@@ -689,6 +689,7 @@ if ($Environment -eq 'DevTest') {
     
     foreach ($vault in $createdVaults) {
         if ($vault.EnableRbacAuthorization) {
+            # RBAC-enabled vault - assign Key Vault Administrator role
             $existing = Get-AzRoleAssignment `
                 -ObjectId $currentUserId `
                 -RoleDefinitionName "Key Vault Administrator" `
@@ -712,6 +713,20 @@ if ($Environment -eq 'DevTest') {
                 }
             } else {
                 Write-Status "Role already assigned for: $($vault.VaultName)" "Success"
+            }
+        } else {
+            # Access Policy vault (non-compliant) - assign access policy permissions
+            try {
+                Set-AzKeyVaultAccessPolicy `
+                    -VaultName $vault.VaultName `
+                    -ObjectId $currentUserId `
+                    -PermissionsToSecrets Get,List,Set,Delete,Recover,Backup,Restore,Purge `
+                    -PermissionsToKeys Get,List,Create,Delete,Update,Import,Recover,Backup,Restore,Purge,Decrypt,Encrypt,UnwrapKey,WrapKey,Verify,Sign,Release,Rotate,GetRotationPolicy,SetRotationPolicy `
+                    -PermissionsToCertificates Get,List,Update,Create,Import,Delete,Recover,Backup,Restore,ManageContacts,ManageIssuers,GetIssuers,ListIssuers,SetIssuers,DeleteIssuers,Purge `
+                    -ErrorAction Stop | Out-Null
+                Write-Status "Assigned access policy for: $($vault.VaultName)" "Success"
+            } catch {
+                Write-Status "Failed to assign access policy for: $($vault.VaultName)" "Error" $_.Exception.Message
             }
         }
     }
@@ -763,7 +778,7 @@ if ($Environment -eq 'DevTest') {
             
             # Temporarily add client IP to firewall if needed
             if ($clientIp) {
-                Write-Status "Temporarily adding client IP to firewall for $($vault.VaultName)..." "Info"
+                Write-Status "Temporarily adding client IP to firewall for $($vault.VaultName) (allows data seeding from current client)..." "Info"
                 try {
                     Add-AzKeyVaultNetworkRule -VaultName $vault.VaultName -IpAddressRange "$clientIp/32" -ErrorAction Stop | Out-Null
                     Start-Sleep -Seconds 5  # Wait for propagation
@@ -870,7 +885,7 @@ if ($Environment -eq 'DevTest') {
             
             # NOW restore firewall rules if modified (after ALL data is seeded)
             if ($firewallTemporarilyModified -and $clientIp) {
-                Write-Status "Removing temporary firewall rule from $($vault.VaultName)..." "Info"
+                Write-Status "Removing temporary firewall rule from $($vault.VaultName) (restores original security posture)..." "Info"
                 try {
                     Remove-AzKeyVaultNetworkRule -VaultName $vault.VaultName -IpAddressRange "$clientIp/32" -ErrorAction Stop | Out-Null
                     Write-Status "Firewall rule removed" "Success"
@@ -903,11 +918,15 @@ if ($Environment -eq 'DevTest') {
 
 #endregion
 
-#region Step 12: Update Configuration Files
+#region Step 12: Update Configuration Files (Optional Reference)
 
 Write-Section "Configuration Files Update"
 
-# Update or create PolicyParameters.json
+# NOTE: These files are OPTIONAL reference outputs - not required for policy deployment
+# The main AzPolicyImplScript.ps1 uses PolicyParameters-*.json files instead
+# These are generated for informational purposes only
+
+# Update or create PolicyParameters.json (OPTIONAL - informational only)
 $policyParamsFile = "PolicyParameters.json"
 $policyParams = @{
     subnetId = $subnetId
@@ -919,9 +938,9 @@ $policyParams = @{
 }
 
 $policyParams | ConvertTo-Json -Depth 10 | Out-File $policyParamsFile -Encoding UTF8
-Write-Status "Updated: $policyParamsFile" "Success"
+Write-Status "Updated: $policyParamsFile (reference only - not used for deployment)" "Success"
 
-# Update or create PolicyImplementationConfig.json
+# Update or create PolicyImplementationConfig.json (OPTIONAL - informational only)
 $configFile = "PolicyImplementationConfig.json"
 $config = @{
     subscription = $SubscriptionId
@@ -952,7 +971,7 @@ $config = @{
 }
 
 $config | ConvertTo-Json -Depth 10 | Out-File $configFile -Encoding UTF8
-Write-Status "Updated: $configFile" "Success"
+Write-Status "Updated: $configFile (reference only - not used for deployment)" "Success"
 
 #endregion
 
@@ -994,8 +1013,9 @@ if (-not $SkipMonitoring) {
 }
 
 Write-Host "`n  Configuration Files:" -ForegroundColor White
-Write-Host "    ✓ $policyParamsFile (parameter values for policies)" -ForegroundColor Green
-Write-Host "    ✓ $configFile (environment configuration)" -ForegroundColor Green
+Write-Host "    ✓ $policyParamsFile (reference - infrastructure IDs)" -ForegroundColor Green
+Write-Host "    ✓ $configFile (reference - environment details)" -ForegroundColor Green
+Write-Host "    ℹ️  NOTE: Main script uses PolicyParameters-*.json files for deployment" -ForegroundColor Gray
 
 Write-Host "`n📋 Next Steps:" -ForegroundColor $colors.Highlight
 Write-Host "  1. Deploy 46 policies: .\\AzPolicyImplScript.ps1 -Environment DevTest -Phase Test" -ForegroundColor White

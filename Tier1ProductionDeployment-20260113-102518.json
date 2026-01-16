@@ -1,0 +1,146 @@
+{
+  "SuccessCount": 12,
+  "Scope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+  "FailureCount": 0,
+  "Phase": "3.1 - Production Audit Mode",
+  "SkippedCount": 0,
+  "Results": [
+    {
+      "AssignmentName": "KV-Tier1-P0-SoftDelete",
+      "DisplayName": "[Tier 1 P0] Key vaults should have soft delete enabled",
+      "PolicyName": "Key vaults should have soft delete enabled",
+      "Priority": "P0",
+      "Effect": "Audit",
+      "Status": "Success",
+      "Message": "Created successfully",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d",
+      "AssignmentId": null
+    },
+    {
+      "AssignmentName": "KV-Tier1-P0-PurgeProtection",
+      "DisplayName": "[Tier 1 P0] Key vaults should have deletion protection enabled",
+      "PolicyName": "Key vaults should have deletion protection enabled",
+      "Priority": "P0",
+      "Effect": "Audit",
+      "Status": "Success",
+      "Message": "Created successfully",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0b60c0b2-2dc2-4e1c-b5c9-abbed971de53",
+      "AssignmentId": null
+    },
+    {
+      "AssignmentName": "KV-Tier1-P0-DisablePublicAccess",
+      "DisplayName": "[Tier 1 P0] Azure Key Vault should disable public network access",
+      "PolicyName": "Azure Key Vault should disable public network access",
+      "Priority": "P0",
+      "Effect": "Audit",
+      "Status": "Success",
+      "Message": "Created successfully",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/405c5871-3e91-4644-8a63-58e19d68ff5b",
+      "AssignmentId": null
+    },
+    {
+      "AssignmentName": "KV-Tier1-P1-PrivateLink",
+      "DisplayName": "[Tier 1 P1] Azure Key Vaults should use private link",
+      "PolicyName": "Azure Key Vaults should use private link",
+      "Priority": "P1",
+      "Effect": "Audit",
+      "Status": "Success",
+      "Message": "Created successfully",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a6abeaec-4d90-4a02-805f-6b26c4d3fbe9",
+      "AssignmentId": null
+    },
+    {
+      "AssignmentName": "KV-Tier1-P1-Firewall",
+      "DisplayName": "[Tier 1 P1] Azure Key Vault should have firewall enabled",
+      "PolicyName": "Azure Key Vault should have firewall enabled or public network access disabled",
+      "Priority": "P1",
+      "Effect": "Audit",
+      "Status": "Success",
+      "Message": "Created successfully",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/55615ac9-af46-4a59-874e-391cc3dfb490",
+      "AssignmentId": null
+    },
+    {
+      "AssignmentName": "KV-Tier1-P1-RBAC",
+      "DisplayName": "[Tier 1 P1] Azure Key Vault should use RBAC permission model",
+      "PolicyName": "Azure Key Vault should use RBAC permission model",
+      "Priority": "P1",
+      "Effect": "Audit",
+      "Status": "Success",
+      "Message": "Created successfully",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5",
+      "AssignmentId": null
+    },
+    {
+      "AssignmentName": "KV-Tier1-P1-KeyExpiration",
+      "DisplayName": "[Tier 1 P1] Key Vault keys should have an expiration date",
+      "PolicyName": "Key Vault keys should have an expiration date",
+      "Priority": "P1",
+      "Effect": "Audit",
+      "Status": "Success",
+      "Message": "Created successfully",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/152b15f7-8e1f-4c1f-ab71-8c010ba5dbc0",
+      "AssignmentId": null
+    },
+    {
+      "AssignmentName": "KV-Tier1-P1-SecretExpiration",
+      "DisplayName": "[Tier 1 P1] Key Vault secrets should have an expiration date",
+      "PolicyName": "Key Vault secrets should have an expiration date",
+      "Priority": "P1",
+      "Effect": "Audit",
+      "Status": "Success",
+      "Message": "Created successfully",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/98728c90-32c7-4049-8429-847dc0f4fe37",
+      "AssignmentId": null
+    },
+    {
+      "AssignmentName": "KV-Tier1-P2-CertValidity",
+      "DisplayName": "[Tier 1 P2] Certificates should have the specified maximum validity period",
+      "PolicyName": "Certificates should have the specified maximum validity period",
+      "Priority": "P2",
+      "Effect": "Audit",
+      "Status": "Success",
+      "Message": "Created successfully",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0a075868-4c26-42ef-914c-5bc007359560",
+      "AssignmentId": null
+    },
+    {
+      "AssignmentName": "KV-Tier1-P2-HSMRequired",
+      "DisplayName": "[Tier 1 P2] Keys should be backed by a hardware security module (HSM)",
+      "PolicyName": "Keys should be backed by a hardware security module (HSM)",
+      "Priority": "P2",
+      "Effect": "Audit",
+      "Status": "Success",
+      "Message": "Created successfully",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/587c79fe-dd04-4a5e-9d0b-f89598c7261b",
+      "AssignmentId": null
+    },
+    {
+      "AssignmentName": "KV-Tier1-P2-RSAKeySize",
+      "DisplayName": "[Tier 1 P2] Keys using RSA cryptography should have minimum key size",
+      "PolicyName": "Keys using RSA cryptography should have a specified minimum key size",
+      "Priority": "P2",
+      "Effect": "Audit",
+      "Status": "Success",
+      "Message": "Created successfully",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/82067dbb-e53b-4e06-b631-546d197452d9",
+      "AssignmentId": null
+    },
+    {
+      "AssignmentName": "KV-Tier1-P2-CertExpiration",
+      "DisplayName": "[Tier 1 P2] Certificates should not expire within specified days",
+      "PolicyName": "Certificates should not expire within the specified number of days",
+      "Priority": "P2",
+      "Effect": "Audit",
+      "Status": "Success",
+      "Message": "Created successfully",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/f772fb64-8e40-40ad-87bc-7706e1949427",
+      "AssignmentId": null
+    }
+  ],
+  "SubscriptionName": "MSDN Platforms Subscription",
+  "WhatIfMode": false,
+  "TargetSubscription": "ab1336c7-687d-4107-b0f6-9649a0458adb",
+  "DeploymentDate": "2026-01-13 10:25:29",
+  "TotalPolicies": 12
+}

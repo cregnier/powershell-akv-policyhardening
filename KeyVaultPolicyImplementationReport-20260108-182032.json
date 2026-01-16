@@ -1,0 +1,192 @@
+{
+  "Assignments": [
+    {
+      "Name": "Certificates should have the specified maximum validity period",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Key vaults should have deletion protection enabled",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Certificates should use allowed key types",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Azure Key Vault should use RBAC permission model",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Certificates should have the specified lifetime action triggers",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Key Vault keys should have an expiration date",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "[Preview]: Azure Key Vault Managed HSM should disable public network access",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "[Preview]: Azure Key Vault Managed HSM keys should have an expiration date",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Key vaults should have soft delete enabled",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Secrets should have the specified maximum validity period",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Azure Key Vault should disable public network access",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Keys should have the specified maximum validity period",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Azure Key Vault should have firewall enabled or public network access disabled",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Keys should be backed by a hardware security module (HSM)",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "[Preview]: Azure Key Vault Managed HSM should use private link",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Keys should have more than the specified number of days before expiration",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Secrets should have content type set",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Keys should be the specified cryptographic type RSA or EC",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Keys using RSA cryptography should have a specified minimum key size",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "[Preview]: Configure Azure Key Vault Managed HSM to disable public network access",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "[Preview]: Azure Key Vault Managed HSM keys using RSA cryptography should have a specified minimum key size",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Certificates should be issued by the specified integrated certificate authority",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Deploy - Configure diagnostic settings for Azure Key Vault to Log Analytics workspace",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Key Vault secrets should have an expiration date",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Configure Azure Key Vaults with private endpoints",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Certificates should be issued by the specified non-integrated certificate authority",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Resource logs in Azure Key Vault Managed HSM should be enabled",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Azure Key Vaults should use private link",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Deploy - Configure diagnostic settings to an Event Hub to be enabled on Azure Key Vault Managed HSM",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Configure Azure Key Vaults to use private DNS zones",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Configure key vaults to enable firewall",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "[Preview]: Azure Key Vault Managed HSM Keys should have more than the specified number of days before expiration",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Secrets should have more than the specified number of days before expiration",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Certificates using elliptic curve cryptography should have allowed curve names",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Keys should not be active for longer than the specified number of days",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Azure Key Vault Managed HSM should have purge protection enabled",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Certificates using RSA cryptography should have the specified minimum key size",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Resource logs in Key Vault should be enabled",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "[Preview]: Configure Azure Key Vault Managed HSM with private endpoints",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Certificates should be issued by one of the specified non-integrated certificate authorities",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Keys should have a rotation policy ensuring that their rotation is scheduled within the specified number of days after creation.",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "[Preview]: Azure Key Vault Managed HSM keys using elliptic curve cryptography should have the specified curve names",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Secrets should not be active for longer than the specified number of days",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Deploy Diagnostic Settings for Key Vault to Event Hub",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Certificates should not expire within the specified number of days",
+      "Status": "NotFound"
+    },
+    {
+      "Name": "Keys using elliptic curve cryptography should have the specified curve names",
+      "Status": "NotFound"
+    }
+  ],
+  "Verification": [],
+  "Compliance": null,
+  "DryRun": true,
+  "Preview": true
+}

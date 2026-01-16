@@ -1,0 +1,41 @@
+{
+  "Verification": null,
+  "Compliance": null,
+  "Preview": false,
+  "DryRun": false,
+  "Assignments": [
+    {
+      "Name": "Key vaults should have soft delete enabled",
+      "Assignment": {
+        "DefinitionVersion": "3.*.*",
+        "Description": null,
+        "DisplayName": null,
+        "EnforcementMode": "DoNotEnforce",
+        "Id": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Keyvaultsshouldhavesoftdeleteenabled-98286787",
+        "IdentityPrincipalId": null,
+        "IdentityTenantId": null,
+        "IdentityType": null,
+        "IdentityUserAssignedIdentity": {},
+        "Location": null,
+        "Metadata": {},
+        "Name": "Keyvaultsshouldhavesoftdeleteenabled-98286787",
+        "NonComplianceMessage": null,
+        "NotScope": null,
+        "Override": null,
+        "Parameter": {},
+        "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d",
+        "ResourceSelector": null,
+        "Scope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+        "SystemDataCreatedAt": "2026-01-12T16:37:34.6766918Z",
+        "SystemDataCreatedBy": "theregniers@hotmail.com",
+        "SystemDataCreatedByType": "User",
+        "SystemDataLastModifiedAt": "2026-01-12T16:37:34.6766918Z",
+        "SystemDataLastModifiedBy": "theregniers@hotmail.com",
+        "SystemDataLastModifiedByType": "User",
+        "Type": "Microsoft.Authorization/policyAssignments"
+      },
+      "Status": "Assigned",
+      "DefinitionType": "Policy"
+    }
+  ]
+}

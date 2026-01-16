@@ -1,0 +1,40 @@
+{
+  "_comment": "Tier 1: Low-Impact Security Policies - Audit Mode (Month 1)",
+  "_description": "9 policies for initial audit baseline. Deploy in corporate AAD subscriptions for 30 days before activating Deny mode.",
+  "_timeline": "Month 1: Audit mode → Establish baseline compliance",
+  "_successCriteria": "<5% violation rate before proceeding to Deny mode",
+  "_reference": "See ProductionRolloutPlan.md - Tier 1 section",
+  
+  "Key vaults should have soft delete enabled": {
+    "effect": "Audit"
+  },
+  "Key vaults should have deletion protection enabled": {
+    "effect": "Audit"
+  },
+  "Azure Key Vault should use RBAC permission model": {
+    "effect": "Audit"
+  },
+  "Azure Key Vault should have firewall enabled or public network access disabled": {
+    "allowedIPAddresses": ["0.0.0.0/0"],
+    "forbiddenIPAddresses": [],
+    "effect": "Audit"
+  },
+  "Key Vault keys should have an expiration date": {
+    "effect": "Audit"
+  },
+  "Key Vault secrets should have an expiration date": {
+    "effect": "Audit"
+  },
+  "Certificates should have the specified maximum validity period": {
+    "maximumValidityInMonths": 12,
+    "effect": "Audit"
+  },
+  "Keys using RSA cryptography should have a specified minimum key size": {
+    "minimumRSAKeySize": 2048,
+    "effect": "Audit"
+  },
+  "Certificates should not expire within the specified number of days": {
+    "daysToExpire": 30,
+    "effect": "Audit"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "ResourceGroupName": "rg-policy-keyvault-test",
+  "Subscription": {
+    "Name": "MSDN Platforms Subscription",
+    "Id": "ab1336c7-687d-4107-b0f6-9649a0458adb"
+  },
+  "Resources": {
+    "PrivateEndpointSubnet": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-keyvault-test/providers/Microsoft.Network/virtualNetworks/vnet-policy-test/subnets/snet-privateendpoints",
+    "EventHubRule": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-keyvault-test/providers/Microsoft.EventHub/namespaces/eh-policy-test-5948/authorizationrules/RootManageSharedAccessKey",
+    "LogAnalyticsWorkspace": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-keyvault-test/providers/Microsoft.OperationalInsights/workspaces/law-policy-test-8530",
+    "PrivateDnsZone": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-keyvault-test/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
+  },
+  "SuccessCount": 1,
+  "Scope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+  "FailureCount": 8,
+  "Results": [
+    {
+      "AssignmentName": "KV-All-ConfigPrivateEndpoints",
+      "PolicyName": "Configure Azure Key Vaults with private endpoints",
+      "Effect": "DeployIfNotExists",
+      "RequiresManagedIdentity": true,
+      "Status": "Failed",
+      "Message": "A parameter cannot be found that matches parameter name 'AssignIdentity'.",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/9d4fad1f-5189-4a42-b29e-cf7929c6b6df",
+      "Timestamp": "2026-01-13 16:34:20"
+    },
+    {
+      "AssignmentName": "KV-All-ConfigPrivateDNS",
+      "PolicyName": "Configure Azure Key Vaults to use private DNS zones",
+      "Effect": "DeployIfNotExists",
+      "RequiresManagedIdentity": true,
+      "Status": "Failed",
+      "Message": "A parameter cannot be found that matches parameter name 'AssignIdentity'.",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ac673a9a-f77d-4846-b2d8-a57f8e1c01d4",
+      "Timestamp": "2026-01-13 16:34:21"
+    },
+    {
+      "AssignmentName": "KV-All-ConfigFirewall",
+      "PolicyName": "Configure key vaults to enable firewall",
+      "Effect": "Modify",
+      "RequiresManagedIdentity": true,
+      "Status": "Failed",
+      "Message": "A parameter cannot be found that matches parameter name 'AssignIdentity'.",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ac673a9a-f77d-4846-b2d8-a57f8e1c01dc",
+      "Timestamp": "2026-01-13 16:34:21"
+    },
+    {
+      "AssignmentName": "KV-All-DeployDiagLA",
+      "PolicyName": "Deploy - Configure diagnostic settings for Azure Key Vault to Log Analytics workspace",
+      "Effect": "DeployIfNotExists",
+      "RequiresManagedIdentity": true,
+      "Status": "Failed",
+      "Message": "A parameter cannot be found that matches parameter name 'AssignIdentity'.",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/951af2fa-529b-416e-ab6e-066fd85ac459",
+      "Timestamp": "2026-01-13 16:34:21"
+    },
+    {
+      "AssignmentName": "KV-All-DeployDiagEH",
+      "PolicyName": "Deploy Diagnostic Settings for Key Vault to Event Hub",
+      "Effect": "DeployIfNotExists",
+      "RequiresManagedIdentity": true,
+      "Status": "Failed",
+      "Message": "A parameter cannot be found that matches parameter name 'AssignIdentity'.",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ed7c8c13-51e7-49d1-8a43-8490431a0da2",
+      "Timestamp": "2026-01-13 16:34:21"
+    },
+    {
+      "AssignmentName": "KV-All-DeployManagedHSMDiagEH",
+      "PolicyName": "Deploy - Configure diagnostic settings to an Event Hub to be enabled on Azure Key Vault Managed HSM",
+      "Effect": "DeployIfNotExists",
+      "RequiresManagedIdentity": true,
+      "Status": "Failed",
+      "Message": "A parameter cannot be found that matches parameter name 'AssignIdentity'.",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a6d2c800-5230-4a40-bff3-8268b4987d42",
+      "Timestamp": "2026-01-13 16:34:22"
+    },
+    {
+      "AssignmentName": "KV-All-ConfigManagedHSMPublicAccess",
+      "PolicyName": "[Preview]: Configure Azure Key Vault Managed HSM to disable public network access",
+      "Effect": "Modify",
+      "RequiresManagedIdentity": true,
+      "Status": "Failed",
+      "Message": "A parameter cannot be found that matches parameter name 'AssignIdentity'.",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/84d327c3-164a-4685-b453-900478614456",
+      "Timestamp": "2026-01-13 16:34:22"
+    },
+    {
+      "AssignmentName": "KV-All-ConfigManagedHSMPrivateEndpoints",
+      "PolicyName": "[Preview]: Configure Azure Key Vault Managed HSM with private endpoints",
+      "Effect": "DeployIfNotExists",
+      "RequiresManagedIdentity": true,
+      "Status": "Failed",
+      "Message": "A parameter cannot be found that matches parameter name 'AssignIdentity'.",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/d1d6d8bb-cc7c-420f-8c7d-6f6f5279a844",
+      "Timestamp": "2026-01-13 16:34:22"
+    },
+    {
+      "AssignmentName": "KV-All-KeyRotationPolicy",
+      "PolicyName": "Keys should have a rotation policy ensuring that their rotation is scheduled within the specified number of days after creation.",
+      "Effect": "Audit",
+      "RequiresManagedIdentity": false,
+      "Status": "Success",
+      "Message": "Deployed with effect=Audit",
+      "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/d8cf8476-a2ec-4916-896e-992351803c44",
+      "Timestamp": "2026-01-13 16:34:22"
+    }
+  ],
+  "DeploymentDate": "2026-01-13 16:34:25",
+  "TotalPolicies": 9
+}

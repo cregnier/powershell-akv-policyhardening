@@ -1,0 +1,102 @@
+========================================
+COMPLIANCE DASHBOARD DEPLOYMENT
+========================================
+
+OPTION 1: Azure Monitor Workbook (Recommended)
+-----------------------------------------------
+
+1. Ensure Log Analytics Workspace exists:
+   az monitor log-analytics workspace create \
+     --resource-group rg-policy-monitoring \
+     --workspace-name law-policy-monitoring \
+     --location eastus
+
+2. Enable Policy State data collection:
+   - Azure Portal → Policy → Compliance
+   - Configure diagnostic settings
+   - Send to Log Analytics workspace
+
+3. Deploy workbook using ARM template:
+   az deployment group create \
+     --resource-group rg-policy-monitoring \
+     --template-file ComplianceDashboard-Template-20260114-112734.json
+
+4. Access dashboard:
+   - Azure Portal → Monitor → Workbooks
+   - Select "Tier 1 Key Vault Policy Compliance Dashboard"
+   - Pin to dashboard for easy access
+
+OPTION 2: Power BI Dashboard
+------------------------------
+
+1. Install Power BI Desktop (if not already installed)
+
+2. Create new Power BI report:
+   - File → Get Data → More
+   - Select "Azure Resource Manager"
+   - Authenticate with Azure AD
+
+3. Configure data source:
+   - Use Policy Compliance API endpoint (see ComplianceDashboard-PowerBI-Config-20260114-112734.json)
+   - Apply filters for "KV-Tier1" assignments
+
+4. Build visualizations:
+   - Overall compliance gauge (target: 95%)
+   - Compliance by priority (P0/P1/P2)
+   - 30-day trend line chart
+   - Top violators table
+
+5. Schedule refresh:
+   - Publish to Power BI Service
+   - Configure daily refresh at 6:00 AM
+   - Share with stakeholders
+
+OPTION 3: Azure Dashboard (Basic)
+-----------------------------------
+
+1. Azure Portal → Dashboard → Create
+2. Add tiles:
+   - Policy Compliance tile (from Azure Policy)
+   - Custom KQL query tiles (from Log Analytics)
+3. Pin to home for quick access
+
+DASHBOARD METRICS TO TRACK:
+----------------------------
+
+✅ Overall Compliance %: Target >95%
+✅ P0 Compliance: Target >90% (critical)
+✅ P1 Compliance: Target >80% (high)
+✅ P2 Compliance: Target >70% (medium)
+✅ Exemption Count: Target <5% of resources
+✅ Remediation Success Rate: Target >90%
+✅ Deny Block Count: Monitor for spikes (>100/hour)
+
+REFRESH SCHEDULE:
+-----------------
+
+- Automated: Every 24 hours (Log Analytics ingestion)
+- Manual: Available on-demand via Refresh button
+- Real-time: Policy state updates every 5-15 minutes
+
+SHARING & PERMISSIONS:
+-----------------------
+
+Share dashboard with:
+- CISO (View only)
+- Security Architects (View only)
+- Azure Governance Team (Edit)
+- Cloud Center of Excellence (View only)
+
+Grant "Reader" role on subscription for dashboard users.
+
+NEXT STEPS:
+-----------
+
+1. Deploy Log Analytics workspace (if not exists)
+2. Configure diagnostic settings for Policy data
+3. Deploy Azure Monitor Workbook
+4. Test dashboard queries and visualizations
+5. Share dashboard link with stakeholders
+6. Schedule monthly review meetings
+
+========================================

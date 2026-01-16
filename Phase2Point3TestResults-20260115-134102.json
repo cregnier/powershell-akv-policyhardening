@@ -1,0 +1,29 @@
+{
+  "TestName": "Phase 2.3 Enforcement Validation",
+  "Summary": {},
+  "Scope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+  "Issues": [],
+  "TestDate": "2026-01-15 13:41:00 UTC",
+  "Tests": {
+    "RemediationTasks": {
+      "Result": "INFO",
+      "Count": 0,
+      "Message": "No active remediations detected"
+    },
+    "IdentityPermissions": {
+      "Result": "SKIPPED",
+      "Message": "Principal ID required for role verification"
+    },
+    "ComplianceDataAvailable": {
+      "StateCount": 100,
+      "Result": "PASS",
+      "ResourceCount": 14,
+      "PolicyCount": 21
+    },
+    "EnforceAssignmentsExist": {
+      "Result": "PASS",
+      "Count": 47,
+      "Message": "Found 47 Enforce-mode assignments"
+    }
+  }
+}

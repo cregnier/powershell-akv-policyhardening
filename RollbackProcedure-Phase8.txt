@@ -1,0 +1,8 @@
+Rollback Procedure for Key Vault Policies
+==========================================
+1. List all assignments: Get-AzPolicyAssignment | Where-Object { $_.Name -like '*keyvault*' }
+2. Remove individual: Remove-AzPolicyAssignment -Name '<name>' -Scope '/subscriptions/<id>'
+3. Remove all (bulk): Get-AzPolicyAssignment | Where-Object { $_.Name -like '*keyvault*' } | ForEach-Object { Remove-AzPolicyAssignment -Id $_.ResourceId }
+4. Verify: Get-AzPolicyAssignment | Where-Object { $_.Name -like '*keyvault*' } | Measure-Object
+
+Current: 43 active assignments, 5 test vaults cleaned up

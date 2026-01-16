@@ -1,0 +1,396 @@
+{
+  "Verification": [],
+  "Compliance": null,
+  "Preview": true,
+  "DryRun": true,
+  "Assignments": [
+    {
+      "Name": "Certificates should have the specified maximum validity period",
+      "Parameters": {
+        "maximumValidityInMonths": {
+          "value": 36
+        },
+        "effect": {
+          "value": "Audit"
+        }
+      },
+      "IntendedAssignmentName": "Certificatesshouldhavethespecifiedmaximumvalidityperiod-298839951",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Key vaults should have deletion protection enabled",
+      "Parameters": {
+        "effect": {
+          "value": "Audit"
+        }
+      },
+      "IntendedAssignmentName": "Keyvaultsshouldhavedeletionprotectionenabled-831882045",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Certificates should use allowed key types",
+      "Parameters": {},
+      "IntendedAssignmentName": "Certificatesshoulduseallowedkeytypes-1770482595",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Azure Key Vault should use RBAC permission model",
+      "Parameters": {},
+      "IntendedAssignmentName": "AzureKeyVaultshoulduseRBACpermissionmodel-30532144",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Certificates should have the specified lifetime action triggers",
+      "Parameters": {},
+      "IntendedAssignmentName": "Certificatesshouldhavethespecifiedlifetimeactiontriggers-1825613788",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Key Vault keys should have an expiration date",
+      "Parameters": {
+        "effect": {
+          "value": "Audit"
+        }
+      },
+      "IntendedAssignmentName": "KeyVaultkeysshouldhaveanexpirationdate-1636154469",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "[Preview]: Azure Key Vault Managed HSM should disable public network access",
+      "Parameters": {},
+      "IntendedAssignmentName": "PreviewAzureKeyVaultManagedHSMshoulddisablepublicnetworkaccess-1697011518",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "[Preview]: Azure Key Vault Managed HSM keys should have an expiration date",
+      "Parameters": {},
+      "IntendedAssignmentName": "PreviewAzureKeyVaultManagedHSMkeysshouldhaveanexpirationdate-2041931249",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Key vaults should have soft delete enabled",
+      "Parameters": {
+        "effect": {
+          "value": "Audit"
+        }
+      },
+      "IntendedAssignmentName": "Keyvaultsshouldhavesoftdeleteenabled-526690191",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Secrets should have the specified maximum validity period",
+      "Parameters": {
+        "maximumValidityInDays": {
+          "value": 1095
+        },
+        "effect": {
+          "value": "Audit"
+        }
+      },
+      "IntendedAssignmentName": "Secretsshouldhavethespecifiedmaximumvalidityperiod-1487771246",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Azure Key Vault should disable public network access",
+      "Parameters": {
+        "effect": {
+          "value": "Audit"
+        }
+      },
+      "IntendedAssignmentName": "AzureKeyVaultshoulddisablepublicnetworkaccess-249980311",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Keys should have the specified maximum validity period",
+      "Parameters": {
+        "maximumValidityInDays": {
+          "value": 1095
+        },
+        "effect": {
+          "value": "Audit"
+        }
+      },
+      "IntendedAssignmentName": "Keysshouldhavethespecifiedmaximumvalidityperiod-555572013",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Azure Key Vault should have firewall enabled or public network access disabled",
+      "Parameters": {
+        "effect": {
+          "value": "Audit"
+        }
+      },
+      "IntendedAssignmentName": "AzureKeyVaultshouldhavefirewallenabledorpublicnetworkaccessdisabled-2110406239",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Keys should be backed by a hardware security module (HSM)",
+      "Parameters": {},
+      "IntendedAssignmentName": "KeysshouldbebackedbyahardwaresecuritymoduleHSM-1823087795",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "[Preview]: Azure Key Vault Managed HSM should use private link",
+      "Parameters": {},
+      "IntendedAssignmentName": "PreviewAzureKeyVaultManagedHSMshoulduseprivatelink-641710455",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Keys should have more than the specified number of days before expiration",
+      "Parameters": {
+        "minimumDaysBeforeExpiration": {
+          "value": 30
+        },
+        "effect": {
+          "value": "Audit"
+        }
+      },
+      "IntendedAssignmentName": "Keysshouldhavemorethanthespecifiednumberofdaysbeforeexpiration-2028246882",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Secrets should have content type set",
+      "Parameters": {},
+      "IntendedAssignmentName": "Secretsshouldhavecontenttypeset-541909880",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Keys should be the specified cryptographic type RSA or EC",
+      "Parameters": {},
+      "IntendedAssignmentName": "KeysshouldbethespecifiedcryptographictypeRSAorEC-660521922",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Keys using RSA cryptography should have a specified minimum key size",
+      "Parameters": {
+        "minimumRSAKeySize": {
+          "value": 2048
+        },
+        "effect": {
+          "value": "Audit"
+        }
+      },
+      "IntendedAssignmentName": "KeysusingRSAcryptographyshouldhaveaspecifiedminimumkeysize-173771837",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "[Preview]: Configure Azure Key Vault Managed HSM to disable public network access",
+      "Parameters": {},
+      "IntendedAssignmentName": "PreviewConfigureAzureKeyVaultManagedHSMtodisablepublicnetworkaccess-110332013",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "[Preview]: Azure Key Vault Managed HSM keys using RSA cryptography should have a specified minimum key size",
+      "Parameters": {},
+      "IntendedAssignmentName": "PreviewAzureKeyVaultManagedHSMkeysusingRSAcryptographyshouldhaveaspecifiedminimumkeysize-791356694",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Certificates should be issued by the specified integrated certificate authority",
+      "Parameters": {},
+      "IntendedAssignmentName": "Certificatesshouldbeissuedbythespecifiedintegratedcertificateauthority-837743290",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Deploy - Configure diagnostic settings for Azure Key Vault to Log Analytics workspace",
+      "Parameters": {},
+      "IntendedAssignmentName": "DeployConfigurediagnosticsettingsforAzureKeyVaulttoLogAnalyticsworkspace-877597102",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Key Vault secrets should have an expiration date",
+      "Parameters": {
+        "effect": {
+          "value": "Audit"
+        }
+      },
+      "IntendedAssignmentName": "KeyVaultsecretsshouldhaveanexpirationdate-1682114052",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Configure Azure Key Vaults with private endpoints",
+      "Parameters": {},
+      "IntendedAssignmentName": "ConfigureAzureKeyVaultswithprivateendpoints-2119545453",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Certificates should be issued by the specified non-integrated certificate authority",
+      "Parameters": {},
+      "IntendedAssignmentName": "Certificatesshouldbeissuedbythespecifiednonintegratedcertificateauthority-1176286703",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Resource logs in Azure Key Vault Managed HSM should be enabled",
+      "Parameters": {
+        "effect": {
+          "value": "Audit"
+        }
+      },
+      "IntendedAssignmentName": "ResourcelogsinAzureKeyVaultManagedHSMshouldbeenabled-1550074254",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Azure Key Vaults should use private link",
+      "Parameters": {},
+      "IntendedAssignmentName": "AzureKeyVaultsshoulduseprivatelink-1849983930",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Deploy - Configure diagnostic settings to an Event Hub to be enabled on Azure Key Vault Managed HSM",
+      "Parameters": {},
+      "IntendedAssignmentName": "DeployConfigurediagnosticsettingstoanEventHubtobeenabledonAzureKeyVaultManagedHSM-1617080262",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Configure Azure Key Vaults to use private DNS zones",
+      "Parameters": {},
+      "IntendedAssignmentName": "ConfigureAzureKeyVaultstouseprivateDNSzones-498301021",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Configure key vaults to enable firewall",
+      "Parameters": {},
+      "IntendedAssignmentName": "Configurekeyvaultstoenablefirewall-1057482116",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "[Preview]: Azure Key Vault Managed HSM Keys should have more than the specified number of days before expiration",
+      "Parameters": {},
+      "IntendedAssignmentName": "PreviewAzureKeyVaultManagedHSMKeysshouldhavemorethanthespecifiednumberofdaysbeforeexpiration-515573454",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Secrets should have more than the specified number of days before expiration",
+      "Parameters": {
+        "minimumDaysBeforeExpiration": {
+          "value": 30
+        },
+        "effect": {
+          "value": "Audit"
+        }
+      },
+      "IntendedAssignmentName": "Secretsshouldhavemorethanthespecifiednumberofdaysbeforeexpiration-1604447842",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Certificates using elliptic curve cryptography should have allowed curve names",
+      "Parameters": {},
+      "IntendedAssignmentName": "Certificatesusingellipticcurvecryptographyshouldhaveallowedcurvenames-804476632",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Keys should not be active for longer than the specified number of days",
+      "Parameters": {
+        "effect": {
+          "value": "Audit"
+        },
+        "maximumActiveDays": {
+          "value": 730
+        }
+      },
+      "IntendedAssignmentName": "Keysshouldnotbeactiveforlongerthanthespecifiednumberofdays-2024480363",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Azure Key Vault Managed HSM should have purge protection enabled",
+      "Parameters": {},
+      "IntendedAssignmentName": "AzureKeyVaultManagedHSMshouldhavepurgeprotectionenabled-1681849226",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Certificates using RSA cryptography should have the specified minimum key size",
+      "Parameters": {
+        "minimumRSAKeySize": {
+          "value": 2048
+        },
+        "effect": {
+          "value": "Audit"
+        }
+      },
+      "IntendedAssignmentName": "CertificatesusingRSAcryptographyshouldhavethespecifiedminimumkeysize-1166928571",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Resource logs in Key Vault should be enabled",
+      "Parameters": {
+        "requiredRetentionDays": {
+          "value": "30"
+        },
+        "effect": {
+          "value": "Audit"
+        }
+      },
+      "IntendedAssignmentName": "ResourcelogsinKeyVaultshouldbeenabled-157557034",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "[Preview]: Configure Azure Key Vault Managed HSM with private endpoints",
+      "Parameters": {},
+      "IntendedAssignmentName": "PreviewConfigureAzureKeyVaultManagedHSMwithprivateendpoints-1408379596",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Certificates should be issued by one of the specified non-integrated certificate authorities",
+      "Parameters": {},
+      "IntendedAssignmentName": "Certificatesshouldbeissuedbyoneofthespecifiednonintegratedcertificateauthorities-421650843",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Keys should have a rotation policy ensuring that their rotation is scheduled within the specified number of days after creation.",
+      "Parameters": {
+        "maximumDaysToRotate": {
+          "value": 180
+        },
+        "effect": {
+          "value": "Audit"
+        }
+      },
+      "IntendedAssignmentName": "Keysshouldhavearotationpolicyensuringthattheirrotationisscheduledwithinthespecifiednumberofdaysaftercreation-2146631920",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "[Preview]: Azure Key Vault Managed HSM keys using elliptic curve cryptography should have the specified curve names",
+      "Parameters": {},
+      "IntendedAssignmentName": "PreviewAzureKeyVaultManagedHSMkeysusingellipticcurvecryptographyshouldhavethespecifiedcurvenames-1134452402",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Secrets should not be active for longer than the specified number of days",
+      "Parameters": {
+        "effect": {
+          "value": "Audit"
+        },
+        "maximumActiveDays": {
+          "value": 730
+        }
+      },
+      "IntendedAssignmentName": "Secretsshouldnotbeactiveforlongerthanthespecifiednumberofdays-1088305568",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Deploy Diagnostic Settings for Key Vault to Event Hub",
+      "Parameters": {},
+      "IntendedAssignmentName": "DeployDiagnosticSettingsforKeyVaulttoEventHub-661049945",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Certificates should not expire within the specified number of days",
+      "Parameters": {
+        "effect": {
+          "value": "Audit"
+        },
+        "minimumDaysBeforeExpiry": {
+          "value": 30
+        }
+      },
+      "IntendedAssignmentName": "Certificatesshouldnotexpirewithinthespecifiednumberofdays-243814578",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Keys using elliptic curve cryptography should have the specified curve names",
+      "Parameters": {},
+      "IntendedAssignmentName": "Keysusingellipticcurvecryptographyshouldhavethespecifiedcurvenames-1018147439",
+      "Status": "DryRun"
+    }
+  ]
+}

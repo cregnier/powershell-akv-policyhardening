@@ -1,0 +1,146 @@
+{
+  "SuccessCount": 0,
+  "Scope": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb",
+  "FailureCount": 12,
+  "Phase": "3.1 - Production Audit Mode",
+  "SkippedCount": 0,
+  "Results": [
+    {
+      "AssignmentName": "KV-Tier1-P0-SoftDelete",
+      "DisplayName": "[Tier 1 P0] Key vaults should have soft delete enabled",
+      "PolicyName": "Key vaults should have soft delete enabled",
+      "Priority": "P0",
+      "Effect": "Audit",
+      "Status": "Failed",
+      "Message": "Policy definition not found: Key vaults should have soft delete enabled",
+      "PolicyDefinitionId": "",
+      "AssignmentId": ""
+    },
+    {
+      "AssignmentName": "KV-Tier1-P0-PurgeProtection",
+      "DisplayName": "[Tier 1 P0] Key vaults should have deletion protection enabled",
+      "PolicyName": "Key vaults should have deletion protection enabled",
+      "Priority": "P0",
+      "Effect": "Audit",
+      "Status": "Failed",
+      "Message": "Policy definition not found: Key vaults should have deletion protection enabled",
+      "PolicyDefinitionId": "",
+      "AssignmentId": ""
+    },
+    {
+      "AssignmentName": "KV-Tier1-P0-DisablePublicAccess",
+      "DisplayName": "[Tier 1 P0] Azure Key Vault should disable public network access",
+      "PolicyName": "Azure Key Vault should disable public network access",
+      "Priority": "P0",
+      "Effect": "Audit",
+      "Status": "Failed",
+      "Message": "Policy definition not found: Azure Key Vault should disable public network access",
+      "PolicyDefinitionId": "",
+      "AssignmentId": ""
+    },
+    {
+      "AssignmentName": "KV-Tier1-P1-PrivateLink",
+      "DisplayName": "[Tier 1 P1] Azure Key Vaults should use private link",
+      "PolicyName": "Azure Key Vaults should use private link",
+      "Priority": "P1",
+      "Effect": "Audit",
+      "Status": "Failed",
+      "Message": "Policy definition not found: Azure Key Vaults should use private link",
+      "PolicyDefinitionId": "",
+      "AssignmentId": ""
+    },
+    {
+      "AssignmentName": "KV-Tier1-P1-Firewall",
+      "DisplayName": "[Tier 1 P1] Azure Key Vault should have firewall enabled",
+      "PolicyName": "Azure Key Vault should have firewall enabled or public network access disabled",
+      "Priority": "P1",
+      "Effect": "Audit",
+      "Status": "Failed",
+      "Message": "Policy definition not found: Azure Key Vault should have firewall enabled or public network access disabled",
+      "PolicyDefinitionId": "",
+      "AssignmentId": ""
+    },
+    {
+      "AssignmentName": "KV-Tier1-P1-RBAC",
+      "DisplayName": "[Tier 1 P1] Azure Key Vault should use RBAC permission model",
+      "PolicyName": "Azure Key Vault should use RBAC permission model",
+      "Priority": "P1",
+      "Effect": "Audit",
+      "Status": "Failed",
+      "Message": "Policy definition not found: Azure Key Vault should use RBAC permission model",
+      "PolicyDefinitionId": "",
+      "AssignmentId": ""
+    },
+    {
+      "AssignmentName": "KV-Tier1-P1-KeyExpiration",
+      "DisplayName": "[Tier 1 P1] Key Vault keys should have an expiration date",
+      "PolicyName": "Key Vault keys should have an expiration date",
+      "Priority": "P1",
+      "Effect": "Audit",
+      "Status": "Failed",
+      "Message": "Policy definition not found: Key Vault keys should have an expiration date",
+      "PolicyDefinitionId": "",
+      "AssignmentId": ""
+    },
+    {
+      "AssignmentName": "KV-Tier1-P1-SecretExpiration",
+      "DisplayName": "[Tier 1 P1] Key Vault secrets should have an expiration date",
+      "PolicyName": "Key Vault secrets should have an expiration date",
+      "Priority": "P1",
+      "Effect": "Audit",
+      "Status": "Failed",
+      "Message": "Policy definition not found: Key Vault secrets should have an expiration date",
+      "PolicyDefinitionId": "",
+      "AssignmentId": ""
+    },
+    {
+      "AssignmentName": "KV-Tier1-P2-CertValidity",
+      "DisplayName": "[Tier 1 P2] Certificates should have the specified maximum validity period",
+      "PolicyName": "Certificates should have the specified maximum validity period",
+      "Priority": "P2",
+      "Effect": "Audit",
+      "Status": "Failed",
+      "Message": "Policy definition not found: Certificates should have the specified maximum validity period",
+      "PolicyDefinitionId": "",
+      "AssignmentId": ""
+    },
+    {
+      "AssignmentName": "KV-Tier1-P2-HSMRequired",
+      "DisplayName": "[Tier 1 P2] Keys should be backed by a hardware security module (HSM)",
+      "PolicyName": "Keys should be backed by a hardware security module (HSM)",
+      "Priority": "P2",
+      "Effect": "Audit",
+      "Status": "Failed",
+      "Message": "Policy definition not found: Keys should be backed by a hardware security module (HSM)",
+      "PolicyDefinitionId": "",
+      "AssignmentId": ""
+    },
+    {
+      "AssignmentName": "KV-Tier1-P2-RSAKeySize",
+      "DisplayName": "[Tier 1 P2] Keys using RSA cryptography should have minimum key size",
+      "PolicyName": "Keys using RSA cryptography should have a specified minimum key size",
+      "Priority": "P2",
+      "Effect": "Audit",
+      "Status": "Failed",
+      "Message": "Policy definition not found: Keys using RSA cryptography should have a specified minimum key size",
+      "PolicyDefinitionId": "",
+      "AssignmentId": ""
+    },
+    {
+      "AssignmentName": "KV-Tier1-P2-CertExpiration",
+      "DisplayName": "[Tier 1 P2] Certificates should not expire within specified days",
+      "PolicyName": "Certificates should not expire within the specified number of days",
+      "Priority": "P2",
+      "Effect": "Audit",
+      "Status": "Failed",
+      "Message": "Policy definition not found: Certificates should not expire within the specified number of days",
+      "PolicyDefinitionId": "",
+      "AssignmentId": ""
+    }
+  ],
+  "SubscriptionName": "MSDN Platforms Subscription",
+  "WhatIfMode": true,
+  "TargetSubscription": "ab1336c7-687d-4107-b0f6-9649a0458adb",
+  "DeploymentDate": "2026-01-13 09:59:19",
+  "TotalPolicies": 12
+}

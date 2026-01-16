@@ -1,0 +1,28 @@
+{
+  "Verification": [],
+  "Compliance": null,
+  "Preview": true,
+  "DryRun": true,
+  "Assignments": [
+    {
+      "Name": "Key vaults should have deletion protection enabled",
+      "Parameters": {
+        "effect": {
+          "value": "Deny"
+        }
+      },
+      "IntendedAssignmentName": "Keyvaultsshouldhavedeletionprotectionenabled-1312372299",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Key vaults should have soft delete enabled",
+      "Parameters": {
+        "effect": {
+          "value": "Deny"
+        }
+      },
+      "IntendedAssignmentName": "Keyvaultsshouldhavesoftdeleteenabled-1479684890",
+      "Status": "DryRun"
+    }
+  ]
+}

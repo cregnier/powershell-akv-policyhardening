@@ -1,0 +1,38 @@
+{
+  "Verification": [],
+  "Compliance": null,
+  "Preview": true,
+  "DryRun": true,
+  "Assignments": [
+    {
+      "Name": "Key vaults should have deletion protection enabled",
+      "Parameters": {
+        "effect": {
+          "value": "Deny"
+        }
+      },
+      "IntendedAssignmentName": "Keyvaultsshouldhavedeletionprotectionenabled-1075192490",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Key vaults should have soft delete enabled",
+      "Parameters": {
+        "effect": {
+          "value": "Deny"
+        }
+      },
+      "IntendedAssignmentName": "Keyvaultsshouldhavesoftdeleteenabled-276310729",
+      "Status": "DryRun"
+    },
+    {
+      "Name": "Azure Key Vault should disable public network access",
+      "Parameters": {
+        "effect": {
+          "value": "Deny"
+        }
+      },
+      "IntendedAssignmentName": "AzureKeyVaultshoulddisablepublicnetworkaccess-643048802",
+      "Status": "DryRun"
+    }
+  ]
+}

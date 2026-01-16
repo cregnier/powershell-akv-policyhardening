@@ -1,0 +1,14 @@
+{
+  "Verification": [],
+  "Compliance": null,
+  "Preview": false,
+  "DryRun": true,
+  "Assignments": [
+    {
+      "Name": "Certificates should have the specified lifetime action triggers",
+      "Parameters": {},
+      "IntendedAssignmentName": "Certificatesshouldhavethespecifiedlifetimeactiontrigge-836553268",
+      "Status": "DryRun"
+    }
+  ]
+}
