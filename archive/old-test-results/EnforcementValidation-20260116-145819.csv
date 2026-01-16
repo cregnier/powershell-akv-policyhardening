@@ -1,0 +1,5 @@
+"Test","RiskLevel","Phase","Expected","Actual","Status","PolicyWorking","VaultName","Notes"
+"Purge Protection","HIGH","Phase 3","Blocked","Created","❌ FAIL","False","val-nopurge-7112","Policy NOT blocking - CRITICAL ISSUE"
+"Firewall Required","MEDIUM","Phase 2","Blocked","Created (Public)","❌ FAIL","False","val-public-7411","Policy NOT blocking public vaults"
+"RBAC Required","MEDIUM","Phase 2","Blocked","Created (Access Policies)","❌ FAIL","False","val-accesspol-5998","Policy NOT blocking Access Policy vaults"
+"Compliant Vault","BASELINE","All","Created","Created","✅ PASS","True","val-compliant-3935","Production-ready: Purge protection, RBAC, Soft delete (90d), Public access disabled"

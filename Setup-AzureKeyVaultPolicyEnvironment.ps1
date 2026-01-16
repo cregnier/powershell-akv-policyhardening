@@ -3,13 +3,37 @@
 
 <#
 .SYNOPSIS
-    ONE-STOP Azure Policy Testing Environment Setup for Dev/Test and Production
+    Infrastructure setup script for Azure Key Vault Policy Governance testing and implementation
     
 .DESCRIPTION
-    Consolidated script that creates COMPLETE testing/production environment for 46 Azure Key Vault policies.
+    ═══════════════════════════════════════════════════════════════════════════════
+    AZURE KEY VAULT POLICY GOVERNANCE - INFRASTRUCTURE SETUP
+    ═══════════════════════════════════════════════════════════════════════════════
     
-    CAPABILITIES:
-    ============
+    WHO:    Azure administrators preparing for policy governance implementation
+    WHAT:   Creates complete testing environment with infrastructure, test vaults, and monitoring
+    WHEN:   Run ONCE before deploying policies (Phase 1 of testing workflow)
+    WHERE:  Azure subscription (creates 1-2 resource groups based on scenario)
+    WHY:    Provides required infrastructure for policy testing, auto-remediation, and monitoring
+    HOW:    PowerShell automation deploying Azure resources via ARM templates
+    
+    ═══════════════════════════════════════════════════════════════════════════════
+    VERSION HISTORY
+    ═══════════════════════════════════════════════════════════════════════════════
+    Version: 1.1
+    Date: 2026-01-16
+    Changes:
+      - Validated for complete testing workflow (Test T1.1 PASS)
+      - Supports both DevTest and Production scenarios
+      - Creates test vaults with varied compliance states
+      - Includes optional monitoring and alerting setup
+    
+    Previous Versions:
+      1.0: Initial infrastructure setup script
+    
+    ═══════════════════════════════════════════════════════════════════════════════
+    CAPABILITIES
+    ═══════════════════════════════════════════════════════════════════════════════
     
     **INFRASTRUCTURE SETUP** (Required for automation policies):
     - Managed Identity for policy remediation (DeployIfNotExists/Modify policies)

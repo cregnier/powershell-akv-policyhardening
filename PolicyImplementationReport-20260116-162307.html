@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Azure Policy Implementation Report</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 28px; margin-bottom: 10px; }
+        .header .subtitle { opacity: 0.9; font-size: 14px; }
+        .content { padding: 30px; }
+        .card { background: #f8f9fa; border-left: 4px solid #0078d4; padding: 20px; margin-bottom: 20px; border-radius: 8px; }
+        .card h2 { color: #333; margin-bottom: 15px; font-size: 20px; }
+        .metadata { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px; }
+        .metadata-item { background: white; padding: 15px; border-radius: 6px; border: 1px solid #dee2e6; }
+        .metadata-item label { display: block; font-size: 12px; color: #6c757d; margin-bottom: 5px; text-transform: uppercase; }
+        .metadata-item value { display: block; font-size: 16px; font-weight: 600; color: #333; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; }
+        th { background: #0078d4; color: white; padding: 12px; text-align: left; font-weight: 600; }
+        td { padding: 12px; border-bottom: 1px solid #dee2e6; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: #f1f3f5; }
+        .status-success { color: #28a745; font-weight: 600; }
+        .status-error { color: #dc3545; font-weight: 600; }
+        .status-warning { color: #ffc107; font-weight: 600; }
+        .error-msg { color: #dc3545; font-size: 13px; }
+        .policy-value { color: #6c757d; display: block; margin-top: 5px; }
+        .param-list { margin: 5px 0; padding-left: 20px; font-size: 13px; }
+        .param-list li { margin: 3px 0; }
+        code { background: #e9ecef; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+        .next-steps { background: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; margin-top: 20px; border-radius: 8px; }
+        .next-steps h3 { color: #856404; margin-bottom: 10px; }
+        .next-steps p { color: #856404; line-height: 1.6; }
+        .compliance-metric { text-align: center; padding: 20px; }
+        .metric-value { font-size: 48px; font-weight: 700; }
+        .metric-label { font-size: 14px; color: #6c757d; margin-top: 5px; }
+        .footer { background: #f8f9fa; padding: 20px; text-align: center; color: #6c757d; font-size: 13px; border-top: 1px solid #dee2e6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔐 Azure Policy Implementation Report</h1>
+            <div class="subtitle">Key Vault Governance & Security Baseline</div>
+            <div class="subtitle">Generated: 2026-01-16 16:23:07 UTC</div>
+        </div>
+        
+        <div class="content">
+            <div class="card">
+                <h2>📋 Deployment Metadata</h2>
+                <div class="metadata">
+                    <div class="metadata-item">
+                        <label>Scope Type</label>
+                        <value>Subscription</value>
+                    </div>
+                    <div class="metadata-item">
+                        <label>Scope</label>
+                        <value>/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb</value>
+                    </div>
+                    <div class="metadata-item">
+                        <label>Enforcement Mode</label>
+                        <value>Deny</value>
+                    </div>
+                    <div class="metadata-item">
+                        <label>Deployment Mode</label>
+                        <value>🚀 Live Deployment</value>
+                    </div>
+                    <div class="metadata-item">
+                        <label>Environment Preset</label>
+                        <value>Custom</value>
+                    </div>
+                    <div class="metadata-item">
+                        <label>Total Policies Processed</label>
+                        <value>9</value>
+                    </div>
+                    <div class="metadata-item">
+                        <label>Successfully Assigned</label>
+                        <value class="status-success">9</value>
+                    </div>
+                    <div class="metadata-item">
+                        <label>Failed Assignments</label>
+                        <value class="status-error">0</value>
+                    </div>
+                </div>
+                
+                                <div style="margin-top: 10px; padding: 15px; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px; font-size: 14px;">
+                    <strong>⚠️ IMPORTANT: Azure Policy Evaluation in Progress</strong><br><br>
+                    <strong>Deployment Status:</strong> ✅ All 9 policies successfully assigned<br>
+                    <strong>Compliance Status:</strong> ⏳ Partial data (64.79%) - Azure is still evaluating resources<br><br>
+                    
+                    <div style="background: white; padding: 12px; border-radius: 6px; margin-top: 10px; border: 1px solid #ffc107;">
+                        <strong style="color: #856404;">📊 Why Compliance is Low Right Now:</strong><br>
+                        <ul style="margin-left: 20px; margin-top: 8px; color: #856404; line-height: 1.8;">
+                            <li><strong>Policy Assignment Propagation:</strong> 30-90 minutes for Azure to distribute assignments across all regions</li>
+                            <li><strong>Resource Scanning:</strong> 15-30 minutes for Azure Policy engine to scan existing Key Vaults</li>
+                            <li><strong>Compliance State Calculation:</strong> 10-15 minutes to evaluate resources against policy rules</li>
+                        </ul>
+                        
+                        <p style="margin-top: 15px; color: #856404;"><strong>⏱️ WAIT 60 MINUTES</strong> from deployment time (2026-01-16 16:23:07 UTC), then regenerate this report to see accurate compliance.</p>
+                        
+                        <p style="margin-top: 15px; color: #856404;"><strong>How to Regenerate Report:</strong></p>
+                        <pre style="background: #f8f9fa; padding: 10px; border-radius: 4px; margin-top: 8px; color: #0078d4; font-family: 'Courier New', monospace; border: 1px solid #dee2e6;">.\AzPolicyImplScript.ps1 -CheckCompliance -TriggerScan</pre>
+                        
+                        <p style="margin-top: 12px; color: #856404; font-size: 13px;">
+                            <strong>Expected improvement:</strong> Compliance should increase from 64.79% to 60-80% range with all 9 policies reporting complete data.
+                        </p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 10px; padding: 10px; background: #e7f3ff; border-left: 3px solid #0078d4; border-radius: 4px; font-size: 13px;">
+                    <strong>📊 Status Breakdown:</strong>
+                    ✅ Assigned: 9 | ❌ Failed: 0
+                    
+                </div>
+            </div>
+            
+            
+            
+                    <div class="card">
+            <h2>📊 Compliance Overview</h2>
+            <div class="compliance-metric">
+                <div class="metric-value" style="color: #ffc107;">64.79%</div>
+                <div class="metric-label">Overall Compliance</div>
+            </div>
+            <table>
+                <tr><th>Metric</th><th>Value</th></tr>
+                <tr><td>Policies Reporting</td><td>9</td></tr>
+                <tr><td>Compliant Resources</td><td class="status-success">46</td></tr>
+                <tr><td>Non-Compliant Resources</td><td class="status-error">25</td></tr>
+                <tr><td>Effectiveness Rating</td><td>Fair ⭐⭐⭐</td></tr>
+            </table>
+        </div>
+            
+            
+            
+            <div class="card">
+                <h2>✅ Successfully Assigned Policies</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Policy Name & Value</th>
+                            <th style="width: 120px;">Status</th>
+                            <th style="width: 300px;">Parameters</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                <tr>
+            <td><strong>Key vaults should have soft delete enabled</strong><br/><small class="policy-value">💡 Prevents accidental/malicious deletion; enables 90-day recovery window</small></td>
+            <td class="status-success">✓ Assigned</td>
+            <td><em>No parameters</em></td>
+        </tr>        <tr>
+            <td><strong>Azure Key Vault should have firewall enabled or public network access disabled</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">✓ Assigned</td>
+            <td><em>No parameters</em></td>
+        </tr>        <tr>
+            <td><strong>Certificates should not expire within the specified number of days</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">✓ Assigned</td>
+            <td><em>No parameters</em></td>
+        </tr>        <tr>
+            <td><strong>Certificates should have the specified maximum validity period</strong><br/><small class="policy-value">💡 Reduces certificate lifecycle risk; enforces rotation policy</small></td>
+            <td class="status-success">✓ Assigned</td>
+            <td><em>No parameters</em></td>
+        </tr>        <tr>
+            <td><strong>Keys using RSA cryptography should have a specified minimum key size</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">✓ Assigned</td>
+            <td><em>No parameters</em></td>
+        </tr>        <tr>
+            <td><strong>Key Vault secrets should have an expiration date</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">✓ Assigned</td>
+            <td><em>No parameters</em></td>
+        </tr>        <tr>
+            <td><strong>Key vaults should have deletion protection enabled</strong><br/><small class="policy-value">💡 Prevents purge operations; ensures mandatory retention period</small></td>
+            <td class="status-success">✓ Assigned</td>
+            <td><em>No parameters</em></td>
+        </tr>        <tr>
+            <td><strong>Azure Key Vault should use RBAC permission model</strong><br/><small class="policy-value">💡 Modernizes access control; enables Azure AD integration</small></td>
+            <td class="status-success">✓ Assigned</td>
+            <td><em>No parameters</em></td>
+        </tr>        <tr>
+            <td><strong>Key Vault keys should have an expiration date</strong><br/><small class="policy-value">💡 Prevents indefinite key usage; enforces key rotation hygiene</small></td>
+            <td class="status-success">✓ Assigned</td>
+            <td><em>No parameters</em></td>
+        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="card">
+                <h2>❌ Failed Policy Assignments</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Policy Name</th>
+                            <th style="width: 120px;">Status</th>
+                            <th>Error Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan='3' style='text-align:center;color:#28a745;'>✅ All policies assigned successfully!</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="card" style="background: #f8f9fa; border-left: 4px solid #6c757d;">
+                <h2>📖 Policy Enforcement Modes Explained</h2>
+                <table style="margin-top: 15px;">
+                    <thead>
+                        <tr>
+                            <th>Mode</th>
+                            <th>Behavior</th>
+                            <th>Use Case</th>
+                            <th>Operational Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong style="color: #0078d4;">Audit</strong></td>
+                            <td>Logs non-compliance events without blocking resource operations</td>
+                            <td>
+                                <strong>Initial Assessment Phase</strong><br>
+                                • Discover non-compliant resources<br>
+                                • Gather compliance telemetry<br>
+                                • No operational disruption
+                            </td>
+                            <td>
+                                <span style="color: #28a745;">✓ Zero risk</span> - No resources blocked<br>
+                                <span style="color: #0078d4;">ℹ️ Duration:</span> 30-90 days recommended
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: #ffc107;">Deny</strong></td>
+                            <td>Blocks creation/modification of non-compliant resources; existing resources unaffected</td>
+                            <td>
+                                <strong>Prevention Phase</strong><br>
+                                • Stop new violations<br>
+                                • Allow time for remediation planning<br>
+                                • Gradual compliance improvement
+                            </td>
+                            <td>
+                                <span style="color: #ffc107;">⚠️ Medium risk</span> - May block deployments<br>
+                                <span style="color: #0078d4;">ℹ️ Duration:</span> 60-120 days before Enforce
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: #dc3545;">Enforce</strong></td>
+                            <td>Actively remediates non-compliant resources through automated tasks or DeployIfNotExists policies</td>
+                            <td>
+                                <strong>Active Remediation Phase</strong><br>
+                                • Auto-correct non-compliant resources<br>
+                                • Full policy enforcement<br>
+                                • Continuous compliance
+                            </td>
+                            <td>
+                                <span style="color: #dc3545;">⚠️ High risk</span> - Modifies resources<br>
+                                <span style="color: #0078d4;">ℹ️ Duration:</span> Ongoing with monitoring
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div style="margin-top: 20px; padding: 15px; background: #e7f3ff; border-left: 3px solid #0078d4; border-radius: 4px;">
+                    <h4 style="color: #0078d4; margin-bottom: 10px;">🔄 Recommended Lifecycle Progression</h4>
+                    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 150px; padding: 10px; background: white; border-radius: 4px; text-align: center;">
+                            <strong style="color: #0078d4;">1. Audit</strong><br>
+                            <small>Discovery & Assessment</small><br>
+                            <span style="font-size: 11px;">30-90 days</span>
+                        </div>
+                        <span style="font-size: 24px; color: #6c757d;">→</span>
+                        <div style="flex: 1; min-width: 150px; padding: 10px; background: white; border-radius: 4px; text-align: center;">
+                            <strong style="color: #0078d4;">2. Analyze</strong><br>
+                            <small>Review Compliance Data</small><br>
+                            <span style="font-size: 11px;">1-2 weeks</span>
+                        </div>
+                        <span style="font-size: 24px; color: #6c757d;">→</span>
+                        <div style="flex: 1; min-width: 150px; padding: 10px; background: white; border-radius: 4px; text-align: center;">
+                            <strong style="color: #ffc107;">3. Deny</strong><br>
+                            <small>Prevent New Violations</small><br>
+                            <span style="font-size: 11px;">60-120 days</span>
+                        </div>
+                        <span style="font-size: 24px; color: #6c757d;">→</span>
+                        <div style="flex: 1; min-width: 150px; padding: 10px; background: white; border-radius: 4px; text-align: center;">
+                            <strong style="color: #0078d4;">4. Remediate</strong><br>
+                            <small>Fix Existing Issues</small><br>
+                            <span style="font-size: 11px;">2-4 weeks</span>
+                        </div>
+                        <span style="font-size: 24px; color: #6c757d;">→</span>
+                        <div style="flex: 1; min-width: 150px; padding: 10px; background: white; border-radius: 4px; text-align: center;">
+                            <strong style="color: #dc3545;">5. Enforce</strong><br>
+                            <small>Auto-Remediation</small><br>
+                            <span style="font-size: 11px;">Ongoing</span>
+                        </div>
+                        <span style="font-size: 24px; color: #6c757d;">→</span>
+                        <div style="flex: 1; min-width: 150px; padding: 10px; background: white; border-radius: 4px; text-align: center;">
+                            <strong style="color: #28a745;">6. Monitor</strong><br>
+                            <small>Maintain Compliance</small><br>
+                            <span style="font-size: 11px;">Continuous</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 15px; color: #6c757d; font-size: 13px;">
+                    <strong>💡 Best Practice:</strong> Never skip directly from Audit to Enforce. Each phase provides critical insights and reduces risk of operational disruption.
+                    Use policy exemptions for resources requiring manual review or temporary exceptions.
+                </p>
+            </div>
+            
+            <div class="next-steps">
+                <h3>📌 Recommended Next Steps</h3>
+                <p>✅ <strong>Monitor blocked operations</strong> and adjust policy parameters if needed<br>✅ Move to <strong>Enforce</strong> mode with remediation tasks to fix existing non-compliant resources<br>✅ Use policy exemptions for special cases requiring manual review</p>
+                <p style="margin-top: 10px;"><strong>Additional Recommendations:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Review non-compliant resources and create remediation tasks</li>
+                    <li>Configure Azure Monitor alerts for policy compliance thresholds</li>
+                    <li>Schedule monthly compliance reviews with security team</li>
+                    <li>Document exceptions and exemptions with business justification</li>
+                    <li>Test remediation in dev/test environment before production rollout</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Generated by Azure Policy Implementation Script v0.1.0 | Microsoft Azure Governance
+        </div>
+    </div>
+</body>
+</html>

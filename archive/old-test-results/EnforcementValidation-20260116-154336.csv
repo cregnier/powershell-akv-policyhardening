@@ -1,0 +1,5 @@
+"Test","RiskLevel","Phase","Expected","Actual","Status","PolicyWorking","PolicyName","Notes"
+"Purge Protection","HIGH","Phase 3","Blocked","Blocked","✅ PASS","True","Unknown","Deny mode working correctly"
+"Firewall Required","MEDIUM","Phase 2","Blocked","Blocked","✅ PASS","True","Unknown","Deny mode working correctly"
+"RBAC Required","MEDIUM","Phase 2","Blocked","Blocked","✅ PASS","True","Unknown","Deny mode working correctly"
+"Compliant Vault","BASELINE","All","Created","Blocked","❌ FAIL","False","Unknown","CRITICAL: Compliant vault blocked - Error: Resource 'val-compliant-6477' was disallowed by policy. Policy identifiers: '[{""policyAssignment"":{""name"":""Keyvaultsshouldhavesoftdeleteenabled-656701378"",""id"":""/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Keyvaultsshouldhavesoftdeleteenabled-656701378""},""policyDefinition"":{""name"":""Key vaults should have soft delete enabled"",""id"":""/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d"",""version"":""3.1.0""}}]'."

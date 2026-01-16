@@ -60,7 +60,7 @@
     "effect": "Audit"
   },
   "Keys should be the specified cryptographic type RSA or EC": {
-    "cryptographicType": ["RSA", "EC"],
+    "allowedKeyTypes": ["RSA", "EC"],
     "effect": "Deny"
   },
   "Keys should have the specified maximum validity period": {

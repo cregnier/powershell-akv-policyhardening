@@ -1,7 +1,21 @@
-# Parameter File Usage Guide - CRITICAL REFERENCE
+# Parameter File Usage Guide - Complete Reference
 
-**Last Updated**: January 15, 2026  
-**Status**: Complete infrastructure values added to all files
+**Version**: 2.0  
+**Last Updated**: 2026-01-16  
+**Status**: Complete infrastructure values configured
+
+---
+
+## 🎯 The 5 Ws and H
+
+| Question | Answer |
+|----------|--------|
+| **WHO** | Azure administrators deploying policies across different environments |
+| **WHAT** | Guide to selecting the correct parameter file for your deployment scenario |
+| **WHEN** | Reference this before each deployment to choose the right parameter file |
+| **WHERE** | All parameter files located in repository root directory |
+| **WHY** | Different scenarios require different policy modes (Audit vs Deny) and parameter values |
+| **HOW** | Match your scenario to the table below, use the specified command |
 
 ---
 

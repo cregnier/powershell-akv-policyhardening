@@ -1,0 +1,65 @@
+Test T4.3: Individual Deny Policy Validation Results
+Generated: 2026-01-16 16:14:11
+========================================================
+
+VAULT-LEVEL POLICIES (Tested in T4.2):
+------------------------------------------------------
+[1] Key vaults should have soft delete enabled
+    Result: ✅ PASS - Blocked non-compliant vault creation
+    Evidence: EnforcementValidation-20260116-154750.csv (Test 4 - ARM template fix)
+
+[2] Key vaults should have deletion protection enabled  
+    Result: ✅ PASS - Blocked vault without purge protection
+    Evidence: EnforcementValidation-20260116-154750.csv, EnforcementValidation-20260116-161008.csv (Test 1)
+
+[3] Azure Key Vault should use RBAC permission model
+    Result: ✅ PASS - Blocked vault with Access Policies model
+    Evidence: EnforcementValidation-20260116-154750.csv, EnforcementValidation-20260116-161008.csv (Test 3)
+
+[4] Azure Key Vault should have firewall enabled
+    Result: ✅ PASS - Blocked public vault creation
+    Evidence: EnforcementValidation-20260116-154750.csv, EnforcementValidation-20260116-161008.csv (Test 2)
+
+RESOURCE-LEVEL POLICIES (Tested in T4.3):
+------------------------------------------------------
+[5] Key Vault keys should have an expiration date
+    Result: ✅ PASS - Blocked key creation without expiration
+    Evidence: PowerShell test executed 2026-01-16 16:09-16:12
+    Test Vault: val-compliant-3449
+
+[6] Key Vault secrets should have an expiration date
+    Result: ✅ PASS - Blocked secret creation without expiration  
+    Evidence: PowerShell test executed 2026-01-16 16:09-16:12
+    Test Vault: val-compliant-3449
+
+[7] Keys using RSA cryptography should have minimum 2048 key size
+    Result: ✅ PASS - Blocked 1024-bit RSA key creation
+    Evidence: PowerShell test executed 2026-01-16 16:09-16:12
+    Test Vault: val-compliant-3449
+
+[8] Certificates should have maximum 12 month validity period
+    Result: ✅ PASS - Blocked certificate with 24 month validity
+    Evidence: PowerShell test executed 2026-01-16 16:09-16:12
+    Test Vault: val-compliant-3449
+
+[9] Certificates should not expire within 30 days
+    Result: ✅ PASS - Blocked short-expiry certificate creation
+    Evidence: PowerShell test executed 2026-01-16 16:09-16:12
+    Test Vault: val-compliant-3449
+
+========================================================
+OVERALL RESULT: ✅ ALL 9 POLICIES VALIDATED SUCCESSFULLY
+========================================================
+
+Test Details:
+- All 9 Deny policies are correctly blocking non-compliant operations
+- Tests 1-4: Vault-level enforcement (from T4.2)  
+- Tests 5-9: Resource-level enforcement (keys, secrets, certificates)
+- Test Vault Used: val-compliant-3449 (created in T4.2)
+- Policy Assignment: PolicyParameters-Tier1-Deny.json (9 policies, Deny mode)
+- Scope: Subscription /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb
+
+Conclusion:
+All 9 Tier 1 Deny policies are functioning correctly and blocking
+non-compliant Key Vault operations as expected. Production enforcement
+is validated and ready for continued operation.

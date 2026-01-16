@@ -1,16 +1,35 @@
 # Azure Policy Implementation - Deployment Prerequisites
 
+**Version**: 2.0  
+**Last Updated**: 2026-01-16  
+**Audience**: Azure Administrators deploying Key Vault governance policies
+
+---
+
+## 🎯 The 5 Ws and H
+
+| Question | Answer |
+|----------|--------|
+| **WHO** | Azure administrators with Policy Contributor or Owner role |
+| **WHAT** | Prerequisites and requirements for deploying 46 Azure Key Vault policies |
+| **WHEN** | Review this before your first deployment or when troubleshooting |
+| **WHERE** | Azure subscriptions/resource groups with Key Vault resources |
+| **WHY** | Ensure successful policy deployment without errors or missing dependencies |
+| **HOW** | Install modules, configure RBAC, prepare infrastructure, select parameter files |
+
+---
+
 ## Quick Reference
 
-**To run AzPolicyImplScript.ps1 on a different computer, you need:**
+**To run AzPolicyImplScript.ps1 successfully, you need:**
 
-✅ PowerShell modules (auto-installed by script)  
-✅ Azure subscription access with proper RBAC roles  
-✅ **6 parameter files** for all testing scenarios (DevTest, DevTest-Full, Production, Remediation)  
-✅ Optional: Managed Identity for DeployIfNotExists/Modify policies  
-✅ Optional: Azure resources for certain policies (Log Analytics, Event Hub, Private Link)
+✅ PowerShell 7.0+ with Azure Az modules  
+✅ Azure subscription access with Policy Contributor or Owner role  
+✅ **6 parameter files** for all testing scenarios (included in repository)  
+✅ Optional: Managed Identity for auto-remediation (8 policies)  
+✅ Optional: Infrastructure resources for diagnostic policies (Log Analytics, Event Hub)
 
-**📖 Parameter File Guide**: See [PolicyParameters-QuickReference.md](PolicyParameters-QuickReference.md) for complete guide.
+**📖 Parameter File Guide**: See [PARAMETER-FILE-USAGE-GUIDE.md](PARAMETER-FILE-USAGE-GUIDE.md) for complete guide.
 
 ---
 

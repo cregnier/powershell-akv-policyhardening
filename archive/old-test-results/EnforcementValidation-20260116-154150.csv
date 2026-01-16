@@ -1,0 +1,5 @@
+"Test","RiskLevel","Phase","Expected","Actual","Status","PolicyWorking","PolicyName","Notes"
+"Purge Protection","HIGH","Phase 3","Blocked","Blocked","✅ PASS","True","Unknown","Deny mode working correctly"
+"Firewall Required","MEDIUM","Phase 2","Blocked","Blocked","✅ PASS","True","Unknown","Deny mode working correctly"
+"RBAC Required","MEDIUM","Phase 2","Blocked","Blocked","✅ PASS","True","Unknown","Deny mode working correctly"
+"Compliant Vault","BASELINE","All","Created","Blocked","❌ FAIL","False","Unknown","CRITICAL: Compliant vault blocked - Error: A parameter cannot be found that matches parameter name 'EnableRbacAuthorization'."
