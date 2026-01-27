@@ -1,0 +1,29 @@
+
+╔══════════════════════════════════════════════════════════════╗
+║  Azure Policy Implementation - Key Vault Governance          ║
+╚══════════════════════════════════════════════════════════════╝
+
+[2026-01-22 15:25:05Z] 
+[INFO] 
+Starting Azure Policy implementation script for Key Vault policies
+[2026-01-22 15:25:05Z] 
+[INFO] 
+Checking required PowerShell modules...
+[2026-01-22 15:25:05Z] 
+[SUCCESS] 
+Module Az.Accounts is present
+[2026-01-22 15:25:05Z] 
+[SUCCESS] 
+Module Az.Resources is present
+[2026-01-22 15:25:05Z] 
+[SUCCESS] 
+Module Az.PolicyInsights is present
+[2026-01-22 15:25:05Z] 
+[SUCCESS] 
+Module Az.Monitor is present
+[2026-01-22 15:25:05Z] 
+[SUCCESS] 
+Module Az.KeyVault is present
+[2026-01-22 15:25:05Z] 
+[INFO] 
+Using Azure context: theregniers@hotmail.com

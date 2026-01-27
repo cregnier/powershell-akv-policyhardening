@@ -1,0 +1,42 @@
+**********************
+PowerShell transcript start
+Start time: 20260127121745
+Username: DTL01\lcladmin
+RunAs User: DTL01\lcladmin
+Configuration Name: 
+Machine: DTL01 (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Program Files\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 7012
+PSVersion: 7.5.3
+PSEdition: Core
+GitCommitId: 7.5.3
+OS: Microsoft Windows 10.0.20348
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\logs\Scenario6-Complete-Validation-20260127-121745.log
+\n╔══════════════════════════════════════════════════════════════╗
+║  SCENARIO 6: COMPLETE VALIDATION - ALL 34 TESTABLE POLICIES ║
+║  Infrastructure: VNet + Premium Vault + Managed HSM          ║
+║  Duration: 20-25 minutes (HSM activation: 15-20 min)         ║
+║  Cost: ~ for Managed HSM 1-hour usage                      ║
+║  Expected: 32-33 PASS, 0 FAIL, 1-2 SKIP (94%+ coverage)      ║
+╚══════════════════════════════════════════════════════════════╝\n
+ParserError: C:\Source\powershell-akv-policyhardening\AzPolicyImplScript.ps1:1898:25
+Line |
+1898 |                  for ($i in 1..5) {
+     |                          ~~
+     | Unexpected token 'in' in expression or statement.
+ParserError: C:\Source\powershell-akv-policyhardening\AzPolicyImplScript.ps1:1898:25
+Line |
+1898 |                  for ($i in 1..5) {
+     |                          ~~
+     | Unexpected token 'in' in expression or statement.
+
+**********************
+PowerShell transcript end
+End time: 20260127121745
+**********************

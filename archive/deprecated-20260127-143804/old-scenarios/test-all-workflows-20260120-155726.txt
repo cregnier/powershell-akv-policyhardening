@@ -1,0 +1,67 @@
+========================================
+CONTEXT-AWARE NEXT-STEPS VALIDATION
+Generated: 2026-01-20 16:01:08
+========================================
+
+SUMMARY:
+  Total Tests:   9
+  Passed:        0
+  Failed:        7
+  Skipped:       2
+  Success Rate:  0%
+
+DETAILED RESULTS:
+
+Workflow              ParameterFile                                  Passed Evidence
+--------              -------------                                  ------ --------
+DevTest30             PolicyParameters-DevTest.json                   False ❌ Failed to detect DevTest30 guidance
+DevTestFull46         PolicyParameters-DevTest-Full.json              False ❌ Failed to detect DevTestFull46 guidance
+DevTestRemediation    PolicyParameters-DevTest-Full-Remediation.json  False ❌ Failed to detect remediation guidance
+ProductionAudit       PolicyParameters-Production.json                False ❌ Failed to detect production audit guidance
+ProductionDeny        PolicyParameters-Production.json                      ⏭️ Production.json configured for Audit mode
+ProductionRemediation PolicyParameters-Production-Remediation.json    False ❌ Failed to detect production remediation guidance
+TierBased             None found (Tier1/Tier2/Tier3.json)                   ⏭️ No tier-based parameter files detected
+Dry-Run               -DryRun flag (runtime mode)                     False ❌ Failed to detect dry-run guidance
+Rollback              -Rollback flag (runtime operation)              False ❌ Failed to detect rollback guidance
+
+
+
+TEST EVIDENCE:
+──────────────────────────────────────────────────────────────────
+
+[DevTest30]
+  Parameter File: PolicyParameters-DevTest.json
+  Result: ❌ Failed to detect DevTest30 guidance
+
+[DevTestFull46]
+  Parameter File: PolicyParameters-DevTest-Full.json
+  Result: ❌ Failed to detect DevTestFull46 guidance
+
+[DevTestRemediation]
+  Parameter File: PolicyParameters-DevTest-Full-Remediation.json
+  Result: ❌ Failed to detect remediation guidance
+
+[ProductionAudit]
+  Parameter File: PolicyParameters-Production.json
+  Result: ❌ Failed to detect production audit guidance
+
+[ProductionDeny]
+  Parameter File: PolicyParameters-Production.json
+  Result: ⏭️ Production.json configured for Audit mode
+
+[ProductionRemediation]
+  Parameter File: PolicyParameters-Production-Remediation.json
+  Result: ❌ Failed to detect production remediation guidance
+
+[TierBased]
+  Parameter File: None found (Tier1/Tier2/Tier3.json)
+  Result: ⏭️ No tier-based parameter files detected
+
+[Dry-Run]
+  Parameter File: -DryRun flag (runtime mode)
+  Result: ❌ Failed to detect dry-run guidance
+
+[Rollback]
+  Parameter File: -Rollback flag (runtime operation)
+  Result: ❌ Failed to detect rollback guidance
+

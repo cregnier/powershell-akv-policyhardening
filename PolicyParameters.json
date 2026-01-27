@@ -1,8 +1,8 @@
 {
-  "subnetId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.Network/virtualNetworks/vnet-policy-test/subnets/snet-privateendpoints",
-  "eventHubAuthorizationRuleId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.EventHub/namespaces/eh-policy-test-7524/authorizationrules/RootManageSharedAccessKey",
-  "managedIdentityPrincipalId": "8a940bed-90d0-40b4-b036-6ef664daf7ab",
-  "logAnalyticsWorkspaceId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.OperationalInsights/workspaces/law-policy-test-8701",
+  "privateDnsZoneId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net",
+  "logAnalyticsWorkspaceId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.OperationalInsights/workspaces/law-policy-test-2524",
   "managedIdentityId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation",
-  "privateDnsZoneId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
+  "eventHubAuthorizationRuleId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.EventHub/namespaces/eh-policy-test-2254/authorizationrules/RootManageSharedAccessKey",
+  "subnetId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.Network/virtualNetworks/vnet-policy-test/subnets/snet-privateendpoints",
+  "managedIdentityPrincipalId": "e46e333b-18a2-4166-a071-87b26ad3a9d9"
 }

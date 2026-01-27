@@ -22,7 +22,7 @@
     "effect": "Audit"
   },
   "Keys should be the specified cryptographic type RSA or EC": {
-    "cryptographicType": ["RSA", "EC"],
+    "allowedKeyTypes": ["RSA", "EC"],
     "effect": "Audit"
   },
   "Keys using elliptic curve cryptography should have the specified curve names": {

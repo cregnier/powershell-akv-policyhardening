@@ -1,0 +1,357 @@
+**********************
+PowerShell transcript start
+Start time: 20260126102855
+Username: DTL01\lcladmin
+RunAs User: DTL01\lcladmin
+Configuration Name: 
+Machine: DTL01 (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Program Files\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 10412
+PSVersion: 7.5.3
+PSEdition: Core
+GitCommitId: 7.5.3
+OS: Microsoft Windows 10.0.20348
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\logs\Phase0-Cleanup-20260126.log
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "`n╔═══════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan; Write-Host "║         PHASE 0: CLEANUP - FRESH START                       ║" -ForegroundColor Cyan; Write-Host "║         Master Test Execution - January 26, 2026             ║" -ForegroundColor Cyan; Write-Host "╚═══════════════════════════════════════════════════════════════╝`n" -ForegroundColor Cyan; Write-Host "Starting cleanup of all existing resources..." -ForegroundColor Yellow; Write-Host "This will remove:" -ForegroundColor White; Write-Host "  1. All KV-* policy assignments" -ForegroundColor Gray; Write-Host "  2. rg-policy-keyvault-test resource group" -ForegroundColor Gray; Write-Host "  3. rg-policy-remediation resource group`n" -ForegroundColor Gray; .\Setup-AzureKeyVaultPolicyEnvironment.ps1 -CleanupFirst
+
+╔═══════════════════════════════════════════════════════════════╗
+║         PHASE 0: CLEANUP - FRESH START                       ║
+║         Master Test Execution - January 26, 2026             ║
+╚═══════════════════════════════════════════════════════════════╝
+Starting cleanup of all existing resources...
+This will remove:
+  1. All KV-* policy assignments
+  2. rg-policy-keyvault-test resource group
+  3. rg-policy-remediation resource group
+ERROR: -ActionGroupEmail is required unless -SkipMonitoring is specified
+]633;D;1]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>.\Setup-AzureKeyVaultPolicyEnvironment.ps1 -CleanupFirst -SkipMonitoring
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║          AZURE KEY VAULT POLICY ENVIRONMENT SETUP                            ║
+║          Comprehensive Infrastructure + Testing + Monitoring                 ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+📋 Configuration:
+  Environment: DevTest
+  Subscription: Current context
+  Test RG: rg-policy-keyvault-test
+  Infra RG: rg-policy-remediation
+  Location: eastus
+  Cleanup First: True
+  Skip Vault Seeding: False
+  Skip Monitoring: True
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║  [1/12] Azure Authentication
+╚════════════════════════════════════════════════════════════════════════════════╝
+  ✓
+Using current context: MSDN Platforms Subscription
+  ℹ
+Scope: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb
+  ℹ
+Signed in as: theregniers_hotmail.com#EXT#@theregniershotmail.onmicrosoft.com
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║  [2/12] Cleanup: Remove Existing Resources
+╚════════════════════════════════════════════════════════════════════════════════╝
+  ⚠
+⚠️  WARNING: This will DELETE all resources!
+  Test Resources:
+    - All policy assignments (KV-All-*, KV-Tier1-*)
+    - All Key Vaults in rg-policy-keyvault-test
+    - Resource group: rg-policy-keyvault-test
+  Infrastructure Resources:
+    - Managed Identity: id-policy-remediation
+    - VNet, Subnet, DNS Zone
+    - Log Analytics Workspace
+    - Event Hub Namespace
+    - Resource group: rg-policy-remediation
+  ℹ
+Removing policy assignments...
+  ✓
+Removed 0 policy assignments
+  ℹ
+Deleting test resource group: rg-policy-keyvault-test...
+  ✓
+Test resource group deleted
+  ℹ
+Deleting infrastructure resource group: rg-policy-remediation (may take 5+ minutes)...
+  ✓
+Infrastructure resource group deleted
+  ✓
+✓ Complete cleanup finished
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║  [3/12] Resource Groups
+╚════════════════════════════════════════════════════════════════════════════════╝
+  ℹ
+Creating infrastructure resource group: rg-policy-remediation...
+  ✓
+Created: rg-policy-remediation
+  ℹ
+Creating test resource group: rg-policy-keyvault-test...
+  ✓
+Created: rg-policy-keyvault-test
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║  [4/12] Managed Identity for Policy Remediation
+╚════════════════════════════════════════════════════════════════════════════════╝
+  ℹ
+Creating managed identity: id-policy-remediation...
+  ✓
+Created: id-policy-remediation
+  ℹ
+Principal ID: e46e333b-18a2-4166-a071-87b26ad3a9d9
+  ℹ
+Waiting 30 seconds for AAD replication...
+  ℹ
+Assigning RBAC roles to managed identity...
+  ✓
+Assigned role: Network Contributor
+  ✓
+Assigned role: Private DNS Zone Contributor
+  ✓
+Assigned role: Log Analytics Contributor
+  ✓
+Assigned role: Contributor
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║  [5/12] Virtual Network and Subnet
+╚════════════════════════════════════════════════════════════════════════════════╝
+  ℹ
+Creating VNet: vnet-policy-test...
+  ✓
+Created VNet: vnet-policy-test
+  ✓
+Created Subnet: snet-privateendpoints
+  ℹ
+Subnet ID: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.Network/virtualNetworks/vnet-policy-test/subnets/snet-privateendpoints
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║  [6/12] Private DNS Zone
+╚════════════════════════════════════════════════════════════════════════════════╝
+  ℹ
+Creating Private DNS Zone: privatelink.vaultcore.azure.net...
+  ✓
+Created: privatelink.vaultcore.azure.net
+  ℹ
+Linking VNet to Private DNS Zone...
+  ✓
+VNet linked to DNS zone
+  ℹ
+DNS Zone ID: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║  [7/12] Log Analytics Workspace
+╚════════════════════════════════════════════════════════════════════════════════╝
+  ℹ
+Creating Log Analytics Workspace: law-policy-test-2524...
+  ✓
+Created: law-policy-test-2524
+  ℹ
+Workspace ID: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.OperationalInsights/workspaces/law-policy-test-2524
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║  [8/12] Event Hub Namespace
+╚════════════════════════════════════════════════════════════════════════════════╝
+  ℹ
+Creating Event Hub Namespace: eh-policy-test-2254...
+  ✓
+Created: eh-policy-test-2254
+  ℹ
+Creating Event Hub: keyvault-diagnostics...
+  ✓
+Created Event Hub: keyvault-diagnostics
+  ℹ
+Auth Rule ID: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.EventHub/namespaces/eh-policy-test-2254/authorizationrules/RootManageSharedAccessKey
+  ℹ
+Skipping monitoring setup (as requested)
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║  [9/12] Test Key Vaults Creation
+╚════════════════════════════════════════════════════════════════════════════════╝
+  ℹ
+Creating Key Vault: kv-compliant-6275...
+PS>TerminatingError(New-AzKeyVault): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Resource 'kv-compliant-6275' was disallowed by policy. Policy identifiers: '[{"policyAssignment":{"name":"Keyvaultsshouldhavesoftdeleteenabled-656701378","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Keyvaultsshouldhavesoftdeleteenabled-656701378"},"policyDefinition":{"name":"Key vaults should have soft delete enabled","id":"/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d","version":"3.1.0"}}]'."
+>> TerminatingError(New-AzKeyVault): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Resource 'kv-compliant-6275' was disallowed by policy. Policy identifiers: '[{"policyAssignment":{"name":"Keyvaultsshouldhavesoftdeleteenabled-656701378","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Keyvaultsshouldhavesoftdeleteenabled-656701378"},"policyDefinition":{"name":"Key vaults should have soft delete enabled","id":"/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d","version":"3.1.0"}}]'."
+>> TerminatingError(New-AzKeyVault): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Resource 'kv-compliant-6275' was disallowed by policy. Policy identifiers: '[{"policyAssignment":{"name":"Keyvaultsshouldhavesoftdeleteenabled-656701378","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Keyvaultsshouldhavesoftdeleteenabled-656701378"},"policyDefinition":{"name":"Key vaults should have soft delete enabled","id":"/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d","version":"3.1.0"}}]'."
+The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Resource 'kv-compliant-6275' was disallowed by policy. Policy identifiers: '[{"policyAssignment":{"name":"Keyvaultsshouldhavesoftdeleteenabled-656701378","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Keyvaultsshouldhavesoftdeleteenabled-656701378"},"policyDefinition":{"name":"Key vaults should have soft delete enabled","id":"/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d","version":"3.1.0"}}]'.
+New-AzKeyVault: C:\Source\powershell-akv-policyhardening\Setup-AzureKeyVaultPolicyEnvironment.ps1:707:22
+Line |
+ 707 |              $vault = New-AzKeyVault @vaultParams
+     |                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Resource 'kv-compliant-6275' was disallowed by policy. Policy identifiers:
+     | '[{"policyAssignment":{"name":"Keyvaultsshouldhavesoftdeleteenabled-656701378","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Keyvaultsshouldhavesoftdeleteenabled-656701378"},"policyDefinition":{"name":"Key vaults should have soft delete enabled","id":"/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d","version":"3.1.0"}}]'.
+
+]633;D;1]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "`n🔍 Checking for existing policy assignments..." -ForegroundColor Yellow; $assignments = Get-AzPolicyAssignment | Where-Object { $_.Name -like '*KeyVault*' -or $_.Name -like '*keyvault*' -or $_.Properties.DisplayName -like '*Key Vault*' -or $_.Properties.DisplayName -like '*key vault*' }; Write-Host "Found $($assignments.Count) Key Vault related policy assignments:`n" -ForegroundColor Cyan; $assignments | Select-Object Name, @{N='DisplayName';E={$_.Properties.DisplayName}}, @{N='Scope';E={$_.Properties.Scope}} | Format-Table -AutoSize
+
+🔍 Checking for existing policy assignments...
+Found 24 Key Vault related policy assignments:
+
+Name                                                             DisplayName Scope
+----                                                             ----------- -----
+AzureKeyVaultshouldhavefirewallenabledorpublicnetwork-1396884516
+DeployConfigurediagnosticsettingsforAzureKeyVaulttoLog-821297124
+Keyvaultsshouldhavedeletionprotectionenabled-1439856846
+ResourcelogsinAzureKeyVaultManagedHSMshouldbeenabled-1874150632
+Configurekeyvaultstoenablefirewall-2078747040
+ConfigureAzureKeyVaultstouseprivateDNSzones-1754477011
+Keyvaultsshouldhavesoftdeleteenabled-656701378
+DeployDiagnosticSettingsforKeyVaulttoEventHub-215019929
+ConfigureAzureKeyVaultswithprivateendpoints-1664094028
+PreviewConfigureAzureKeyVaultManagedHSMtodisablepublic-937554689
+AzureKeyVaultsshoulduseprivatelink-2127082189
+PreviewAzureKeyVaultManagedHSMshoulddisablepublicnetwo-208646097
+AzureKeyVaultshoulduseRBACpermissionmodel-307198231
+PreviewAzureKeyVaultManagedHSMkeysusingellipticcurvecr-518169623
+KeyVaultkeysshouldhaveanexpirationdate-386037801
+PreviewConfigureAzureKeyVaultManagedHSMwithprivateendp-732076577
+ResourcelogsinKeyVaultshouldbeenabled-1683835535
+KeyVaultsecretsshouldhaveanexpirationdate-1232117220
+AzureKeyVaultshoulddisablepublicnetworkaccess-906277113
+PreviewAzureKeyVaultManagedHSMKeysshouldhavemorethant-1035226701
+PreviewAzureKeyVaultManagedHSMkeysshouldhaveanexpirati-976371970
+PreviewAzureKeyVaultManagedHSMkeysusingRSAcryptography-998252524
+AzureKeyVaultManagedHSMshouldhavepurgeprotectionenabl-1494992807
+PreviewAzureKeyVaultManagedHSMshoulduseprivatelink-504701151
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "`n🗑️  Removing $($assignments.Count) Key Vault policy assignments..." -ForegroundColor Yellow; $removedCount = 0; foreach ($assignment in $assignments) { try { Remove-AzPolicyAssignment -Id $assignment.ResourceId -ErrorAction Stop | Out-Null; $removedCount++; Write-Host "  ✓ Removed: $($assignment.Properties.DisplayName)" -ForegroundColor Green } catch { Write-Host "  ✗ Failed: $($assignment.Properties.DisplayName) - $($_.Exception.Message)" -ForegroundColor Red } }; Write-Host "`n✅ Removed $removedCount/$($assignments.Count) policy assignments" -ForegroundColor Green
+
+🗑️  Removing 24 Key Vault policy assignments...
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+PS>TerminatingError(Remove-AzPolicyAssignment): "Cannot bind argument to parameter 'Id' because it is an empty string."
+  ✗ Failed:  - Cannot bind argument to parameter 'Id' because it is an empty string.
+
+✅ Removed 0/24 policy assignments
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>$assignments = Get-AzPolicyAssignment | Where-Object { $_.Name -like '*KeyVault*' -or $_.Name -like '*keyvault*' }; $first = $assignments[0]; $first | Get-Member -MemberType Properties | Select-Object Name | Format-Table
+
+Name
+----
+Metadata
+NonComplianceMessage
+NotScope
+Parameter
+DefinitionVersion
+Description
+DisplayName
+EnforcementMode
+Id
+IdentityPrincipalId
+IdentityTenantId
+IdentityType
+IdentityUserAssignedIdentity
+Location
+Name
+Override
+PolicyDefinitionId
+ResourceSelector
+Scope
+SystemDataCreatedAt
+SystemDataCreatedBy
+SystemDataCreatedByType
+SystemDataLastModifiedAt
+SystemDataLastModifiedBy
+SystemDataLastModifiedByType
+Type
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>$assignments = Get-AzPolicyAssignment | Where-Object { $_.Name -like '*KeyVault*' -or $_.Name -like '*keyvault*' }; Write-Host "`n🗑️  Removing $($assignments.Count) Key Vault policy assignments..." -ForegroundColor Yellow; $removedCount = 0; foreach ($assignment in $assignments) { try { Remove-AzPolicyAssignment -Id $assignment.Id -ErrorAction Stop | Out-Null; $removedCount++; Write-Host "  ✓ Removed: $($assignment.DisplayName)" -ForegroundColor Green } catch { Write-Host "  ✗ Failed: $($assignment.DisplayName) - $($_.Exception.Message)" -ForegroundColor Red } }; Write-Host "`n✅ Successfully removed $removedCount/$($assignments.Count) policy assignments" -ForegroundColor Green
+
+🗑️  Removing 24 Key Vault policy assignments...
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+  ✓ Removed:
+
+✅ Successfully removed 24/24 policy assignments
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "`n✅ Successfully removed 24/24 policy assignments" -ForegroundColor Green; Write-Host "`n✅ PHASE 0 CLEANUP COMPLETE!" -ForegroundColor Green; Write-Host "  ✓ Removed 24 Key Vault policy assignments" -ForegroundColor Gray; Write-Host "  ✓ Deleted rg-policy-keyvault-test" -ForegroundColor Gray; Write-Host "  ✓ Deleted rg-policy-remediation`n" -ForegroundColor Gray; Stop-Transcript
+
+✅ Successfully removed 24/24 policy assignments
+
+✅ PHASE 0 CLEANUP COMPLETE!
+  ✓ Removed 24 Key Vault policy assignments
+  ✓ Deleted rg-policy-keyvault-test
+  ✓ Deleted rg-policy-remediation
+**********************
+PowerShell transcript end
+End time: 20260126103709
+**********************

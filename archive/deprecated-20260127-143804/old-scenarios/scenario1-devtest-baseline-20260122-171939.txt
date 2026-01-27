@@ -1,0 +1,233 @@
+**********************
+PowerShell transcript start
+Start time: 20260122171939
+Username: DTL01\lcladmin
+RunAs User: DTL01\lcladmin
+Configuration Name: 
+Machine: DTL01 (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Program Files\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 2380
+PSVersion: 7.5.3
+PSEdition: Core
+GitCommitId: 7.5.3
+OS: Microsoft Windows 10.0.20348
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is scenario1-devtest-baseline-20260122-171939.txt
+WARNING: Resulting JSON is truncated as serialization has exceeded the set depth of 2.
+
+================================================================================
+                   Azure Key Vault Policy Deployment Scenarios
+================================================================================
+
+Select a deployment scenario:
+  [1]
+DevTest Baseline (30 Policies)
+ [✗ Failed: ]
+      Safe initial deployment with core policies - Audit mode
+      Risk:
+Low
+ | Duration:
+5 minutes
+
+  [2]
+DevTest Full (46 Policies)
+ [Not Deployed]
+      Comprehensive testing of all policies - Audit mode
+      Risk:
+Low
+ | Duration:
+5 minutes
+
+  [3]
+DevTest Auto-Remediation (46 Policies)
+ [Not Deployed]
+      Test automated compliance fixes - Audit + DeployIfNotExists
+      Risk:
+Medium
+ | Duration:
+60-90 minutes (Azure evaluation)
+
+  [4]
+Production Audit (46 Policies)
+ [Not Deployed]
+      Production monitoring without blocking - Audit mode
+      Risk:
+Low
+ | Duration:
+5 minutes
+
+  [5]
+Production Deny (35 Policies)
+ [Not Deployed]
+      Maximum enforcement - BLOCKS non-compliant resources
+      Risk:
+HIGH
+ | Duration:
+5 minutes
+
+  [6]
+Production Auto-Remediation (46 Policies)
+ [Not Deployed]
+      Production automated compliance - Audit + DeployIfNotExists
+      Risk:
+Medium
+ | Duration:
+60-90 minutes (Azure evaluation)
+
+  [7]
+Resource Group Scope (30 Policies)
+ [Not Deployed]
+      Limited scope testing - Single resource group
+      Risk:
+Low
+ | Duration:
+5 minutes
+
+  [8]
+Management Group Scope (46 Policies)
+ [Not Deployed]
+      Organization-wide governance - Multiple subscriptions
+      Risk:
+Medium
+ | Duration:
+5 minutes
+
+  [9]
+Rollback (Remove All Policies)
+ [Not Deployed]
+      Remove all KV-* policy assignments
+      Risk:
+Low
+ | Duration:
+3 minutes
+
+  [H]
+View Deployment History
+  [C]
+Clear Deployment History
+  [Q]
+Quit
+
+
+================================================================================
+                   Deploying: DevTest Baseline (30 Policies)
+================================================================================
+
+Description:
+Safe initial deployment with core policies - Audit mode
+Parameter File:
+PolicyParameters-DevTest.json
+Effect:
+Audit
+Risk Level:
+Low
+Duration:
+5 minutes
+
+Deployment Mode:
+  [P] Preview (safe validation - no changes)
+  [A] Actual (deploy policies to Azure)
+
+⚠️  ACTUAL DEPLOYMENT MODE SELECTED
+
+🚀 Starting deployment...
+Command: .\AzPolicyImplScript.ps1
+  -ParameterFile C:\Source\powershell-akv-policyhardening\PolicyParameters-DevTest.json
+  -SkipRBACCheck
+
+
+╔══════════════════════════════════════════════════════════════╗
+║  Azure Policy Implementation - Key Vault Governance          ║
+╚══════════════════════════════════════════════════════════════╝
+
+[2026-01-22 17:19:48Z]
+[INFO]
+Starting Azure Policy implementation script for Key Vault policies
+[2026-01-22 17:19:48Z]
+[INFO]
+Checking required PowerShell modules...
+[2026-01-22 17:19:48Z]
+[SUCCESS]
+Module Az.Accounts is present
+[2026-01-22 17:19:48Z]
+[SUCCESS]
+Module Az.Resources is present
+[2026-01-22 17:19:48Z]
+[SUCCESS]
+Module Az.PolicyInsights is present
+[2026-01-22 17:19:48Z]
+[SUCCESS]
+Module Az.Monitor is present
+[2026-01-22 17:19:48Z]
+[SUCCESS]
+Module Az.KeyVault is present
+[2026-01-22 17:19:49Z]
+[INFO]
+Using Azure context: theregniers@hotmail.com
+[2026-01-22 17:19:49Z]
+[INFO]
+Loading policy mapping from ./PolicyNameMapping.json
+[2026-01-22 17:19:49Z]
+[INFO]
+Loaded 3745 policy mappings
+[2026-01-22 17:19:49Z]
+[INFO]
+Loading policy parameter overrides from ./PolicyParameters.json
+[2026-01-22 17:19:49Z]
+[INFO]
+Detected deployment type: Custom (from parameter file: PolicyParameters.json)
+[2026-01-22 17:19:49Z]
+[INFO]
+DEBUG: PSBoundParameters keys: SkipRBACCheck, CsvPath
+[2026-01-22 17:19:49Z]
+[INFO]
+DEBUG: ScopeType value: ''
+[2026-01-22 17:19:49Z]
+[INFO]
+DEBUG: Prompting for scope type (PSBound check failed)
+[2026-01-22 17:19:52Z]
+[INFO]
+Checking current subscription context.
+[2026-01-22 17:19:52Z]
+[INFO]
+Current subscription: MSDN Platforms Subscription (ab1336c7-687d-4107-b0f6-9649a0458adb)
+[2026-01-22 17:19:55Z]
+[WARN]
+Skipping RBAC permission check (SkipRBACCheck flag enabled).
+[2026-01-22 17:19:55Z]
+[INFO]
+Using policy effects from parameter file: ./PolicyParameters.json
+[2026-01-22 17:19:55Z]
+[SUCCESS]
+Loaded 6 policies from parameter file: ./PolicyParameters.json
+
+Processing 6 policies...
+─────────────────────────────────────────────────────────────
+
+[2026-01-22 17:19:55Z]
+[INFO]
+Preparing to assign (1/6): eventHubAuthorizationRuleId
+[2026-01-22 17:19:55Z]
+[INFO]
+Assigning policy 'eventHubAuthorizationRuleId' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+PS>TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+]633;D;1]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Stop-Transcript
+**********************
+PowerShell transcript end
+End time: 20260122172005
+**********************

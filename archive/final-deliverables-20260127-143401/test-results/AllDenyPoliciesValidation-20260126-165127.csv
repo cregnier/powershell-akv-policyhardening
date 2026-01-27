@@ -1,0 +1,7 @@
+"Test","Category","Priority","Expected","Actual","Status","Notes"
+"Soft Delete Required","Vault","CRITICAL","Blocked","Blocked","✅ PASS","Policy blocked vault without soft delete"
+"Purge Protection","Vault","CRITICAL","Blocked","Blocked","✅ PASS","Policy blocked vault without purge protection"
+"Public Access Disabled","Vault","HIGH","Blocked","Blocked","✅ PASS","Policy blocked public vault"
+"Firewall Required","Vault","HIGH","Blocked","Blocked","✅ PASS","Policy blocked vault without firewall"
+"RBAC Required","Vault","HIGH","Blocked","Blocked","✅ PASS","Policy blocked Access Policies vault"
+"Private Link Required","Vault","HIGH","Blocked","Requires VNet","⚠️ SKIP","Private link testing requires VNet infrastructure (not in test scope)"

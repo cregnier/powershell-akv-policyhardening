@@ -1,0 +1,66 @@
+**********************
+PowerShell transcript start
+Start time: 20260126112730
+Username: DTL01\lcladmin
+RunAs User: DTL01\lcladmin
+Configuration Name: 
+Machine: DTL01 (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Program Files\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 10360
+PSVersion: 7.5.3
+PSEdition: Core
+GitCommitId: 7.5.3
+OS: Microsoft Windows 10.0.20348
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\logs\Scenario3-Cleanup-20260126.log
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "`n╔═══════════════════════════════════════════════════════════════╗" -ForegroundColor Yellow; Write-Host "║      CLEANUP: Removing Scenario 2 Policies (30 assignments) ║" -ForegroundColor Yellow; Write-Host "╚═══════════════════════════════════════════════════════════════╝`n" -ForegroundColor Yellow
+
+╔═══════════════════════════════════════════════════════════════╗
+║      CLEANUP: Removing Scenario 2 Policies (30 assignments) ║
+╚═══════════════════════════════════════════════════════════════╝
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>$scope = "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb"; $assignments = Get-AzPolicyAssignment -Scope $scope | Where-Object { $_.Name -notlike "sys.*" -and $_.Name -notlike "SecurityCenter*" -and ($_.Name -like "*Key*" -or $_.Name -like "*Secret*" -or $_.Name -like "*Certificate*" -or $_.Properties.DisplayName -like "*Key Vault*" -or $_.Properties.DisplayName -like "*key vault*" -or $_.Properties.DisplayName -like "*Managed HSM*") }; Write-Host "Found $($assignments.Count) policy assignments to remove (excluding system policies)`n" -ForegroundColor Cyan; foreach ($assignment in $assignments) { $displayName = if ($assignment.Properties.DisplayName) { $assignment.Properties.DisplayName } else { $assignment.Name }; Write-Host "Removing: $displayName" -ForegroundColor Gray; Remove-AzPolicyAssignment -Id $assignment.Id -ErrorAction SilentlyContinue | Out-Null }; Write-Host "`nRemoved $($assignments.Count) policy assignments" -ForegroundColor Green
+Found 29 policy assignments to remove (excluding system policies)
+Removing: Certificatesshouldbeissuedbythespecifiednonintegratedc-238460340
+Removing: AzureKeyVaultshoulddisablepublicnetworkaccess-1516057540
+Removing: AzureKeyVaultshouldhavefirewallenabledorpublicnetwork-2034591837
+Removing: KeyVaultkeysshouldhaveanexpirationdate-2022460500
+Removing: Keysshouldhavemorethanthespecifiednumberofdaysbeforeex-724035873
+Removing: Secretsshouldnotbeactiveforlongerthanthespecifiednumb-1481979544
+Removing: PreviewConfigureAzureKeyVaultManagedHSMwithprivateend-1786254928
+Removing: ResourcelogsinKeyVaultshouldbeenabled-1834463734
+Removing: Certificatesshouldbeissuedbyoneofthespecifiednonintegr-792721522
+Removing: Keysshouldhavearotationpolicyensuringthattheirrotatio-1670602920
+Removing: Keyvaultsshouldhavesoftdeleteenabled-1379684838
+Removing: ConfigureAzureKeyVaultstouseprivateDNSzones-1646571138
+Removing: KeyVaultsecretsshouldhaveanexpirationdate-307794413
+Removing: Keyvaultsshouldhavedeletionprotectionenabled-153898781
+Removing: Certificatesshouldhavethespecifiedlifetimeactiontrigge-381911080
+Removing: ConfigureAzureKeyVaultswithprivateendpoints-1189375272
+Removing: Secretsshouldhavemorethanthespecifiednumberofdaysbefor-572806066
+Removing: PreviewConfigureAzureKeyVaultManagedHSMtodisablepublic-577432186
+Removing: Configurekeyvaultstoenablefirewall-1083969436
+Removing: Certificatesshouldnotexpirewithinthespecifiednumberof-1249060344
+Removing: Secretsshouldhavethespecifiedmaximumvalidityperiod-504858152
+Removing: Keysshouldhavethespecifiedmaximumvalidityperiod-1411162431
+Removing: Certificatesshouldhavethespecifiedmaximumvalidityperi-1998917175
+Removing: ResourcelogsinAzureKeyVaultManagedHSMshouldbeenabled-1349940279
+Removing: DeployDiagnosticSettingsforKeyVaulttoEventHub-1420688396
+Removing: DeployConfigurediagnosticsettingsforAzureKeyVaulttoLo-1457551118
+Removing: CertificatesusingRSAcryptographyshouldhavethespecifie-2032132616
+Removing: Keysshouldnotbeactiveforlongerthanthespecifiednumberof-410554539
+Removing: KeysusingRSAcryptographyshouldhaveaspecifiedminimumkey-804418106
+
+Removed 29 policy assignments
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Stop-Transcript
+**********************
+PowerShell transcript end
+End time: 20260126112823
+**********************

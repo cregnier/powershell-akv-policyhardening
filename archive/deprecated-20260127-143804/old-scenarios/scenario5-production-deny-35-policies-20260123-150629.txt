@@ -1,0 +1,685 @@
+**********************
+PowerShell transcript start
+Start time: 20260123150629
+Username: DTL01\lcladmin
+RunAs User: DTL01\lcladmin
+Configuration Name: 
+Machine: DTL01 (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Program Files\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 9968
+PSVersion: 7.5.3
+PSEdition: Core
+GitCommitId: 7.5.3
+OS: Microsoft Windows 10.0.20348
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+
+🚀 Starting deployment...
+Command: .\AzPolicyImplScript.ps1
+  -SkipRBACCheck
+  -ParameterFile C:\Source\powershell-akv-policyhardening\PolicyParameters-Production-Deny.json
+
+
+╔══════════════════════════════════════════════════════════════╗
+║  Azure Policy Implementation - Key Vault Governance          ║
+╚══════════════════════════════════════════════════════════════╝
+
+[2026-01-23 15:06:29Z]
+[INFO]
+Starting Azure Policy implementation script for Key Vault policies
+[2026-01-23 15:06:29Z]
+[INFO]
+Checking required PowerShell modules...
+[2026-01-23 15:06:29Z]
+[SUCCESS]
+Module Az.Accounts is present
+[2026-01-23 15:06:29Z]
+[SUCCESS]
+Module Az.Resources is present
+[2026-01-23 15:06:29Z]
+[SUCCESS]
+Module Az.PolicyInsights is present
+[2026-01-23 15:06:29Z]
+[SUCCESS]
+Module Az.Monitor is present
+[2026-01-23 15:06:29Z]
+[SUCCESS]
+Module Az.KeyVault is present
+[2026-01-23 15:06:30Z]
+[INFO]
+Using Azure context: theregniers@hotmail.com
+[2026-01-23 15:06:30Z]
+[INFO]
+Loading policy mapping from ./PolicyNameMapping.json
+[2026-01-23 15:06:30Z]
+[INFO]
+Loaded 3745 policy mappings
+[2026-01-23 15:06:30Z]
+[INFO]
+Loading policy parameter overrides from C:\Source\powershell-akv-policyhardening\PolicyParameters-Production-Deny.json
+[2026-01-23 15:06:30Z]
+[INFO]
+Detected deployment type: Custom (from parameter file: PolicyParameters-Production-Deny.json)
+[2026-01-23 15:06:30Z]
+[INFO]
+DEBUG: PSBoundParameters keys: CsvPath, SkipRBACCheck, ParameterOverridesPath
+[2026-01-23 15:06:30Z]
+[INFO]
+DEBUG: ScopeType value: ''
+[2026-01-23 15:06:30Z]
+[INFO]
+DEBUG: Prompting for scope type (PSBound check failed)
+[2026-01-23 15:06:35Z]
+[INFO]
+Checking current subscription context.
+[2026-01-23 15:06:35Z]
+[INFO]
+Current subscription: MSDN Platforms Subscription (ab1336c7-687d-4107-b0f6-9649a0458adb)
+[2026-01-23 15:06:39Z]
+[WARN]
+Skipping RBAC permission check (SkipRBACCheck flag enabled).
+[2026-01-23 15:06:39Z]
+[INFO]
+Using policy effects from parameter file: C:\Source\powershell-akv-policyhardening\PolicyParameters-Production-Deny.json
+
+╔═══════════════════════════════════════════════════════════════╗
+║  ℹ️  Production Configuration Detected (Audit Mode)            ║
+╚═══════════════════════════════════════════════════════════════╝
+
+  Using production parameters in Audit mode (recommended first step)
+  No resources will be blocked during this deployment
+
+[2026-01-23 15:06:39Z]
+[SUCCESS]
+Loaded 34 policies from parameter file: C:\Source\powershell-akv-policyhardening\PolicyParameters-Production-Deny.json
+
+Processing 34 policies...
+─────────────────────────────────────────────────────────────
+
+[2026-01-23 15:06:39Z]
+[INFO]
+Preparing to assign (1/34): Keys should be backed by a hardware security module (HSM)
+[2026-01-23 15:06:39Z]
+[INFO]
+Assigning policy 'Keys should be backed by a hardware security module (HSM)' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-23 15:06:39Z]
+[SUCCESS]
+Found 'Keys should be backed by a hardware security module (HSM)' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/587c79fe-dd04-4a5e-9d0b-f89598c7261b
+[2026-01-23 15:06:41Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-23 15:06:41Z]
+[INFO]
+DEBUG: Defined parameter names: effect
+[2026-01-23 15:06:41Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-23 15:06:41Z]
+[INFO]
+Using effect 'Deny' from parameter override for policy 'Keys should be backed by a hardware security module (HSM)'
+[2026-01-23 15:06:41Z]
+[INFO]
+DEBUG: PolicyParameterObject being sent to Azure:
+[2026-01-23 15:06:41Z]
+[INFO]
+  effect = Deny
+[2026-01-23 15:06:41Z]
+[INFO]
+Assignment already exists for 'Keys should be backed by a hardware security module (HSM)'. Updating parameters and enforcement mode...
+PS>TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '587c79fe-dd04-4a5e-9d0b-f89598c7261b version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '587c79fe-dd04-4a5e-9d0b-f89598c7261b version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '587c79fe-dd04-4a5e-9d0b-f89598c7261b version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '587c79fe-dd04-4a5e-9d0b-f89598c7261b version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '587c79fe-dd04-4a5e-9d0b-f89598c7261b version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+[2026-01-23 15:06:42Z]
+[WARN]
+Attempt 1 failed: [PolicyParameterValueNotAllowed] : The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '587c79fe-dd04-4a5e-9d0b-f89598c7261b version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'.. Retrying in 2 seconds...
+PS>TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '587c79fe-dd04-4a5e-9d0b-f89598c7261b version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '587c79fe-dd04-4a5e-9d0b-f89598c7261b version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '587c79fe-dd04-4a5e-9d0b-f89598c7261b version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '587c79fe-dd04-4a5e-9d0b-f89598c7261b version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '587c79fe-dd04-4a5e-9d0b-f89598c7261b version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+[2026-01-23 15:06:45Z]
+[WARN]
+Attempt 2 failed: [PolicyParameterValueNotAllowed] : The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '587c79fe-dd04-4a5e-9d0b-f89598c7261b version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'.. Retrying in 4 seconds...
+PS>TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '587c79fe-dd04-4a5e-9d0b-f89598c7261b version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '587c79fe-dd04-4a5e-9d0b-f89598c7261b version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '587c79fe-dd04-4a5e-9d0b-f89598c7261b version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '587c79fe-dd04-4a5e-9d0b-f89598c7261b version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '587c79fe-dd04-4a5e-9d0b-f89598c7261b version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '587c79fe-dd04-4a5e-9d0b-f89598c7261b version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+[2026-01-23 15:06:49Z]
+[ERROR]
+Failed to assign policy after 3 retries: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '587c79fe-dd04-4a5e-9d0b-f89598c7261b version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'.
+
+[2026-01-23 15:06:49Z]
+[INFO]
+Preparing to assign (2/34): Azure Key Vault should use RBAC permission model
+[2026-01-23 15:06:49Z]
+[INFO]
+Assigning policy 'Azure Key Vault should use RBAC permission model' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-23 15:06:49Z]
+[SUCCESS]
+Found 'Azure Key Vault should use RBAC permission model' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5
+[2026-01-23 15:06:49Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-23 15:06:49Z]
+[INFO]
+DEBUG: Defined parameter names: effect
+[2026-01-23 15:06:49Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-23 15:06:49Z]
+[INFO]
+Using effect 'Deny' from parameter override for policy 'Azure Key Vault should use RBAC permission model'
+[2026-01-23 15:06:49Z]
+[INFO]
+DEBUG: PolicyParameterObject being sent to Azure:
+[2026-01-23 15:06:49Z]
+[INFO]
+  effect = Deny
+[2026-01-23 15:06:49Z]
+[INFO]
+Assignment already exists for 'Azure Key Vault should use RBAC permission model'. Updating parameters and enforcement mode...
+PS>TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+[2026-01-23 15:06:50Z]
+[WARN]
+Attempt 1 failed: [PolicyParameterValueNotAllowed] : The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'.. Retrying in 2 seconds...
+PS>TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+[2026-01-23 15:06:52Z]
+[WARN]
+Attempt 2 failed: [PolicyParameterValueNotAllowed] : The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'.. Retrying in 4 seconds...
+PS>TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+[2026-01-23 15:06:58Z]
+[ERROR]
+Failed to assign policy after 3 retries: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'.
+
+[2026-01-23 15:06:58Z]
+[INFO]
+Preparing to assign (3/34): Secrets should have content type set
+[2026-01-23 15:06:58Z]
+[INFO]
+Assigning policy 'Secrets should have content type set' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-23 15:06:58Z]
+[SUCCESS]
+Found 'Secrets should have content type set' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/75262d3e-ba4a-4f43-85f8-9f72c090e5e3
+[2026-01-23 15:07:00Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-23 15:07:00Z]
+[INFO]
+DEBUG: Defined parameter names: effect
+[2026-01-23 15:07:00Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-23 15:07:00Z]
+[INFO]
+Using effect 'Deny' from parameter override for policy 'Secrets should have content type set'
+[2026-01-23 15:07:00Z]
+[INFO]
+DEBUG: PolicyParameterObject being sent to Azure:
+[2026-01-23 15:07:00Z]
+[INFO]
+  effect = Deny
+[2026-01-23 15:07:00Z]
+[INFO]
+Assignment already exists for 'Secrets should have content type set'. Updating parameters and enforcement mode...
+PS>TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75262d3e-ba4a-4f43-85f8-9f72c090e5e3 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75262d3e-ba4a-4f43-85f8-9f72c090e5e3 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75262d3e-ba4a-4f43-85f8-9f72c090e5e3 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75262d3e-ba4a-4f43-85f8-9f72c090e5e3 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75262d3e-ba4a-4f43-85f8-9f72c090e5e3 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+[2026-01-23 15:07:00Z]
+[WARN]
+Attempt 1 failed: [PolicyParameterValueNotAllowed] : The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75262d3e-ba4a-4f43-85f8-9f72c090e5e3 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'.. Retrying in 2 seconds...
+PS>TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75262d3e-ba4a-4f43-85f8-9f72c090e5e3 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75262d3e-ba4a-4f43-85f8-9f72c090e5e3 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75262d3e-ba4a-4f43-85f8-9f72c090e5e3 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75262d3e-ba4a-4f43-85f8-9f72c090e5e3 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75262d3e-ba4a-4f43-85f8-9f72c090e5e3 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+[2026-01-23 15:07:03Z]
+[WARN]
+Attempt 2 failed: [PolicyParameterValueNotAllowed] : The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75262d3e-ba4a-4f43-85f8-9f72c090e5e3 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'.. Retrying in 4 seconds...
+PS>TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75262d3e-ba4a-4f43-85f8-9f72c090e5e3 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75262d3e-ba4a-4f43-85f8-9f72c090e5e3 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75262d3e-ba4a-4f43-85f8-9f72c090e5e3 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75262d3e-ba4a-4f43-85f8-9f72c090e5e3 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75262d3e-ba4a-4f43-85f8-9f72c090e5e3 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75262d3e-ba4a-4f43-85f8-9f72c090e5e3 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+[2026-01-23 15:07:07Z]
+[ERROR]
+Failed to assign policy after 3 retries: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75262d3e-ba4a-4f43-85f8-9f72c090e5e3 version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'.
+
+[2026-01-23 15:07:07Z]
+[INFO]
+Preparing to assign (4/34): Keys should have more than the specified number of days before expiration
+[2026-01-23 15:07:07Z]
+[INFO]
+Assigning policy 'Keys should have more than the specified number of days before expiration' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-23 15:07:07Z]
+[SUCCESS]
+Found 'Keys should have more than the specified number of days before expiration' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/5ff38825-c5d8-47c5-b70e-069a21955146
+[2026-01-23 15:07:07Z]
+[INFO]
+DEBUG: Checking parameter 'minimumDaysBeforeExpiration' against policy definition
+[2026-01-23 15:07:07Z]
+[INFO]
+DEBUG: Defined parameter names: minimumDaysBeforeExpiration, effect
+[2026-01-23 15:07:07Z]
+[INFO]
+DEBUG: Added parameter 'minimumDaysBeforeExpiration' = '90' to cleaned params
+[2026-01-23 15:07:07Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-23 15:07:07Z]
+[INFO]
+DEBUG: Defined parameter names: minimumDaysBeforeExpiration, effect
+[2026-01-23 15:07:07Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-23 15:07:07Z]
+[INFO]
+Using effect 'Deny' from parameter override for policy 'Keys should have more than the specified number of days before expiration'
+[2026-01-23 15:07:07Z]
+[INFO]
+DEBUG: PolicyParameterObject being sent to Azure:
+[2026-01-23 15:07:07Z]
+[INFO]
+  minimumDaysBeforeExpiration = 90
+[2026-01-23 15:07:07Z]
+[INFO]
+  effect = Deny
+[2026-01-23 15:07:07Z]
+[INFO]
+Assignment already exists for 'Keys should have more than the specified number of days before expiration'. Updating parameters and enforcement mode...
+PS>TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'minimumDaysBeforeExpiration' does not match the expected parameter type defined in the policy definition '5ff38825-c5d8-47c5-b70e-069a21955146 version 1.0.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'minimumDaysBeforeExpiration' does not match the expected parameter type defined in the policy definition '5ff38825-c5d8-47c5-b70e-069a21955146 version 1.0.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'minimumDaysBeforeExpiration' does not match the expected parameter type defined in the policy definition '5ff38825-c5d8-47c5-b70e-069a21955146 version 1.0.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'minimumDaysBeforeExpiration' does not match the expected parameter type defined in the policy definition '5ff38825-c5d8-47c5-b70e-069a21955146 version 1.0.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'minimumDaysBeforeExpiration' does not match the expected parameter type defined in the policy definition '5ff38825-c5d8-47c5-b70e-069a21955146 version 1.0.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+[2026-01-23 15:07:08Z]
+[WARN]
+Attempt 1 failed: [InvalidPolicyParameterType] : The policy parameter 'minimumDaysBeforeExpiration' does not match the expected parameter type defined in the policy definition '5ff38825-c5d8-47c5-b70e-069a21955146 version 1.0.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'.. Retrying in 2 seconds...
+PS>TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'minimumDaysBeforeExpiration' does not match the expected parameter type defined in the policy definition '5ff38825-c5d8-47c5-b70e-069a21955146 version 1.0.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'minimumDaysBeforeExpiration' does not match the expected parameter type defined in the policy definition '5ff38825-c5d8-47c5-b70e-069a21955146 version 1.0.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'minimumDaysBeforeExpiration' does not match the expected parameter type defined in the policy definition '5ff38825-c5d8-47c5-b70e-069a21955146 version 1.0.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'minimumDaysBeforeExpiration' does not match the expected parameter type defined in the policy definition '5ff38825-c5d8-47c5-b70e-069a21955146 version 1.0.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'minimumDaysBeforeExpiration' does not match the expected parameter type defined in the policy definition '5ff38825-c5d8-47c5-b70e-069a21955146 version 1.0.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+[2026-01-23 15:07:10Z]
+[WARN]
+Attempt 2 failed: [InvalidPolicyParameterType] : The policy parameter 'minimumDaysBeforeExpiration' does not match the expected parameter type defined in the policy definition '5ff38825-c5d8-47c5-b70e-069a21955146 version 1.0.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'.. Retrying in 4 seconds...
+PS>TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'minimumDaysBeforeExpiration' does not match the expected parameter type defined in the policy definition '5ff38825-c5d8-47c5-b70e-069a21955146 version 1.0.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'minimumDaysBeforeExpiration' does not match the expected parameter type defined in the policy definition '5ff38825-c5d8-47c5-b70e-069a21955146 version 1.0.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'minimumDaysBeforeExpiration' does not match the expected parameter type defined in the policy definition '5ff38825-c5d8-47c5-b70e-069a21955146 version 1.0.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'minimumDaysBeforeExpiration' does not match the expected parameter type defined in the policy definition '5ff38825-c5d8-47c5-b70e-069a21955146 version 1.0.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'minimumDaysBeforeExpiration' does not match the expected parameter type defined in the policy definition '5ff38825-c5d8-47c5-b70e-069a21955146 version 1.0.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'minimumDaysBeforeExpiration' does not match the expected parameter type defined in the policy definition '5ff38825-c5d8-47c5-b70e-069a21955146 version 1.0.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+[2026-01-23 15:07:15Z]
+[ERROR]
+Failed to assign policy after 3 retries: The policy parameter 'minimumDaysBeforeExpiration' does not match the expected parameter type defined in the policy definition '5ff38825-c5d8-47c5-b70e-069a21955146 version 1.0.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'.
+
+[2026-01-23 15:07:15Z]
+[INFO]
+Preparing to assign (5/34): Certificates should not expire within the specified number of days
+[2026-01-23 15:07:15Z]
+[INFO]
+Assigning policy 'Certificates should not expire within the specified number of days' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-23 15:07:15Z]
+[SUCCESS]
+Found 'Certificates should not expire within the specified number of days' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/f772fb64-8e40-40ad-87bc-7706e1949427
+[2026-01-23 15:07:15Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-23 15:07:15Z]
+[INFO]
+DEBUG: Defined parameter names: daysToExpire, effect
+[2026-01-23 15:07:15Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-23 15:07:15Z]
+[INFO]
+DEBUG: Checking parameter 'daysToExpire' against policy definition
+[2026-01-23 15:07:15Z]
+[INFO]
+DEBUG: Defined parameter names: daysToExpire, effect
+[2026-01-23 15:07:15Z]
+[INFO]
+DEBUG: Added parameter 'daysToExpire' = '90' to cleaned params
+[2026-01-23 15:07:15Z]
+[INFO]
+Using effect 'Deny' from parameter override for policy 'Certificates should not expire within the specified number of days'
+[2026-01-23 15:07:15Z]
+[INFO]
+DEBUG: PolicyParameterObject being sent to Azure:
+[2026-01-23 15:07:15Z]
+[INFO]
+  effect = Deny
+[2026-01-23 15:07:15Z]
+[INFO]
+  daysToExpire = 90
+[2026-01-23 15:07:15Z]
+[INFO]
+Assignment already exists for 'Certificates should not expire within the specified number of days'. Updating parameters and enforcement mode...
+PS>TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'daysToExpire' does not match the expected parameter type defined in the policy definition 'f772fb64-8e40-40ad-87bc-7706e1949427 version 2.1.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'daysToExpire' does not match the expected parameter type defined in the policy definition 'f772fb64-8e40-40ad-87bc-7706e1949427 version 2.1.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'daysToExpire' does not match the expected parameter type defined in the policy definition 'f772fb64-8e40-40ad-87bc-7706e1949427 version 2.1.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'daysToExpire' does not match the expected parameter type defined in the policy definition 'f772fb64-8e40-40ad-87bc-7706e1949427 version 2.1.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'daysToExpire' does not match the expected parameter type defined in the policy definition 'f772fb64-8e40-40ad-87bc-7706e1949427 version 2.1.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+[2026-01-23 15:07:16Z]
+[WARN]
+Attempt 1 failed: [InvalidPolicyParameterType] : The policy parameter 'daysToExpire' does not match the expected parameter type defined in the policy definition 'f772fb64-8e40-40ad-87bc-7706e1949427 version 2.1.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'.. Retrying in 2 seconds...
+PS>TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'daysToExpire' does not match the expected parameter type defined in the policy definition 'f772fb64-8e40-40ad-87bc-7706e1949427 version 2.1.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'daysToExpire' does not match the expected parameter type defined in the policy definition 'f772fb64-8e40-40ad-87bc-7706e1949427 version 2.1.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'daysToExpire' does not match the expected parameter type defined in the policy definition 'f772fb64-8e40-40ad-87bc-7706e1949427 version 2.1.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'daysToExpire' does not match the expected parameter type defined in the policy definition 'f772fb64-8e40-40ad-87bc-7706e1949427 version 2.1.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'daysToExpire' does not match the expected parameter type defined in the policy definition 'f772fb64-8e40-40ad-87bc-7706e1949427 version 2.1.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+[2026-01-23 15:07:18Z]
+[WARN]
+Attempt 2 failed: [InvalidPolicyParameterType] : The policy parameter 'daysToExpire' does not match the expected parameter type defined in the policy definition 'f772fb64-8e40-40ad-87bc-7706e1949427 version 2.1.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'.. Retrying in 4 seconds...
+PS>TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'daysToExpire' does not match the expected parameter type defined in the policy definition 'f772fb64-8e40-40ad-87bc-7706e1949427 version 2.1.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'daysToExpire' does not match the expected parameter type defined in the policy definition 'f772fb64-8e40-40ad-87bc-7706e1949427 version 2.1.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'daysToExpire' does not match the expected parameter type defined in the policy definition 'f772fb64-8e40-40ad-87bc-7706e1949427 version 2.1.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'daysToExpire' does not match the expected parameter type defined in the policy definition 'f772fb64-8e40-40ad-87bc-7706e1949427 version 2.1.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'daysToExpire' does not match the expected parameter type defined in the policy definition 'f772fb64-8e40-40ad-87bc-7706e1949427 version 2.1.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The policy parameter 'daysToExpire' does not match the expected parameter type defined in the policy definition 'f772fb64-8e40-40ad-87bc-7706e1949427 version 2.1.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'."
+[2026-01-23 15:07:22Z]
+[ERROR]
+Failed to assign policy after 3 retries: The policy parameter 'daysToExpire' does not match the expected parameter type defined in the policy definition 'f772fb64-8e40-40ad-87bc-7706e1949427 version 2.1.1'. Details 'The expected policy parameter type: 'Integer'. The actual policy parameter type 'Object'.'.
+
+[2026-01-23 15:07:22Z]
+[INFO]
+Preparing to assign (6/34): Azure Key Vault Managed HSM should have purge protection enabled
+[2026-01-23 15:07:22Z]
+[INFO]
+Assigning policy 'Azure Key Vault Managed HSM should have purge protection enabled' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-23 15:07:22Z]
+[SUCCESS]
+Found 'Azure Key Vault Managed HSM should have purge protection enabled' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/c39ba22d-4428-4149-b981-70acb31fc383
+[2026-01-23 15:07:23Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-23 15:07:23Z]
+[INFO]
+DEBUG: Defined parameter names: effect
+[2026-01-23 15:07:23Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-23 15:07:23Z]
+[INFO]
+Using effect 'Deny' from parameter override for policy 'Azure Key Vault Managed HSM should have purge protection enabled'
+[2026-01-23 15:07:23Z]
+[INFO]
+DEBUG: PolicyParameterObject being sent to Azure:
+[2026-01-23 15:07:23Z]
+[INFO]
+  effect = Deny
+[2026-01-23 15:07:23Z]
+[INFO]
+Assignment already exists for 'Azure Key Vault Managed HSM should have purge protection enabled'. Updating parameters and enforcement mode...
+PS>TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition 'c39ba22d-4428-4149-b981-70acb31fc383 version 1.0.0'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition 'c39ba22d-4428-4149-b981-70acb31fc383 version 1.0.0'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition 'c39ba22d-4428-4149-b981-70acb31fc383 version 1.0.0'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition 'c39ba22d-4428-4149-b981-70acb31fc383 version 1.0.0'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition 'c39ba22d-4428-4149-b981-70acb31fc383 version 1.0.0'. The allowed values are 'Audit, Deny, Disabled'."
+[2026-01-23 15:07:24Z]
+[WARN]
+Attempt 1 failed: [PolicyParameterValueNotAllowed] : The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition 'c39ba22d-4428-4149-b981-70acb31fc383 version 1.0.0'. The allowed values are 'Audit, Deny, Disabled'.. Retrying in 2 seconds...
+PS>TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition 'c39ba22d-4428-4149-b981-70acb31fc383 version 1.0.0'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition 'c39ba22d-4428-4149-b981-70acb31fc383 version 1.0.0'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition 'c39ba22d-4428-4149-b981-70acb31fc383 version 1.0.0'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition 'c39ba22d-4428-4149-b981-70acb31fc383 version 1.0.0'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition 'c39ba22d-4428-4149-b981-70acb31fc383 version 1.0.0'. The allowed values are 'Audit, Deny, Disabled'."
+[2026-01-23 15:07:28Z]
+[WARN]
+Attempt 2 failed: [PolicyParameterValueNotAllowed] : The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition 'c39ba22d-4428-4149-b981-70acb31fc383 version 1.0.0'. The allowed values are 'Audit, Deny, Disabled'.. Retrying in 4 seconds...
+PS>TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition 'c39ba22d-4428-4149-b981-70acb31fc383 version 1.0.0'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition 'c39ba22d-4428-4149-b981-70acb31fc383 version 1.0.0'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition 'c39ba22d-4428-4149-b981-70acb31fc383 version 1.0.0'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition 'c39ba22d-4428-4149-b981-70acb31fc383 version 1.0.0'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition 'c39ba22d-4428-4149-b981-70acb31fc383 version 1.0.0'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition 'c39ba22d-4428-4149-b981-70acb31fc383 version 1.0.0'. The allowed values are 'Audit, Deny, Disabled'."
+[2026-01-23 15:07:32Z]
+[ERROR]
+Failed to assign policy after 3 retries: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition 'c39ba22d-4428-4149-b981-70acb31fc383 version 1.0.0'. The allowed values are 'Audit, Deny, Disabled'.
+
+[2026-01-23 15:07:32Z]
+[INFO]
+Preparing to assign (7/34): Keys should be the specified cryptographic type RSA or EC
+[2026-01-23 15:07:32Z]
+[INFO]
+Assigning policy 'Keys should be the specified cryptographic type RSA or EC' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-23 15:07:32Z]
+[SUCCESS]
+Found 'Keys should be the specified cryptographic type RSA or EC' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/75c4f823-d65c-4f29-a733-01d0077fdbcb
+[2026-01-23 15:07:34Z]
+[INFO]
+DEBUG: Checking parameter 'cryptographicType' against policy definition
+[2026-01-23 15:07:34Z]
+[INFO]
+DEBUG: Defined parameter names: allowedKeyTypes, effect
+[2026-01-23 15:07:34Z]
+[WARN]
+DEBUG: Parameter 'cryptographicType' NOT FOUND in policy definition - SKIPPED
+[2026-01-23 15:07:34Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-23 15:07:34Z]
+[INFO]
+DEBUG: Defined parameter names: allowedKeyTypes, effect
+[2026-01-23 15:07:34Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-23 15:07:34Z]
+[WARN]
+Parameter 'cryptographicType' not defined in policy. Skipping to avoid UndefinedPolicyParameter error.
+[2026-01-23 15:07:34Z]
+[INFO]
+Using effect 'Deny' from parameter override for policy 'Keys should be the specified cryptographic type RSA or EC'
+[2026-01-23 15:07:34Z]
+[INFO]
+DEBUG: PolicyParameterObject being sent to Azure:
+[2026-01-23 15:07:34Z]
+[INFO]
+  effect = Deny
+[2026-01-23 15:07:34Z]
+[INFO]
+Assignment already exists for 'Keys should be the specified cryptographic type RSA or EC'. Updating parameters and enforcement mode...
+PS>TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75c4f823-d65c-4f29-a733-01d0077fdbcb version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75c4f823-d65c-4f29-a733-01d0077fdbcb version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75c4f823-d65c-4f29-a733-01d0077fdbcb version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75c4f823-d65c-4f29-a733-01d0077fdbcb version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+>> TerminatingError(New-AzPolicyAssignment_CreateExpanded): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75c4f823-d65c-4f29-a733-01d0077fdbcb version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'."
+[2026-01-23 15:07:34Z]
+[WARN]
+Attempt 1 failed: [PolicyParameterValueNotAllowed] : The value '{
+  "value": "Deny"
+}' is not allowed for policy parameter 'effect' in policy definition '75c4f823-d65c-4f29-a733-01d0077fdbcb version 1.0.1'. The allowed values are 'Audit, Deny, Disabled'.. Retrying in 2 seconds...
+PS>TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+]633;D;1]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B

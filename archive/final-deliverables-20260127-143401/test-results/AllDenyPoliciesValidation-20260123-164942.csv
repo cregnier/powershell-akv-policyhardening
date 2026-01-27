@@ -1,0 +1,7 @@
+"Test","Category","Priority","Expected","Actual","Status","Notes"
+"Soft Delete Required","Vault","CRITICAL","Blocked","Error","⚠️ WARN","Non-policy error: Cannot validate argument on parameter 'ResourceGroupName'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+"Purge Protection","Vault","CRITICAL","Blocked","Error","⚠️ WARN","Non-policy error"
+"Public Access Disabled","Vault","HIGH","Blocked","Error","⚠️ WARN","Non-policy error"
+"Firewall Required","Vault","HIGH","Blocked","Error","⚠️ WARN","Non-policy error"
+"RBAC Required","Vault","HIGH","Blocked","Error","⚠️ WARN","Non-policy error"
+"Private Link Required","Vault","HIGH","Blocked","Requires VNet","⚠️ SKIP","Private link testing requires VNet infrastructure (not in test scope)"

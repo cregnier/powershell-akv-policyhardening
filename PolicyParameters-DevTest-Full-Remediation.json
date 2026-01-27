@@ -95,7 +95,7 @@
   },
   
   "Keys should be the specified cryptographic type RSA or EC": {
-    "cryptographicType": ["RSA", "EC"],
+    "allowedKeyTypes": ["RSA", "EC"],
     "effect": "Audit"
   },
   "Keys using RSA cryptography should have a specified minimum key size": {

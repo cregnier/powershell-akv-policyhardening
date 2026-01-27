@@ -1,0 +1,121 @@
+**********************
+PowerShell transcript start
+Start time: 20260126165429
+Username: DTL01\lcladmin
+RunAs User: DTL01\lcladmin
+Configuration Name: 
+Machine: DTL01 (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Program Files\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 10360
+PSVersion: 7.5.3
+PSEdition: Core
+GitCommitId: 7.5.3
+OS: Microsoft Windows 10.0.20348
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\logs\Scenario6-Comprehensive-34Policies-20260126.log
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS># Note: Test-AllDenyPolicies is a built-in test function, not a deployment
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS># It doesn't need -SkipRBACCheck because it's just testing existing policies
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>.\AzPolicyImplScript.ps1 -TestAllDenyPolicies
+
+╔══════════════════════════════════════════════════════════════╗
+║  Azure Policy Implementation - Key Vault Governance          ║
+╚══════════════════════════════════════════════════════════════╝
+
+[2026-01-26 16:54:29Z]
+[INFO]
+Starting Azure Policy implementation script for Key Vault policies
+[2026-01-26 16:54:29Z]
+[INFO]
+Checking required PowerShell modules...
+[2026-01-26 16:54:29Z]
+[SUCCESS]
+Module Az.Accounts is present
+[2026-01-26 16:54:29Z]
+[SUCCESS]
+Module Az.Resources is present
+[2026-01-26 16:54:29Z]
+[SUCCESS]
+Module Az.PolicyInsights is present
+[2026-01-26 16:54:29Z]
+[SUCCESS]
+Module Az.Monitor is present
+[2026-01-26 16:54:29Z]
+[SUCCESS]
+Module Az.KeyVault is present
+[2026-01-26 16:54:29Z]
+[INFO]
+Using Azure context: theregniers@hotmail.com
+[2026-01-26 16:54:29Z]
+[INFO]
+Running comprehensive validation of ALL 34 Deny policies...
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║   COMPREHENSIVE DENY POLICY VALIDATION - ALL 34 POLICIES (100% COVERAGE)   ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+Using Resource Group: rg-policy-keyvault-test
+Using Location: eastus
+
+╔═══════════════════════════════════════════════════════════════╗
+║  PHASE 1: VAULT-LEVEL POLICIES (6 tests)                      ║
+╚═══════════════════════════════════════════════════════════════╝
+[1] Soft Delete Required (CRITICAL)
+  Attempting to create vault WITHOUT soft delete via ARM...
+PS>TerminatingError(New-AzResourceGroupDeployment): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: 4:54:30 PM - Error: Code=InvalidTemplateDeployment; Message=The template deployment failed because of policy violation. Please see details for more information.
+"
+  ✅ PASS: Blocked by policy
+
+[2] Purge Protection Required (CRITICAL)
+  Attempting to create vault WITHOUT purge protection...
+PS>TerminatingError(New-AzKeyVault): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Resource 'val-nopurge-2594' was disallowed by policy. Policy identifiers: '[{"policyAssignment":{"name":"AzureKeyVaultshoulddisablepublicnetworkaccess-188399946","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/AzureKeyVaultshoulddisablepublicnetworkaccess-188399946"},"policyDefinition":{"name":"Azure Key Vault should disable public network access","id":"/providers/Microsoft.Authorization/policyDefinitions/405c5871-3e91-4644-8a63-58e19d68ff5b","version":"1.1.0"}},{"policyAssignment":{"name":"Keyvaultsshouldhavesoftdeleteenabled-716191913","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Keyvaultsshouldhavesoftdeleteenabled-716191913"},"policyDefinition":{"name":"Key vaults should have soft delete enabled","id":"/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d","version":"3.1.0"}},{"policyAssignment":{"name":"AzureKeyVaultshouldhavefirewallenabledorpublicnetworka-571915124","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/AzureKeyVaultshouldhavefirewallenabledorpublicnetworka-571915124"},"policyDefinition":{"name":"Azure Key Vault should have firewall enabled or public network access disabled","id":"/providers/Microsoft.Authorization/policyDefinitions/55615ac9-af46-4a59-874e-391cc3dfb490","version":"3.3.0"}},{"policyAssignment":{"name":"Keyvaultsshouldhavedeletionprotectionenabled-1084075278","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Keyvaultsshouldhavedeletionprotectionenabled-1084075278"},"policyDefinition":{"name":"Key vaults should have deletion protection enabled","id":"/providers/Microsoft.Authorization/policyDefinitions/0b60c0b2-2dc2-4e1c-b5c9-abbed971de53","version":"2.1.0"}}]'."
+  ✅ PASS: Blocked by policy
+
+[3] Public Network Access Disabled (HIGH)
+  Attempting to create vault WITH public access enabled...
+PS>TerminatingError(New-AzKeyVault): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Resource 'val-public-8240' was disallowed by policy. Policy identifiers: '[{"policyAssignment":{"name":"AzureKeyVaultshoulddisablepublicnetworkaccess-188399946","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/AzureKeyVaultshoulddisablepublicnetworkaccess-188399946"},"policyDefinition":{"name":"Azure Key Vault should disable public network access","id":"/providers/Microsoft.Authorization/policyDefinitions/405c5871-3e91-4644-8a63-58e19d68ff5b","version":"1.1.0"}},{"policyAssignment":{"name":"Keyvaultsshouldhavesoftdeleteenabled-716191913","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Keyvaultsshouldhavesoftdeleteenabled-716191913"},"policyDefinition":{"name":"Key vaults should have soft delete enabled","id":"/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d","version":"3.1.0"}},{"policyAssignment":{"name":"AzureKeyVaultshouldhavefirewallenabledorpublicnetworka-571915124","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/AzureKeyVaultshouldhavefirewallenabledorpublicnetworka-571915124"},"policyDefinition":{"name":"Azure Key Vault should have firewall enabled or public network access disabled","id":"/providers/Microsoft.Authorization/policyDefinitions/55615ac9-af46-4a59-874e-391cc3dfb490","version":"3.3.0"}}]'."
+  ✅ PASS: Blocked by policy
+
+[4] Firewall Required (HIGH)
+  Attempting to create vault without firewall...
+PS>TerminatingError(New-AzKeyVault): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Resource 'val-nofw-6614' was disallowed by policy. Policy identifiers: '[{"policyAssignment":{"name":"AzureKeyVaultshoulddisablepublicnetworkaccess-188399946","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/AzureKeyVaultshoulddisablepublicnetworkaccess-188399946"},"policyDefinition":{"name":"Azure Key Vault should disable public network access","id":"/providers/Microsoft.Authorization/policyDefinitions/405c5871-3e91-4644-8a63-58e19d68ff5b","version":"1.1.0"}},{"policyAssignment":{"name":"Keyvaultsshouldhavesoftdeleteenabled-716191913","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Keyvaultsshouldhavesoftdeleteenabled-716191913"},"policyDefinition":{"name":"Key vaults should have soft delete enabled","id":"/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d","version":"3.1.0"}},{"policyAssignment":{"name":"AzureKeyVaultshouldhavefirewallenabledorpublicnetworka-571915124","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/AzureKeyVaultshouldhavefirewallenabledorpublicnetworka-571915124"},"policyDefinition":{"name":"Azure Key Vault should have firewall enabled or public network access disabled","id":"/providers/Microsoft.Authorization/policyDefinitions/55615ac9-af46-4a59-874e-391cc3dfb490","version":"3.3.0"}}]'."
+  ✅ PASS: Blocked by policy
+
+[5] RBAC Required (HIGH)
+  Attempting to create vault with Access Policies...
+PS>TerminatingError(New-AzKeyVault): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Resource 'val-accesspol-5044' was disallowed by policy. Policy identifiers: '[{"policyAssignment":{"name":"AzureKeyVaultshoulddisablepublicnetworkaccess-188399946","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/AzureKeyVaultshoulddisablepublicnetworkaccess-188399946"},"policyDefinition":{"name":"Azure Key Vault should disable public network access","id":"/providers/Microsoft.Authorization/policyDefinitions/405c5871-3e91-4644-8a63-58e19d68ff5b","version":"1.1.0"}},{"policyAssignment":{"name":"Keyvaultsshouldhavesoftdeleteenabled-716191913","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Keyvaultsshouldhavesoftdeleteenabled-716191913"},"policyDefinition":{"name":"Key vaults should have soft delete enabled","id":"/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d","version":"3.1.0"}},{"policyAssignment":{"name":"AzureKeyVaultshoulduseRBACpermissionmodel-1502415944","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/AzureKeyVaultshoulduseRBACpermissionmodel-1502415944"},"policyDefinition":{"name":"Azure Key Vault should use RBAC permission model","id":"/providers/Microsoft.Authorization/policyDefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5","version":"1.0.1"}},{"policyAssignment":{"name":"AzureKeyVaultshouldhavefirewallenabledorpublicnetworka-571915124","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/AzureKeyVaultshouldhavefirewallenabledorpublicnetworka-571915124"},"policyDefinition":{"name":"Azure Key Vault should have firewall enabled or public network access disabled","id":"/providers/Microsoft.Authorization/policyDefinitions/55615ac9-af46-4a59-874e-391cc3dfb490","version":"3.3.0"}}]'."
+  ✅ PASS: Blocked by policy
+
+[6] Private Link Required (HIGH)
+  Note: Validates policy blocks vault without private link
+  (Full private link testing requires VNet infrastructure)
+  ⚠️ SKIP: Requires VNet infrastructure
+
+╔═══════════════════════════════════════════════════════════════╗
+║  Creating compliant baseline vault for resource tests...      ║
+╚═══════════════════════════════════════════════════════════════╝
+  Creating new baseline vault with PUBLIC access...
+PS>TerminatingError(New-AzResourceGroupDeployment): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: 4:54:34 PM - Error: Code=InvalidTemplateDeployment; Message=The template deployment failed because of policy violation. Please see details for more information.
+"
+  ❌ FAILED to create baseline vault: 4:54:34 PM - Error: Code=InvalidTemplateDeployment; Message=The template deployment failed because of policy violation. Please see details for more information.
+  ⚠️  Skipping resource-level tests
+
+📄 Results saved to: AllDenyPoliciesValidation-20260126-165434.csv
+
+[2026-01-26 16:54:34Z]
+[SUCCESS]
+Comprehensive Deny policy validation completed.
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Stop-Transcript
+**********************
+PowerShell transcript end
+End time: 20260126165434
+**********************

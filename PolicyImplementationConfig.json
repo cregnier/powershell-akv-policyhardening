@@ -1,27 +1,27 @@
 {
+  "location": "eastus",
+  "testResourceGroup": "rg-policy-keyvault-test",
+  "environment": "DevTest",
   "managedIdentity": {
-    "id": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation",
-    "principalId": "8a940bed-90d0-40b4-b036-6ef664daf7ab",
-    "clientId": "7d019339-8794-4879-a401-3c54a3032c0b"
-  },
-  "infrastructure": {
-    "logAnalyticsId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.OperationalInsights/workspaces/law-policy-test-8701",
-    "subnetId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.Network/virtualNetworks/vnet-policy-test/subnets/snet-privateendpoints",
-    "eventHubNamespace": "eh-policy-test-7524",
-    "eventHubName": "keyvault-diagnostics",
-    "eventHubAuthRuleId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.EventHub/namespaces/eh-policy-test-7524/authorizationrules/RootManageSharedAccessKey",
-    "dnsZoneId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net",
-    "vnetId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.Network/virtualNetworks/vnet-policy-test"
+    "clientId": "d7a20293-5c39-4ecb-904f-d0a773af1359",
+    "principalId": "e46e333b-18a2-4166-a071-87b26ad3a9d9",
+    "id": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation"
   },
   "infraResourceGroup": "rg-policy-remediation",
-  "testResourceGroup": "rg-policy-keyvault-test",
+  "infrastructure": {
+    "dnsZoneId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net",
+    "vnetId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.Network/virtualNetworks/vnet-policy-test",
+    "eventHubName": "keyvault-diagnostics",
+    "eventHubNamespace": "eh-policy-test-2254",
+    "subnetId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.Network/virtualNetworks/vnet-policy-test/subnets/snet-privateendpoints",
+    "logAnalyticsId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.OperationalInsights/workspaces/law-policy-test-2524",
+    "eventHubAuthRuleId": "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.EventHub/namespaces/eh-policy-test-2254/authorizationrules/RootManageSharedAccessKey"
+  },
+  "createdAt": "2026-01-26T15:44:34Z",
+  "subscription": "ab1336c7-687d-4107-b0f6-9649a0458adb",
   "monitoring": {
     "enabled": false,
-    "actionGroupName": null,
-    "actionGroupEmail": ""
-  },
-  "environment": "DevTest",
-  "location": "eastus",
-  "createdAt": "2026-01-16T15:41:42Z",
-  "subscription": "ab1336c7-687d-4107-b0f6-9649a0458adb"
+    "actionGroupEmail": "",
+    "actionGroupName": null
+  }
 }

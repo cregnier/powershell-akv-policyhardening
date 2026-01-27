@@ -1,0 +1,1860 @@
+
+╔══════════════════════════════════════════════════════════════╗
+║  Azure Policy Implementation - Key Vault Governance          ║
+╚══════════════════════════════════════════════════════════════╝
+
+[2026-01-22 15:17:11Z] 
+[INFO] 
+Starting Azure Policy implementation script for Key Vault policies
+[2026-01-22 15:17:11Z] 
+[INFO] 
+Checking required PowerShell modules...
+[2026-01-22 15:17:11Z] 
+[SUCCESS] 
+Module Az.Accounts is present
+[2026-01-22 15:17:11Z] 
+[SUCCESS] 
+Module Az.Resources is present
+[2026-01-22 15:17:11Z] 
+[SUCCESS] 
+Module Az.PolicyInsights is present
+[2026-01-22 15:17:11Z] 
+[SUCCESS] 
+Module Az.Monitor is present
+[2026-01-22 15:17:11Z] 
+[SUCCESS] 
+Module Az.KeyVault is present
+[2026-01-22 15:17:12Z] 
+[INFO] 
+Using Azure context: theregniers@hotmail.com
+[2026-01-22 15:17:12Z] 
+[INFO] 
+Loading policy mapping from ./PolicyNameMapping.json
+[2026-01-22 15:17:12Z] 
+[INFO] 
+Loaded 3745 policy mappings
+[2026-01-22 15:17:12Z] 
+[INFO] 
+Loading policy parameter overrides from .\PolicyParameters-DevTest-Full-Remediation.json
+[2026-01-22 15:17:12Z] 
+[INFO] 
+Detected deployment type: DevTestRemediation (from parameter file: PolicyParameters-DevTest-Full-Remediation.json)
+[2026-01-22 15:17:12Z] 
+[INFO] 
+Preview mode enabled: setting DryRun and skipping RBAC checks.
+[2026-01-22 15:17:12Z] 
+[INFO] 
+DEBUG: PSBoundParameters keys: ParameterOverridesPath, CsvPath, Preview, IdentityResourceId, SkipRBACCheck
+[2026-01-22 15:17:12Z] 
+[INFO] 
+DEBUG: ScopeType value: ''
+[2026-01-22 15:17:12Z] 
+[INFO] 
+Dry-run mode: using Subscription scope by default
+[2026-01-22 15:17:12Z] 
+[INFO] 
+Checking current subscription context.
+[2026-01-22 15:17:12Z] 
+[INFO] 
+Current subscription: MSDN Platforms Subscription (ab1336c7-687d-4107-b0f6-9649a0458adb)
+[2026-01-22 15:17:12Z] 
+[INFO] 
+Dry-run mode: using current subscription context
+[2026-01-22 15:17:12Z] 
+[INFO] 
+Preview mode: skipped RBAC permission check.
+[2026-01-22 15:17:12Z] 
+[INFO] 
+Using policy effects from parameter file: .\PolicyParameters-DevTest-Full-Remediation.json
+[2026-01-22 15:17:12Z] 
+[SUCCESS] 
+Loaded 46 policies from parameter file: .\PolicyParameters-DevTest-Full-Remediation.json
+
+Processing 46 policies...
+─────────────────────────────────────────────────────────────
+
+[2026-01-22 15:17:12Z] 
+[INFO] 
+Preparing to assign (1/46): [Preview]: Azure Key Vault Managed HSM Keys should have more than the specified number of days before expiration
+[2026-01-22 15:17:12Z] 
+[INFO] 
+Assigning policy '[Preview]: Azure Key Vault Managed HSM Keys should have more than the specified number of days before expiration' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:12Z] 
+[SUCCESS] 
+Found '[Preview]: Azure Key Vault Managed HSM Keys should have more than the specified number of days before expiration' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/ad27588c-0198-4c84-81ef-08efd0274653
+[2026-01-22 15:17:12Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:12Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect, minimumDaysBeforeExpiration
+[2026-01-22 15:17:12Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:12Z] 
+[INFO] 
+DEBUG: Checking parameter 'minimumDaysBeforeExpiration' against policy definition
+[2026-01-22 15:17:12Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect, minimumDaysBeforeExpiration
+[2026-01-22 15:17:12Z] 
+[INFO] 
+DEBUG: Added parameter 'minimumDaysBeforeExpiration' = '30' to cleaned params
+[2026-01-22 15:17:12Z] 
+[INFO] 
+Dry-run: would create assignment with name PreviewAzureKeyVaultManagedHSMKeysshouldhavemorethant-1035226701 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+minimumDaysBeforeExpiration    30
+
+
+
+[2026-01-22 15:17:12Z] 
+[INFO] 
+Preparing to assign (2/46): Certificates should not expire within the specified number of days
+[2026-01-22 15:17:12Z] 
+[INFO] 
+Assigning policy 'Certificates should not expire within the specified number of days' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:12Z] 
+[SUCCESS] 
+Found 'Certificates should not expire within the specified number of days' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/f772fb64-8e40-40ad-87bc-7706e1949427
+[2026-01-22 15:17:12Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:12Z] 
+[INFO] 
+DEBUG: Defined parameter names: daysToExpire, effect
+[2026-01-22 15:17:12Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:12Z] 
+[INFO] 
+DEBUG: Checking parameter 'daysToExpire' against policy definition
+[2026-01-22 15:17:12Z] 
+[INFO] 
+DEBUG: Defined parameter names: daysToExpire, effect
+[2026-01-22 15:17:12Z] 
+[INFO] 
+DEBUG: Added parameter 'daysToExpire' = '30' to cleaned params
+[2026-01-22 15:17:12Z] 
+[INFO] 
+Dry-run: would create assignment with name Certificatesshouldnotexpirewithinthespecifiednumberof-2114192775 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+daysToExpire                   30
+
+
+
+[2026-01-22 15:17:12Z] 
+[INFO] 
+Preparing to assign (3/46): Key vaults should have deletion protection enabled
+[2026-01-22 15:17:12Z] 
+[INFO] 
+Assigning policy 'Key vaults should have deletion protection enabled' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:12Z] 
+[SUCCESS] 
+Found 'Key vaults should have deletion protection enabled' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/0b60c0b2-2dc2-4e1c-b5c9-abbed971de53
+[2026-01-22 15:17:13Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:13Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect
+[2026-01-22 15:17:13Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:13Z] 
+[INFO] 
+Dry-run: would create assignment with name Keyvaultsshouldhavedeletionprotectionenabled-1439856846 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+
+
+
+[2026-01-22 15:17:13Z] 
+[INFO] 
+Preparing to assign (4/46): Key vaults should have soft delete enabled
+[2026-01-22 15:17:13Z] 
+[INFO] 
+Assigning policy 'Key vaults should have soft delete enabled' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:13Z] 
+[SUCCESS] 
+Found 'Key vaults should have soft delete enabled' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d
+[2026-01-22 15:17:13Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:13Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect
+[2026-01-22 15:17:13Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:13Z] 
+[INFO] 
+Dry-run: would create assignment with name Keyvaultsshouldhavesoftdeleteenabled-656701378 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+
+
+
+[2026-01-22 15:17:13Z] 
+[INFO] 
+Preparing to assign (5/46): Secrets should not be active for longer than the specified number of days
+[2026-01-22 15:17:13Z] 
+[INFO] 
+Assigning policy 'Secrets should not be active for longer than the specified number of days' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:13Z] 
+[SUCCESS] 
+Found 'Secrets should not be active for longer than the specified number of days' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/e8d99835-8a06-45ae-a8e0-87a91941ccfe
+[2026-01-22 15:17:13Z] 
+[INFO] 
+DEBUG: Checking parameter 'maximumValidityInDays' against policy definition
+[2026-01-22 15:17:13Z] 
+[INFO] 
+DEBUG: Defined parameter names: maximumValidityInDays, effect
+[2026-01-22 15:17:13Z] 
+[INFO] 
+DEBUG: Added parameter 'maximumValidityInDays' = '1095' to cleaned params
+[2026-01-22 15:17:13Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:13Z] 
+[INFO] 
+DEBUG: Defined parameter names: maximumValidityInDays, effect
+[2026-01-22 15:17:13Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:13Z] 
+[INFO] 
+Dry-run: would create assignment with name Secretsshouldnotbeactiveforlongerthanthespecifiednumb-1452013840 and params: 
+Name                           Value
+----                           -----
+maximumValidityInDays          1095
+effect                         Audit
+
+
+
+[2026-01-22 15:17:13Z] 
+[INFO] 
+Preparing to assign (6/46): Key Vault secrets should have an expiration date
+[2026-01-22 15:17:13Z] 
+[INFO] 
+Assigning policy 'Key Vault secrets should have an expiration date' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:13Z] 
+[SUCCESS] 
+Found 'Key Vault secrets should have an expiration date' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/98728c90-32c7-4049-8429-847dc0f4fe37
+[2026-01-22 15:17:13Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:13Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect
+[2026-01-22 15:17:13Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:13Z] 
+[INFO] 
+Dry-run: would create assignment with name KeyVaultsecretsshouldhaveanexpirationdate-1232117220 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+
+
+
+[2026-01-22 15:17:13Z] 
+[INFO] 
+Preparing to assign (7/46): Certificates should have the specified maximum validity period
+[2026-01-22 15:17:13Z] 
+[INFO] 
+Assigning policy 'Certificates should have the specified maximum validity period' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:13Z] 
+[SUCCESS] 
+Found 'Certificates should have the specified maximum validity period' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/0a075868-4c26-42ef-914c-5bc007359560
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Checking parameter 'maximumValidityInMonths' against policy definition
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Defined parameter names: maximumValidityInMonths, effect
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Added parameter 'maximumValidityInMonths' = '36' to cleaned params
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Defined parameter names: maximumValidityInMonths, effect
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:14Z] 
+[INFO] 
+Dry-run: would create assignment with name Certificatesshouldhavethespecifiedmaximumvalidityperio-407807336 and params: 
+Name                           Value
+----                           -----
+maximumValidityInMonths        36
+effect                         Audit
+
+
+
+[2026-01-22 15:17:14Z] 
+[INFO] 
+Preparing to assign (8/46): Azure Key Vault should have firewall enabled or public network access disabled
+[2026-01-22 15:17:14Z] 
+[INFO] 
+Assigning policy 'Azure Key Vault should have firewall enabled or public network access disabled' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:14Z] 
+[SUCCESS] 
+Found 'Azure Key Vault should have firewall enabled or public network access disabled' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/55615ac9-af46-4a59-874e-391cc3dfb490
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Checking parameter 'allowedIPAddresses' against policy definition
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect, restrictIPAddresses, allowedIPAddresses, forbiddenIPAddresses
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Added parameter 'allowedIPAddresses' = '' to cleaned params
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect, restrictIPAddresses, allowedIPAddresses, forbiddenIPAddresses
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Checking parameter 'forbiddenIPAddresses' against policy definition
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect, restrictIPAddresses, allowedIPAddresses, forbiddenIPAddresses
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Added parameter 'forbiddenIPAddresses' = '' to cleaned params
+[2026-01-22 15:17:14Z] 
+[INFO] 
+Dry-run: would create assignment with name AzureKeyVaultshouldhavefirewallenabledorpublicnetwork-1396884516 and params: 
+Name                           Value
+----                           -----
+forbiddenIPAddresses           {}
+allowedIPAddresses             {}
+effect                         Audit
+
+
+
+[2026-01-22 15:17:14Z] 
+[INFO] 
+Preparing to assign (9/46): Keys should have the specified maximum validity period
+[2026-01-22 15:17:14Z] 
+[INFO] 
+Assigning policy 'Keys should have the specified maximum validity period' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:14Z] 
+[SUCCESS] 
+Found 'Keys should have the specified maximum validity period' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/49a22571-d204-4c91-a7b6-09b1a586fbc9
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Checking parameter 'maximumValidityInDays' against policy definition
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Defined parameter names: maximumValidityInDays, effect
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Added parameter 'maximumValidityInDays' = '1095' to cleaned params
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Defined parameter names: maximumValidityInDays, effect
+[2026-01-22 15:17:14Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:14Z] 
+[INFO] 
+Dry-run: would create assignment with name Keysshouldhavethespecifiedmaximumvalidityperiod-906231923 and params: 
+Name                           Value
+----                           -----
+maximumValidityInDays          1095
+effect                         Audit
+
+
+
+[2026-01-22 15:17:14Z] 
+[INFO] 
+Preparing to assign (10/46): Certificates should use allowed key types
+[2026-01-22 15:17:14Z] 
+[INFO] 
+Assigning policy 'Certificates should use allowed key types' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:14Z] 
+[SUCCESS] 
+Found 'Certificates should use allowed key types' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/1151cede-290b-4ba0-8b38-0ad145ac888f
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Defined parameter names: allowedKeyTypes, effect
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Checking parameter 'allowedKeyTypes' against policy definition
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Defined parameter names: allowedKeyTypes, effect
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Added parameter 'allowedKeyTypes' = 'RSA EC' to cleaned params
+[2026-01-22 15:17:15Z] 
+[INFO] 
+Dry-run: would create assignment with name Certificatesshoulduseallowedkeytypes-246707145 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+allowedKeyTypes                {RSA, EC}
+
+
+
+[2026-01-22 15:17:15Z] 
+[INFO] 
+Preparing to assign (11/46): [Preview]: Azure Key Vault Managed HSM keys using RSA cryptography should have a specified minimum key size
+[2026-01-22 15:17:15Z] 
+[INFO] 
+Assigning policy '[Preview]: Azure Key Vault Managed HSM keys using RSA cryptography should have a specified minimum key size' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:15Z] 
+[SUCCESS] 
+Found '[Preview]: Azure Key Vault Managed HSM keys using RSA cryptography should have a specified minimum key size' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/86810a98-8e91-4a44-8386-ec66d0de5d57
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect, minimumRSAKeySize
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Checking parameter 'minimumRSAKeySize' against policy definition
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect, minimumRSAKeySize
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Added parameter 'minimumRSAKeySize' = '2048' to cleaned params
+[2026-01-22 15:17:15Z] 
+[INFO] 
+Dry-run: would create assignment with name PreviewAzureKeyVaultManagedHSMkeysusingRSAcryptography-998252524 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+minimumRSAKeySize              2048
+
+
+
+[2026-01-22 15:17:15Z] 
+[INFO] 
+Preparing to assign (12/46): Keys should have a rotation policy ensuring that their rotation is scheduled within the specified number of days after creation.
+[2026-01-22 15:17:15Z] 
+[INFO] 
+Assigning policy 'Keys should have a rotation policy ensuring that their rotation is scheduled within the specified number of days after creation.' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:15Z] 
+[SUCCESS] 
+Found 'Keys should have a rotation policy ensuring that their rotation is scheduled within the specified number of days after creation.' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/d8cf8476-a2ec-4916-896e-992351803c44
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Defined parameter names: maximumDaysToRotate, effect
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Checking parameter 'maximumDaysToRotate' against policy definition
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Defined parameter names: maximumDaysToRotate, effect
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Added parameter 'maximumDaysToRotate' = '365' to cleaned params
+[2026-01-22 15:17:15Z] 
+[INFO] 
+Dry-run: would create assignment with name Keysshouldhavearotationpolicyensuringthattheirrotatio-1816322754 and params: 
+Name                           Value
+----                           -----
+maximumDaysToRotate            365
+effect                         Audit
+
+
+
+[2026-01-22 15:17:15Z] 
+[INFO] 
+Preparing to assign (13/46): [Preview]: Azure Key Vault Managed HSM keys should have an expiration date
+[2026-01-22 15:17:15Z] 
+[INFO] 
+Assigning policy '[Preview]: Azure Key Vault Managed HSM keys should have an expiration date' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:15Z] 
+[SUCCESS] 
+Found '[Preview]: Azure Key Vault Managed HSM keys should have an expiration date' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/1d478a74-21ba-4b9f-9d8f-8e6fced0eec5
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect
+[2026-01-22 15:17:15Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:15Z] 
+[INFO] 
+Dry-run: would create assignment with name PreviewAzureKeyVaultManagedHSMkeysshouldhaveanexpirati-976371970 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+
+
+
+[2026-01-22 15:17:15Z] 
+[INFO] 
+Preparing to assign (14/46): Keys should be backed by a hardware security module (HSM)
+[2026-01-22 15:17:15Z] 
+[INFO] 
+Assigning policy 'Keys should be backed by a hardware security module (HSM)' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:15Z] 
+[SUCCESS] 
+Found 'Keys should be backed by a hardware security module (HSM)' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/587c79fe-dd04-4a5e-9d0b-f89598c7261b
+[2026-01-22 15:17:16Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:16Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect
+[2026-01-22 15:17:16Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:16Z] 
+[INFO] 
+Dry-run: would create assignment with name KeysshouldbebackedbyahardwaresecuritymoduleHSM-593124860 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+
+
+
+[2026-01-22 15:17:16Z] 
+[INFO] 
+Preparing to assign (15/46): Keys should not be active for longer than the specified number of days
+[2026-01-22 15:17:16Z] 
+[INFO] 
+Assigning policy 'Keys should not be active for longer than the specified number of days' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:16Z] 
+[SUCCESS] 
+Found 'Keys should not be active for longer than the specified number of days' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/c26e4b24-cf98-4c67-b48b-5a25c4c69eb9
+[2026-01-22 15:17:16Z] 
+[INFO] 
+DEBUG: Checking parameter 'maximumValidityInDays' against policy definition
+[2026-01-22 15:17:16Z] 
+[INFO] 
+DEBUG: Defined parameter names: maximumValidityInDays, effect
+[2026-01-22 15:17:16Z] 
+[INFO] 
+DEBUG: Added parameter 'maximumValidityInDays' = '1095' to cleaned params
+[2026-01-22 15:17:16Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:16Z] 
+[INFO] 
+DEBUG: Defined parameter names: maximumValidityInDays, effect
+[2026-01-22 15:17:16Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:16Z] 
+[INFO] 
+Dry-run: would create assignment with name Keysshouldnotbeactiveforlongerthanthespecifiednumbero-1296256806 and params: 
+Name                           Value
+----                           -----
+maximumValidityInDays          1095
+effect                         Audit
+
+
+
+[2026-01-22 15:17:16Z] 
+[INFO] 
+Preparing to assign (16/46): Keys should have more than the specified number of days before expiration
+[2026-01-22 15:17:16Z] 
+[INFO] 
+Assigning policy 'Keys should have more than the specified number of days before expiration' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:16Z] 
+[SUCCESS] 
+Found 'Keys should have more than the specified number of days before expiration' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/5ff38825-c5d8-47c5-b70e-069a21955146
+[2026-01-22 15:17:17Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:17Z] 
+[INFO] 
+DEBUG: Defined parameter names: minimumDaysBeforeExpiration, effect
+[2026-01-22 15:17:17Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:17Z] 
+[INFO] 
+DEBUG: Checking parameter 'minimumDaysBeforeExpiration' against policy definition
+[2026-01-22 15:17:17Z] 
+[INFO] 
+DEBUG: Defined parameter names: minimumDaysBeforeExpiration, effect
+[2026-01-22 15:17:17Z] 
+[INFO] 
+DEBUG: Added parameter 'minimumDaysBeforeExpiration' = '30' to cleaned params
+[2026-01-22 15:17:17Z] 
+[INFO] 
+Dry-run: would create assignment with name Keysshouldhavemorethanthespecifiednumberofdaysbeforeexp-12464927 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+minimumDaysBeforeExpiration    30
+
+
+
+[2026-01-22 15:17:17Z] 
+[INFO] 
+Preparing to assign (17/46): Configure key vaults to enable firewall
+[2026-01-22 15:17:17Z] 
+[INFO] 
+Assigning policy 'Configure key vaults to enable firewall' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:17Z] 
+[SUCCESS] 
+Found 'Configure key vaults to enable firewall' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/ac673a9a-f77d-4846-b2d8-a57f8e1c01dc
+[2026-01-22 15:17:17Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:17Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect
+[2026-01-22 15:17:17Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Modify' to cleaned params
+[2026-01-22 15:17:17Z] 
+[INFO] 
+DEBUG: IdentityResourceId parameter value: '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation' (Length: 169)
+[2026-01-22 15:17:17Z] 
+[INFO] 
+Policy requires managed identity. Using: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+[2026-01-22 15:17:22Z] 
+[INFO] 
+Added user-assigned identity: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation (using default location: eastus)
+[2026-01-22 15:17:22Z] 
+[INFO] 
+Dry-run: would create assignment with name Configurekeyvaultstoenablefirewall-2078747040 and params: 
+Name                           Value
+----                           -----
+effect                         Modify
+
+
+
+[2026-01-22 15:17:22Z] 
+[INFO] 
+Preparing to assign (18/46): Certificates should be issued by the specified non-integrated certificate authority
+[2026-01-22 15:17:22Z] 
+[INFO] 
+Assigning policy 'Certificates should be issued by the specified non-integrated certificate authority' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:22Z] 
+[SUCCESS] 
+Found 'Certificates should be issued by the specified non-integrated certificate authority' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/a22f4a40-01d3-4c7d-8071-da157eeff341
+[2026-01-22 15:17:22Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:22Z] 
+[INFO] 
+DEBUG: Defined parameter names: caCommonName, effect
+[2026-01-22 15:17:22Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:22Z] 
+[INFO] 
+DEBUG: Checking parameter 'caCommonName' against policy definition
+[2026-01-22 15:17:22Z] 
+[INFO] 
+DEBUG: Defined parameter names: caCommonName, effect
+[2026-01-22 15:17:22Z] 
+[INFO] 
+DEBUG: Added parameter 'caCommonName' = 'ContosoCA' to cleaned params
+[2026-01-22 15:17:22Z] 
+[INFO] 
+Dry-run: would create assignment with name Certificatesshouldbeissuedbythespecifiednonintegratedc-500792775 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+caCommonName                   ContosoCA
+
+
+
+[2026-01-22 15:17:22Z] 
+[INFO] 
+Preparing to assign (19/46): Resource logs in Key Vault should be enabled
+[2026-01-22 15:17:22Z] 
+[INFO] 
+Assigning policy 'Resource logs in Key Vault should be enabled' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:22Z] 
+[SUCCESS] 
+Found 'Resource logs in Key Vault should be enabled' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/cf820ca0-f99e-4f3e-84fb-66e913812d21
+[2026-01-22 15:17:22Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:22Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect, requiredRetentionDays
+[2026-01-22 15:17:22Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'AuditIfNotExists' to cleaned params
+[2026-01-22 15:17:22Z] 
+[INFO] 
+DEBUG: Checking parameter 'requiredRetentionDays' against policy definition
+[2026-01-22 15:17:22Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect, requiredRetentionDays
+[2026-01-22 15:17:22Z] 
+[INFO] 
+DEBUG: Added parameter 'requiredRetentionDays' = '90' to cleaned params
+[2026-01-22 15:17:22Z] 
+[INFO] 
+Dry-run: would create assignment with name ResourcelogsinKeyVaultshouldbeenabled-1683835535 and params: 
+Name                           Value
+----                           -----
+effect                         AuditIfNotExists
+requiredRetentionDays          90
+
+
+
+[2026-01-22 15:17:22Z] 
+[INFO] 
+Preparing to assign (20/46): Azure Key Vault Managed HSM should have purge protection enabled
+[2026-01-22 15:17:22Z] 
+[INFO] 
+Assigning policy 'Azure Key Vault Managed HSM should have purge protection enabled' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:22Z] 
+[SUCCESS] 
+Found 'Azure Key Vault Managed HSM should have purge protection enabled' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/c39ba22d-4428-4149-b981-70acb31fc383
+[2026-01-22 15:17:23Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:23Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect
+[2026-01-22 15:17:23Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:23Z] 
+[INFO] 
+Dry-run: would create assignment with name AzureKeyVaultManagedHSMshouldhavepurgeprotectionenabl-1494992807 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+
+
+
+[2026-01-22 15:17:23Z] 
+[INFO] 
+Preparing to assign (21/46): Secrets should have content type set
+[2026-01-22 15:17:23Z] 
+[INFO] 
+Assigning policy 'Secrets should have content type set' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:23Z] 
+[SUCCESS] 
+Found 'Secrets should have content type set' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/75262d3e-ba4a-4f43-85f8-9f72c090e5e3
+[2026-01-22 15:17:23Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:23Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect
+[2026-01-22 15:17:23Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:23Z] 
+[INFO] 
+Dry-run: would create assignment with name Secretsshouldhavecontenttypeset-1186338756 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+
+
+
+[2026-01-22 15:17:23Z] 
+[INFO] 
+Preparing to assign (22/46): Certificates should be issued by the specified integrated certificate authority
+[2026-01-22 15:17:23Z] 
+[INFO] 
+Assigning policy 'Certificates should be issued by the specified integrated certificate authority' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:23Z] 
+[SUCCESS] 
+Found 'Certificates should be issued by the specified integrated certificate authority' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/8e826246-c976-48f6-b03e-619bb92b3d82
+[2026-01-22 15:17:23Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:23Z] 
+[INFO] 
+DEBUG: Defined parameter names: allowedCAs, effect
+[2026-01-22 15:17:23Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:23Z] 
+[INFO] 
+DEBUG: Checking parameter 'allowedCAs' against policy definition
+[2026-01-22 15:17:23Z] 
+[INFO] 
+DEBUG: Defined parameter names: allowedCAs, effect
+[2026-01-22 15:17:23Z] 
+[INFO] 
+DEBUG: Added parameter 'allowedCAs' = 'DigiCert GlobalSign' to cleaned params
+[2026-01-22 15:17:23Z] 
+[INFO] 
+Dry-run: would create assignment with name Certificatesshouldbeissuedbythespecifiedintegratedcer-1190107367 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+allowedCAs                     {DigiCert, GlobalSign}
+
+
+
+[2026-01-22 15:17:23Z] 
+[INFO] 
+Preparing to assign (23/46): Secrets should have more than the specified number of days before expiration
+[2026-01-22 15:17:23Z] 
+[INFO] 
+Assigning policy 'Secrets should have more than the specified number of days before expiration' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:23Z] 
+[SUCCESS] 
+Found 'Secrets should have more than the specified number of days before expiration' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/b0eb591a-5e70-4534-a8bf-04b9c489584a
+[2026-01-22 15:17:24Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:24Z] 
+[INFO] 
+DEBUG: Defined parameter names: minimumDaysBeforeExpiration, effect
+[2026-01-22 15:17:24Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:24Z] 
+[INFO] 
+DEBUG: Checking parameter 'minimumDaysBeforeExpiration' against policy definition
+[2026-01-22 15:17:24Z] 
+[INFO] 
+DEBUG: Defined parameter names: minimumDaysBeforeExpiration, effect
+[2026-01-22 15:17:24Z] 
+[INFO] 
+DEBUG: Added parameter 'minimumDaysBeforeExpiration' = '30' to cleaned params
+[2026-01-22 15:17:24Z] 
+[INFO] 
+Dry-run: would create assignment with name Secretsshouldhavemorethanthespecifiednumberofdaysbefo-1193127515 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+minimumDaysBeforeExpiration    30
+
+
+
+[2026-01-22 15:17:24Z] 
+[INFO] 
+Preparing to assign (24/46): Secrets should have the specified maximum validity period
+[2026-01-22 15:17:24Z] 
+[INFO] 
+Assigning policy 'Secrets should have the specified maximum validity period' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:24Z] 
+[SUCCESS] 
+Found 'Secrets should have the specified maximum validity period' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/342e8053-e12e-4c44-be01-c3c2f318400f
+[2026-01-22 15:17:24Z] 
+[INFO] 
+DEBUG: Checking parameter 'maximumValidityInDays' against policy definition
+[2026-01-22 15:17:24Z] 
+[INFO] 
+DEBUG: Defined parameter names: maximumValidityInDays, effect
+[2026-01-22 15:17:24Z] 
+[INFO] 
+DEBUG: Added parameter 'maximumValidityInDays' = '1095' to cleaned params
+[2026-01-22 15:17:24Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:24Z] 
+[INFO] 
+DEBUG: Defined parameter names: maximumValidityInDays, effect
+[2026-01-22 15:17:24Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:24Z] 
+[INFO] 
+Dry-run: would create assignment with name Secretsshouldhavethespecifiedmaximumvalidityperiod-1663466362 and params: 
+Name                           Value
+----                           -----
+maximumValidityInDays          1095
+effect                         Audit
+
+
+
+[2026-01-22 15:17:24Z] 
+[INFO] 
+Preparing to assign (25/46): Keys should be the specified cryptographic type RSA or EC
+[2026-01-22 15:17:24Z] 
+[INFO] 
+Assigning policy 'Keys should be the specified cryptographic type RSA or EC' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:24Z] 
+[SUCCESS] 
+Found 'Keys should be the specified cryptographic type RSA or EC' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/75c4f823-d65c-4f29-a733-01d0077fdbcb
+[2026-01-22 15:17:24Z] 
+[INFO] 
+DEBUG: Checking parameter 'cryptographicType' against policy definition
+[2026-01-22 15:17:24Z] 
+[INFO] 
+DEBUG: Defined parameter names: allowedKeyTypes, effect
+[2026-01-22 15:17:24Z] 
+[WARN] 
+DEBUG: Parameter 'cryptographicType' NOT FOUND in policy definition - SKIPPED
+[2026-01-22 15:17:24Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:24Z] 
+[INFO] 
+DEBUG: Defined parameter names: allowedKeyTypes, effect
+[2026-01-22 15:17:24Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:24Z] 
+[WARN] 
+Parameter 'cryptographicType' not defined in policy. Skipping to avoid UndefinedPolicyParameter error.
+[2026-01-22 15:17:24Z] 
+[INFO] 
+Dry-run: would create assignment with name KeysshouldbethespecifiedcryptographictypeRSAorEC-976981238 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+
+
+
+[2026-01-22 15:17:24Z] 
+[INFO] 
+Preparing to assign (26/46): Certificates should have the specified lifetime action triggers
+[2026-01-22 15:17:24Z] 
+[INFO] 
+Assigning policy 'Certificates should have the specified lifetime action triggers' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:24Z] 
+[SUCCESS] 
+Found 'Certificates should have the specified lifetime action triggers' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/12ef42cb-9903-4e39-9c26-422d29570417
+[2026-01-22 15:17:25Z] 
+[INFO] 
+DEBUG: Checking parameter 'maximumPercentageLife' against policy definition
+[2026-01-22 15:17:25Z] 
+[INFO] 
+DEBUG: Defined parameter names: maximumPercentageLife, minimumDaysBeforeExpiry, effect
+[2026-01-22 15:17:25Z] 
+[INFO] 
+DEBUG: Added parameter 'maximumPercentageLife' = '80' to cleaned params
+[2026-01-22 15:17:25Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:25Z] 
+[INFO] 
+DEBUG: Defined parameter names: maximumPercentageLife, minimumDaysBeforeExpiry, effect
+[2026-01-22 15:17:25Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:25Z] 
+[INFO] 
+DEBUG: Checking parameter 'minimumDaysBeforeExpiry' against policy definition
+[2026-01-22 15:17:25Z] 
+[INFO] 
+DEBUG: Defined parameter names: maximumPercentageLife, minimumDaysBeforeExpiry, effect
+[2026-01-22 15:17:25Z] 
+[INFO] 
+DEBUG: Added parameter 'minimumDaysBeforeExpiry' = '30' to cleaned params
+[2026-01-22 15:17:25Z] 
+[INFO] 
+Dry-run: would create assignment with name Certificatesshouldhavethespecifiedlifetimeactiontrigg-1761965968 and params: 
+Name                           Value
+----                           -----
+maximumPercentageLife          80
+effect                         Audit
+minimumDaysBeforeExpiry        30
+
+
+
+[2026-01-22 15:17:25Z] 
+[INFO] 
+Preparing to assign (27/46): Keys using RSA cryptography should have a specified minimum key size
+[2026-01-22 15:17:25Z] 
+[INFO] 
+Assigning policy 'Keys using RSA cryptography should have a specified minimum key size' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:25Z] 
+[SUCCESS] 
+Found 'Keys using RSA cryptography should have a specified minimum key size' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/82067dbb-e53b-4e06-b631-546d197452d9
+[2026-01-22 15:17:25Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:25Z] 
+[INFO] 
+DEBUG: Defined parameter names: minimumRSAKeySize, effect
+[2026-01-22 15:17:25Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:25Z] 
+[INFO] 
+DEBUG: Checking parameter 'minimumRSAKeySize' against policy definition
+[2026-01-22 15:17:25Z] 
+[INFO] 
+DEBUG: Defined parameter names: minimumRSAKeySize, effect
+[2026-01-22 15:17:25Z] 
+[INFO] 
+DEBUG: Added parameter 'minimumRSAKeySize' = '2048' to cleaned params
+[2026-01-22 15:17:25Z] 
+[INFO] 
+Dry-run: would create assignment with name KeysusingRSAcryptographyshouldhaveaspecifiedminimumkey-909744685 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+minimumRSAKeySize              2048
+
+
+
+[2026-01-22 15:17:25Z] 
+[INFO] 
+Preparing to assign (28/46): Azure Key Vaults should use private link
+[2026-01-22 15:17:25Z] 
+[INFO] 
+Assigning policy 'Azure Key Vaults should use private link' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:25Z] 
+[SUCCESS] 
+Found 'Azure Key Vaults should use private link' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/a6abeaec-4d90-4a02-805f-6b26c4d3fbe9
+[2026-01-22 15:17:26Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:26Z] 
+[INFO] 
+DEBUG: Defined parameter names: audit_effect, effect
+[2026-01-22 15:17:26Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:26Z] 
+[INFO] 
+Dry-run: would create assignment with name AzureKeyVaultsshoulduseprivatelink-2127082189 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+
+
+
+[2026-01-22 15:17:26Z] 
+[INFO] 
+Preparing to assign (29/46): [Preview]: Azure Key Vault Managed HSM keys using elliptic curve cryptography should have the specified curve names
+[2026-01-22 15:17:26Z] 
+[INFO] 
+Assigning policy '[Preview]: Azure Key Vault Managed HSM keys using elliptic curve cryptography should have the specified curve names' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:26Z] 
+[SUCCESS] 
+Found '[Preview]: Azure Key Vault Managed HSM keys using elliptic curve cryptography should have the specified curve names' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/e58fd0c1-feac-4d12-92db-0a7e9421f53e
+[2026-01-22 15:17:26Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:26Z] 
+[INFO] 
+DEBUG: Defined parameter names: allowedECNames, effect
+[2026-01-22 15:17:26Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:26Z] 
+[INFO] 
+DEBUG: Checking parameter 'allowedECNames' against policy definition
+[2026-01-22 15:17:26Z] 
+[INFO] 
+DEBUG: Defined parameter names: allowedECNames, effect
+[2026-01-22 15:17:26Z] 
+[INFO] 
+DEBUG: Added parameter 'allowedECNames' = 'P-256 P-256K P-384 P-521' to cleaned params
+[2026-01-22 15:17:26Z] 
+[INFO] 
+Dry-run: would create assignment with name PreviewAzureKeyVaultManagedHSMkeysusingellipticcurvecr-518169623 and params: 
+Name                           Value
+----                           -----
+allowedECNames                 {P-256, P-256K, P-384, P-521}
+effect                         Audit
+
+
+
+[2026-01-22 15:17:26Z] 
+[INFO] 
+Preparing to assign (30/46): [Preview]: Azure Key Vault Managed HSM should disable public network access
+[2026-01-22 15:17:26Z] 
+[INFO] 
+Assigning policy '[Preview]: Azure Key Vault Managed HSM should disable public network access' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:26Z] 
+[SUCCESS] 
+Found '[Preview]: Azure Key Vault Managed HSM should disable public network access' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/19ea9d63-adee-4431-a95e-1913c6c1c75f
+[2026-01-22 15:17:26Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:26Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect
+[2026-01-22 15:17:26Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:26Z] 
+[INFO] 
+Dry-run: would create assignment with name PreviewAzureKeyVaultManagedHSMshoulddisablepublicnetwo-208646097 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+
+
+
+[2026-01-22 15:17:26Z] 
+[INFO] 
+Preparing to assign (31/46): Resource logs in Azure Key Vault Managed HSM should be enabled
+[2026-01-22 15:17:26Z] 
+[INFO] 
+Assigning policy 'Resource logs in Azure Key Vault Managed HSM should be enabled' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:26Z] 
+[SUCCESS] 
+Found 'Resource logs in Azure Key Vault Managed HSM should be enabled' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/a2a5b911-5617-447e-a49e-59dbe0e0434b
+[2026-01-22 15:17:26Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:26Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect, requiredRetentionDays
+[2026-01-22 15:17:26Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'AuditIfNotExists' to cleaned params
+[2026-01-22 15:17:26Z] 
+[INFO] 
+Dry-run: would create assignment with name ResourcelogsinAzureKeyVaultManagedHSMshouldbeenabled-1874150632 and params: 
+Name                           Value
+----                           -----
+effect                         AuditIfNotExists
+
+
+
+[2026-01-22 15:17:26Z] 
+[INFO] 
+Preparing to assign (32/46): Deploy - Configure diagnostic settings to an Event Hub to be enabled on Azure Key Vault Managed HSM
+[2026-01-22 15:17:26Z] 
+[INFO] 
+Assigning policy 'Deploy - Configure diagnostic settings to an Event Hub to be enabled on Azure Key Vault Managed HSM' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:26Z] 
+[SUCCESS] 
+Found 'Deploy - Configure diagnostic settings to an Event Hub to be enabled on Azure Key Vault Managed HSM' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/a6d2c800-5230-4a40-bff3-8268b4987d42
+[2026-01-22 15:17:27Z] 
+[INFO] 
+DEBUG: Checking parameter 'eventHubRuleId' against policy definition
+[2026-01-22 15:17:27Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect, profileName, eventHubRuleId, eventHubLocation, metricsEnabled, logsEnabled
+[2026-01-22 15:17:27Z] 
+[INFO] 
+DEBUG: Added parameter 'eventHubRuleId' = '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.EventHub/namespaces/eh-policy-test-3464/authorizationrules/RootManageSharedAccessKey' to cleaned params
+[2026-01-22 15:17:27Z] 
+[INFO] 
+DEBUG: Checking parameter 'eventHubLocation' against policy definition
+[2026-01-22 15:17:27Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect, profileName, eventHubRuleId, eventHubLocation, metricsEnabled, logsEnabled
+[2026-01-22 15:17:27Z] 
+[INFO] 
+DEBUG: Added parameter 'eventHubLocation' = 'eastus' to cleaned params
+[2026-01-22 15:17:27Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:27Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect, profileName, eventHubRuleId, eventHubLocation, metricsEnabled, logsEnabled
+[2026-01-22 15:17:27Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'DeployIfNotExists' to cleaned params
+[2026-01-22 15:17:27Z] 
+[INFO] 
+DEBUG: IdentityResourceId parameter value: '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation' (Length: 169)
+[2026-01-22 15:17:27Z] 
+[INFO] 
+Policy requires managed identity. Using: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+[2026-01-22 15:17:27Z] 
+[INFO] 
+Added user-assigned identity: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation (using default location: eastus)
+[2026-01-22 15:17:27Z] 
+[INFO] 
+Dry-run: would create assignment with name DeployConfigurediagnosticsettingstoanEventHubtobeenabl-909645055 and params: 
+Name                           Value
+----                           -----
+eventHubRuleId                 /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.EventHub/namespaces/eh-…
+eventHubLocation               eastus
+effect                         DeployIfNotExists
+
+
+
+[2026-01-22 15:17:27Z] 
+[INFO] 
+Preparing to assign (33/46): Deploy Diagnostic Settings for Key Vault to Event Hub
+[2026-01-22 15:17:27Z] 
+[INFO] 
+Assigning policy 'Deploy Diagnostic Settings for Key Vault to Event Hub' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:27Z] 
+[SUCCESS] 
+Found 'Deploy Diagnostic Settings for Key Vault to Event Hub' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/ed7c8c13-51e7-49d1-8a43-8490431a0da2
+[2026-01-22 15:17:28Z] 
+[INFO] 
+DEBUG: Checking parameter 'eventHubRuleId' against policy definition
+[2026-01-22 15:17:28Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect, profileName, eventHubRuleId, eventHubLocation, metricsEnabled, logsEnabled
+[2026-01-22 15:17:28Z] 
+[INFO] 
+DEBUG: Added parameter 'eventHubRuleId' = '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.EventHub/namespaces/eh-policy-test-3464/authorizationrules/RootManageSharedAccessKey' to cleaned params
+[2026-01-22 15:17:28Z] 
+[INFO] 
+DEBUG: Checking parameter 'eventHubLocation' against policy definition
+[2026-01-22 15:17:28Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect, profileName, eventHubRuleId, eventHubLocation, metricsEnabled, logsEnabled
+[2026-01-22 15:17:28Z] 
+[INFO] 
+DEBUG: Added parameter 'eventHubLocation' = 'eastus' to cleaned params
+[2026-01-22 15:17:28Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:28Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect, profileName, eventHubRuleId, eventHubLocation, metricsEnabled, logsEnabled
+[2026-01-22 15:17:28Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'DeployIfNotExists' to cleaned params
+[2026-01-22 15:17:28Z] 
+[INFO] 
+DEBUG: IdentityResourceId parameter value: '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation' (Length: 169)
+[2026-01-22 15:17:28Z] 
+[INFO] 
+Policy requires managed identity. Using: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+[2026-01-22 15:17:28Z] 
+[INFO] 
+Added user-assigned identity: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation (using default location: eastus)
+[2026-01-22 15:17:28Z] 
+[INFO] 
+Dry-run: would create assignment with name DeployDiagnosticSettingsforKeyVaulttoEventHub-215019929 and params: 
+Name                           Value
+----                           -----
+eventHubRuleId                 /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.EventHub/namespaces/eh-…
+eventHubLocation               eastus
+effect                         DeployIfNotExists
+
+
+
+[2026-01-22 15:17:28Z] 
+[INFO] 
+Preparing to assign (34/46): Deploy - Configure diagnostic settings for Azure Key Vault to Log Analytics workspace
+[2026-01-22 15:17:28Z] 
+[INFO] 
+Assigning policy 'Deploy - Configure diagnostic settings for Azure Key Vault to Log Analytics workspace' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:28Z] 
+[SUCCESS] 
+Found 'Deploy - Configure diagnostic settings for Azure Key Vault to Log Analytics workspace' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/951af2fa-529b-416e-ab6e-066fd85ac459
+[2026-01-22 15:17:29Z] 
+[INFO] 
+DEBUG: Checking parameter 'logAnalytics' against policy definition
+[2026-01-22 15:17:29Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect, diagnosticsSettingNameToUse, logAnalytics, AuditEventEnabled, AllMetricsEnabled
+[2026-01-22 15:17:29Z] 
+[INFO] 
+DEBUG: Added parameter 'logAnalytics' = '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.OperationalInsights/workspaces/law-policy-test-6874' to cleaned params
+[2026-01-22 15:17:29Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:29Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect, diagnosticsSettingNameToUse, logAnalytics, AuditEventEnabled, AllMetricsEnabled
+[2026-01-22 15:17:29Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'DeployIfNotExists' to cleaned params
+[2026-01-22 15:17:29Z] 
+[INFO] 
+DEBUG: IdentityResourceId parameter value: '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation' (Length: 169)
+[2026-01-22 15:17:29Z] 
+[INFO] 
+Policy requires managed identity. Using: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+[2026-01-22 15:17:30Z] 
+[INFO] 
+Added user-assigned identity: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation (using default location: eastus)
+[2026-01-22 15:17:30Z] 
+[INFO] 
+Dry-run: would create assignment with name DeployConfigurediagnosticsettingsforAzureKeyVaulttoLog-821297124 and params: 
+Name                           Value
+----                           -----
+effect                         DeployIfNotExists
+logAnalytics                   /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.OperationalInsights/wor…
+
+
+
+[2026-01-22 15:17:30Z] 
+[INFO] 
+Preparing to assign (35/46): Certificates using RSA cryptography should have the specified minimum key size
+[2026-01-22 15:17:30Z] 
+[INFO] 
+Assigning policy 'Certificates using RSA cryptography should have the specified minimum key size' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:30Z] 
+[SUCCESS] 
+Found 'Certificates using RSA cryptography should have the specified minimum key size' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/cee51871-e572-4576-855c-047c820360f0
+[2026-01-22 15:17:30Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:30Z] 
+[INFO] 
+DEBUG: Defined parameter names: minimumRSAKeySize, effect
+[2026-01-22 15:17:30Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:30Z] 
+[INFO] 
+DEBUG: Checking parameter 'minimumRSAKeySize' against policy definition
+[2026-01-22 15:17:30Z] 
+[INFO] 
+DEBUG: Defined parameter names: minimumRSAKeySize, effect
+[2026-01-22 15:17:30Z] 
+[INFO] 
+DEBUG: Added parameter 'minimumRSAKeySize' = '2048' to cleaned params
+[2026-01-22 15:17:30Z] 
+[INFO] 
+Dry-run: would create assignment with name CertificatesusingRSAcryptographyshouldhavethespecifie-2031578458 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+minimumRSAKeySize              2048
+
+
+
+[2026-01-22 15:17:30Z] 
+[INFO] 
+Preparing to assign (36/46): Configure Azure Key Vaults to use private DNS zones
+[2026-01-22 15:17:30Z] 
+[INFO] 
+Assigning policy 'Configure Azure Key Vaults to use private DNS zones' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:30Z] 
+[SUCCESS] 
+Found 'Configure Azure Key Vaults to use private DNS zones' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/ac673a9a-f77d-4846-b2d8-a57f8e1c01d4
+[2026-01-22 15:17:31Z] 
+[INFO] 
+DEBUG: Checking parameter 'privateDnsZoneId' against policy definition
+[2026-01-22 15:17:31Z] 
+[INFO] 
+DEBUG: Defined parameter names: privateDnsZoneId, effect
+[2026-01-22 15:17:31Z] 
+[INFO] 
+DEBUG: Added parameter 'privateDnsZoneId' = '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net' to cleaned params
+[2026-01-22 15:17:31Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:31Z] 
+[INFO] 
+DEBUG: Defined parameter names: privateDnsZoneId, effect
+[2026-01-22 15:17:31Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'DeployIfNotExists' to cleaned params
+[2026-01-22 15:17:31Z] 
+[INFO] 
+DEBUG: IdentityResourceId parameter value: '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation' (Length: 169)
+[2026-01-22 15:17:31Z] 
+[INFO] 
+Policy requires managed identity. Using: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+[2026-01-22 15:17:31Z] 
+[INFO] 
+Added user-assigned identity: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation (using default location: eastus)
+[2026-01-22 15:17:31Z] 
+[INFO] 
+Dry-run: would create assignment with name ConfigureAzureKeyVaultstouseprivateDNSzones-1754477011 and params: 
+Name                           Value
+----                           -----
+privateDnsZoneId               /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.Network/privateDnsZones…
+effect                         DeployIfNotExists
+
+
+
+[2026-01-22 15:17:31Z] 
+[INFO] 
+Preparing to assign (37/46): Certificates using elliptic curve cryptography should have allowed curve names
+[2026-01-22 15:17:31Z] 
+[INFO] 
+Assigning policy 'Certificates using elliptic curve cryptography should have allowed curve names' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:31Z] 
+[SUCCESS] 
+Found 'Certificates using elliptic curve cryptography should have allowed curve names' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/bd78111f-4953-4367-9fd5-7e08808b54bf
+[2026-01-22 15:17:32Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:32Z] 
+[INFO] 
+DEBUG: Defined parameter names: allowedECNames, effect
+[2026-01-22 15:17:32Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:32Z] 
+[INFO] 
+DEBUG: Checking parameter 'allowedECNames' against policy definition
+[2026-01-22 15:17:32Z] 
+[INFO] 
+DEBUG: Defined parameter names: allowedECNames, effect
+[2026-01-22 15:17:32Z] 
+[INFO] 
+DEBUG: Added parameter 'allowedECNames' = 'P-256 P-256K P-384 P-521' to cleaned params
+[2026-01-22 15:17:32Z] 
+[INFO] 
+Dry-run: would create assignment with name Certificatesusingellipticcurvecryptographyshouldhavea-1468057639 and params: 
+Name                           Value
+----                           -----
+allowedECNames                 {P-256, P-256K, P-384, P-521}
+effect                         Audit
+
+
+
+[2026-01-22 15:17:32Z] 
+[INFO] 
+Preparing to assign (38/46): Keys using elliptic curve cryptography should have the specified curve names
+[2026-01-22 15:17:32Z] 
+[INFO] 
+Assigning policy 'Keys using elliptic curve cryptography should have the specified curve names' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:32Z] 
+[SUCCESS] 
+Found 'Keys using elliptic curve cryptography should have the specified curve names' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/ff25f3c8-b739-4538-9d07-3d6d25cfb255
+[2026-01-22 15:17:32Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:32Z] 
+[INFO] 
+DEBUG: Defined parameter names: allowedECNames, effect
+[2026-01-22 15:17:32Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:32Z] 
+[INFO] 
+DEBUG: Checking parameter 'allowedECNames' against policy definition
+[2026-01-22 15:17:32Z] 
+[INFO] 
+DEBUG: Defined parameter names: allowedECNames, effect
+[2026-01-22 15:17:32Z] 
+[INFO] 
+DEBUG: Added parameter 'allowedECNames' = 'P-256 P-256K P-384 P-521' to cleaned params
+[2026-01-22 15:17:32Z] 
+[INFO] 
+Dry-run: would create assignment with name Keysusingellipticcurvecryptographyshouldhavethespecif-1437325202 and params: 
+Name                           Value
+----                           -----
+allowedECNames                 {P-256, P-256K, P-384, P-521}
+effect                         Audit
+
+
+
+[2026-01-22 15:17:32Z] 
+[INFO] 
+Preparing to assign (39/46): Azure Key Vault should disable public network access
+[2026-01-22 15:17:32Z] 
+[INFO] 
+Assigning policy 'Azure Key Vault should disable public network access' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:32Z] 
+[SUCCESS] 
+Found 'Azure Key Vault should disable public network access' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/405c5871-3e91-4644-8a63-58e19d68ff5b
+[2026-01-22 15:17:32Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:32Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect
+[2026-01-22 15:17:32Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:32Z] 
+[INFO] 
+Dry-run: would create assignment with name AzureKeyVaultshoulddisablepublicnetworkaccess-906277113 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+
+
+
+[2026-01-22 15:17:32Z] 
+[INFO] 
+Preparing to assign (40/46): Certificates should be issued by one of the specified non-integrated certificate authorities
+[2026-01-22 15:17:32Z] 
+[INFO] 
+Assigning policy 'Certificates should be issued by one of the specified non-integrated certificate authorities' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:32Z] 
+[SUCCESS] 
+Found 'Certificates should be issued by one of the specified non-integrated certificate authorities' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/d3e82b87-6673-410b-8501-1896b688b9a3
+[2026-01-22 15:17:33Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:33Z] 
+[INFO] 
+DEBUG: Defined parameter names: caCommonNames, effect
+[2026-01-22 15:17:33Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:33Z] 
+[INFO] 
+DEBUG: Checking parameter 'caCommonNames' against policy definition
+[2026-01-22 15:17:33Z] 
+[INFO] 
+DEBUG: Defined parameter names: caCommonNames, effect
+[2026-01-22 15:17:33Z] 
+[INFO] 
+DEBUG: Added parameter 'caCommonNames' = 'ContosoCA FabrikamCA' to cleaned params
+[2026-01-22 15:17:33Z] 
+[INFO] 
+Dry-run: would create assignment with name Certificatesshouldbeissuedbyoneofthespecifiednonintegr-165973907 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+caCommonNames                  {ContosoCA, FabrikamCA}
+
+
+
+[2026-01-22 15:17:33Z] 
+[INFO] 
+Preparing to assign (41/46): Configure Azure Key Vaults with private endpoints
+[2026-01-22 15:17:33Z] 
+[INFO] 
+Assigning policy 'Configure Azure Key Vaults with private endpoints' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:33Z] 
+[SUCCESS] 
+Found 'Configure Azure Key Vaults with private endpoints' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/9d4fad1f-5189-4a42-b29e-cf7929c6b6df
+[2026-01-22 15:17:33Z] 
+[INFO] 
+DEBUG: Checking parameter 'privateEndpointSubnetId' against policy definition
+[2026-01-22 15:17:33Z] 
+[INFO] 
+DEBUG: Defined parameter names: privateEndpointSubnetId, effect
+[2026-01-22 15:17:33Z] 
+[INFO] 
+DEBUG: Added parameter 'privateEndpointSubnetId' = '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-keyvault-test/providers/Microsoft.Network/virtualNetworks/vnet-policy-test/subnets/subnet-keyvault' to cleaned params
+[2026-01-22 15:17:33Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:33Z] 
+[INFO] 
+DEBUG: Defined parameter names: privateEndpointSubnetId, effect
+[2026-01-22 15:17:33Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'DeployIfNotExists' to cleaned params
+[2026-01-22 15:17:33Z] 
+[INFO] 
+DEBUG: IdentityResourceId parameter value: '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation' (Length: 169)
+[2026-01-22 15:17:33Z] 
+[INFO] 
+Policy requires managed identity. Using: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+[2026-01-22 15:17:34Z] 
+[INFO] 
+Added user-assigned identity: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation (using default location: eastus)
+[2026-01-22 15:17:34Z] 
+[INFO] 
+Dry-run: would create assignment with name ConfigureAzureKeyVaultswithprivateendpoints-1664094028 and params: 
+Name                           Value
+----                           -----
+effect                         DeployIfNotExists
+privateEndpointSubnetId        /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-keyvault-test/providers/Microsoft.Network/virtualNetwor…
+
+
+
+[2026-01-22 15:17:34Z] 
+[INFO] 
+Preparing to assign (42/46): [Preview]: Configure Azure Key Vault Managed HSM to disable public network access
+[2026-01-22 15:17:34Z] 
+[INFO] 
+Assigning policy '[Preview]: Configure Azure Key Vault Managed HSM to disable public network access' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:34Z] 
+[SUCCESS] 
+Found '[Preview]: Configure Azure Key Vault Managed HSM to disable public network access' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/84d327c3-164a-4685-b453-900478614456
+[2026-01-22 15:17:34Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:34Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect
+[2026-01-22 15:17:34Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Modify' to cleaned params
+[2026-01-22 15:17:34Z] 
+[INFO] 
+DEBUG: IdentityResourceId parameter value: '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation' (Length: 169)
+[2026-01-22 15:17:34Z] 
+[INFO] 
+Policy requires managed identity. Using: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+[2026-01-22 15:17:35Z] 
+[INFO] 
+Added user-assigned identity: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation (using default location: eastus)
+[2026-01-22 15:17:35Z] 
+[INFO] 
+Dry-run: would create assignment with name PreviewConfigureAzureKeyVaultManagedHSMtodisablepublic-937554689 and params: 
+Name                           Value
+----                           -----
+effect                         Modify
+
+
+
+[2026-01-22 15:17:35Z] 
+[INFO] 
+Preparing to assign (43/46): [Preview]: Configure Azure Key Vault Managed HSM with private endpoints
+[2026-01-22 15:17:35Z] 
+[INFO] 
+Assigning policy '[Preview]: Configure Azure Key Vault Managed HSM with private endpoints' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:35Z] 
+[SUCCESS] 
+Found '[Preview]: Configure Azure Key Vault Managed HSM with private endpoints' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/d1d6d8bb-cc7c-420f-8c7d-6f6f5279a844
+[2026-01-22 15:17:35Z] 
+[INFO] 
+DEBUG: Checking parameter 'privateEndpointSubnetId' against policy definition
+[2026-01-22 15:17:35Z] 
+[INFO] 
+DEBUG: Defined parameter names: privateEndpointSubnetId, effect
+[2026-01-22 15:17:35Z] 
+[INFO] 
+DEBUG: Added parameter 'privateEndpointSubnetId' = '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-keyvault-test/providers/Microsoft.Network/virtualNetworks/vnet-policy-test/subnets/subnet-keyvault' to cleaned params
+[2026-01-22 15:17:35Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:35Z] 
+[INFO] 
+DEBUG: Defined parameter names: privateEndpointSubnetId, effect
+[2026-01-22 15:17:35Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'DeployIfNotExists' to cleaned params
+[2026-01-22 15:17:35Z] 
+[INFO] 
+DEBUG: IdentityResourceId parameter value: '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation' (Length: 169)
+[2026-01-22 15:17:35Z] 
+[INFO] 
+Policy requires managed identity. Using: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+Unable to acquire token for tenant '' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+[2026-01-22 15:17:36Z] 
+[INFO] 
+Added user-assigned identity: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation (using default location: eastus)
+[2026-01-22 15:17:36Z] 
+[INFO] 
+Dry-run: would create assignment with name PreviewConfigureAzureKeyVaultManagedHSMwithprivateendp-732076577 and params: 
+Name                           Value
+----                           -----
+effect                         DeployIfNotExists
+privateEndpointSubnetId        /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-keyvault-test/providers/Microsoft.Network/virtualNetwor…
+
+
+
+[2026-01-22 15:17:36Z] 
+[INFO] 
+Preparing to assign (44/46): Azure Key Vault should use RBAC permission model
+[2026-01-22 15:17:36Z] 
+[INFO] 
+Assigning policy 'Azure Key Vault should use RBAC permission model' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:36Z] 
+[SUCCESS] 
+Found 'Azure Key Vault should use RBAC permission model' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5
+[2026-01-22 15:17:36Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:36Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect
+[2026-01-22 15:17:36Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:36Z] 
+[INFO] 
+Dry-run: would create assignment with name AzureKeyVaultshoulduseRBACpermissionmodel-307198231 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+
+
+
+[2026-01-22 15:17:36Z] 
+[INFO] 
+Preparing to assign (45/46): Key Vault keys should have an expiration date
+[2026-01-22 15:17:36Z] 
+[INFO] 
+Assigning policy 'Key Vault keys should have an expiration date' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:36Z] 
+[SUCCESS] 
+Found 'Key Vault keys should have an expiration date' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/152b15f7-8e1f-4c1f-ab71-8c010ba5dbc0
+[2026-01-22 15:17:36Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:36Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect
+[2026-01-22 15:17:36Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:36Z] 
+[INFO] 
+Dry-run: would create assignment with name KeyVaultkeysshouldhaveanexpirationdate-386037801 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+
+
+
+[2026-01-22 15:17:36Z] 
+[INFO] 
+Preparing to assign (46/46): [Preview]: Azure Key Vault Managed HSM should use private link
+[2026-01-22 15:17:36Z] 
+[INFO] 
+Assigning policy '[Preview]: Azure Key Vault Managed HSM should use private link' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 15:17:36Z] 
+[SUCCESS] 
+Found '[Preview]: Azure Key Vault Managed HSM should use private link' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/59fee2f4-d439-4f1b-9b9a-982e1474bfd8
+[2026-01-22 15:17:37Z] 
+[INFO] 
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 15:17:37Z] 
+[INFO] 
+DEBUG: Defined parameter names: effect
+[2026-01-22 15:17:37Z] 
+[INFO] 
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-22 15:17:37Z] 
+[INFO] 
+Dry-run: would create assignment with name PreviewAzureKeyVaultManagedHSMshoulduseprivatelink-504701151 and params: 
+Name                           Value
+----                           -----
+effect                         Audit
+
+
+[2026-01-22 15:17:37Z] 
+[INFO] 
+Collected 0 assignment IDs for filtering
+[2026-01-22 15:17:37Z] 
+[INFO] 
+Wrote reports: KeyVaultPolicyImplementationReport-20260122-151737.md, KeyVaultPolicyImplementationReport-20260122-151737.json, KeyVaultPolicyImplementationReport-20260122-151737.csv
+[2026-01-22 15:17:37Z] 
+[SUCCESS] 
+HTML report generated: ./PolicyImplementationReport-20260122-151737.html
+Dry-run summary written to ./DryRunSummary.txt
+
+[2026-01-22 15:17:37Z] 
+[INFO] 
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:17:37Z] 
+[INFO] 
+                    📋 NEXT STEPS GUIDANCE
+[2026-01-22 15:17:37Z] 
+[INFO] 
+═══════════════════════════════════════════════════════════
+
+🎯 Dry-Run Validation Complete
+
+✅ What was validated:
+  → Policy definitions resolved from mapping file
+  → Parameter overrides validated against policy schemas
+  → Assignment names generated (64-char limit enforced)
+  → No actual Azure resources created or modified
+
+📋 Recommended Next Steps:
+  1. 📄 Review dry-run summary:
+     
+notepad ./DryRunSummary.txt
+  2. ✅ Verify all policies resolved successfully (Status: DryRun)
+  3. 🔍 Check for policies requiring managed identity (DeployIfNotExists/Modify effects)
+  4. 📊 Review parameter values match your requirements
+  5. 🚀 Deploy to test environment when ready:
+     
+.\\AzPolicyImplScript.ps1 -ParameterFile <YOUR_PARAM_FILE> -SkipRBACCheck
+
+⚠️  Common Issues to Check:
+  → Policies with Status='Skipped' require -IdentityResourceId parameter
+  → Verify parameter values don't exceed policy min/max constraints
+  → Check for typos in policy display names (lookup failures)
+
+📚 Documentation:
+  → Parameter File Guide: PolicyParameters-QuickReference.md
+  → Deployment Workflow: DEPLOYMENT-WORKFLOW-GUIDE.md
+
+
+📋 Dry-Run Summary: 
+./DryRunSummary.txt
+
+
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:17:37Z] 
+[SUCCESS] 
+Completed run. Reports generated.
+═══════════════════════════════════════════════════════════
+
+📄 Reports Generated:
+  • HTML:     
+./PolicyImplementationReport-20260122-151737.html
+  • Markdown: 
+KeyVaultPolicyImplementationReport-20260122-151737.md
+  • JSON:     
+KeyVaultPolicyImplementationReport-20260122-151737.json
+
+
+[2026-01-22 15:17:37Z] 
+[INFO] 
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:17:37Z] 
+[INFO] 
+                    📋 NEXT STEPS GUIDANCE
+[2026-01-22 15:17:37Z] 
+[INFO] 
+═══════════════════════════════════════════════════════════
+
+🎯 Auto-Remediation Deployment Complete (8 Policies - DeployIfNotExists)
+
+✅ What was deployed:
+  → 8 auto-remediation policies (DeployIfNotExists/Modify effects)
+  → Managed identity assigned: Contributor role for automatic fixes
+  → Policies: Diagnostic settings, Private Endpoints, Soft Delete, Purge Protection
+
+⚠️  CRITICAL: Remediation Timeline
+  → Azure Policy creates remediation tasks in 10-15 minutes
+  → Remediation completes in 2-10 minutes after task creation
+  → Total wait time: 15-30 minutes minimum
+
+📋 Recommended Next Steps:
+  1. ⏳ Wait 15-30 minutes for auto-remediation tasks to complete
+  2. 📊 Monitor remediation status:
+     
+Get-AzPolicyRemediation -Scope '/subscriptions/YOUR_SUB_ID'
+  3. ✅ Verify resources were remediated:
+     
+.\\AzPolicyImplScript.ps1 -CheckCompliance -TriggerScan
+  4. 📋 Review remediation tasks in HTML report
+
+🐛 Troubleshooting Remediation Failures:
+  → Check managed identity has Contributor role
+  → Verify no Azure Policy conflicts (conflicting assignments)
+  → Review Azure Activity Log for error details
+

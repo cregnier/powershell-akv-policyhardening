@@ -1,0 +1,188 @@
+Dry-run assignment summary: Generated 2026-01-23 14:43:44Z
+ScriptVersion: 0.1.0
+
+- Policy: Certificates using RSA cryptography should have the specified minimum key size | Status: DryRun | AssignmentName: CertificatesusingRSAcryptographyshouldhavethespecifie-2031578458
+  Parameters: {
+  "effect": "Deny",
+  "minimumRSAKeySize": 4096
+}
+- Policy: Keys should have more than the specified number of days before expiration | Status: DryRun | AssignmentName: Keysshouldhavemorethanthespecifiednumberofdaysbeforeexp-12464927
+  Parameters: {
+  "minimumDaysBeforeExpiration": 90,
+  "effect": "Deny"
+}
+- Policy: Azure Key Vault should disable public network access | Status: DryRun | AssignmentName: AzureKeyVaultshoulddisablepublicnetworkaccess-906277113
+  Parameters: {
+  "effect": "Deny"
+}
+- Policy: Secrets should not be active for longer than the specified number of days | Status: DryRun | AssignmentName: Secretsshouldnotbeactiveforlongerthanthespecifiednumb-1452013840
+  Parameters: {
+  "maximumValidityInDays": 365,
+  "effect": "Deny"
+}
+- Policy: Keys using elliptic curve cryptography should have the specified curve names | Status: DryRun | AssignmentName: Keysusingellipticcurvecryptographyshouldhavethespecif-1437325202
+  Parameters: {
+  "allowedECNames": [
+    "P-256",
+    "P-256K",
+    "P-384",
+    "P-521"
+  ],
+  "effect": "Deny"
+}
+- Policy: Certificates should be issued by one of the specified non-integrated certificate authorities | Status: DryRun | AssignmentName: Certificatesshouldbeissuedbyoneofthespecifiednonintegr-165973907
+  Parameters: {
+  "effect": "Deny",
+  "caCommonNames": [
+    "ContosoCA",
+    "FabrikamCA"
+  ]
+}
+- Policy: Certificates should have the specified maximum validity period | Status: DryRun | AssignmentName: Certificatesshouldhavethespecifiedmaximumvalidityperio-407807336
+  Parameters: {
+  "maximumValidityInMonths": 12,
+  "effect": "Deny"
+}
+- Policy: Certificates should not expire within the specified number of days | Status: DryRun | AssignmentName: Certificatesshouldnotexpirewithinthespecifiednumberof-2114192775
+  Parameters: {
+  "effect": "Deny",
+  "daysToExpire": 90
+}
+- Policy: Keys should be the specified cryptographic type RSA or EC | Status: DryRun | AssignmentName: KeysshouldbethespecifiedcryptographictypeRSAorEC-976981238
+  Parameters: {
+  "effect": "Deny"
+}
+- Policy: [Preview]: Azure Key Vault Managed HSM keys using elliptic curve cryptography should have the specified curve names | Status: DryRun | AssignmentName: PreviewAzureKeyVaultManagedHSMkeysusingellipticcurvecr-518169623
+  Parameters: {
+  "allowedECNames": [
+    "P-256",
+    "P-256K",
+    "P-384",
+    "P-521"
+  ],
+  "effect": "Deny"
+}
+- Policy: Key Vault secrets should have an expiration date | Status: DryRun | AssignmentName: KeyVaultsecretsshouldhaveanexpirationdate-1232117220
+  Parameters: {
+  "effect": "Deny"
+}
+- Policy: [Preview]: Azure Key Vault Managed HSM Keys should have more than the specified number of days before expiration | Status: DryRun | AssignmentName: PreviewAzureKeyVaultManagedHSMKeysshouldhavemorethant-1035226701
+  Parameters: {
+  "minimumDaysBeforeExpiration": 30,
+  "effect": "Deny"
+}
+- Policy: Azure Key Vault Managed HSM should have purge protection enabled | Status: DryRun | AssignmentName: AzureKeyVaultManagedHSMshouldhavepurgeprotectionenabl-1494992807
+  Parameters: {
+  "effect": "Deny"
+}
+- Policy: Secrets should have the specified maximum validity period | Status: DryRun | AssignmentName: Secretsshouldhavethespecifiedmaximumvalidityperiod-1663466362
+  Parameters: {
+  "maximumValidityInDays": 365,
+  "effect": "Deny"
+}
+- Policy: Key vaults should have deletion protection enabled | Status: DryRun | AssignmentName: Keyvaultsshouldhavedeletionprotectionenabled-1439856846
+  Parameters: {
+  "effect": "Deny"
+}
+- Policy: Certificates using elliptic curve cryptography should have allowed curve names | Status: DryRun | AssignmentName: Certificatesusingellipticcurvecryptographyshouldhavea-1468057639
+  Parameters: {
+  "allowedECNames": [
+    "P-256",
+    "P-256K",
+    "P-384",
+    "P-521"
+  ],
+  "effect": "Deny"
+}
+- Policy: Secrets should have content type set | Status: DryRun | AssignmentName: Secretsshouldhavecontenttypeset-1186338756
+  Parameters: {
+  "effect": "Deny"
+}
+- Policy: Certificates should have the specified lifetime action triggers | Status: DryRun | AssignmentName: Certificatesshouldhavethespecifiedlifetimeactiontrigg-1761965968
+  Parameters: {
+  "maximumPercentageLife": 80,
+  "minimumDaysBeforeExpiry": 90,
+  "effect": "Deny"
+}
+- Policy: Key vaults should have soft delete enabled | Status: DryRun | AssignmentName: Keyvaultsshouldhavesoftdeleteenabled-656701378
+  Parameters: {
+  "effect": "Deny"
+}
+- Policy: Certificates should be issued by the specified non-integrated certificate authority | Status: DryRun | AssignmentName: Certificatesshouldbeissuedbythespecifiednonintegratedc-500792775
+  Parameters: {
+  "caCommonName": "ContosoCA",
+  "effect": "Deny"
+}
+- Policy: Keys using RSA cryptography should have a specified minimum key size | Status: DryRun | AssignmentName: KeysusingRSAcryptographyshouldhaveaspecifiedminimumkey-909744685
+  Parameters: {
+  "effect": "Deny",
+  "minimumRSAKeySize": 4096
+}
+- Policy: [Preview]: Azure Key Vault Managed HSM should disable public network access | Status: DryRun | AssignmentName: PreviewAzureKeyVaultManagedHSMshoulddisablepublicnetwo-208646097
+  Parameters: {
+  "effect": "Deny"
+}
+- Policy: Certificates should use allowed key types | Status: DryRun | AssignmentName: Certificatesshoulduseallowedkeytypes-246707145
+  Parameters: {
+  "allowedKeyTypes": [
+    "RSA",
+    "EC"
+  ],
+  "effect": "Deny"
+}
+- Policy: [Preview]: Azure Key Vault Managed HSM keys should have an expiration date | Status: DryRun | AssignmentName: PreviewAzureKeyVaultManagedHSMkeysshouldhaveanexpirati-976371970
+  Parameters: {
+  "effect": "Deny"
+}
+- Policy: Azure Key Vault should have firewall enabled or public network access disabled | Status: DryRun | AssignmentName: AzureKeyVaultshouldhavefirewallenabledorpublicnetwork-1396884516
+  Parameters: {
+  "allowedIPAddresses": [
+    "0.0.0.0/0"
+  ],
+  "effect": "Deny",
+  "forbiddenIPAddresses": []
+}
+- Policy: Secrets should have more than the specified number of days before expiration | Status: DryRun | AssignmentName: Secretsshouldhavemorethanthespecifiednumberofdaysbefo-1193127515
+  Parameters: {
+  "minimumDaysBeforeExpiration": 90,
+  "effect": "Deny"
+}
+- Policy: Azure Key Vaults should use private link | Status: DryRun | AssignmentName: AzureKeyVaultsshoulduseprivatelink-2127082189
+  Parameters: {
+  "effect": "Deny"
+}
+- Policy: Key Vault keys should have an expiration date | Status: DryRun | AssignmentName: KeyVaultkeysshouldhaveanexpirationdate-386037801
+  Parameters: {
+  "effect": "Deny"
+}
+- Policy: Keys should not be active for longer than the specified number of days | Status: DryRun | AssignmentName: Keysshouldnotbeactiveforlongerthanthespecifiednumbero-1296256806
+  Parameters: {
+  "maximumValidityInDays": 365,
+  "effect": "Deny"
+}
+- Policy: Keys should be backed by a hardware security module (HSM) | Status: DryRun | AssignmentName: KeysshouldbebackedbyahardwaresecuritymoduleHSM-593124860
+  Parameters: {
+  "effect": "Deny"
+}
+- Policy: Certificates should be issued by the specified integrated certificate authority | Status: DryRun | AssignmentName: Certificatesshouldbeissuedbythespecifiedintegratedcer-1190107367
+  Parameters: {
+  "effect": "Deny",
+  "allowedCAs": [
+    "DigiCert",
+    "GlobalSign"
+  ]
+}
+- Policy: Azure Key Vault should use RBAC permission model | Status: DryRun | AssignmentName: AzureKeyVaultshoulduseRBACpermissionmodel-307198231
+  Parameters: {
+  "effect": "Deny"
+}
+- Policy: [Preview]: Azure Key Vault Managed HSM keys using RSA cryptography should have a specified minimum key size | Status: DryRun | AssignmentName: PreviewAzureKeyVaultManagedHSMkeysusingRSAcryptography-998252524
+  Parameters: {
+  "effect": "Deny",
+  "minimumRSAKeySize": 4096
+}
+- Policy: Keys should have the specified maximum validity period | Status: DryRun | AssignmentName: Keysshouldhavethespecifiedmaximumvalidityperiod-906231923
+  Parameters: {
+  "maximumValidityInDays": 365,
+  "effect": "Deny"
+}

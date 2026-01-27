@@ -29,22 +29,100 @@ This is an **Azure Policy automation framework** for deploying and managing 46 A
 - **Deny**: Block new non-compliant resources (production enforcement)
 - **DeployIfNotExists/Modify**: Auto-remediate existing non-compliant resources (8 policies)
 
-## Critical Workflows
+## PowerShell Az.KeyVault Module - Critical Syntax Changes
 
-### Policy Deployment (ALWAYS check parameter file first)
+**BREAKING CHANGES** as of Az.KeyVault 6.3.2+ (January 2026):
+
+### RBAC Authorization Parameter
+- **OLD (deprecated)**: `-EnableRbacAuthorization` (does not exist)
+- **NEW (correct)**: 
+  - To **ENABLE** RBAC: Omit the `-DisableRbacAuthorization` switch (RBAC enabled by default)
+  - To **DISABLE** RBAC: Use `-DisableRbacAuthorization` switch
 
 ```powershell
-# DevTest safe deployment (30 policies, Audit mode)
-.\AzPolicyImplScript.ps1 -DeployDevTest -SkipRBACCheck
+# CORRECT - Enable RBAC (default behavior)
+New-AzKeyVault -Name "vault" -ResourceGroupName "rg" -Location "eastus" -EnablePurgeProtection
+# RBAC is enabled by default - no parameter needed!
 
-# DevTest full testing (46 policies, Audit mode)
-.\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-DevTest-Full.json -SkipRBACCheck
+# CORRECT - Disable RBAC (use Access Policies)
+New-AzKeyVault -Name "vault" -ResourceGroupName "rg" -Location "eastus" -DisableRbacAuthorization
 
-# Production deployment (46 policies, Deny mode - REQUIRES CONFIRMATION)
-.\AzPolicyImplScript.ps1 -DeployProduction -SkipRBACCheck
+# WRONG - This parameter does not exist
+New-AzKeyVault -EnableRbacAuthorization  # ❌ ERROR
+```
 
-# Auto-remediation (8 DeployIfNotExists/Modify policies with managed identity)
-.\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-DevTest-Full-Remediation.json -IdentityResourceId "/subscriptions/.../id-policy-remediation" -SkipRBACCheck
+### Public Network Access Parameter
+- **Parameter**: `-PublicNetworkAccess <String>`
+- **Values**: `'Enabled'` or `'Disabled'` (string, not boolean)
+- **Default**: Enabled if omitted
+
+```powershell
+# CORRECT - Disable public access
+New-AzKeyVault -Name "vault" -ResourceGroupName "rg" -Location "eastus" -PublicNetworkAccess 'Disabled'
+
+# WRONG - Boolean not accepted
+New-AzKeyVault -PublicNetworkAccess $false  # ❌ ERROR
+```
+
+### Testing Impact
+When writing comprehensive tests, ensure:
+1. ✅ Omit `-DisableRbacAuthorization` for RBAC-enabled vaults (default)
+2. ✅ Use `-PublicNetworkAccess 'Disabled'` for private vaults (string value)
+3. ✅ ARM templates use `"enableRbacAuthorization": true` (still valid in JSON)
+
+## Critical Workflows
+
+### Policy Deployment (ALWAYS use managed identity + proper parameters)
+
+**CRITICAL**: All deployments now require these parameters for complete policy coverage:
+- `-ParameterFile`: Which policy set to deploy
+- `-PolicyMode`: Audit or Deny (prevents interactive menu prompts)
+- `-IdentityResourceId`: Managed identity for DINE/Modify policies (ALL scenarios need this)
+- `-ScopeType Subscription`: Always use subscription scope (production-ready)
+- `-SkipRBACCheck`: Skip permission validation (speeds up testing)
+
+```powershell
+# Get managed identity (created by Setup-AzureKeyVaultPolicyEnvironment.ps1)
+$identityId = "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation"
+
+# DevTest safe deployment (30/30 policies, Audit mode, Subscription scope)
+.\AzPolicyImplScript.ps1 `
+    -ParameterFile .\PolicyParameters-DevTest.json `
+    -PolicyMode Audit `
+    -IdentityResourceId $identityId `
+    -ScopeType Subscription `
+    -SkipRBACCheck
+
+# DevTest full testing (46/46 policies, Audit mode, Subscription scope)
+.\AzPolicyImplScript.ps1 `
+    -ParameterFile .\PolicyParameters-DevTest-Full.json `
+    -PolicyMode Audit `
+    -IdentityResourceId $identityId `
+    -ScopeType Subscription `
+    -SkipRBACCheck
+
+# Production deployment (46/46 policies, Audit mode, Subscription scope)
+.\AzPolicyImplScript.ps1 `
+    -ParameterFile .\PolicyParameters-Production.json `
+    -PolicyMode Audit `
+    -IdentityResourceId $identityId `
+    -ScopeType Subscription `
+    -SkipRBACCheck
+
+# Production deployment (34 Deny policies, Subscription scope)
+.\AzPolicyImplScript.ps1 `
+    -ParameterFile .\PolicyParameters-Production-Deny.json `
+    -PolicyMode Deny `
+    -IdentityResourceId $identityId `
+    -ScopeType Subscription `
+    -SkipRBACCheck
+
+# Auto-remediation (8/8 DeployIfNotExists/Modify policies)
+.\AzPolicyImplScript.ps1 `
+    -ParameterFile .\PolicyParameters-DevTest-Full-Remediation.json `
+    -IdentityResourceId $identityId `
+    -ScopeType Subscription `
+    -SkipRBACCheck
 ```
 
 ### Testing Commands (script has built-in test functions)
@@ -129,15 +207,55 @@ Assignments automatically generated from policy display names, truncated to 64 c
 **Problem**: Switching from Audit to Deny requires all parameter values
 **Solution**: Use parameter file designed for Deny mode (Production.json), not Audit (DevTest.json)
 
-### 3. Managed Identity Not Provided for Auto-Remediation
-**Problem**: DeployIfNotExists/Modify policies skipped without managed identity
-**Solution**: Always provide `-IdentityResourceId` for remediation parameter files
+### 3. Managed Identity Required for ALL Deployments
+**Problem**: DeployIfNotExists/Modify policies skipped without managed identity, missing 8 policies
+**Solution**: ALWAYS provide `-IdentityResourceId` for ALL scenarios (not just remediation)
 ```powershell
-[WARN] Policy default effect 'DeployIfNotExists' requires managed identity. Skipping assignment - provide -IdentityResourceId to enable.
+# Managed identity created by Setup-AzureKeyVaultPolicyEnvironment.ps1 at line 369
+$identityId = "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation"
+
+# ALL scenarios need this parameter
+.\AzPolicyImplScript.ps1 `
+    -ParameterFile .\PolicyParameters-DevTest.json `
+    -PolicyMode Audit `
+    -IdentityResourceId $identityId `
+    -ScopeType Subscription `
+    -SkipRBACCheck
 ```
 
-### 4. Testing Auto-Remediation Without Waiting
-**Problem**: Checking compliance immediately after vault creation shows no data
+**8 Policies That Require Identity** (present in DevTest/Production parameter files):
+1. Configure Azure Key Vault Managed HSM with private endpoints (DINE)
+2. Deploy - Configure diagnostic settings to Event Hub for Managed HSM (DINE)
+3. Configure Azure Key Vaults to use private DNS zones (DINE)
+4. Deploy Diagnostic Settings for Key Vault to Event Hub (DINE)
+5. Deploy - Configure diagnostic settings for Key Vault to Log Analytics (DINE)
+6. Configure Azure Key Vaults with private endpoints (DINE)
+7. Configure Azure Key Vault Managed HSM to disable public network access (Modify)
+8. Configure key vaults to enable firewall (Modify)
+
+### 4. PolicyMode Parameter Missing
+**Problem**: Script prompts "Choose mode (Audit/Deny/Enforce) [Audit]:" interactively (breaks automation)
+**Solution**: Always provide `-PolicyMode Audit` or `-PolicyMode Deny` explicitly
+```powershell
+# Script does NOT auto-read mode from parameter file's "effect" values
+# Must explicitly provide -PolicyMode parameter
+.\AzPolicyImplScript.ps1 `
+    -ParameterFile .\PolicyParameters-DevTest.json `
+    -PolicyMode Audit `  # REQUIRED - prevents interactive prompt
+    -IdentityResourceId $identityId `
+    -ScopeType Subscription `
+    -SkipRBACCheck
+```
+
+### 5. Scope Strategy (Updated Jan 2026)
+**Problem**: DevTest scenarios originally used ResourceGroup scope (limited)
+**Solution**: ALL scenarios now use Subscription scope (production-ready)
+```powershell
+# Script hardcoded to use Subscription at line 5773
+# But explicit parameter ensures clarity
+-ScopeType Subscription
+```
+### 6. Testing Auto-Remediation Without Waiting
 **Solution**: Wait 30-60 minutes for Azure Policy evaluation cycle (enforced by Azure backend)
 
 ## Code Navigation Tips

@@ -1,0 +1,270 @@
+
+═══════════════════════════════════════════════════════════
+  Azure Key Vault Policy Governance - Scenario Validation
+═══════════════════════════════════════════════════════════
+
+[2026-01-22 15:16:37] [INFO] Starting comprehensive scenario validation
+[2026-01-22 15:16:37] [INFO] Test mode: DRYRUN (Preview)
+[2026-01-22 15:16:37] [INFO] Test log: .\test-all-scenarios-validation-20260122-151637.txt
+[2026-01-22 15:16:37] [INFO] 
+Validating prerequisites...
+[2026-01-22 15:16:37] [SUCCESS] ✅ All prerequisites validated
+
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:16:37] [INFO] SCENARIO 1: DevTest Baseline (30 Policies)
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:16:37] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-DevTest.json -SkipRBACCheck -Preview
+[2026-01-22 15:16:52] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:16:52] [INFO]   Output saved to: .\scenario-1-output-20260122-151637.txt
+[2026-01-22 15:16:52] [SUCCESS]   ✅ Console next steps validated for DevTest Baseline (30 Policies)
+[2026-01-22 15:16:52] [SUCCESS]   ✅ HTML report validated for DevTest Baseline (30 Policies)
+[2026-01-22 15:16:52] [ERROR]   ❌ Found unexpected warnings/errors for DevTest Baseline (30 Policies)
+[2026-01-22 15:16:52] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:16:52] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:16:52] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:16:52] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:16:52] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:16:52] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:16:53] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:16:53] [ERROR]     - Unexpected WARN: [WARN] 
+
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:16:55] [INFO] SCENARIO 2: DevTest Full (46 Policies)
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:16:55] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-DevTest-Full.json -SkipRBACCheck -Preview
+[2026-01-22 15:17:09] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:17:09] [INFO]   Output saved to: .\scenario-2-output-20260122-151655.txt
+[2026-01-22 15:17:09] [SUCCESS]   ✅ Console next steps validated for DevTest Full (46 Policies)
+[2026-01-22 15:17:09] [SUCCESS]   ✅ HTML report validated for DevTest Full (46 Policies)
+[2026-01-22 15:17:09] [ERROR]   ❌ Found unexpected warnings/errors for DevTest Full (46 Policies)
+[2026-01-22 15:17:09] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:17:09] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:17:09] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:17:09] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:17:09] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:17:09] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:17:09] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:17:09] [ERROR]     - Unexpected WARN: [WARN] 
+
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:17:11] [INFO] SCENARIO 3: DevTest Auto-Remediation (8 Policies)
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:17:11] [WARN] ⚠️  User input required for this scenario:
+[2026-01-22 15:17:11] [WARN]     Replace <MANAGED_IDENTITY_ID> with:
+[2026-01-22 15:17:11] [WARN]     /subscriptions/<subscription-id>/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+[2026-01-22 15:17:11] [INFO]   Using managed identity: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+[2026-01-22 15:17:11] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-DevTest-Full-Remediation.json -IdentityResourceId '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation' -SkipRBACCheck -Preview
+[2026-01-22 15:17:37] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:17:37] [INFO]   Output saved to: .\scenario-3-output-20260122-151711.txt
+[2026-01-22 15:17:37] [SUCCESS]   ✅ Console next steps validated for DevTest Auto-Remediation (8 Policies)
+[2026-01-22 15:17:37] [SUCCESS]   ✅ HTML report validated for DevTest Auto-Remediation (8 Policies)
+[2026-01-22 15:17:37] [ERROR]   ❌ Found unexpected warnings/errors for DevTest Auto-Remediation (8 Policies)
+[2026-01-22 15:17:37] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:17:37] [ERROR]     - Unexpected WARN: [WARN] 
+
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:17:39] [INFO] SCENARIO 4: Production Audit (46 Policies)
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:17:39] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-Production.json -SkipRBACCheck -Preview
+[2026-01-22 15:17:53] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:17:53] [INFO]   Output saved to: .\scenario-4-output-20260122-151739.txt
+[2026-01-22 15:17:53] [SUCCESS]   ✅ Console next steps validated for Production Audit (46 Policies)
+[2026-01-22 15:17:53] [SUCCESS]   ✅ HTML report validated for Production Audit (46 Policies)
+[2026-01-22 15:17:53] [ERROR]   ❌ Found unexpected warnings/errors for Production Audit (46 Policies)
+[2026-01-22 15:17:53] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:17:53] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:17:53] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:17:53] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:17:53] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:17:53] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:17:53] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:17:53] [ERROR]     - Unexpected WARN: [WARN] 
+
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:17:55] [INFO] SCENARIO 5: Production Deny (46 Policies - Maximum Enforcement)
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:17:55] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-Production-Deny.json -SkipRBACCheck -Preview
+[2026-01-22 15:18:10] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:18:10] [INFO]   Output saved to: .\scenario-5-output-20260122-151755.txt
+[2026-01-22 15:18:10] [ERROR]   ❌ Console next steps validation failed for Production Deny (46 Policies - Maximum Enforcement)
+[2026-01-22 15:18:10] [ERROR]     - Missing Production Deny deployment banner
+[2026-01-22 15:18:10] [ERROR]     - Missing rollback instructions
+[2026-01-22 15:18:10] [SUCCESS]   ✅ HTML report validated for Production Deny (46 Policies - Maximum Enforcement)
+[2026-01-22 15:18:10] [ERROR]   ❌ Found unexpected warnings/errors for Production Deny (46 Policies - Maximum Enforcement)
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:10] [ERROR]     - Unexpected WARN: [WARN] 
+
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:18:12] [INFO] SCENARIO 6: Production Auto-Remediation (8 Policies)
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:18:12] [WARN] ⚠️  User input required for this scenario:
+[2026-01-22 15:18:12] [WARN]     Replace <MANAGED_IDENTITY_ID> with:
+[2026-01-22 15:18:12] [WARN]     /subscriptions/<subscription-id>/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+[2026-01-22 15:18:12] [INFO]   Using managed identity: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+[2026-01-22 15:18:12] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-Production-Remediation.json -IdentityResourceId '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation' -SkipRBACCheck -Preview
+[2026-01-22 15:18:32] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:18:32] [INFO]   Output saved to: .\scenario-6-output-20260122-151812.txt
+[2026-01-22 15:18:32] [SUCCESS]   ✅ Console next steps validated for Production Auto-Remediation (8 Policies)
+[2026-01-22 15:18:32] [SUCCESS]   ✅ HTML report validated for Production Auto-Remediation (8 Policies)
+[2026-01-22 15:18:32] [ERROR]   ❌ Found unexpected warnings/errors for Production Auto-Remediation (8 Policies)
+[2026-01-22 15:18:32] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:32] [ERROR]     - Unexpected WARN: [WARN] 
+
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:18:34] [INFO] SCENARIO 7: Resource Group Scope (Limited Deployment)
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:18:34] [WARN] ⚠️  User input required for this scenario:
+[2026-01-22 15:18:34] [WARN]     Replace <SUBSCRIPTION_ID> with your subscription ID
+[2026-01-22 15:18:34] [WARN]     Replace <RESOURCE_GROUP> with resource group name (default: rg-policy-keyvault-test)
+[2026-01-22 15:18:34] [INFO]   Using resource group: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-keyvault-test
+[2026-01-22 15:18:34] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-DevTest.json -ResourceGroupScope '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-keyvault-test' -SkipRBACCheck -Preview
+[2026-01-22 15:18:44] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:18:44] [INFO]   Output saved to: .\scenario-7-output-20260122-151834.txt
+[2026-01-22 15:18:44] [ERROR]   ❌ Console next steps validation failed for Resource Group Scope (Limited Deployment)
+[2026-01-22 15:18:44] [ERROR]     - Missing resource group scope indication
+[2026-01-22 15:18:44] [SUCCESS]   ✅ HTML report validated for Resource Group Scope (Limited Deployment)
+[2026-01-22 15:18:44] [ERROR]   ❌ Found unexpected warnings/errors for Resource Group Scope (Limited Deployment)
+[2026-01-22 15:18:44] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:44] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:44] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:44] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:44] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:44] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:44] [ERROR]     - Unexpected WARN: [WARN] 
+[2026-01-22 15:18:44] [ERROR]     - Unexpected WARN: [WARN] 
+
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:18:46] [INFO] SCENARIO 8: Management Group Scope (Enterprise-Wide)
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:18:46] [WARN] ⚠️  User input required for this scenario:
+[2026-01-22 15:18:46] [WARN]     Replace <MANAGEMENT_GROUP_ID> with your management group ID
+[2026-01-22 15:18:46] [WARN]     WARNING: Affects all subscriptions under management group
+[2026-01-22 15:18:46] [WARN]   ⏭️  Skipping scenario (no -ManagementGroupId provided)
+
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:18:46] [INFO] SCENARIO 9: Rollback (Remove All Policies)
+═══════════════════════════════════════════════════════════
+[2026-01-22 15:18:46] [INFO] Executing: .\AzPolicyImplScript.ps1 -Rollback -SkipRBACCheck -Preview
+[2026-01-22 15:18:52] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:18:52] [INFO]   Output saved to: .\scenario-9-output-20260122-151846.txt
+[2026-01-22 15:18:52] [ERROR]   ❌ Console next steps validation failed for Rollback (Remove All Policies)
+[2026-01-22 15:18:52] [ERROR]     - Missing 'NEXT STEPS GUIDANCE' banner
+[2026-01-22 15:18:52] [SUCCESS]   ✅ HTML report validated for Rollback (Remove All Policies)
+[2026-01-22 15:18:52] [SUCCESS]   ✅ No unexpected warnings/errors for Rollback (Remove All Policies)
+
+
+═══════════════════════════════════════════════════════════
+                     TEST SUMMARY REPORT
+═══════════════════════════════════════════════════════════
+
+[2026-01-22 15:18:54] [INFO] Test Duration: 00:02:16
+[2026-01-22 15:18:54] [INFO] Test Log: .\test-all-scenarios-validation-20260122-151637.txt
+
+📊 Results by Scenario:
+═══════════════════════════════════════════════════════════
+
+DevTest Baseline (30 Policies):
+  Status: FAIL
+  ❌ Console validation: True
+  ✅ HTML validation: True
+  ❌ No unexpected warnings/errors: False
+  📄 Output: .\scenario-1-output-20260122-151637.txt
+
+DevTest Full (46 Policies):
+  Status: FAIL
+  ❌ Console validation: True
+  ✅ HTML validation: True
+  ❌ No unexpected warnings/errors: False
+  📄 Output: .\scenario-2-output-20260122-151655.txt
+
+DevTest Auto-Remediation (8 Policies):
+  Status: FAIL
+  ❌ Console validation: True
+  ✅ HTML validation: True
+  ❌ No unexpected warnings/errors: False
+  📄 Output: .\scenario-3-output-20260122-151711.txt
+
+Production Audit (46 Policies):
+  Status: FAIL
+  ❌ Console validation: True
+  ✅ HTML validation: True
+  ❌ No unexpected warnings/errors: False
+  📄 Output: .\scenario-4-output-20260122-151739.txt
+
+Production Deny (46 Policies - Maximum Enforcement):
+  Status: FAIL
+  ❌ Console validation: False
+  ✅ HTML validation: True
+  ❌ No unexpected warnings/errors: False
+  📄 Output: .\scenario-5-output-20260122-151755.txt
+
+Production Auto-Remediation (8 Policies):
+  Status: FAIL
+  ❌ Console validation: True
+  ✅ HTML validation: True
+  ❌ No unexpected warnings/errors: False
+  📄 Output: .\scenario-6-output-20260122-151812.txt
+
+Resource Group Scope (Limited Deployment):
+  Status: FAIL
+  ❌ Console validation: False
+  ✅ HTML validation: True
+  ❌ No unexpected warnings/errors: False
+  📄 Output: .\scenario-7-output-20260122-151834.txt
+
+Management Group Scope (Enterprise-Wide):
+  Status: SKIPPED
+  ⏭️  Reason: No management group ID provided
+
+Rollback (Remove All Policies):
+  Status: FAIL
+  ❌ Console validation: False
+  ✅ HTML validation: True
+  ✅ No unexpected warnings/errors: True
+  📄 Output: .\scenario-9-output-20260122-151846.txt
+
+═══════════════════════════════════════════════════════════
+
+📊 Overall Statistics:
+  Total scenarios: 9
+  ✅ Passed: 0
+  ❌ Failed: 8
+  ⚠️  Errors: 0
+  ⏭️  Skipped: 3
+
+═══════════════════════════════════════════════════════════
+❌ SOME TESTS FAILED - Review output above
+═══════════════════════════════════════════════════════════
+
+[2026-01-22 15:18:54] [INFO] 
+Test suite complete. Overall status: FAIL

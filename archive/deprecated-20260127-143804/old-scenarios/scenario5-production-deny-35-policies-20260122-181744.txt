@@ -1,0 +1,1273 @@
+**********************
+PowerShell transcript start
+Start time: 20260122181744
+Username: DTL01\lcladmin
+RunAs User: DTL01\lcladmin
+Configuration Name: 
+Machine: DTL01 (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Program Files\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 2380
+PSVersion: 7.5.3
+PSEdition: Core
+GitCommitId: 7.5.3
+OS: Microsoft Windows 10.0.20348
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+
+🚀 Starting deployment...
+Command: .\AzPolicyImplScript.ps1
+  -ParameterFile C:\Source\powershell-akv-policyhardening\PolicyParameters-Production-Deny.json
+  -SkipRBACCheck
+
+
+╔══════════════════════════════════════════════════════════════╗
+║  Azure Policy Implementation - Key Vault Governance          ║
+╚══════════════════════════════════════════════════════════════╝
+
+[2026-01-22 18:17:44Z]
+[INFO]
+Starting Azure Policy implementation script for Key Vault policies
+[2026-01-22 18:17:44Z]
+[INFO]
+Checking required PowerShell modules...
+[2026-01-22 18:17:44Z]
+[SUCCESS]
+Module Az.Accounts is present
+[2026-01-22 18:17:44Z]
+[SUCCESS]
+Module Az.Resources is present
+[2026-01-22 18:17:44Z]
+[SUCCESS]
+Module Az.PolicyInsights is present
+[2026-01-22 18:17:44Z]
+[SUCCESS]
+Module Az.Monitor is present
+[2026-01-22 18:17:44Z]
+[SUCCESS]
+Module Az.KeyVault is present
+[2026-01-22 18:17:44Z]
+[INFO]
+Using Azure context: theregniers@hotmail.com
+[2026-01-22 18:17:44Z]
+[INFO]
+Loading policy mapping from ./PolicyNameMapping.json
+[2026-01-22 18:17:44Z]
+[INFO]
+Loaded 3745 policy mappings
+[2026-01-22 18:17:44Z]
+[INFO]
+Loading policy parameter overrides from C:\Source\powershell-akv-policyhardening\PolicyParameters-Production-Deny.json
+[2026-01-22 18:17:44Z]
+[INFO]
+Detected deployment type: Custom (from parameter file: PolicyParameters-Production-Deny.json)
+[2026-01-22 18:17:44Z]
+[INFO]
+DEBUG: PSBoundParameters keys: SkipRBACCheck, CsvPath, ParameterOverridesPath
+[2026-01-22 18:17:44Z]
+[INFO]
+DEBUG: ScopeType value: ''
+[2026-01-22 18:17:44Z]
+[INFO]
+DEBUG: Prompting for scope type (PSBound check failed)
+[2026-01-22 18:17:47Z]
+[INFO]
+Checking current subscription context.
+[2026-01-22 18:17:47Z]
+[INFO]
+Current subscription: MSDN Platforms Subscription (ab1336c7-687d-4107-b0f6-9649a0458adb)
+[2026-01-22 18:17:49Z]
+[WARN]
+Skipping RBAC permission check (SkipRBACCheck flag enabled).
+[2026-01-22 18:17:49Z]
+[INFO]
+Using policy effects from parameter file: C:\Source\powershell-akv-policyhardening\PolicyParameters-Production-Deny.json
+
+╔═══════════════════════════════════════════════════════════════╗
+║  ℹ️  Production Configuration Detected (Audit Mode)            ║
+╚═══════════════════════════════════════════════════════════════╝
+
+  Using production parameters in Audit mode (recommended first step)
+  No resources will be blocked during this deployment
+
+[2026-01-22 18:17:49Z]
+[SUCCESS]
+Loaded 34 policies from parameter file: C:\Source\powershell-akv-policyhardening\PolicyParameters-Production-Deny.json
+
+Processing 34 policies...
+─────────────────────────────────────────────────────────────
+
+[2026-01-22 18:17:49Z]
+[INFO]
+Preparing to assign (1/34): Secrets should have the specified maximum validity period
+[2026-01-22 18:17:49Z]
+[INFO]
+Assigning policy 'Secrets should have the specified maximum validity period' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:17:49Z]
+[SUCCESS]
+Found 'Secrets should have the specified maximum validity period' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/342e8053-e12e-4c44-be01-c3c2f318400f
+[2026-01-22 18:17:49Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:17:49Z]
+[INFO]
+DEBUG: Defined parameter names: maximumValidityInDays, effect
+[2026-01-22 18:17:49Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:17:49Z]
+[INFO]
+DEBUG: Checking parameter 'maximumValidityInDays' against policy definition
+[2026-01-22 18:17:49Z]
+[INFO]
+DEBUG: Defined parameter names: maximumValidityInDays, effect
+[2026-01-22 18:17:49Z]
+[INFO]
+DEBUG: Added parameter 'maximumValidityInDays' = '365' to cleaned params
+[2026-01-22 18:17:49Z]
+[INFO]
+Assignment already exists for 'Secrets should have the specified maximum validity period'. Updating parameters and enforcement mode...
+[2026-01-22 18:17:50Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:17:50Z]
+[INFO]
+Preparing to assign (2/34): Certificates should be issued by one of the specified non-integrated certificate authorities
+[2026-01-22 18:17:50Z]
+[INFO]
+Assigning policy 'Certificates should be issued by one of the specified non-integrated certificate authorities' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:17:50Z]
+[SUCCESS]
+Found 'Certificates should be issued by one of the specified non-integrated certificate authorities' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/d3e82b87-6673-410b-8501-1896b688b9a3
+[2026-01-22 18:17:50Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:17:50Z]
+[INFO]
+DEBUG: Defined parameter names: caCommonNames, effect
+[2026-01-22 18:17:50Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:17:50Z]
+[INFO]
+DEBUG: Checking parameter 'caCommonNames' against policy definition
+[2026-01-22 18:17:50Z]
+[INFO]
+DEBUG: Defined parameter names: caCommonNames, effect
+[2026-01-22 18:17:50Z]
+[INFO]
+DEBUG: Added parameter 'caCommonNames' = 'ContosoCA FabrikamCA' to cleaned params
+[2026-01-22 18:17:50Z]
+[INFO]
+Assignment already exists for 'Certificates should be issued by one of the specified non-integrated certificate authorities'. Updating parameters and enforcement mode...
+[2026-01-22 18:17:51Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:17:51Z]
+[INFO]
+Preparing to assign (3/34): Keys using RSA cryptography should have a specified minimum key size
+[2026-01-22 18:17:51Z]
+[INFO]
+Assigning policy 'Keys using RSA cryptography should have a specified minimum key size' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:17:51Z]
+[SUCCESS]
+Found 'Keys using RSA cryptography should have a specified minimum key size' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/82067dbb-e53b-4e06-b631-546d197452d9
+[2026-01-22 18:17:51Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:17:51Z]
+[INFO]
+DEBUG: Defined parameter names: minimumRSAKeySize, effect
+[2026-01-22 18:17:51Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:17:51Z]
+[INFO]
+DEBUG: Checking parameter 'minimumRSAKeySize' against policy definition
+[2026-01-22 18:17:51Z]
+[INFO]
+DEBUG: Defined parameter names: minimumRSAKeySize, effect
+[2026-01-22 18:17:51Z]
+[INFO]
+DEBUG: Added parameter 'minimumRSAKeySize' = '4096' to cleaned params
+[2026-01-22 18:17:51Z]
+[INFO]
+Assignment already exists for 'Keys using RSA cryptography should have a specified minimum key size'. Updating parameters and enforcement mode...
+[2026-01-22 18:17:52Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:17:52Z]
+[INFO]
+Preparing to assign (4/34): Azure Key Vault Managed HSM should have purge protection enabled
+[2026-01-22 18:17:52Z]
+[INFO]
+Assigning policy 'Azure Key Vault Managed HSM should have purge protection enabled' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:17:52Z]
+[SUCCESS]
+Found 'Azure Key Vault Managed HSM should have purge protection enabled' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/c39ba22d-4428-4149-b981-70acb31fc383
+[2026-01-22 18:17:52Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:17:52Z]
+[INFO]
+DEBUG: Defined parameter names: effect
+[2026-01-22 18:17:52Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:17:52Z]
+[INFO]
+Assignment already exists for 'Azure Key Vault Managed HSM should have purge protection enabled'. Updating parameters and enforcement mode...
+[2026-01-22 18:17:52Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:17:52Z]
+[INFO]
+Preparing to assign (5/34): Certificates using elliptic curve cryptography should have allowed curve names
+[2026-01-22 18:17:52Z]
+[INFO]
+Assigning policy 'Certificates using elliptic curve cryptography should have allowed curve names' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:17:52Z]
+[SUCCESS]
+Found 'Certificates using elliptic curve cryptography should have allowed curve names' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/bd78111f-4953-4367-9fd5-7e08808b54bf
+[2026-01-22 18:17:53Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:17:53Z]
+[INFO]
+DEBUG: Defined parameter names: allowedECNames, effect
+[2026-01-22 18:17:53Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:17:53Z]
+[INFO]
+DEBUG: Checking parameter 'allowedECNames' against policy definition
+[2026-01-22 18:17:53Z]
+[INFO]
+DEBUG: Defined parameter names: allowedECNames, effect
+[2026-01-22 18:17:53Z]
+[INFO]
+DEBUG: Added parameter 'allowedECNames' = 'P-256 P-256K P-384 P-521' to cleaned params
+[2026-01-22 18:17:53Z]
+[INFO]
+Assignment already exists for 'Certificates using elliptic curve cryptography should have allowed curve names'. Updating parameters and enforcement mode...
+[2026-01-22 18:17:53Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:17:53Z]
+[INFO]
+Preparing to assign (6/34): Keys should be the specified cryptographic type RSA or EC
+[2026-01-22 18:17:53Z]
+[INFO]
+Assigning policy 'Keys should be the specified cryptographic type RSA or EC' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:17:53Z]
+[SUCCESS]
+Found 'Keys should be the specified cryptographic type RSA or EC' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/75c4f823-d65c-4f29-a733-01d0077fdbcb
+[2026-01-22 18:17:53Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:17:53Z]
+[INFO]
+DEBUG: Defined parameter names: allowedKeyTypes, effect
+[2026-01-22 18:17:54Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:17:54Z]
+[INFO]
+DEBUG: Checking parameter 'cryptographicType' against policy definition
+[2026-01-22 18:17:54Z]
+[INFO]
+DEBUG: Defined parameter names: allowedKeyTypes, effect
+[2026-01-22 18:17:54Z]
+[WARN]
+DEBUG: Parameter 'cryptographicType' NOT FOUND in policy definition - SKIPPED
+[2026-01-22 18:17:54Z]
+[WARN]
+Parameter 'cryptographicType' not defined in policy. Skipping to avoid UndefinedPolicyParameter error.
+[2026-01-22 18:17:54Z]
+[INFO]
+Assignment already exists for 'Keys should be the specified cryptographic type RSA or EC'. Updating parameters and enforcement mode...
+[2026-01-22 18:17:54Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:17:54Z]
+[INFO]
+Preparing to assign (7/34): Certificates using RSA cryptography should have the specified minimum key size
+[2026-01-22 18:17:54Z]
+[INFO]
+Assigning policy 'Certificates using RSA cryptography should have the specified minimum key size' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:17:54Z]
+[SUCCESS]
+Found 'Certificates using RSA cryptography should have the specified minimum key size' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/cee51871-e572-4576-855c-047c820360f0
+[2026-01-22 18:17:54Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:17:54Z]
+[INFO]
+DEBUG: Defined parameter names: minimumRSAKeySize, effect
+[2026-01-22 18:17:54Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:17:54Z]
+[INFO]
+DEBUG: Checking parameter 'minimumRSAKeySize' against policy definition
+[2026-01-22 18:17:54Z]
+[INFO]
+DEBUG: Defined parameter names: minimumRSAKeySize, effect
+[2026-01-22 18:17:54Z]
+[INFO]
+DEBUG: Added parameter 'minimumRSAKeySize' = '4096' to cleaned params
+[2026-01-22 18:17:54Z]
+[INFO]
+Assignment already exists for 'Certificates using RSA cryptography should have the specified minimum key size'. Updating parameters and enforcement mode...
+[2026-01-22 18:17:55Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:17:55Z]
+[INFO]
+Preparing to assign (8/34): [Preview]: Azure Key Vault Managed HSM keys using elliptic curve cryptography should have the specified curve names
+[2026-01-22 18:17:55Z]
+[INFO]
+Assigning policy '[Preview]: Azure Key Vault Managed HSM keys using elliptic curve cryptography should have the specified curve names' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:17:55Z]
+[SUCCESS]
+Found '[Preview]: Azure Key Vault Managed HSM keys using elliptic curve cryptography should have the specified curve names' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/e58fd0c1-feac-4d12-92db-0a7e9421f53e
+[2026-01-22 18:17:55Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:17:55Z]
+[INFO]
+DEBUG: Defined parameter names: allowedECNames, effect
+[2026-01-22 18:17:55Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:17:55Z]
+[INFO]
+DEBUG: Checking parameter 'allowedECNames' against policy definition
+[2026-01-22 18:17:55Z]
+[INFO]
+DEBUG: Defined parameter names: allowedECNames, effect
+[2026-01-22 18:17:55Z]
+[INFO]
+DEBUG: Added parameter 'allowedECNames' = 'P-256 P-256K P-384 P-521' to cleaned params
+[2026-01-22 18:17:55Z]
+[INFO]
+Assignment already exists for '[Preview]: Azure Key Vault Managed HSM keys using elliptic curve cryptography should have the specified curve names'. Updating parameters and enforcement mode...
+[2026-01-22 18:17:56Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:17:56Z]
+[INFO]
+Preparing to assign (9/34): Certificates should not expire within the specified number of days
+[2026-01-22 18:17:56Z]
+[INFO]
+Assigning policy 'Certificates should not expire within the specified number of days' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:17:56Z]
+[SUCCESS]
+Found 'Certificates should not expire within the specified number of days' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/f772fb64-8e40-40ad-87bc-7706e1949427
+[2026-01-22 18:17:56Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:17:56Z]
+[INFO]
+DEBUG: Defined parameter names: daysToExpire, effect
+[2026-01-22 18:17:56Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:17:56Z]
+[INFO]
+DEBUG: Checking parameter 'daysToExpire' against policy definition
+[2026-01-22 18:17:56Z]
+[INFO]
+DEBUG: Defined parameter names: daysToExpire, effect
+[2026-01-22 18:17:56Z]
+[INFO]
+DEBUG: Added parameter 'daysToExpire' = '90' to cleaned params
+[2026-01-22 18:17:56Z]
+[INFO]
+Assignment already exists for 'Certificates should not expire within the specified number of days'. Updating parameters and enforcement mode...
+[2026-01-22 18:17:57Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:17:57Z]
+[INFO]
+Preparing to assign (10/34): Azure Key Vaults should use private link
+[2026-01-22 18:17:57Z]
+[INFO]
+Assigning policy 'Azure Key Vaults should use private link' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:17:57Z]
+[SUCCESS]
+Found 'Azure Key Vaults should use private link' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/a6abeaec-4d90-4a02-805f-6b26c4d3fbe9
+[2026-01-22 18:17:57Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:17:57Z]
+[INFO]
+DEBUG: Defined parameter names: audit_effect, effect
+[2026-01-22 18:17:57Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:17:57Z]
+[INFO]
+Assignment already exists for 'Azure Key Vaults should use private link'. Updating parameters and enforcement mode...
+[2026-01-22 18:17:57Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:17:57Z]
+[INFO]
+Preparing to assign (11/34): Certificates should be issued by the specified integrated certificate authority
+[2026-01-22 18:17:57Z]
+[INFO]
+Assigning policy 'Certificates should be issued by the specified integrated certificate authority' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:17:57Z]
+[SUCCESS]
+Found 'Certificates should be issued by the specified integrated certificate authority' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/8e826246-c976-48f6-b03e-619bb92b3d82
+[2026-01-22 18:17:58Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:17:58Z]
+[INFO]
+DEBUG: Defined parameter names: allowedCAs, effect
+[2026-01-22 18:17:58Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:17:58Z]
+[INFO]
+DEBUG: Checking parameter 'allowedCAs' against policy definition
+[2026-01-22 18:17:58Z]
+[INFO]
+DEBUG: Defined parameter names: allowedCAs, effect
+[2026-01-22 18:17:58Z]
+[INFO]
+DEBUG: Added parameter 'allowedCAs' = 'DigiCert GlobalSign' to cleaned params
+[2026-01-22 18:17:58Z]
+[INFO]
+Assignment already exists for 'Certificates should be issued by the specified integrated certificate authority'. Updating parameters and enforcement mode...
+[2026-01-22 18:17:58Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:17:58Z]
+[INFO]
+Preparing to assign (12/34): Keys should be backed by a hardware security module (HSM)
+[2026-01-22 18:17:58Z]
+[INFO]
+Assigning policy 'Keys should be backed by a hardware security module (HSM)' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:17:58Z]
+[SUCCESS]
+Found 'Keys should be backed by a hardware security module (HSM)' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/587c79fe-dd04-4a5e-9d0b-f89598c7261b
+[2026-01-22 18:17:59Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:17:59Z]
+[INFO]
+DEBUG: Defined parameter names: effect
+[2026-01-22 18:17:59Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:17:59Z]
+[INFO]
+Assignment already exists for 'Keys should be backed by a hardware security module (HSM)'. Updating parameters and enforcement mode...
+[2026-01-22 18:17:59Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:17:59Z]
+[INFO]
+Preparing to assign (13/34): Keys using elliptic curve cryptography should have the specified curve names
+[2026-01-22 18:17:59Z]
+[INFO]
+Assigning policy 'Keys using elliptic curve cryptography should have the specified curve names' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:17:59Z]
+[SUCCESS]
+Found 'Keys using elliptic curve cryptography should have the specified curve names' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/ff25f3c8-b739-4538-9d07-3d6d25cfb255
+[2026-01-22 18:18:00Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:00Z]
+[INFO]
+DEBUG: Defined parameter names: allowedECNames, effect
+[2026-01-22 18:18:00Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:00Z]
+[INFO]
+DEBUG: Checking parameter 'allowedECNames' against policy definition
+[2026-01-22 18:18:00Z]
+[INFO]
+DEBUG: Defined parameter names: allowedECNames, effect
+[2026-01-22 18:18:00Z]
+[INFO]
+DEBUG: Added parameter 'allowedECNames' = 'P-256 P-256K P-384 P-521' to cleaned params
+[2026-01-22 18:18:00Z]
+[INFO]
+Assignment already exists for 'Keys using elliptic curve cryptography should have the specified curve names'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:00Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:00Z]
+[INFO]
+Preparing to assign (14/34): Keys should have more than the specified number of days before expiration
+[2026-01-22 18:18:00Z]
+[INFO]
+Assigning policy 'Keys should have more than the specified number of days before expiration' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:00Z]
+[SUCCESS]
+Found 'Keys should have more than the specified number of days before expiration' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/5ff38825-c5d8-47c5-b70e-069a21955146
+[2026-01-22 18:18:01Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:01Z]
+[INFO]
+DEBUG: Defined parameter names: minimumDaysBeforeExpiration, effect
+[2026-01-22 18:18:01Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:01Z]
+[INFO]
+DEBUG: Checking parameter 'minimumDaysBeforeExpiration' against policy definition
+[2026-01-22 18:18:01Z]
+[INFO]
+DEBUG: Defined parameter names: minimumDaysBeforeExpiration, effect
+[2026-01-22 18:18:01Z]
+[INFO]
+DEBUG: Added parameter 'minimumDaysBeforeExpiration' = '90' to cleaned params
+[2026-01-22 18:18:01Z]
+[INFO]
+Assignment already exists for 'Keys should have more than the specified number of days before expiration'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:01Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:01Z]
+[INFO]
+Preparing to assign (15/34): [Preview]: Azure Key Vault Managed HSM should disable public network access
+[2026-01-22 18:18:01Z]
+[INFO]
+Assigning policy '[Preview]: Azure Key Vault Managed HSM should disable public network access' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:01Z]
+[SUCCESS]
+Found '[Preview]: Azure Key Vault Managed HSM should disable public network access' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/19ea9d63-adee-4431-a95e-1913c6c1c75f
+[2026-01-22 18:18:02Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:02Z]
+[INFO]
+DEBUG: Defined parameter names: effect
+[2026-01-22 18:18:02Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:02Z]
+[INFO]
+Assignment already exists for '[Preview]: Azure Key Vault Managed HSM should disable public network access'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:02Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:02Z]
+[INFO]
+Preparing to assign (16/34): Key Vault keys should have an expiration date
+[2026-01-22 18:18:02Z]
+[INFO]
+Assigning policy 'Key Vault keys should have an expiration date' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:02Z]
+[SUCCESS]
+Found 'Key Vault keys should have an expiration date' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/152b15f7-8e1f-4c1f-ab71-8c010ba5dbc0
+[2026-01-22 18:18:02Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:02Z]
+[INFO]
+DEBUG: Defined parameter names: effect
+[2026-01-22 18:18:02Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:02Z]
+[INFO]
+Assignment already exists for 'Key Vault keys should have an expiration date'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:03Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:03Z]
+[INFO]
+Preparing to assign (17/34): Keys should have the specified maximum validity period
+[2026-01-22 18:18:03Z]
+[INFO]
+Assigning policy 'Keys should have the specified maximum validity period' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:03Z]
+[SUCCESS]
+Found 'Keys should have the specified maximum validity period' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/49a22571-d204-4c91-a7b6-09b1a586fbc9
+[2026-01-22 18:18:03Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:03Z]
+[INFO]
+DEBUG: Defined parameter names: maximumValidityInDays, effect
+[2026-01-22 18:18:03Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:03Z]
+[INFO]
+DEBUG: Checking parameter 'maximumValidityInDays' against policy definition
+[2026-01-22 18:18:03Z]
+[INFO]
+DEBUG: Defined parameter names: maximumValidityInDays, effect
+[2026-01-22 18:18:03Z]
+[INFO]
+DEBUG: Added parameter 'maximumValidityInDays' = '365' to cleaned params
+[2026-01-22 18:18:03Z]
+[INFO]
+Assignment already exists for 'Keys should have the specified maximum validity period'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:04Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:04Z]
+[INFO]
+Preparing to assign (18/34): Key Vault secrets should have an expiration date
+[2026-01-22 18:18:04Z]
+[INFO]
+Assigning policy 'Key Vault secrets should have an expiration date' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:04Z]
+[SUCCESS]
+Found 'Key Vault secrets should have an expiration date' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/98728c90-32c7-4049-8429-847dc0f4fe37
+[2026-01-22 18:18:04Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:04Z]
+[INFO]
+DEBUG: Defined parameter names: effect
+[2026-01-22 18:18:04Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:04Z]
+[INFO]
+Assignment already exists for 'Key Vault secrets should have an expiration date'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:04Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:04Z]
+[INFO]
+Preparing to assign (19/34): Key vaults should have soft delete enabled
+[2026-01-22 18:18:04Z]
+[INFO]
+Assigning policy 'Key vaults should have soft delete enabled' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:04Z]
+[SUCCESS]
+Found 'Key vaults should have soft delete enabled' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d
+[2026-01-22 18:18:05Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:05Z]
+[INFO]
+DEBUG: Defined parameter names: effect
+[2026-01-22 18:18:05Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:05Z]
+[INFO]
+Assignment already exists for 'Key vaults should have soft delete enabled'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:06Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:06Z]
+[INFO]
+Preparing to assign (20/34): Azure Key Vault should disable public network access
+[2026-01-22 18:18:06Z]
+[INFO]
+Assigning policy 'Azure Key Vault should disable public network access' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:06Z]
+[SUCCESS]
+Found 'Azure Key Vault should disable public network access' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/405c5871-3e91-4644-8a63-58e19d68ff5b
+[2026-01-22 18:18:06Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:06Z]
+[INFO]
+DEBUG: Defined parameter names: effect
+[2026-01-22 18:18:06Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:06Z]
+[INFO]
+Assignment already exists for 'Azure Key Vault should disable public network access'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:06Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:06Z]
+[INFO]
+Preparing to assign (21/34): Certificates should be issued by the specified non-integrated certificate authority
+[2026-01-22 18:18:06Z]
+[INFO]
+Assigning policy 'Certificates should be issued by the specified non-integrated certificate authority' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:06Z]
+[SUCCESS]
+Found 'Certificates should be issued by the specified non-integrated certificate authority' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/a22f4a40-01d3-4c7d-8071-da157eeff341
+[2026-01-22 18:18:07Z]
+[INFO]
+DEBUG: Checking parameter 'caCommonName' against policy definition
+[2026-01-22 18:18:07Z]
+[INFO]
+DEBUG: Defined parameter names: caCommonName, effect
+[2026-01-22 18:18:07Z]
+[INFO]
+DEBUG: Added parameter 'caCommonName' = 'ContosoCA' to cleaned params
+[2026-01-22 18:18:07Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:07Z]
+[INFO]
+DEBUG: Defined parameter names: caCommonName, effect
+[2026-01-22 18:18:07Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:07Z]
+[INFO]
+Assignment already exists for 'Certificates should be issued by the specified non-integrated certificate authority'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:07Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:07Z]
+[INFO]
+Preparing to assign (22/34): Certificates should have the specified maximum validity period
+[2026-01-22 18:18:07Z]
+[INFO]
+Assigning policy 'Certificates should have the specified maximum validity period' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:07Z]
+[SUCCESS]
+Found 'Certificates should have the specified maximum validity period' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/0a075868-4c26-42ef-914c-5bc007359560
+[2026-01-22 18:18:07Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:07Z]
+[INFO]
+DEBUG: Defined parameter names: maximumValidityInMonths, effect
+[2026-01-22 18:18:07Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:07Z]
+[INFO]
+DEBUG: Checking parameter 'maximumValidityInMonths' against policy definition
+[2026-01-22 18:18:07Z]
+[INFO]
+DEBUG: Defined parameter names: maximumValidityInMonths, effect
+[2026-01-22 18:18:07Z]
+[INFO]
+DEBUG: Added parameter 'maximumValidityInMonths' = '12' to cleaned params
+[2026-01-22 18:18:07Z]
+[INFO]
+Assignment already exists for 'Certificates should have the specified maximum validity period'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:08Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:08Z]
+[INFO]
+Preparing to assign (23/34): Keys should not be active for longer than the specified number of days
+[2026-01-22 18:18:08Z]
+[INFO]
+Assigning policy 'Keys should not be active for longer than the specified number of days' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:08Z]
+[SUCCESS]
+Found 'Keys should not be active for longer than the specified number of days' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/c26e4b24-cf98-4c67-b48b-5a25c4c69eb9
+[2026-01-22 18:18:08Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:08Z]
+[INFO]
+DEBUG: Defined parameter names: maximumValidityInDays, effect
+[2026-01-22 18:18:08Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:08Z]
+[INFO]
+DEBUG: Checking parameter 'maximumValidityInDays' against policy definition
+[2026-01-22 18:18:08Z]
+[INFO]
+DEBUG: Defined parameter names: maximumValidityInDays, effect
+[2026-01-22 18:18:08Z]
+[INFO]
+DEBUG: Added parameter 'maximumValidityInDays' = '365' to cleaned params
+[2026-01-22 18:18:08Z]
+[INFO]
+Assignment already exists for 'Keys should not be active for longer than the specified number of days'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:09Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:09Z]
+[INFO]
+Preparing to assign (24/34): Secrets should have content type set
+[2026-01-22 18:18:09Z]
+[INFO]
+Assigning policy 'Secrets should have content type set' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:09Z]
+[SUCCESS]
+Found 'Secrets should have content type set' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/75262d3e-ba4a-4f43-85f8-9f72c090e5e3
+[2026-01-22 18:18:09Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:09Z]
+[INFO]
+DEBUG: Defined parameter names: effect
+[2026-01-22 18:18:09Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:09Z]
+[INFO]
+Assignment already exists for 'Secrets should have content type set'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:10Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:10Z]
+[INFO]
+Preparing to assign (25/34): Azure Key Vault should have firewall enabled or public network access disabled
+[2026-01-22 18:18:10Z]
+[INFO]
+Assigning policy 'Azure Key Vault should have firewall enabled or public network access disabled' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:10Z]
+[SUCCESS]
+Found 'Azure Key Vault should have firewall enabled or public network access disabled' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/55615ac9-af46-4a59-874e-391cc3dfb490
+[2026-01-22 18:18:10Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:10Z]
+[INFO]
+DEBUG: Defined parameter names: effect, restrictIPAddresses, allowedIPAddresses, forbiddenIPAddresses
+[2026-01-22 18:18:10Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:10Z]
+[INFO]
+DEBUG: Checking parameter 'forbiddenIPAddresses' against policy definition
+[2026-01-22 18:18:10Z]
+[INFO]
+DEBUG: Defined parameter names: effect, restrictIPAddresses, allowedIPAddresses, forbiddenIPAddresses
+[2026-01-22 18:18:10Z]
+[INFO]
+DEBUG: Added parameter 'forbiddenIPAddresses' = '' to cleaned params
+[2026-01-22 18:18:10Z]
+[INFO]
+DEBUG: Checking parameter 'allowedIPAddresses' against policy definition
+[2026-01-22 18:18:10Z]
+[INFO]
+DEBUG: Defined parameter names: effect, restrictIPAddresses, allowedIPAddresses, forbiddenIPAddresses
+[2026-01-22 18:18:10Z]
+[INFO]
+DEBUG: Added parameter 'allowedIPAddresses' = '0.0.0.0/0' to cleaned params
+[2026-01-22 18:18:10Z]
+[INFO]
+Assignment already exists for 'Azure Key Vault should have firewall enabled or public network access disabled'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:10Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:10Z]
+[INFO]
+Preparing to assign (26/34): [Preview]: Azure Key Vault Managed HSM Keys should have more than the specified number of days before expiration
+[2026-01-22 18:18:10Z]
+[INFO]
+Assigning policy '[Preview]: Azure Key Vault Managed HSM Keys should have more than the specified number of days before expiration' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:10Z]
+[SUCCESS]
+Found '[Preview]: Azure Key Vault Managed HSM Keys should have more than the specified number of days before expiration' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/ad27588c-0198-4c84-81ef-08efd0274653
+[2026-01-22 18:18:11Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:11Z]
+[INFO]
+DEBUG: Defined parameter names: effect, minimumDaysBeforeExpiration
+[2026-01-22 18:18:11Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:11Z]
+[INFO]
+DEBUG: Checking parameter 'minimumDaysBeforeExpiration' against policy definition
+[2026-01-22 18:18:11Z]
+[INFO]
+DEBUG: Defined parameter names: effect, minimumDaysBeforeExpiration
+[2026-01-22 18:18:11Z]
+[INFO]
+DEBUG: Added parameter 'minimumDaysBeforeExpiration' = '30' to cleaned params
+[2026-01-22 18:18:11Z]
+[INFO]
+Assignment already exists for '[Preview]: Azure Key Vault Managed HSM Keys should have more than the specified number of days before expiration'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:11Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:11Z]
+[INFO]
+Preparing to assign (27/34): Azure Key Vault should use RBAC permission model
+[2026-01-22 18:18:11Z]
+[INFO]
+Assigning policy 'Azure Key Vault should use RBAC permission model' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:11Z]
+[SUCCESS]
+Found 'Azure Key Vault should use RBAC permission model' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5
+[2026-01-22 18:18:12Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:12Z]
+[INFO]
+DEBUG: Defined parameter names: effect
+[2026-01-22 18:18:12Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:12Z]
+[INFO]
+Assignment already exists for 'Azure Key Vault should use RBAC permission model'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:12Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:12Z]
+[INFO]
+Preparing to assign (28/34): Secrets should have more than the specified number of days before expiration
+[2026-01-22 18:18:12Z]
+[INFO]
+Assigning policy 'Secrets should have more than the specified number of days before expiration' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:12Z]
+[SUCCESS]
+Found 'Secrets should have more than the specified number of days before expiration' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/b0eb591a-5e70-4534-a8bf-04b9c489584a
+[2026-01-22 18:18:12Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:12Z]
+[INFO]
+DEBUG: Defined parameter names: minimumDaysBeforeExpiration, effect
+[2026-01-22 18:18:12Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:12Z]
+[INFO]
+DEBUG: Checking parameter 'minimumDaysBeforeExpiration' against policy definition
+[2026-01-22 18:18:12Z]
+[INFO]
+DEBUG: Defined parameter names: minimumDaysBeforeExpiration, effect
+[2026-01-22 18:18:12Z]
+[INFO]
+DEBUG: Added parameter 'minimumDaysBeforeExpiration' = '90' to cleaned params
+[2026-01-22 18:18:12Z]
+[INFO]
+Assignment already exists for 'Secrets should have more than the specified number of days before expiration'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:13Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:13Z]
+[INFO]
+Preparing to assign (29/34): Key vaults should have deletion protection enabled
+[2026-01-22 18:18:13Z]
+[INFO]
+Assigning policy 'Key vaults should have deletion protection enabled' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:13Z]
+[SUCCESS]
+Found 'Key vaults should have deletion protection enabled' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/0b60c0b2-2dc2-4e1c-b5c9-abbed971de53
+[2026-01-22 18:18:13Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:13Z]
+[INFO]
+DEBUG: Defined parameter names: effect
+[2026-01-22 18:18:13Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:13Z]
+[INFO]
+Assignment already exists for 'Key vaults should have deletion protection enabled'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:13Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:13Z]
+[INFO]
+Preparing to assign (30/34): Certificates should have the specified lifetime action triggers
+[2026-01-22 18:18:13Z]
+[INFO]
+Assigning policy 'Certificates should have the specified lifetime action triggers' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:13Z]
+[SUCCESS]
+Found 'Certificates should have the specified lifetime action triggers' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/12ef42cb-9903-4e39-9c26-422d29570417
+[2026-01-22 18:18:14Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:14Z]
+[INFO]
+DEBUG: Defined parameter names: maximumPercentageLife, minimumDaysBeforeExpiry, effect
+[2026-01-22 18:18:14Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:14Z]
+[INFO]
+DEBUG: Checking parameter 'minimumDaysBeforeExpiry' against policy definition
+[2026-01-22 18:18:14Z]
+[INFO]
+DEBUG: Defined parameter names: maximumPercentageLife, minimumDaysBeforeExpiry, effect
+[2026-01-22 18:18:14Z]
+[INFO]
+DEBUG: Added parameter 'minimumDaysBeforeExpiry' = '90' to cleaned params
+[2026-01-22 18:18:14Z]
+[INFO]
+DEBUG: Checking parameter 'maximumPercentageLife' against policy definition
+[2026-01-22 18:18:14Z]
+[INFO]
+DEBUG: Defined parameter names: maximumPercentageLife, minimumDaysBeforeExpiry, effect
+[2026-01-22 18:18:14Z]
+[INFO]
+DEBUG: Added parameter 'maximumPercentageLife' = '80' to cleaned params
+[2026-01-22 18:18:14Z]
+[INFO]
+Assignment already exists for 'Certificates should have the specified lifetime action triggers'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:14Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:14Z]
+[INFO]
+Preparing to assign (31/34): Secrets should not be active for longer than the specified number of days
+[2026-01-22 18:18:14Z]
+[INFO]
+Assigning policy 'Secrets should not be active for longer than the specified number of days' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:14Z]
+[SUCCESS]
+Found 'Secrets should not be active for longer than the specified number of days' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/e8d99835-8a06-45ae-a8e0-87a91941ccfe
+[2026-01-22 18:18:15Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:15Z]
+[INFO]
+DEBUG: Defined parameter names: maximumValidityInDays, effect
+[2026-01-22 18:18:15Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:15Z]
+[INFO]
+DEBUG: Checking parameter 'maximumValidityInDays' against policy definition
+[2026-01-22 18:18:15Z]
+[INFO]
+DEBUG: Defined parameter names: maximumValidityInDays, effect
+[2026-01-22 18:18:15Z]
+[INFO]
+DEBUG: Added parameter 'maximumValidityInDays' = '365' to cleaned params
+[2026-01-22 18:18:15Z]
+[INFO]
+Assignment already exists for 'Secrets should not be active for longer than the specified number of days'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:15Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:15Z]
+[INFO]
+Preparing to assign (32/34): [Preview]: Azure Key Vault Managed HSM keys should have an expiration date
+[2026-01-22 18:18:15Z]
+[INFO]
+Assigning policy '[Preview]: Azure Key Vault Managed HSM keys should have an expiration date' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:15Z]
+[SUCCESS]
+Found '[Preview]: Azure Key Vault Managed HSM keys should have an expiration date' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/1d478a74-21ba-4b9f-9d8f-8e6fced0eec5
+[2026-01-22 18:18:16Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:16Z]
+[INFO]
+DEBUG: Defined parameter names: effect
+[2026-01-22 18:18:16Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:16Z]
+[INFO]
+Assignment already exists for '[Preview]: Azure Key Vault Managed HSM keys should have an expiration date'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:16Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:16Z]
+[INFO]
+Preparing to assign (33/34): Certificates should use allowed key types
+[2026-01-22 18:18:16Z]
+[INFO]
+Assigning policy 'Certificates should use allowed key types' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:16Z]
+[SUCCESS]
+Found 'Certificates should use allowed key types' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/1151cede-290b-4ba0-8b38-0ad145ac888f
+[2026-01-22 18:18:16Z]
+[INFO]
+DEBUG: Checking parameter 'allowedKeyTypes' against policy definition
+[2026-01-22 18:18:16Z]
+[INFO]
+DEBUG: Defined parameter names: allowedKeyTypes, effect
+[2026-01-22 18:18:16Z]
+[INFO]
+DEBUG: Added parameter 'allowedKeyTypes' = 'RSA EC' to cleaned params
+[2026-01-22 18:18:16Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:16Z]
+[INFO]
+DEBUG: Defined parameter names: allowedKeyTypes, effect
+[2026-01-22 18:18:16Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:16Z]
+[INFO]
+Assignment already exists for 'Certificates should use allowed key types'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:17Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-22 18:18:17Z]
+[INFO]
+Preparing to assign (34/34): [Preview]: Azure Key Vault Managed HSM keys using RSA cryptography should have a specified minimum key size
+[2026-01-22 18:18:17Z]
+[INFO]
+Assigning policy '[Preview]: Azure Key Vault Managed HSM keys using RSA cryptography should have a specified minimum key size' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-22 18:18:17Z]
+[SUCCESS]
+Found '[Preview]: Azure Key Vault Managed HSM keys using RSA cryptography should have a specified minimum key size' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/86810a98-8e91-4a44-8386-ec66d0de5d57
+[2026-01-22 18:18:17Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-22 18:18:17Z]
+[INFO]
+DEBUG: Defined parameter names: effect, minimumRSAKeySize
+[2026-01-22 18:18:17Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Deny' to cleaned params
+[2026-01-22 18:18:17Z]
+[INFO]
+DEBUG: Checking parameter 'minimumRSAKeySize' against policy definition
+[2026-01-22 18:18:17Z]
+[INFO]
+DEBUG: Defined parameter names: effect, minimumRSAKeySize
+[2026-01-22 18:18:17Z]
+[INFO]
+DEBUG: Added parameter 'minimumRSAKeySize' = '4096' to cleaned params
+[2026-01-22 18:18:17Z]
+[INFO]
+Assignment already exists for '[Preview]: Azure Key Vault Managed HSM keys using RSA cryptography should have a specified minimum key size'. Updating parameters and enforcement mode...
+[2026-01-22 18:18:17Z]
+[SUCCESS]
+Updated assignment
+[2026-01-22 18:18:17Z]
+[INFO]
+Collected 34 assignment IDs for filtering
+[2026-01-22 18:18:17Z]
+[INFO]
+First 3 assignment IDs: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Secretsshouldhavethespecifiedmaximumvalidityperiod-1663466362, /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Certificatesshouldbeissuedbyoneofthespecifiednonintegr-165973907, /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/KeysusingRSAcryptographyshouldhaveaspecifiedminimumkey-909744685
+
+Generating compliance report with operational metrics...
+[2026-01-22 18:18:21Z]
+[INFO]
+Querying policy states for scope: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb
+[2026-01-22 18:18:22Z]
+[INFO]
+Compliance query returned: Raw states=504, Policies reporting=36
+[2026-01-22 18:18:22Z]
+[INFO]
+Filtering compliance data: 34 assignments, 504 total policy states
+[2026-01-22 18:18:22Z]
+[INFO]
+Sample assignment IDs we're filtering for: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Secretsshouldhavethespecifiedmaximumvalidityperiod-1663466362 | /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Certificatesshouldbeissuedbyoneofthespecifiednonintegr-165973907
+[2026-01-22 18:18:22Z]
+[INFO]
+Found 248 compliance states for newly deployed policies
+[2026-01-22 18:18:22Z]
+[INFO]
+Total unique assignment IDs in compliance data: 36
+
+═══ Compliance Summary ═══
+Overall Compliance:
+42.74%
+ | Policies Reporting:
+34
+ | Resources Evaluated:
+12
+
+[2026-01-22 18:18:22Z]
+[INFO]
+Wrote reports: KeyVaultPolicyImplementationReport-20260122-181822.md, KeyVaultPolicyImplementationReport-20260122-181822.json, KeyVaultPolicyImplementationReport-20260122-181822.csv
+[2026-01-22 18:18:22Z]
+[SUCCESS]
+HTML report generated: ./PolicyImplementationReport-20260122-181822.html
+
+═══════════════════════════════════════════════════════════
+[2026-01-22 18:18:22Z]
+[SUCCESS]
+Completed run. Reports generated.
+═══════════════════════════════════════════════════════════
+
+📄 Reports Generated:
+  • HTML:
+./PolicyImplementationReport-20260122-181822.html
+  • Markdown:
+KeyVaultPolicyImplementationReport-20260122-181822.md
+  • JSON:
+KeyVaultPolicyImplementationReport-20260122-181822.json
+
+⚠️  IMPORTANT: Azure Policy Evaluation in Progress
+
+Deployment Status:
+✅ All policies successfully assigned
+Compliance Status:
+⏳ Partial data (42.74%) - Azure is still evaluating resources
+
+📊 Why Compliance is Low Right Now:
+  • Policy Assignment Propagation: 30-90 minutes for Azure to distribute assignments
+  • Resource Scanning: 15-30 minutes for Azure Policy engine to scan existing Key Vaults
+  • Compliance State Calculation: 10-15 minutes to evaluate resources against policy rules
+
+⏱️  WAIT 60 MINUTES from now, then regenerate this report to see accurate compliance.
+
+How to Regenerate Report:
+  .\AzPolicyImplScript.ps1 -CheckCompliance -TriggerScan
+
+Expected improvement: Compliance should increase from 42.74% to 60-80% range
+with all policies reporting complete data.
+
+
+[2026-01-22 18:18:22Z]
+[INFO]
+═══════════════════════════════════════════════════════════
+[2026-01-22 18:18:22Z]
+[INFO]
+                    📋 NEXT STEPS GUIDANCE
+[2026-01-22 18:18:22Z]
+[INFO]
+═══════════════════════════════════════════════════════════
+
+🎯 Custom Deployment Complete
+
+✅ What was deployed:
+  → Custom policy configuration from parameter file
+
+📋 Recommended Next Steps:
+  1. ⏳ Wait 30-60 minutes for Azure Policy evaluation cycle
+  2. 📊 Check compliance status:
+
+.\\AzPolicyImplScript.ps1 -CheckCompliance -TriggerScan
+  3. 📚 Review deployment documentation for custom workflows
+
+**********************
+PowerShell transcript end
+End time: 20260122181822
+**********************

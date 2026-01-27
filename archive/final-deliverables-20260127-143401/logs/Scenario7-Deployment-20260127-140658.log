@@ -1,0 +1,137 @@
+**********************
+PowerShell transcript start
+Start time: 20260127140658
+Username: DTL01\lcladmin
+RunAs User: DTL01\lcladmin
+Configuration Name: 
+Machine: DTL01 (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Program Files\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 4892
+PSVersion: 7.5.3
+PSEdition: Core
+GitCommitId: 7.5.3
+OS: Microsoft Windows 10.0.20348
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\logs\Scenario7-Deployment-20260127-140658.log
+
+╔══════════════════════════════════════════════════════════════╗
+║  SCENARIO 7: PRODUCTION REMEDIATION (8 DINE/Modify Policies) ║
+║  Duration: 5-7 minutes                                       ║
+║  Managed Identity: id-policy-remediation                     ║
+╚══════════════════════════════════════════════════════════════╝
+
+╔══════════════════════════════════════════════════════════════╗
+║  Azure Policy Implementation - Key Vault Governance          ║
+╚══════════════════════════════════════════════════════════════╝
+
+[2026-01-27 14:06:59Z]
+[INFO]
+Starting Azure Policy implementation script for Key Vault policies
+[2026-01-27 14:06:59Z]
+[INFO]
+Checking required PowerShell modules...
+[2026-01-27 14:06:59Z]
+[SUCCESS]
+Module Az.Accounts is present
+[2026-01-27 14:06:59Z]
+[SUCCESS]
+Module Az.Resources is present
+[2026-01-27 14:06:59Z]
+[SUCCESS]
+Module Az.PolicyInsights is present
+[2026-01-27 14:06:59Z]
+[SUCCESS]
+Module Az.Monitor is present
+[2026-01-27 14:06:59Z]
+[SUCCESS]
+Module Az.KeyVault is present
+[2026-01-27 14:07:00Z]
+[INFO]
+Using Azure context: theregniers@hotmail.com
+[2026-01-27 14:07:00Z]
+[INFO]
+Loading policy mapping from ./PolicyNameMapping.json
+[2026-01-27 14:07:00Z]
+[INFO]
+Loaded 3745 policy mappings
+[2026-01-27 14:07:00Z]
+[INFO]
+Loading policy parameter overrides from .\PolicyParameters-Production-Remediation.json
+
+╔══════════════════════════════════════════════════════════════╗
+║  ⚠️  AUTO-REMEDIATION WARNING                              ║
+╚══════════════════════════════════════════════════════════════╝
+
+You are deploying AUTO-REMEDIATION policies (DeployIfNotExists/Modify)
+These policies will AUTOMATICALLY MODIFY existing resources:
+
+📋 What Will Happen:
+  • Creates private endpoints (may impact connectivity)
+  • Enables firewall (may block access)
+  • Disables public network access (may break apps)
+  • Creates diagnostic settings (may increase costs)
+
+⏰ Timeline:
+  • Policy assignment: Immediate
+  • Resource evaluation: 15-30 minutes
+  • Remediation tasks created: 30-60 minutes
+  • Tasks complete: 60-90 minutes
+  • Total: Allow 90 minutes minimum
+
+✅ Prerequisites Check:
+  ☐ Scenario 4 (DevTest) testing completed successfully?
+  ☐ Scenario 5 (Production Audit) validated violations?
+  ☐ Scenario 6 (Production Deny) tested without blocking?
+  ☐ Maintenance window scheduled (off-peak hours)?
+  ☐ Stakeholders notified 7-14 days in advance?
+  ☐ Rollback plan documented and approved?
+  ☐ On-call engineer available during deployment?
+
+🚨 PRODUCTION IMPACT WARNING:
+  This will modify ALL Key Vaults in PRODUCTION subscription!
+  Applications may lose connectivity if private endpoints not tested!
+
+💡 Value Proposition:
+  Auto-remediation can fix 100+ Key Vaults in 90 minutes
+  vs 2 weeks manual work (~,000 labor cost savings)
+
+📚 Documentation:
+  Review AUTO-REMEDIATION-GUIDE.md for complete details
+
+🛑 User Choice:
+
+✅ Proceeding with auto-remediation deployment...
+Monitor progress: Azure Portal → Policy → Remediation
+[2026-01-27 14:07:11Z]
+[INFO]
+DEBUG: PSBoundParameters keys: ScopeType, ParameterOverridesPath, CsvPath, IdentityResourceId, SkipRBACCheck
+[2026-01-27 14:07:11Z]
+[INFO]
+DEBUG: ScopeType value: 'Subscription'
+[2026-01-27 14:07:11Z]
+[INFO]
+Using scope type from parameter: Subscription
+[2026-01-27 14:07:11Z]
+[INFO]
+Checking current subscription context.
+[2026-01-27 14:07:11Z]
+[INFO]
+Current subscription: MSDN Platforms Subscription (ab1336c7-687d-4107-b0f6-9649a0458adb)
+[2026-01-27 14:07:15Z]
+[WARN]
+Skipping RBAC permission check (SkipRBACCheck flag enabled).
+PS>TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+]633;D;1]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B

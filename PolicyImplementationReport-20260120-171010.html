@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Azure Policy Implementation Report</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 28px; margin-bottom: 10px; }
+        .header .subtitle { opacity: 0.9; font-size: 14px; }
+        .content { padding: 30px; }
+        .card { background: #f8f9fa; border-left: 4px solid #0078d4; padding: 20px; margin-bottom: 20px; border-radius: 8px; }
+        .card h2 { color: #333; margin-bottom: 15px; font-size: 20px; }
+        .metadata { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px; }
+        .metadata-item { background: white; padding: 15px; border-radius: 6px; border: 1px solid #dee2e6; }
+        .metadata-item label { display: block; font-size: 12px; color: #6c757d; margin-bottom: 5px; text-transform: uppercase; }
+        .metadata-item value { display: block; font-size: 16px; font-weight: 600; color: #333; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 6px; overflow: hidden; }
+        th { background: #0078d4; color: white; padding: 12px; text-align: left; font-weight: 600; }
+        td { padding: 12px; border-bottom: 1px solid #dee2e6; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: #f1f3f5; }
+        .status-success { color: #28a745; font-weight: 600; }
+        .status-error { color: #dc3545; font-weight: 600; }
+        .status-warning { color: #ffc107; font-weight: 600; }
+        .error-msg { color: #dc3545; font-size: 13px; }
+        .policy-value { color: #6c757d; display: block; margin-top: 5px; }
+        .param-list { margin: 5px 0; padding-left: 20px; font-size: 13px; }
+        .param-list li { margin: 3px 0; }
+        code { background: #e9ecef; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+        .next-steps { background: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; margin-top: 20px; border-radius: 8px; }
+        .next-steps h3 { color: #856404; margin-bottom: 10px; }
+        .next-steps p { color: #856404; line-height: 1.6; }
+        .compliance-metric { text-align: center; padding: 20px; }
+        .metric-value { font-size: 48px; font-weight: 700; }
+        .metric-label { font-size: 14px; color: #6c757d; margin-top: 5px; }
+        .footer { background: #f8f9fa; padding: 20px; text-align: center; color: #6c757d; font-size: 13px; border-top: 1px solid #dee2e6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔐 Azure Policy Implementation Report</h1>
+            <div class="subtitle">Key Vault Governance & Security Baseline</div>
+            <div class="subtitle">Generated: 2026-01-20 17:10:10 UTC</div>
+        </div>
+        
+        <div class="content">
+            <div class="card">
+                <h2>📋 Deployment Metadata</h2>
+                <div class="metadata">
+                    <div class="metadata-item">
+                        <label>Scope Type</label>
+                        <value>Subscription</value>
+                    </div>
+                    <div class="metadata-item">
+                        <label>Scope</label>
+                        <value>/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb</value>
+                    </div>
+                    <div class="metadata-item">
+                        <label>Enforcement Mode</label>
+                        <value>ParameterFile</value>
+                    </div>
+                    <div class="metadata-item">
+                        <label>Deployment Mode</label>
+                        <value>🔍 Preview/Dry-Run</value>
+                    </div>
+                    <div class="metadata-item">
+                        <label>Environment Preset</label>
+                        <value>Production</value>
+                    </div>
+                    <div class="metadata-item">
+                        <label>Total Policies Processed</label>
+                        <value>46</value>
+                    </div>
+                    <div class="metadata-item">
+                        <label>Simulated Assignments</label>
+                        <value class="status-success">46</value>
+                    </div>
+                    <div class="metadata-item">
+                        <label>Failed Simulations</label>
+                        <value class="status-error">0</value>
+                    </div>
+                </div>
+                
+                
+                
+                <div style="margin-top: 10px; padding: 10px; background: #e7f3ff; border-left: 3px solid #0078d4; border-radius: 4px; font-size: 13px;">
+                    <strong>📊 Status Breakdown:</strong>
+                    🔍 Simulated: 46 | ❌ Failed: 0
+                    
+                </div>
+            </div>
+            
+                        <div class="card" style="background: #cfe2ff; border-left: 4px solid #0d6efd;">
+                <h2>ℹ️ Preview Mode Notice</h2>
+                <p style="color: #084298; line-height: 1.8;">
+                    This report was generated in <strong>Preview/Dry-Run mode</strong>. No actual policy assignments were created in Azure.
+                    The results below show what <em>would</em> have been assigned if this script ran in live deployment mode.
+                    <br><br>
+                    <strong>To perform actual deployments:</strong> Remove the <code>-Preview</code> parameter and ensure you have appropriate RBAC permissions.
+                </p>
+            </div>
+            
+                    <div class="card" style="border-left: 4px solid #ffc107; background: #fff3cd;">
+            <h2>⏳ Compliance Data Not Yet Available</h2>
+            <p style="color: #856404; line-height: 1.8; margin-bottom: 15px;">
+                <strong>Azure Policy evaluation takes time.</strong> Newly assigned policies typically need <strong>30-90 minutes</strong> 
+                to evaluate existing resources and generate compliance data.
+            </p>
+            
+            <div style="background: white; padding: 15px; border-radius: 6px; margin-top: 15px; border: 1px solid #ffc107;">
+                <h3 style="color: #856404; font-size: 16px; margin-bottom: 10px;">📊 How to Check Compliance Later</h3>
+                <p style="color: #856404; margin-bottom: 10px;">Run the compliance check command to see detailed resource-level compliance:</p>
+                <pre style="background: #f8f9fa; padding: 12px; border-radius: 4px; overflow-x: auto; color: #0078d4; font-family: 'Courier New', monospace; border: 1px solid #dee2e6;">.\AzPolicyImplScript.ps1 -CheckCompliance</pre>
+                
+                <p style="color: #856404; margin-top: 15px; font-size: 14px;">
+                    <strong>This will show you:</strong>
+                </p>
+                <ul style="color: #856404; margin-left: 20px; line-height: 1.8; font-size: 14px;">
+                    <li>✅ Which Key Vaults are compliant vs non-compliant for each policy</li>
+                    <li>📊 Detailed resource-level breakdown showing exactly what needs remediation</li>
+                    <li>🔧 Policies that support auto-remediation (DeployIfNotExists/Modify effects)</li>
+                </ul>
+                
+                <div style="background: #e7f3ff; padding: 15px; border-radius: 6px; margin-top: 15px; border: 1px solid #0078d4;">
+                    <h3 style="color: #005a9e; font-size: 16px; margin-bottom: 10px;">⚡ Auto-Remediation Notice</h3>
+                    <p style="color: #005a9e; margin-bottom: 10px; line-height: 1.6;">
+                        <strong>Important:</strong> Policies with <strong>DeployIfNotExists</strong> or <strong>Modify</strong> effects 
+                        <strong>do NOT automatically remediate</strong> non-compliant resources. You must <strong>manually trigger remediation tasks</strong> 
+                        after Azure completes its compliance evaluation (30-90 minutes).
+                    </p>
+                    <p style="color: #005a9e; margin-bottom: 10px;">To trigger remediation for auto-fix policies:</p>
+                    <pre style="background: #f8f9fa; padding: 12px; border-radius: 4px; overflow-x: auto; color: #0078d4; font-family: 'Courier New', monospace; border: 1px solid #dee2e6;"># Trigger all auto-remediation policies
+.\AzPolicyImplScript.ps1 -TriggerRemediation
+
+# Or trigger specific policy by definition ID
+.\AzPolicyImplScript.ps1 -TriggerRemediation -PolicyDefinitionId "951af2fa-529b-416e-ab6e-066fd85ac459"</pre>
+                    <p style="color: #005a9e; font-size: 13px; margin-top: 10px;">
+                        💡 <em>Remediation tasks typically complete in 2-10 minutes depending on complexity (diagnostic settings, firewalls, private endpoints).</em>
+                    </p>
+                </div>
+                
+                <ul style="color: #856404; margin-left: 20px; line-height: 1.8; font-size: 14px;">
+                    <li>⚠️ Impact analysis: what would be blocked if you switched to Deny/Enforce mode</li>
+                    <li>📈 Overall compliance percentage and effectiveness ratings</li>
+                </ul>
+                
+                <p style="color: #856404; margin-top: 15px; font-size: 14px;">
+                    <strong>Tip:</strong> Wait 30-60 minutes after policy assignment, then run the compliance check to see results.
+                </p>
+            </div>
+            
+            <table style="margin-top: 15px;">
+                <tr><th>Metric</th><th>Value</th></tr>
+                <tr><td>Policies Reporting</td><td><em>Pending evaluation...</em></td></tr>
+                <tr><td>Compliant Resources</td><td><em>Pending evaluation...</em></td></tr>
+                <tr><td>Non-Compliant Resources</td><td><em>Pending evaluation...</em></td></tr>
+                <tr><td>Effectiveness Rating</td><td><em>Pending evaluation...</em></td></tr>
+            </table>
+        </div>
+            
+            
+            
+            <div class="card">
+                <h2>✅ Simulated Policy Assignments (Preview Mode)</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Policy Name & Value</th>
+                            <th style="width: 120px;">Status</th>
+                            <th style="width: 300px;">Parameters</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                <tr>
+            <td><strong>Resource logs in Azure Key Vault Managed HSM should be enabled</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Secrets should have more than the specified number of days before expiration</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li><li><code>minimumDaysBeforeExpiration</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>[Preview]: Azure Key Vault Managed HSM should use private link</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Keys using RSA cryptography should have a specified minimum key size</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>minimumRSAKeySize</code>: </li><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Key vaults should have soft delete enabled</strong><br/><small class="policy-value">💡 Prevents accidental/malicious deletion; enables 90-day recovery window</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Keys should have a rotation policy ensuring that their rotation is scheduled within the specified number of days after creation.</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li><li><code>maximumDaysToRotate</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Keys should have the specified maximum validity period</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li><li><code>maximumValidityInDays</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Azure Key Vault should use RBAC permission model</strong><br/><small class="policy-value">💡 Modernizes access control; enables Azure AD integration</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Secrets should not be active for longer than the specified number of days</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li><li><code>maximumValidityInDays</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>[Preview]: Configure Azure Key Vault Managed HSM to disable public network access</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Azure Key Vault Managed HSM should have purge protection enabled</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>[Preview]: Azure Key Vault Managed HSM should disable public network access</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Deploy - Configure diagnostic settings for Azure Key Vault to Log Analytics workspace</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li><li><code>logAnalytics</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Keys should be backed by a hardware security module (HSM)</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Keys should be the specified cryptographic type RSA or EC</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Certificates should not expire within the specified number of days</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li><li><code>daysToExpire</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Keys using elliptic curve cryptography should have the specified curve names</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>allowedECNames</code>: </li><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Certificates should be issued by the specified integrated certificate authority</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li><li><code>allowedCAs</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Keys should have more than the specified number of days before expiration</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li><li><code>minimumDaysBeforeExpiration</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Certificates should be issued by one of the specified non-integrated certificate authorities</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li><li><code>caCommonNames</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Azure Key Vault should disable public network access</strong><br/><small class="policy-value">💡 Blocks internet exposure; enforces private endpoint access only</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Key Vault secrets should have an expiration date</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Configure Azure Key Vaults with private endpoints</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li><li><code>privateEndpointSubnetId</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Secrets should have content type set</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Azure Key Vault should have firewall enabled or public network access disabled</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>forbiddenIPAddresses</code>: </li><li><code>allowedIPAddresses</code>: </li><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>[Preview]: Azure Key Vault Managed HSM keys should have an expiration date</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Configure key vaults to enable firewall</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Certificates using RSA cryptography should have the specified minimum key size</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>minimumRSAKeySize</code>: </li><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>[Preview]: Azure Key Vault Managed HSM keys using elliptic curve cryptography should have the specified curve names</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>allowedECNames</code>: </li><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Key vaults should have deletion protection enabled</strong><br/><small class="policy-value">💡 Prevents purge operations; ensures mandatory retention period</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Keys should not be active for longer than the specified number of days</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li><li><code>maximumValidityInDays</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Azure Key Vaults should use private link</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>[Preview]: Azure Key Vault Managed HSM keys using RSA cryptography should have a specified minimum key size</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>minimumRSAKeySize</code>: </li><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Configure Azure Key Vaults to use private DNS zones</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li><li><code>privateDnsZoneId</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Certificates should have the specified lifetime action triggers</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>maximumPercentageLife</code>: </li><li><code>minimumDaysBeforeExpiry</code>: </li><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Key Vault keys should have an expiration date</strong><br/><small class="policy-value">💡 Prevents indefinite key usage; enforces key rotation hygiene</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Certificates should use allowed key types</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li><li><code>allowedKeyTypes</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>[Preview]: Configure Azure Key Vault Managed HSM with private endpoints</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li><li><code>privateEndpointSubnetId</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Secrets should have the specified maximum validity period</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li><li><code>maximumValidityInDays</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Certificates should be issued by the specified non-integrated certificate authority</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>caCommonName</code>: </li><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>[Preview]: Azure Key Vault Managed HSM Keys should have more than the specified number of days before expiration</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li><li><code>minimumDaysBeforeExpiration</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Resource logs in Key Vault should be enabled</strong><br/><small class="policy-value">💡 Enables audit trail; supports security investigations and compliance</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li><li><code>requiredRetentionDays</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Deploy - Configure diagnostic settings to an Event Hub to be enabled on Azure Key Vault Managed HSM</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>eventHubLocation</code>: </li><li><code>eventHubRuleId</code>: </li><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Deploy Diagnostic Settings for Key Vault to Event Hub</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>eventHubLocation</code>: </li><li><code>eventHubRuleId</code>: </li><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Certificates using elliptic curve cryptography should have allowed curve names</strong><br/><small class="policy-value">💡 Enhances Key Vault security and compliance posture</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>allowedECNames</code>: </li><li><code>effect</code>: </li></ul></td>
+        </tr>        <tr>
+            <td><strong>Certificates should have the specified maximum validity period</strong><br/><small class="policy-value">💡 Reduces certificate lifecycle risk; enforces rotation policy</small></td>
+            <td class="status-success">🔍 Simulated</td>
+            <td><ul class='param-list'><li><code>effect</code>: </li><li><code>maximumValidityInMonths</code>: </li></ul></td>
+        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="card">
+                <h2>❌ Failed Policy Assignments</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Policy Name</th>
+                            <th style="width: 120px;">Status</th>
+                            <th>Error Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan='3' style='text-align:center;color:#28a745;'>✅ All policies assigned successfully!</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="card" style="background: #f8f9fa; border-left: 4px solid #6c757d;">
+                <h2>📖 Policy Enforcement Modes Explained</h2>
+                <table style="margin-top: 15px;">
+                    <thead>
+                        <tr>
+                            <th>Mode</th>
+                            <th>Behavior</th>
+                            <th>Use Case</th>
+                            <th>Operational Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong style="color: #0078d4;">Audit</strong></td>
+                            <td>Logs non-compliance events without blocking resource operations</td>
+                            <td>
+                                <strong>Initial Assessment Phase</strong><br>
+                                • Discover non-compliant resources<br>
+                                • Gather compliance telemetry<br>
+                                • No operational disruption
+                            </td>
+                            <td>
+                                <span style="color: #28a745;">✓ Zero risk</span> - No resources blocked<br>
+                                <span style="color: #0078d4;">ℹ️ Duration:</span> 30-90 days recommended
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: #ffc107;">Deny</strong></td>
+                            <td>Blocks creation/modification of non-compliant resources; existing resources unaffected</td>
+                            <td>
+                                <strong>Prevention Phase</strong><br>
+                                • Stop new violations<br>
+                                • Allow time for remediation planning<br>
+                                • Gradual compliance improvement
+                            </td>
+                            <td>
+                                <span style="color: #ffc107;">⚠️ Medium risk</span> - May block deployments<br>
+                                <span style="color: #0078d4;">ℹ️ Duration:</span> 60-120 days before Enforce
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: #dc3545;">Enforce</strong></td>
+                            <td>Actively remediates non-compliant resources through automated tasks or DeployIfNotExists policies</td>
+                            <td>
+                                <strong>Active Remediation Phase</strong><br>
+                                • Auto-correct non-compliant resources<br>
+                                • Full policy enforcement<br>
+                                • Continuous compliance
+                            </td>
+                            <td>
+                                <span style="color: #dc3545;">⚠️ High risk</span> - Modifies resources<br>
+                                <span style="color: #0078d4;">ℹ️ Duration:</span> Ongoing with monitoring
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div style="margin-top: 20px; padding: 15px; background: #e7f3ff; border-left: 3px solid #0078d4; border-radius: 4px;">
+                    <h4 style="color: #0078d4; margin-bottom: 10px;">🔄 Recommended Lifecycle Progression</h4>
+                    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 150px; padding: 10px; background: white; border-radius: 4px; text-align: center;">
+                            <strong style="color: #0078d4;">1. Audit</strong><br>
+                            <small>Discovery & Assessment</small><br>
+                            <span style="font-size: 11px;">30-90 days</span>
+                        </div>
+                        <span style="font-size: 24px; color: #6c757d;">→</span>
+                        <div style="flex: 1; min-width: 150px; padding: 10px; background: white; border-radius: 4px; text-align: center;">
+                            <strong style="color: #0078d4;">2. Analyze</strong><br>
+                            <small>Review Compliance Data</small><br>
+                            <span style="font-size: 11px;">1-2 weeks</span>
+                        </div>
+                        <span style="font-size: 24px; color: #6c757d;">→</span>
+                        <div style="flex: 1; min-width: 150px; padding: 10px; background: white; border-radius: 4px; text-align: center;">
+                            <strong style="color: #ffc107;">3. Deny</strong><br>
+                            <small>Prevent New Violations</small><br>
+                            <span style="font-size: 11px;">60-120 days</span>
+                        </div>
+                        <span style="font-size: 24px; color: #6c757d;">→</span>
+                        <div style="flex: 1; min-width: 150px; padding: 10px; background: white; border-radius: 4px; text-align: center;">
+                            <strong style="color: #0078d4;">4. Remediate</strong><br>
+                            <small>Fix Existing Issues</small><br>
+                            <span style="font-size: 11px;">2-4 weeks</span>
+                        </div>
+                        <span style="font-size: 24px; color: #6c757d;">→</span>
+                        <div style="flex: 1; min-width: 150px; padding: 10px; background: white; border-radius: 4px; text-align: center;">
+                            <strong style="color: #dc3545;">5. Enforce</strong><br>
+                            <small>Auto-Remediation</small><br>
+                            <span style="font-size: 11px;">Ongoing</span>
+                        </div>
+                        <span style="font-size: 24px; color: #6c757d;">→</span>
+                        <div style="flex: 1; min-width: 150px; padding: 10px; background: white; border-radius: 4px; text-align: center;">
+                            <strong style="color: #28a745;">6. Monitor</strong><br>
+                            <small>Maintain Compliance</small><br>
+                            <span style="font-size: 11px;">Continuous</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 15px; color: #6c757d; font-size: 13px;">
+                    <strong>💡 Best Practice:</strong> Never skip directly from Audit to Enforce. Each phase provides critical insights and reduces risk of operational disruption.
+                    Use policy exemptions for resources requiring manual review or temporary exceptions.
+                </p>
+            </div>
+            
+            <div class="next-steps">
+                <h3>📌 Recommended Next Steps</h3>
+                <p>✅ <strong>Run actual deployment</strong> by removing the <code>-Preview</code> parameter<br>✅ Ensure you have appropriate RBAC permissions (Contributor + Resource Policy Contributor or Owner)<br>✅ Consider starting with a <strong>single resource group</strong> or test environment before subscription-wide deployment</p>
+                <p style="margin-top: 10px;"><strong>Additional Recommendations:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Review non-compliant resources and create remediation tasks</li>
+                    <li>Configure Azure Monitor alerts for policy compliance thresholds</li>
+                    <li>Schedule monthly compliance reviews with security team</li>
+                    <li>Document exceptions and exemptions with business justification</li>
+                    <li>Test remediation in dev/test environment before production rollout</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Generated by Azure Policy Implementation Script v0.1.0 | Microsoft Azure Governance
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+[2026-01-22 15:32:56] [INFO] Starting comprehensive scenario validation
+[2026-01-22 15:32:56] [INFO] Test mode: ACTUAL DEPLOYMENT
+[2026-01-22 15:32:56] [INFO] Test log: .\test-all-scenarios-validation-20260122-153256.txt
+[2026-01-22 15:32:56] [INFO] 
+Validating prerequisites...
+[2026-01-22 15:32:56] [SUCCESS] ✅ All prerequisites validated
+[2026-01-22 15:32:56] [INFO] SCENARIO 1: DevTest Baseline (30 Policies)
+[2026-01-22 15:32:56] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-DevTest.json -SkipRBACCheck 
+[2026-01-22 15:33:52] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:33:52] [INFO]   Output saved to: .\scenario-1-output-20260122-153256.txt
+[2026-01-22 15:33:52] [SUCCESS]   ✅ Console next steps validated for DevTest Baseline (30 Policies)
+[2026-01-22 15:33:52] [SUCCESS]   ✅ HTML report validated for DevTest Baseline (30 Policies)
+[2026-01-22 15:33:52] [ERROR]   ❌ Found unexpected warnings/errors for DevTest Baseline (30 Policies)
+[2026-01-22 15:33:52] [ERROR]     - Unexpected WARN: Skipping RBAC permission check (SkipRBACCheck flag enabled).
+[2026-01-22 15:33:54] [INFO] SCENARIO 2: DevTest Full (46 Policies)
+[2026-01-22 15:33:54] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-DevTest-Full.json -SkipRBACCheck 
+[2026-01-22 15:34:48] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:34:48] [INFO]   Output saved to: .\scenario-2-output-20260122-153354.txt
+[2026-01-22 15:34:48] [SUCCESS]   ✅ Console next steps validated for DevTest Full (46 Policies)
+[2026-01-22 15:34:48] [SUCCESS]   ✅ HTML report validated for DevTest Full (46 Policies)
+[2026-01-22 15:34:48] [ERROR]   ❌ Found unexpected warnings/errors for DevTest Full (46 Policies)
+[2026-01-22 15:34:48] [ERROR]     - Unexpected WARN: Skipping RBAC permission check (SkipRBACCheck flag enabled).
+[2026-01-22 15:34:50] [INFO] SCENARIO 3: DevTest Auto-Remediation (8 Policies)
+[2026-01-22 15:34:50] [WARN] ⚠️  User input required for this scenario:
+[2026-01-22 15:34:50] [WARN]     Replace <MANAGED_IDENTITY_ID> with:
+[2026-01-22 15:34:50] [WARN]     /subscriptions/<subscription-id>/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+[2026-01-22 15:34:50] [INFO]   Using managed identity: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+[2026-01-22 15:34:50] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-DevTest-Full-Remediation.json -IdentityResourceId '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation' -SkipRBACCheck 
+[2026-01-22 15:35:56] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:35:56] [INFO]   Output saved to: .\scenario-3-output-20260122-153450.txt
+[2026-01-22 15:35:56] [SUCCESS]   ✅ Console next steps validated for DevTest Auto-Remediation (8 Policies)
+[2026-01-22 15:35:56] [SUCCESS]   ✅ HTML report validated for DevTest Auto-Remediation (8 Policies)
+[2026-01-22 15:35:56] [ERROR]   ❌ Found unexpected warnings/errors for DevTest Auto-Remediation (8 Policies)
+[2026-01-22 15:35:56] [ERROR]     - Unexpected WARN: Skipping RBAC permission check (SkipRBACCheck flag enabled).
+[2026-01-22 15:35:58] [INFO] SCENARIO 4: Production Audit (46 Policies)
+[2026-01-22 15:35:58] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-Production.json -SkipRBACCheck 
+[2026-01-22 15:37:42] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:37:42] [INFO]   Output saved to: .\scenario-4-output-20260122-153558.txt
+[2026-01-22 15:37:42] [SUCCESS]   ✅ Console next steps validated for Production Audit (46 Policies)
+[2026-01-22 15:37:42] [SUCCESS]   ✅ HTML report validated for Production Audit (46 Policies)
+[2026-01-22 15:37:42] [ERROR]   ❌ Found unexpected warnings/errors for Production Audit (46 Policies)
+[2026-01-22 15:37:42] [ERROR]     - Unexpected WARN: Skipping RBAC permission check (SkipRBACCheck flag enabled).
+[2026-01-22 15:37:44] [INFO] SCENARIO 5: Production Deny (38 Policies - Maximum Enforcement)
+[2026-01-22 15:37:44] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-Production-Deny.json -SkipRBACCheck 
+[2026-01-22 15:39:21] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:39:21] [INFO]   Output saved to: .\scenario-5-output-20260122-153744.txt
+[2026-01-22 15:39:21] [ERROR]   ❌ Console next steps validation failed for Production Deny (38 Policies - Maximum Enforcement)
+[2026-01-22 15:39:21] [ERROR]     - Missing Production Deny deployment banner
+[2026-01-22 15:39:21] [ERROR]     - Missing rollback instructions
+[2026-01-22 15:39:21] [SUCCESS]   ✅ HTML report validated for Production Deny (38 Policies - Maximum Enforcement)
+[2026-01-22 15:39:21] [ERROR]   ❌ Found unexpected warnings/errors for Production Deny (38 Policies - Maximum Enforcement)
+[2026-01-22 15:39:21] [ERROR]     - Unexpected WARN: Skipping RBAC permission check (SkipRBACCheck flag enabled).
+[2026-01-22 15:39:21] [ERROR]     - Unexpected WARN: Parameter 'effect' value 'Deny' not in allowed values
+[2026-01-22 15:39:21] [ERROR]     - Unexpected WARN: Effect 'Audit' not supported by policy '
+[2026-01-22 15:39:21] [ERROR]     - Unexpected WARN: Parameter 'effect' value 'Deny' not in allowed values
+[2026-01-22 15:39:21] [ERROR]     - Unexpected WARN: Parameter 'effect' value 'Deny' not in allowed values
+[2026-01-22 15:39:23] [INFO] SCENARIO 6: Production Auto-Remediation (8 Policies)
+[2026-01-22 15:39:23] [WARN] ⚠️  User input required for this scenario:
+[2026-01-22 15:39:23] [WARN]     Replace <MANAGED_IDENTITY_ID> with:
+[2026-01-22 15:39:23] [WARN]     /subscriptions/<subscription-id>/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+[2026-01-22 15:39:23] [INFO]   Using managed identity: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+[2026-01-22 15:39:23] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-Production-Remediation.json -IdentityResourceId '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation' -SkipRBACCheck 
+[2026-01-22 15:40:31] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:40:31] [INFO]   Output saved to: .\scenario-6-output-20260122-153923.txt
+[2026-01-22 15:40:31] [SUCCESS]   ✅ Console next steps validated for Production Auto-Remediation (8 Policies)
+[2026-01-22 15:40:31] [SUCCESS]   ✅ HTML report validated for Production Auto-Remediation (8 Policies)
+[2026-01-22 15:40:31] [ERROR]   ❌ Found unexpected warnings/errors for Production Auto-Remediation (8 Policies)
+[2026-01-22 15:40:31] [ERROR]     - Unexpected WARN: Skipping RBAC permission check (SkipRBACCheck flag enabled).
+[2026-01-22 15:40:33] [INFO] SCENARIO 7: Resource Group Scope (Limited Deployment)
+[2026-01-22 15:40:33] [WARN] ⚠️  User input required for this scenario:
+[2026-01-22 15:40:33] [WARN]     Replace <SUBSCRIPTION_ID> with your subscription ID
+[2026-01-22 15:40:33] [WARN]     Replace <RESOURCE_GROUP> with resource group name (default: rg-policy-keyvault-test)
+[2026-01-22 15:40:33] [INFO]   Using resource group: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-keyvault-test
+[2026-01-22 15:40:33] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-DevTest.json -ResourceGroupScope '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-keyvault-test' -SkipRBACCheck 
+[2026-01-22 15:41:16] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:41:16] [INFO]   Output saved to: .\scenario-7-output-20260122-154033.txt
+[2026-01-22 15:41:16] [ERROR]   ❌ Console next steps validation failed for Resource Group Scope (Limited Deployment)
+[2026-01-22 15:41:16] [ERROR]     - Missing resource group scope indication
+[2026-01-22 15:41:16] [SUCCESS]   ✅ HTML report validated for Resource Group Scope (Limited Deployment)
+[2026-01-22 15:41:16] [ERROR]   ❌ Found unexpected warnings/errors for Resource Group Scope (Limited Deployment)
+[2026-01-22 15:41:16] [ERROR]     - Unexpected WARN: Skipping RBAC permission check (SkipRBACCheck flag enabled).
+[2026-01-22 15:41:18] [INFO] SCENARIO 8: Management Group Scope (Enterprise-Wide)
+[2026-01-22 15:41:18] [WARN] ⚠️  User input required for this scenario:
+[2026-01-22 15:41:18] [WARN]     Replace <MANAGEMENT_GROUP_ID> with your management group ID
+[2026-01-22 15:41:18] [WARN]     WARNING: Affects all subscriptions under management group
+[2026-01-22 15:41:18] [WARN]   ⏭️  Skipping scenario (no -ManagementGroupId provided)
+[2026-01-22 15:41:18] [INFO] SCENARIO 9: Rollback (Remove All Policies)
+[2026-01-22 15:41:18] [INFO] Executing: .\AzPolicyImplScript.ps1 -Rollback -SkipRBACCheck 
+[2026-01-22 15:42:44] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:42:44] [INFO]   Output saved to: .\scenario-9-output-20260122-154118.txt
+[2026-01-22 15:42:44] [ERROR]   ❌ Console next steps validation failed for Rollback (Remove All Policies)
+[2026-01-22 15:42:44] [ERROR]     - Missing 'NEXT STEPS GUIDANCE' banner
+[2026-01-22 15:42:44] [SUCCESS]   ✅ HTML report validated for Rollback (Remove All Policies)
+[2026-01-22 15:42:44] [SUCCESS]   ✅ No unexpected warnings/errors for Rollback (Remove All Policies)
+[2026-01-22 15:42:46] [INFO] Test Duration: 00:09:49
+[2026-01-22 15:42:46] [INFO] Test Log: .\test-all-scenarios-validation-20260122-153256.txt
+[2026-01-22 15:42:46] [INFO] 
+Test suite complete. Overall status: FAIL

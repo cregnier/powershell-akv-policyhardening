@@ -1,0 +1,274 @@
+**********************
+PowerShell transcript start
+Start time: 20260126104023
+Username: DTL01\lcladmin
+RunAs User: DTL01\lcladmin
+Configuration Name: 
+Machine: DTL01 (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Program Files\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 10412
+PSVersion: 7.5.3
+PSEdition: Core
+GitCommitId: 7.5.3
+OS: Microsoft Windows 10.0.20348
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\logs\Phase1-Infrastructure-Setup-20260126.log
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "`n╔═══════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan; Write-Host "║         PHASE 1: FRESH INFRASTRUCTURE SETUP                  ║" -ForegroundColor Cyan; Write-Host "║         Master Test Execution - January 26, 2026             ║" -ForegroundColor Cyan; Write-Host "╚═══════════════════════════════════════════════════════════════╝`n" -ForegroundColor Cyan; Write-Host "Creating complete testing infrastructure..." -ForegroundColor Yellow; Write-Host "This will create:" -ForegroundColor White; Write-Host "  1. rg-policy-remediation (managed identity, networking)" -ForegroundColor Gray; Write-Host "  2. rg-policy-keyvault-test (3 test vaults)" -ForegroundColor Gray; Write-Host "  3. Log Analytics + Event Hub" -ForegroundColor Gray; Write-Host "  4. Monitoring alerts (skipped for now)`n" -ForegroundColor Gray; Write-Host "Expected Duration: 15-20 minutes`n" -ForegroundColor Cyan
+
+╔═══════════════════════════════════════════════════════════════╗
+║         PHASE 1: FRESH INFRASTRUCTURE SETUP                  ║
+║         Master Test Execution - January 26, 2026             ║
+╚═══════════════════════════════════════════════════════════════╝
+Creating complete testing infrastructure...
+This will create:
+  1. rg-policy-remediation (managed identity, networking)
+  2. rg-policy-keyvault-test (3 test vaults)
+  3. Log Analytics + Event Hub
+  4. Monitoring alerts (skipped for now)
+Expected Duration: 15-20 minutes
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>.\Setup-AzureKeyVaultPolicyEnvironment.ps1 -SkipMonitoring
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║          AZURE KEY VAULT POLICY ENVIRONMENT SETUP                            ║
+║          Comprehensive Infrastructure + Testing + Monitoring                 ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+📋 Configuration:
+  Environment: DevTest
+  Subscription: Current context
+  Test RG: rg-policy-keyvault-test
+  Infra RG: rg-policy-remediation
+  Location: eastus
+  Cleanup First: False
+  Skip Vault Seeding: False
+  Skip Monitoring: True
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║  [1/12] Azure Authentication
+╚════════════════════════════════════════════════════════════════════════════════╝
+  ✓
+Using current context: MSDN Platforms Subscription
+  ℹ
+Scope: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb
+  ℹ
+Signed in as: theregniers_hotmail.com#EXT#@theregniershotmail.onmicrosoft.com
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║  [2/12] Resource Groups
+╚════════════════════════════════════════════════════════════════════════════════╝
+  ✓
+Using existing: rg-policy-remediation
+  ✓
+Using existing: rg-policy-keyvault-test
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║  [3/12] Managed Identity for Policy Remediation
+╚════════════════════════════════════════════════════════════════════════════════╝
+  ✓
+Using existing: id-policy-remediation
+  ℹ
+Principal ID: e46e333b-18a2-4166-a071-87b26ad3a9d9
+  ℹ
+Assigning RBAC roles to managed identity...
+  ✓
+Role already assigned: Network Contributor
+  ✓
+Role already assigned: Private DNS Zone Contributor
+  ✓
+Role already assigned: Log Analytics Contributor
+  ✓
+Role already assigned: Contributor
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║  [4/12] Virtual Network and Subnet
+╚════════════════════════════════════════════════════════════════════════════════╝
+  ✓
+Using existing VNet: vnet-policy-test
+  ✓
+Using existing Subnet: snet-privateendpoints
+  ℹ
+Subnet ID: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.Network/virtualNetworks/vnet-policy-test/subnets/snet-privateendpoints
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║  [5/12] Private DNS Zone
+╚════════════════════════════════════════════════════════════════════════════════╝
+  ✓
+Using existing: privatelink.vaultcore.azure.net
+  ✓
+VNet already linked to DNS zone
+  ℹ
+DNS Zone ID: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║  [6/12] Log Analytics Workspace
+╚════════════════════════════════════════════════════════════════════════════════╝
+  ✓
+Using existing Log Analytics Workspace: law-policy-test-2524
+  ℹ
+Workspace ID: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.OperationalInsights/workspaces/law-policy-test-2524
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║  [7/12] Event Hub Namespace
+╚════════════════════════════════════════════════════════════════════════════════╝
+PS>TerminatingError(): "The pipeline has been stopped."
+  ✓
+Using existing Event Hub Namespace: eh-policy-test-2254
+  ✓
+Using existing Event Hub: keyvault-diagnostics
+  ℹ
+Auth Rule ID: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.EventHub/namespaces/eh-policy-test-2254/authorizationrules/RootManageSharedAccessKey
+  ℹ
+Skipping monitoring setup (as requested)
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║  [8/12] Test Key Vaults Creation
+╚════════════════════════════════════════════════════════════════════════════════╝
+  ℹ
+Creating Key Vault: kv-compliant-9487...
+  ✓
+Created: kv-compliant-9487 (Fully compliant vault)
+  ℹ
+Creating Key Vault: kv-partial-3147...
+  ✓
+Created: kv-partial-3147 (Partially compliant vault)
+  ℹ
+Creating Key Vault: kv-noncompliant-8891...
+  ✓
+Created: kv-noncompliant-8891 (Non-compliant vault (for testing blocking))
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║  [9/12] RBAC Role Assignments
+╚════════════════════════════════════════════════════════════════════════════════╝
+  ℹ
+Assigning 'Key Vault Administrator' role to current user...
+  ✓
+Assigned role for: kv-compliant-9487
+  ✓
+Assigned role for: kv-partial-3147
+  ✓
+Assigned access policy for: kv-noncompliant-8891
+  ℹ
+Waiting 60 seconds for RBAC propagation...
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║  [10/12] Seeding Test Data (Secrets, Keys, Certificates)
+╚════════════════════════════════════════════════════════════════════════════════╝
+  ℹ
+Detecting client IP address...
+  ✓
+Client IP: 20.10.50.180
+  ℹ
+Temporarily enabling public access for kv-compliant-9487 to seed test data...
+  ✓
+Public access enabled
+  ℹ
+Temporarily adding client IP to firewall for kv-compliant-9487 (allows data seeding from current client)...
+  ✓
+Firewall rule added
+  ℹ
+Seeding data in: kv-compliant-9487...
+  ✓
+Created 4 secrets in kv-compliant-9487
+  ✓
+Created 5 keys in kv-compliant-9487
+  ✓
+Created 3 certificates in kv-compliant-9487
+  ℹ
+Removing temporary firewall rule from kv-compliant-9487 (restores original security posture)...
+  ✓
+Firewall rule removed
+  ℹ
+Restoring public access to 'Disabled' for kv-compliant-9487...
+  ✓
+Public access restored to original setting
+  ℹ
+Temporarily adding client IP to firewall for kv-partial-3147 (allows data seeding from current client)...
+  ✓
+Firewall rule added
+  ℹ
+Seeding data in: kv-partial-3147...
+  ✓
+Created 4 secrets in kv-partial-3147
+  ✓
+Created 5 keys in kv-partial-3147
+  ✓
+Created 3 certificates in kv-partial-3147
+  ℹ
+Removing temporary firewall rule from kv-partial-3147 (restores original security posture)...
+  ✓
+Firewall rule removed
+  ℹ
+Temporarily adding client IP to firewall for kv-noncompliant-8891 (allows data seeding from current client)...
+  ✓
+Firewall rule added
+  ℹ
+Seeding data in: kv-noncompliant-8891...
+  ✓
+Created 4 secrets in kv-noncompliant-8891
+  ✓
+Created 5 keys in kv-noncompliant-8891
+  ✓
+Created 3 certificates in kv-noncompliant-8891
+  ℹ
+Removing temporary firewall rule from kv-noncompliant-8891 (restores original security posture)...
+  ✓
+Firewall rule removed
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║  [11/12] Configuration Files Update
+╚════════════════════════════════════════════════════════════════════════════════╝
+  ✓
+Updated: PolicyParameters.json (reference only - not used for deployment)
+  ✓
+Updated: PolicyImplementationConfig.json (reference only - not used for deployment)
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                          ✅ SETUP COMPLETE                                   ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+📊 Summary:
+
+  Infrastructure Created:
+    ✓ Managed Identity: id-policy-remediation
+    ✓ VNet: vnet-policy-test
+    ✓ Subnet: snet-privateendpoints
+    ✓ Private DNS Zone: privatelink.vaultcore.azure.net
+    ✓ Log Analytics Workspace: law-policy-test-2524
+    ✓ Event Hub Namespace: eh-policy-test-2254
+
+  Test Environment:
+    ✓ Created 3 Key Vaults
+    ✓ Seeded test data:
+      - Secrets: 12
+      - Keys: 15
+      - Certificates: 9
+
+  Configuration Files:
+    ✓ PolicyParameters.json (reference - infrastructure IDs)
+    ✓ PolicyImplementationConfig.json (reference - environment details)
+    ℹ️  NOTE: Main script uses PolicyParameters-*.json files for deployment
+
+📋 Next Steps:
+  1. Deploy 46 policies: .\\AzPolicyImplScript.ps1 -Environment DevTest -Phase Test
+  2. Check compliance: .\\AzPolicyImplScript.ps1 -CheckCompliance -TriggerScan -SkipRBACCheck
+  3. Deploy to Production Audit: .\\AzPolicyImplScript.ps1 -Environment Production -Phase Audit
+  4. Enable enforcement: .\\AzPolicyImplScript.ps1 -Environment Production -Phase Enforce
+
+✨ Environment is ready for policy deployment and testing!
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Stop-Transcript; Write-Host "`n✅ PHASE 1 COMPLETE!" -ForegroundColor Green; Write-Host "`nInfrastructure Created:" -ForegroundColor Cyan; Write-Host "  ✓ 2 Resource Groups (rg-policy-remediation, rg-policy-keyvault-test)" -ForegroundColor Gray; Write-Host "  ✓ Managed Identity (id-policy-remediation) with RBAC roles" -ForegroundColor Gray; Write-Host "  ✓ Networking (VNet, Subnet, Private DNS)" -ForegroundColor Gray; Write-Host "  ✓ Monitoring (Log Analytics, Event Hub)" -ForegroundColor Gray; Write-Host "  ✓ 3 Test Vaults (compliant/partial/non-compliant)" -ForegroundColor Gray; Write-Host "  ✓ Test Data (12 secrets, 15 keys, 9 certificates)" -ForegroundColor Gray; Write-Host "`nVaults Created:" -ForegroundColor Cyan; Get-AzKeyVault -ResourceGroupName "rg-policy-keyvault-test" | Select-Object VaultName, EnablePurgeProtection, EnableRbacAuthorization, PublicNetworkAccess | Format-Table -AutoSize
+**********************
+PowerShell transcript end
+End time: 20260126104518
+**********************

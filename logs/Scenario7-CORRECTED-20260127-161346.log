@@ -1,0 +1,327 @@
+**********************
+PowerShell transcript start
+Start time: 20260127161346
+Username: DTL01\lcladmin
+RunAs User: DTL01\lcladmin
+Configuration Name: 
+Machine: DTL01 (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Program Files\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 10980
+PSVersion: 7.5.3
+PSEdition: Core
+GitCommitId: 7.5.3
+OS: Microsoft Windows 10.0.20348
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\logs\Scenario7-CORRECTED-20260127-161346.log
+
+╔══════════════════════════════════════════════════════════════╗
+║  SCENARIO 7: AUTO-REMEDIATION (CORRECTED)                    ║
+║  8 DINE/Modify policies with managed identity               ║
+╚══════════════════════════════════════════════════════════════╝
+
+╔══════════════════════════════════════════════════════════════╗
+║  Azure Policy Implementation - Key Vault Governance          ║
+╚══════════════════════════════════════════════════════════════╝
+
+[2026-01-27 16:13:46Z]
+[INFO]
+Starting Azure Policy implementation script for Key Vault policies
+[2026-01-27 16:13:46Z]
+[INFO]
+Checking required PowerShell modules...
+[2026-01-27 16:13:46Z]
+[SUCCESS]
+Module Az.Accounts is present
+[2026-01-27 16:13:46Z]
+[SUCCESS]
+Module Az.Resources is present
+[2026-01-27 16:13:46Z]
+[SUCCESS]
+Module Az.PolicyInsights is present
+[2026-01-27 16:13:46Z]
+[SUCCESS]
+Module Az.Monitor is present
+[2026-01-27 16:13:46Z]
+[SUCCESS]
+Module Az.KeyVault is present
+[2026-01-27 16:13:46Z]
+[INFO]
+Using Azure context: theregniers@hotmail.com
+[2026-01-27 16:13:46Z]
+[INFO]
+Loading policy mapping from ./PolicyNameMapping.json
+[2026-01-27 16:13:46Z]
+[INFO]
+Loaded 3745 policy mappings
+[2026-01-27 16:13:46Z]
+[INFO]
+Loading policy parameter overrides from .\PolicyParameters-Production-Remediation.json
+
+╔══════════════════════════════════════════════════════════════╗
+║  ⚠️  AUTO-REMEDIATION WARNING                              ║
+╚══════════════════════════════════════════════════════════════╝
+
+You are deploying AUTO-REMEDIATION policies (DeployIfNotExists/Modify)
+These policies will AUTOMATICALLY MODIFY existing resources:
+
+📋 What Will Happen:
+  • Creates private endpoints (may impact connectivity)
+  • Enables firewall (may block access)
+  • Disables public network access (may break apps)
+  • Creates diagnostic settings (may increase costs)
+
+⏰ Timeline:
+  • Policy assignment: Immediate
+  • Resource evaluation: 15-30 minutes
+  • Remediation tasks created: 30-60 minutes
+  • Tasks complete: 60-90 minutes
+  • Total: Allow 90 minutes minimum
+
+✅ Prerequisites Check:
+  ☐ Scenario 4 (DevTest) testing completed successfully?
+  ☐ Scenario 5 (Production Audit) validated violations?
+  ☐ Scenario 6 (Production Deny) tested without blocking?
+  ☐ Maintenance window scheduled (off-peak hours)?
+  ☐ Stakeholders notified 7-14 days in advance?
+  ☐ Rollback plan documented and approved?
+  ☐ On-call engineer available during deployment?
+
+🚨 PRODUCTION IMPACT WARNING:
+  This will modify ALL Key Vaults in PRODUCTION subscription!
+  Applications may lose connectivity if private endpoints not tested!
+
+💡 Value Proposition:
+  Auto-remediation can fix 100+ Key Vaults in 90 minutes
+  vs 2 weeks manual work (~,000 labor cost savings)
+
+📚 Documentation:
+  Review AUTO-REMEDIATION-GUIDE.md for complete details
+
+🛑 User Choice:
+  ⚡ FORCE MODE: Bypassing interactive prompt (auto-remediation will proceed)
+
+✅ Proceeding with auto-remediation deployment...
+Monitor progress: Azure Portal → Policy → Remediation
+[2026-01-27 16:13:48Z]
+[INFO]
+DEBUG: PSBoundParameters keys: ScopeType, SkipRBACCheck, CsvPath, ParameterOverridesPath, Force, IdentityResourceId
+[2026-01-27 16:13:48Z]
+[INFO]
+DEBUG: ScopeType value: 'Subscription'
+[2026-01-27 16:13:48Z]
+[INFO]
+Using scope type from parameter: Subscription
+[2026-01-27 16:13:48Z]
+[INFO]
+Checking current subscription context.
+[2026-01-27 16:13:48Z]
+[INFO]
+Current subscription: MSDN Platforms Subscription (ab1336c7-687d-4107-b0f6-9649a0458adb)
+[2026-01-27 16:13:53Z]
+[WARN]
+Skipping RBAC permission check (SkipRBACCheck flag enabled).
+PS>TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+]633;D;1]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>$identityId = "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation"; "Y`nEnforce" | .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-Production-Remediation.json -IdentityResourceId $identityId -ScopeType Subscription -SkipRBACCheck -Force 2>&1 | Select-Object -First 200
+
+╔══════════════════════════════════════════════════════════════╗
+║  Azure Policy Implementation - Key Vault Governance          ║
+╚══════════════════════════════════════════════════════════════╝
+
+[2026-01-27 16:14:07Z]
+[INFO]
+Starting Azure Policy implementation script for Key Vault policies
+[2026-01-27 16:14:07Z]
+[INFO]
+Checking required PowerShell modules...
+[2026-01-27 16:14:07Z]
+[SUCCESS]
+Module Az.Accounts is present
+[2026-01-27 16:14:07Z]
+[SUCCESS]
+Module Az.Resources is present
+[2026-01-27 16:14:07Z]
+[SUCCESS]
+Module Az.PolicyInsights is present
+[2026-01-27 16:14:07Z]
+[SUCCESS]
+Module Az.Monitor is present
+[2026-01-27 16:14:07Z]
+[SUCCESS]
+Module Az.KeyVault is present
+[2026-01-27 16:14:07Z]
+[INFO]
+Using Azure context: theregniers@hotmail.com
+[2026-01-27 16:14:07Z]
+[INFO]
+Loading policy mapping from ./PolicyNameMapping.json
+[2026-01-27 16:14:07Z]
+[INFO]
+Loaded 3745 policy mappings
+[2026-01-27 16:14:07Z]
+[INFO]
+Loading policy parameter overrides from .\PolicyParameters-Production-Remediation.json
+
+╔══════════════════════════════════════════════════════════════╗
+║  ⚠️  AUTO-REMEDIATION WARNING                              ║
+╚══════════════════════════════════════════════════════════════╝
+
+You are deploying AUTO-REMEDIATION policies (DeployIfNotExists/Modify)
+These policies will AUTOMATICALLY MODIFY existing resources:
+
+📋 What Will Happen:
+  • Creates private endpoints (may impact connectivity)
+  • Enables firewall (may block access)
+  • Disables public network access (may break apps)
+  • Creates diagnostic settings (may increase costs)
+
+⏰ Timeline:
+  • Policy assignment: Immediate
+  • Resource evaluation: 15-30 minutes
+  • Remediation tasks created: 30-60 minutes
+  • Tasks complete: 60-90 minutes
+  • Total: Allow 90 minutes minimum
+
+✅ Prerequisites Check:
+  ☐ Scenario 4 (DevTest) testing completed successfully?
+  ☐ Scenario 5 (Production Audit) validated violations?
+  ☐ Scenario 6 (Production Deny) tested without blocking?
+  ☐ Maintenance window scheduled (off-peak hours)?
+  ☐ Stakeholders notified 7-14 days in advance?
+  ☐ Rollback plan documented and approved?
+  ☐ On-call engineer available during deployment?
+
+🚨 PRODUCTION IMPACT WARNING:
+  This will modify ALL Key Vaults in PRODUCTION subscription!
+  Applications may lose connectivity if private endpoints not tested!
+
+💡 Value Proposition:
+  Auto-remediation can fix 100+ Key Vaults in 90 minutes
+  vs 2 weeks manual work (~,000 labor cost savings)
+
+📚 Documentation:
+  Review AUTO-REMEDIATION-GUIDE.md for complete details
+
+🛑 User Choice:
+  ⚡ FORCE MODE: Bypassing interactive prompt (auto-remediation will proceed)
+
+✅ Proceeding with auto-remediation deployment...
+Monitor progress: Azure Portal → Policy → Remediation
+[2026-01-27 16:14:09Z]
+[INFO]
+DEBUG: PSBoundParameters keys: ScopeType, SkipRBACCheck, CsvPath, ParameterOverridesPath, Force, IdentityResourceId
+[2026-01-27 16:14:09Z]
+[INFO]
+DEBUG: ScopeType value: 'Subscription'
+[2026-01-27 16:14:09Z]
+[INFO]
+Using scope type from parameter: Subscription
+[2026-01-27 16:14:09Z]
+[INFO]
+Checking current subscription context.
+[2026-01-27 16:14:09Z]
+[INFO]
+Current subscription: MSDN Platforms Subscription (ab1336c7-687d-4107-b0f6-9649a0458adb)
+[2026-01-27 16:14:13Z]
+[WARN]
+Skipping RBAC permission check (SkipRBACCheck flag enabled).
+
+╔═══════════════════════════════════════════════════════════════╗
+║  ℹ️  Production Configuration Detected (Audit Mode)            ║
+╚═══════════════════════════════════════════════════════════════╝
+
+  Using production parameters in Audit mode (recommended first step)
+  No resources will be blocked during this deployment
+
+[2026-01-27 16:14:21Z]
+[SUCCESS]
+Loaded 46 policies from parameter file: .\PolicyParameters-Production-Remediation.json
+
+Processing 46 policies...
+─────────────────────────────────────────────────────────────
+
+[2026-01-27 16:14:21Z]
+[INFO]
+Preparing to assign (1/46): [Preview]: Azure Key Vault Managed HSM should disable public network access
+[2026-01-27 16:14:21Z]
+[INFO]
+Assigning policy '[Preview]: Azure Key Vault Managed HSM should disable public network access' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-27 16:14:21Z]
+[SUCCESS]
+Found '[Preview]: Azure Key Vault Managed HSM should disable public network access' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/19ea9d63-adee-4431-a95e-1913c6c1c75f
+[2026-01-27 16:14:21Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-27 16:14:21Z]
+[INFO]
+DEBUG: Defined parameter names: effect
+[2026-01-27 16:14:21Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Audit' to cleaned params
+[2026-01-27 16:14:21Z]
+[INFO]
+Assignment already exists for '[Preview]: Azure Key Vault Managed HSM should disable public network access'. Updating parameters and enforcement mode...
+[2026-01-27 16:14:22Z]
+[SUCCESS]
+Updated assignment
+
+[2026-01-27 16:14:22Z]
+[INFO]
+Preparing to assign (2/46): Configure key vaults to enable firewall
+[2026-01-27 16:14:22Z]
+[INFO]
+Assigning policy 'Configure key vaults to enable firewall' to /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb (Mode=Audit)
+[2026-01-27 16:14:22Z]
+[SUCCESS]
+Found 'Configure key vaults to enable firewall' in mapping: PolicyDefinition -> /providers/Microsoft.Authorization/policyDefinitions/ac673a9a-f77d-4846-b2d8-a57f8e1c01dc
+[2026-01-27 16:14:22Z]
+[INFO]
+DEBUG: Checking parameter 'effect' against policy definition
+[2026-01-27 16:14:22Z]
+[INFO]
+DEBUG: Defined parameter names: effect
+[2026-01-27 16:14:22Z]
+[INFO]
+DEBUG: Added parameter 'effect' = 'Modify' to cleaned params
+[2026-01-27 16:14:23Z]
+[INFO]
+DEBUG: IdentityResourceId parameter value: '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation' (Length: 169)
+[2026-01-27 16:14:23Z]
+[INFO]
+Policy requires managed identity. Using: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+PS>TerminatingError(Get-AzUserAssignedIdentity): "A parameter cannot be found that matches parameter name 'ResourceId'."
+PS>TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+]633;D;1]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "`n╔═══════════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan; Write-Host "║  SCENARIO 7: AUTO-REMEDIATION - ENFORCE MODE                     ║" -ForegroundColor Cyan; Write-Host "╚═══════════════════════════════════════════════════════════════════╝" -ForegroundColor Cyan; Write-Host "`n📋 MODE SELECTION:" -ForegroundColor Yellow; Write-Host "   • Audit = Monitor only (no auto-fix)" -ForegroundColor Gray; Write-Host "   • Enforce = Auto-remediation ENABLED ✅" -ForegroundColor Green; Write-Host "`n🎯 For Scenario 7, we need ENFORCE mode to test auto-remediation" -ForegroundColor White; Write-Host "`n⏱️  Starting deployment at $(Get-Date -Format 'HH:mm:ss')..." -ForegroundColor Cyan
+
+╔═══════════════════════════════════════════════════════════════════╗
+║  SCENARIO 7: AUTO-REMEDIATION - ENFORCE MODE                     ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+📋 MODE SELECTION:
+   • Audit = Monitor only (no auto-fix)
+   • Enforce = Auto-remediation ENABLED ✅
+
+🎯 For Scenario 7, we need ENFORCE mode to test auto-remediation
+
+⏱️  Starting deployment at 16:15:41...
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+**********************
+PowerShell transcript end
+End time: 20260127170204
+**********************

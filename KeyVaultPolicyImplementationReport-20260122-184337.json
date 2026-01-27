@@ -1,0 +1,246 @@
+{
+  "Verification": null,
+  "Preview": false,
+  "DryRun": false,
+  "Compliance": {
+    "Raw": null,
+    "OperationalStatus": {
+      "TotalPoliciesReporting": 0,
+      "TotalResourcesEvaluated": 0,
+      "OverallCompliancePercent": 0
+    },
+    "Summary": []
+  },
+  "Assignments": [
+    {
+      "Status": "Failed",
+      "Name": "Certificates should be issued by one of the specified non-integrated certificate authorities",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'Certificatesshouldbeissuedbyoneofthespecifiednoninteg-1964740617' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Azure Key Vaults should use private link",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'AzureKeyVaultsshoulduseprivatelink-1181504241' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Skipped",
+      "Name": "Configure Azure Key Vaults to use private DNS zones",
+      "Error": "Effect '' requires managed identity"
+    },
+    {
+      "Status": "Failed",
+      "Name": "[Preview]: Azure Key Vault Managed HSM keys using RSA cryptography should have a specified minimum key size",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'PreviewAzureKeyVaultManagedHSMkeysusingRSAcryptography-359087599' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Keys should not be active for longer than the specified number of days",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'Keysshouldnotbeactiveforlongerthanthespecifiednumberof-454502706' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Keys should be the specified cryptographic type RSA or EC",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'KeysshouldbethespecifiedcryptographictypeRSAorEC-1464230551' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "[Preview]: Azure Key Vault Managed HSM keys should have an expiration date",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'PreviewAzureKeyVaultManagedHSMkeysshouldhaveanexpirati-194527196' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Keys using RSA cryptography should have a specified minimum key size",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'KeysusingRSAcryptographyshouldhaveaspecifiedminimumke-2142764776' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "[Preview]: Azure Key Vault Managed HSM keys using elliptic curve cryptography should have the specified curve names",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'PreviewAzureKeyVaultManagedHSMkeysusingellipticcurvec-1062263117' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Skipped",
+      "Name": "Deploy Diagnostic Settings for Key Vault to Event Hub",
+      "Error": "Effect '' requires managed identity"
+    },
+    {
+      "Status": "Failed",
+      "Name": "Key vaults should have soft delete enabled",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'Keyvaultsshouldhavesoftdeleteenabled-1702009588' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Keys using elliptic curve cryptography should have the specified curve names",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'Keysusingellipticcurvecryptographyshouldhavethespecifi-734732977' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Skipped",
+      "Name": "Configure Azure Key Vaults with private endpoints",
+      "Error": "Effect '' requires managed identity"
+    },
+    {
+      "Status": "Skipped",
+      "Name": "Deploy - Configure diagnostic settings for Azure Key Vault to Log Analytics workspace",
+      "Error": "Effect '' requires managed identity"
+    },
+    {
+      "Status": "Failed",
+      "Name": "Key vaults should have deletion protection enabled",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'Keyvaultsshouldhavedeletionprotectionenabled-577997390' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Azure Key Vault should disable public network access",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'AzureKeyVaultshoulddisablepublicnetworkaccess-702455669' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Keys should have more than the specified number of days before expiration",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'Keysshouldhavemorethanthespecifiednumberofdaysbeforee-1520979548' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Azure Key Vault Managed HSM should have purge protection enabled",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'AzureKeyVaultManagedHSMshouldhavepurgeprotectionenable-943440678' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Secrets should have content type set",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'Secretsshouldhavecontenttypeset-518367599' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Azure Key Vault should use RBAC permission model",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'AzureKeyVaultshoulduseRBACpermissionmodel-678231572' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Certificates should use allowed key types",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'Certificatesshoulduseallowedkeytypes-2055684176' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Secrets should not be active for longer than the specified number of days",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'Secretsshouldnotbeactiveforlongerthanthespecifiednumb-1592664721' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Certificates using elliptic curve cryptography should have allowed curve names",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'Certificatesusingellipticcurvecryptographyshouldhaveal-637651881' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Skipped",
+      "Name": "Configure key vaults to enable firewall",
+      "Error": "Effect '' requires managed identity"
+    },
+    {
+      "Status": "Failed",
+      "Name": "Certificates using RSA cryptography should have the specified minimum key size",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'CertificatesusingRSAcryptographyshouldhavethespecifie-1705665105' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Keys should be backed by a hardware security module (HSM)",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'KeysshouldbebackedbyahardwaresecuritymoduleHSM-171951881' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Resource logs in Key Vault should be enabled",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'ResourcelogsinKeyVaultshouldbeenabled-799193874' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Key Vault secrets should have an expiration date",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'KeyVaultsecretsshouldhaveanexpirationdate-231508495' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Secrets should have more than the specified number of days before expiration",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'Secretsshouldhavemorethanthespecifiednumberofdaysbefo-1877849216' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Certificates should have the specified lifetime action triggers",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'Certificatesshouldhavethespecifiedlifetimeactiontrigger-39712862' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Azure Key Vault should have firewall enabled or public network access disabled",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'AzureKeyVaultshouldhavefirewallenabledorpublicnetwork-1939440665' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Keys should have a rotation policy ensuring that their rotation is scheduled within the specified number of days after creation.",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'Keysshouldhavearotationpolicyensuringthattheirrotation-829764683' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Keys should have the specified maximum validity period",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'Keysshouldhavethespecifiedmaximumvalidityperiod-770046264' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Key Vault keys should have an expiration date",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'KeyVaultkeysshouldhaveanexpirationdate-480031965' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Certificates should have the specified maximum validity period",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'Certificatesshouldhavethespecifiedmaximumvalidityperio-616438788' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Resource logs in Azure Key Vault Managed HSM should be enabled",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'ResourcelogsinAzureKeyVaultManagedHSMshouldbeenabled-98754088' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Certificates should not expire within the specified number of days",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'Certificatesshouldnotexpirewithinthespecifiednumberofd-865740358' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "[Preview]: Azure Key Vault Managed HSM Keys should have more than the specified number of days before expiration",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'PreviewAzureKeyVaultManagedHSMKeysshouldhavemorethanth-913174080' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Secrets should have the specified maximum validity period",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'Secretsshouldhavethespecifiedmaximumvalidityperiod-121067901' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "[Preview]: Azure Key Vault Managed HSM should use private link",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'PreviewAzureKeyVaultManagedHSMshoulduseprivatelink-335099883' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Failed",
+      "Name": "Certificates should be issued by the specified non-integrated certificate authority",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'Certificatesshouldbeissuedbythespecifiednonintegrated-1170868902' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Skipped",
+      "Name": "Deploy - Configure diagnostic settings to an Event Hub to be enabled on Azure Key Vault Managed HSM",
+      "Error": "Effect '' requires managed identity"
+    },
+    {
+      "Status": "Failed",
+      "Name": "[Preview]: Azure Key Vault Managed HSM should disable public network access",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'PreviewAzureKeyVaultManagedHSMshoulddisablepublicnetwo-958349171' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Skipped",
+      "Name": "[Preview]: Configure Azure Key Vault Managed HSM to disable public network access",
+      "Error": "Effect '' requires managed identity"
+    },
+    {
+      "Status": "Failed",
+      "Name": "Certificates should be issued by the specified integrated certificate authority",
+      "Error": "[InvalidPolicyAssignmentName] : The policy assignment name 'Certificatesshouldbeissuedbythespecifiedintegratedcer-2070504465' is invalid. The policy assignment name length must not exceed '24' characters."
+    },
+    {
+      "Status": "Skipped",
+      "Name": "[Preview]: Configure Azure Key Vault Managed HSM with private endpoints",
+      "Error": "Effect '' requires managed identity"
+    }
+  ]
+}

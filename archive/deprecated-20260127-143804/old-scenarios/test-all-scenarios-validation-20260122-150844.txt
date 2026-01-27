@@ -1,0 +1,105 @@
+[2026-01-22 15:08:44] [INFO] Starting comprehensive scenario validation
+[2026-01-22 15:08:44] [INFO] Test mode: DRYRUN (Preview)
+[2026-01-22 15:08:44] [INFO] Test log: .\test-all-scenarios-validation-20260122-150844.txt
+[2026-01-22 15:08:44] [INFO] 
+Validating prerequisites...
+[2026-01-22 15:08:44] [SUCCESS] ✅ All prerequisites validated
+[2026-01-22 15:08:44] [INFO] SCENARIO 1: DevTest Baseline (30 Policies)
+[2026-01-22 15:08:44] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-DevTest.json -SkipRBACCheck -Preview
+[2026-01-22 15:09:03] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:09:03] [INFO]   Output saved to: .\scenario-1-output-20260122-150844.txt
+[2026-01-22 15:09:03] [ERROR]   ❌ Console next steps validation failed for DevTest Baseline (30 Policies)
+[2026-01-22 15:09:03] [ERROR]     - Missing 'NEXT STEPS GUIDANCE' banner
+[2026-01-22 15:09:03] [ERROR]     - Missing DevTest30 deployment banner
+[2026-01-22 15:09:03] [ERROR]     - Missing recommendation to deploy full 46-policy suite
+[2026-01-22 15:09:03] [SUCCESS]   ✅ HTML report validated for DevTest Baseline (30 Policies)
+[2026-01-22 15:09:03] [SUCCESS]   ✅ No unexpected warnings/errors for DevTest Baseline (30 Policies)
+[2026-01-22 15:09:05] [INFO] SCENARIO 2: DevTest Full (46 Policies)
+[2026-01-22 15:09:05] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-DevTest-Full.json -SkipRBACCheck -Preview
+[2026-01-22 15:09:21] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:09:21] [INFO]   Output saved to: .\scenario-2-output-20260122-150905.txt
+[2026-01-22 15:09:21] [ERROR]   ❌ Console next steps validation failed for DevTest Full (46 Policies)
+[2026-01-22 15:09:21] [ERROR]     - Missing 'NEXT STEPS GUIDANCE' banner
+[2026-01-22 15:09:21] [ERROR]     - Missing DevTestFull46 deployment banner
+[2026-01-22 15:09:21] [ERROR]     - Missing auto-remediation testing recommendation
+[2026-01-22 15:09:21] [SUCCESS]   ✅ HTML report validated for DevTest Full (46 Policies)
+[2026-01-22 15:09:21] [SUCCESS]   ✅ No unexpected warnings/errors for DevTest Full (46 Policies)
+[2026-01-22 15:09:23] [INFO] SCENARIO 3: DevTest Auto-Remediation (8 Policies)
+[2026-01-22 15:09:24] [WARN] ⚠️  User input required for this scenario:
+[2026-01-22 15:09:24] [WARN]     Replace <MANAGED_IDENTITY_ID> with:
+[2026-01-22 15:09:24] [WARN]     /subscriptions/<subscription-id>/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+[2026-01-22 15:09:24] [INFO]   Using managed identity: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+[2026-01-22 15:09:24] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-DevTest-Full-Remediation.json -IdentityResourceId '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation' -SkipRBACCheck -Preview
+[2026-01-22 15:09:50] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:09:50] [INFO]   Output saved to: .\scenario-3-output-20260122-150924.txt
+[2026-01-22 15:09:50] [ERROR]   ❌ Console next steps validation failed for DevTest Auto-Remediation (8 Policies)
+[2026-01-22 15:09:50] [ERROR]     - Missing 'NEXT STEPS GUIDANCE' banner
+[2026-01-22 15:09:50] [ERROR]     - Missing auto-remediation deployment banner
+[2026-01-22 15:09:50] [ERROR]     - Missing remediation timing guidance
+[2026-01-22 15:09:50] [SUCCESS]   ✅ HTML report validated for DevTest Auto-Remediation (8 Policies)
+[2026-01-22 15:09:50] [SUCCESS]   ✅ No unexpected warnings/errors for DevTest Auto-Remediation (8 Policies)
+[2026-01-22 15:09:52] [INFO] SCENARIO 4: Production Audit (46 Policies)
+[2026-01-22 15:09:52] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-Production.json -SkipRBACCheck -Preview
+[2026-01-22 15:10:08] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:10:08] [INFO]   Output saved to: .\scenario-4-output-20260122-150952.txt
+[2026-01-22 15:10:08] [ERROR]   ❌ Console next steps validation failed for Production Audit (46 Policies)
+[2026-01-22 15:10:08] [ERROR]     - Missing 'NEXT STEPS GUIDANCE' banner
+[2026-01-22 15:10:08] [ERROR]     - Missing Production Audit deployment banner
+[2026-01-22 15:10:08] [ERROR]     - Missing 30-90 day monitoring recommendation
+[2026-01-22 15:10:08] [SUCCESS]   ✅ HTML report validated for Production Audit (46 Policies)
+[2026-01-22 15:10:08] [SUCCESS]   ✅ No unexpected warnings/errors for Production Audit (46 Policies)
+[2026-01-22 15:10:10] [INFO] SCENARIO 5: Production Deny (46 Policies - Maximum Enforcement)
+[2026-01-22 15:10:10] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-Production-Deny.json -SkipRBACCheck -Preview
+[2026-01-22 15:10:27] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:10:27] [INFO]   Output saved to: .\scenario-5-output-20260122-151010.txt
+[2026-01-22 15:10:27] [ERROR]   ❌ Console next steps validation failed for Production Deny (46 Policies - Maximum Enforcement)
+[2026-01-22 15:10:27] [ERROR]     - Missing 'NEXT STEPS GUIDANCE' banner
+[2026-01-22 15:10:27] [ERROR]     - Missing Production Deny deployment banner
+[2026-01-22 15:10:27] [ERROR]     - Missing rollback instructions
+[2026-01-22 15:10:27] [SUCCESS]   ✅ HTML report validated for Production Deny (46 Policies - Maximum Enforcement)
+[2026-01-22 15:10:27] [SUCCESS]   ✅ No unexpected warnings/errors for Production Deny (46 Policies - Maximum Enforcement)
+[2026-01-22 15:10:29] [INFO] SCENARIO 6: Production Auto-Remediation (8 Policies)
+[2026-01-22 15:10:29] [WARN] ⚠️  User input required for this scenario:
+[2026-01-22 15:10:29] [WARN]     Replace <MANAGED_IDENTITY_ID> with:
+[2026-01-22 15:10:29] [WARN]     /subscriptions/<subscription-id>/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+[2026-01-22 15:10:29] [INFO]   Using managed identity: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+[2026-01-22 15:10:29] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-Production-Remediation.json -IdentityResourceId '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation' -SkipRBACCheck -Preview
+[2026-01-22 15:10:51] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:10:51] [INFO]   Output saved to: .\scenario-6-output-20260122-151029.txt
+[2026-01-22 15:10:51] [ERROR]   ❌ Console next steps validation failed for Production Auto-Remediation (8 Policies)
+[2026-01-22 15:10:51] [ERROR]     - Missing 'NEXT STEPS GUIDANCE' banner
+[2026-01-22 15:10:51] [ERROR]     - Missing Production Remediation banner
+[2026-01-22 15:10:51] [ERROR]     - Missing emergency response guidance
+[2026-01-22 15:10:52] [SUCCESS]   ✅ HTML report validated for Production Auto-Remediation (8 Policies)
+[2026-01-22 15:10:52] [SUCCESS]   ✅ No unexpected warnings/errors for Production Auto-Remediation (8 Policies)
+[2026-01-22 15:10:54] [INFO] SCENARIO 7: Resource Group Scope (Limited Deployment)
+[2026-01-22 15:10:54] [WARN] ⚠️  User input required for this scenario:
+[2026-01-22 15:10:54] [WARN]     Replace <SUBSCRIPTION_ID> with your subscription ID
+[2026-01-22 15:10:54] [WARN]     Replace <RESOURCE_GROUP> with resource group name (default: rg-policy-keyvault-test)
+[2026-01-22 15:10:54] [INFO]   Using resource group: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-keyvault-test
+[2026-01-22 15:10:54] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-DevTest.json -ResourceGroupScope '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-keyvault-test' -SkipRBACCheck -Preview
+[2026-01-22 15:11:04] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:11:04] [INFO]   Output saved to: .\scenario-7-output-20260122-151054.txt
+[2026-01-22 15:11:04] [ERROR]   ❌ Console next steps validation failed for Resource Group Scope (Limited Deployment)
+[2026-01-22 15:11:04] [ERROR]     - Missing 'NEXT STEPS GUIDANCE' banner
+[2026-01-22 15:11:04] [ERROR]     - Missing resource group scope indication
+[2026-01-22 15:11:04] [SUCCESS]   ✅ HTML report validated for Resource Group Scope (Limited Deployment)
+[2026-01-22 15:11:04] [SUCCESS]   ✅ No unexpected warnings/errors for Resource Group Scope (Limited Deployment)
+[2026-01-22 15:11:06] [INFO] SCENARIO 8: Management Group Scope (Enterprise-Wide)
+[2026-01-22 15:11:06] [WARN] ⚠️  User input required for this scenario:
+[2026-01-22 15:11:06] [WARN]     Replace <MANAGEMENT_GROUP_ID> with your management group ID
+[2026-01-22 15:11:06] [WARN]     WARNING: Affects all subscriptions under management group
+[2026-01-22 15:11:06] [WARN]   ⏭️  Skipping scenario (no -ManagementGroupId provided)
+[2026-01-22 15:11:06] [INFO] SCENARIO 9: Rollback (Remove All Policies)
+[2026-01-22 15:11:06] [INFO] Executing: .\AzPolicyImplScript.ps1 -Rollback -SkipRBACCheck -Preview
+[2026-01-22 15:11:14] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:11:14] [INFO]   Output saved to: .\scenario-9-output-20260122-151106.txt
+[2026-01-22 15:11:14] [ERROR]   ❌ Console next steps validation failed for Rollback (Remove All Policies)
+[2026-01-22 15:11:14] [ERROR]     - Missing 'NEXT STEPS GUIDANCE' banner
+[2026-01-22 15:11:14] [ERROR]     - Missing rollback confirmation
+[2026-01-22 15:11:14] [SUCCESS]   ✅ HTML report validated for Rollback (Remove All Policies)
+[2026-01-22 15:11:14] [SUCCESS]   ✅ No unexpected warnings/errors for Rollback (Remove All Policies)
+[2026-01-22 15:11:16] [INFO] Test Duration: 00:02:32
+[2026-01-22 15:11:16] [INFO] Test Log: .\test-all-scenarios-validation-20260122-150844.txt
+[2026-01-22 15:11:17] [INFO] 
+Test suite complete. Overall status: FAIL

@@ -1,0 +1,99 @@
+[2026-01-22 15:23:04] [INFO] Starting comprehensive scenario validation
+[2026-01-22 15:23:04] [INFO] Test mode: DRYRUN (Preview)
+[2026-01-22 15:23:04] [INFO] Test log: .\test-all-scenarios-validation-20260122-152304.txt
+[2026-01-22 15:23:04] [INFO] 
+Validating prerequisites...
+[2026-01-22 15:23:04] [SUCCESS] ✅ All prerequisites validated
+[2026-01-22 15:23:04] [INFO] SCENARIO 1: DevTest Baseline (30 Policies)
+[2026-01-22 15:23:04] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-DevTest.json -SkipRBACCheck -Preview
+[2026-01-22 15:23:18] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:23:18] [INFO]   Output saved to: .\scenario-1-output-20260122-152304.txt
+[2026-01-22 15:23:18] [SUCCESS]   ✅ Console next steps validated for DevTest Baseline (30 Policies)
+[2026-01-22 15:23:18] [SUCCESS]   ✅ HTML report validated for DevTest Baseline (30 Policies)
+[2026-01-22 15:23:18] [SUCCESS]   ✅ No unexpected warnings/errors for DevTest Baseline (30 Policies)
+[2026-01-22 15:23:20] [INFO] SCENARIO 2: DevTest Full (46 Policies)
+[2026-01-22 15:23:20] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-DevTest-Full.json -SkipRBACCheck -Preview
+[2026-01-22 15:23:35] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:23:35] [INFO]   Output saved to: .\scenario-2-output-20260122-152320.txt
+[2026-01-22 15:23:35] [SUCCESS]   ✅ Console next steps validated for DevTest Full (46 Policies)
+[2026-01-22 15:23:35] [SUCCESS]   ✅ HTML report validated for DevTest Full (46 Policies)
+[2026-01-22 15:23:35] [SUCCESS]   ✅ No unexpected warnings/errors for DevTest Full (46 Policies)
+[2026-01-22 15:23:37] [INFO] SCENARIO 3: DevTest Auto-Remediation (8 Policies)
+[2026-01-22 15:23:37] [WARN] ⚠️  User input required for this scenario:
+[2026-01-22 15:23:37] [WARN]     Replace <MANAGED_IDENTITY_ID> with:
+[2026-01-22 15:23:37] [WARN]     /subscriptions/<subscription-id>/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+[2026-01-22 15:23:37] [INFO]   Using managed identity: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+[2026-01-22 15:23:37] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-DevTest-Full-Remediation.json -IdentityResourceId '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation' -SkipRBACCheck -Preview
+[2026-01-22 15:23:58] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:23:58] [INFO]   Output saved to: .\scenario-3-output-20260122-152337.txt
+[2026-01-22 15:23:58] [SUCCESS]   ✅ Console next steps validated for DevTest Auto-Remediation (8 Policies)
+[2026-01-22 15:23:58] [SUCCESS]   ✅ HTML report validated for DevTest Auto-Remediation (8 Policies)
+[2026-01-22 15:23:58] [SUCCESS]   ✅ No unexpected warnings/errors for DevTest Auto-Remediation (8 Policies)
+[2026-01-22 15:24:00] [INFO] SCENARIO 4: Production Audit (46 Policies)
+[2026-01-22 15:24:00] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-Production.json -SkipRBACCheck -Preview
+[2026-01-22 15:24:15] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:24:15] [INFO]   Output saved to: .\scenario-4-output-20260122-152400.txt
+[2026-01-22 15:24:15] [SUCCESS]   ✅ Console next steps validated for Production Audit (46 Policies)
+[2026-01-22 15:24:15] [SUCCESS]   ✅ HTML report validated for Production Audit (46 Policies)
+[2026-01-22 15:24:15] [SUCCESS]   ✅ No unexpected warnings/errors for Production Audit (46 Policies)
+[2026-01-22 15:24:17] [INFO] SCENARIO 5: Production Deny (46 Policies - Maximum Enforcement)
+[2026-01-22 15:24:17] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-Production-Deny.json -SkipRBACCheck -Preview
+[2026-01-22 15:24:31] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:24:31] [INFO]   Output saved to: .\scenario-5-output-20260122-152417.txt
+[2026-01-22 15:24:31] [ERROR]   ❌ Console next steps validation failed for Production Deny (46 Policies - Maximum Enforcement)
+[2026-01-22 15:24:31] [ERROR]     - Missing Production Deny deployment banner
+[2026-01-22 15:24:31] [ERROR]     - Missing rollback instructions
+[2026-01-22 15:24:31] [SUCCESS]   ✅ HTML report validated for Production Deny (46 Policies - Maximum Enforcement)
+[2026-01-22 15:24:31] [ERROR]   ❌ Found unexpected warnings/errors for Production Deny (46 Policies - Maximum Enforcement)
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Parameter 'effect' value 'Deny' not in allowed values
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Effect 'Audit' not supported by policy 'Deploy - Configure diagnostic settings for Azure Key Vault to Log Analytics workspace'. Allowed: DeployIfNotExists, Disabled. Using policy default.
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Parameter 'effect' value 'Deny' not in allowed values
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Effect 'Audit' not supported by policy 'Configure Azure Key Vaults with private endpoints'. Allowed: DeployIfNotExists, Disabled. Using policy default.
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Parameter 'effect' value 'Deny' not in allowed values
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Effect 'Audit' not supported by policy 'Configure Azure Key Vaults to use private DNS zones'. Allowed: DeployIfNotExists, Disabled. Using policy default.
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Parameter 'effect' value 'Deny' not in allowed values
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Effect 'Audit' not supported by policy 'Deploy Diagnostic Settings for Key Vault to Event Hub'. Allowed: DeployIfNotExists, Disabled. Using policy default.
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Parameter 'effect' value 'Deny' not in allowed values
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Parameter 'effect' value 'Deny' not in allowed values
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Effect 'Audit' not supported by policy '
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Parameter 'effect' value 'Deny' not in allowed values
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Effect 'Audit' not supported by policy 'Deploy - Configure diagnostic settings to an Event Hub to be enabled on Azure Key Vault Managed HSM'. Allowed: DeployIfNotExists, Disabled. Using policy default.
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Parameter 'effect' value 'Deny' not in allowed values
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Effect 'Audit' not supported by policy 'Resource logs in Key Vault should be enabled'. Allowed: AuditIfNotExists, Disabled. Using policy default.
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Parameter 'effect' value 'Deny' not in allowed values
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Parameter 'effect' value 'Deny' not in allowed values
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Effect 'Audit' not supported by policy '
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Parameter 'effect' value 'Deny' not in allowed values
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Effect 'Audit' not supported by policy 'Configure key vaults to enable firewall'. Allowed: Modify, Disabled. Using policy default.
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Parameter 'effect' value 'Deny' not in allowed values
+[2026-01-22 15:24:31] [ERROR]     - Unexpected WARN: Effect 'Audit' not supported by policy 'Resource logs in Azure Key Vault Managed HSM should be enabled'. Allowed: AuditIfNotExists, Disabled. Using policy default.
+[2026-01-22 15:24:33] [INFO] SCENARIO 6: Production Auto-Remediation (8 Policies)
+[2026-01-22 15:24:33] [WARN] ⚠️  User input required for this scenario:
+[2026-01-22 15:24:33] [WARN]     Replace <MANAGED_IDENTITY_ID> with:
+[2026-01-22 15:24:33] [WARN]     /subscriptions/<subscription-id>/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+[2026-01-22 15:24:33] [INFO]   Using managed identity: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation
+[2026-01-22 15:24:33] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-Production-Remediation.json -IdentityResourceId '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-remediation/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-policy-remediation' -SkipRBACCheck -Preview
+[2026-01-22 15:24:51] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:24:51] [INFO]   Output saved to: .\scenario-6-output-20260122-152433.txt
+[2026-01-22 15:24:51] [SUCCESS]   ✅ Console next steps validated for Production Auto-Remediation (8 Policies)
+[2026-01-22 15:24:51] [SUCCESS]   ✅ HTML report validated for Production Auto-Remediation (8 Policies)
+[2026-01-22 15:24:51] [SUCCESS]   ✅ No unexpected warnings/errors for Production Auto-Remediation (8 Policies)
+[2026-01-22 15:24:53] [INFO] SCENARIO 7: Resource Group Scope (Limited Deployment)
+[2026-01-22 15:24:53] [WARN] ⚠️  User input required for this scenario:
+[2026-01-22 15:24:53] [WARN]     Replace <SUBSCRIPTION_ID> with your subscription ID
+[2026-01-22 15:24:53] [WARN]     Replace <RESOURCE_GROUP> with resource group name (default: rg-policy-keyvault-test)
+[2026-01-22 15:24:53] [INFO]   Using resource group: /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-keyvault-test
+[2026-01-22 15:24:53] [INFO] Executing: .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-DevTest.json -ResourceGroupScope '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourceGroups/rg-policy-keyvault-test' -SkipRBACCheck -Preview
+[2026-01-22 15:25:02] [SUCCESS]   ✅ Command executed successfully
+[2026-01-22 15:25:02] [INFO]   Output saved to: .\scenario-7-output-20260122-152453.txt
+[2026-01-22 15:25:02] [ERROR]   ❌ Console next steps validation failed for Resource Group Scope (Limited Deployment)
+[2026-01-22 15:25:03] [ERROR]     - Missing resource group scope indication
+[2026-01-22 15:25:03] [SUCCESS]   ✅ HTML report validated for Resource Group Scope (Limited Deployment)
+[2026-01-22 15:25:03] [SUCCESS]   ✅ No unexpected warnings/errors for Resource Group Scope (Limited Deployment)
+[2026-01-22 15:25:05] [INFO] SCENARIO 8: Management Group Scope (Enterprise-Wide)
+[2026-01-22 15:25:05] [WARN] ⚠️  User input required for this scenario:
+[2026-01-22 15:25:05] [WARN]     Replace <MANAGEMENT_GROUP_ID> with your management group ID
+[2026-01-22 15:25:05] [WARN]     WARNING: Affects all subscriptions under management group
+[2026-01-22 15:25:05] [WARN]   ⏭️  Skipping scenario (no -ManagementGroupId provided)
+[2026-01-22 15:25:05] [INFO] SCENARIO 9: Rollback (Remove All Policies)
+[2026-01-22 15:25:05] [INFO] Executing: .\AzPolicyImplScript.ps1 -Rollback -SkipRBACCheck -Preview

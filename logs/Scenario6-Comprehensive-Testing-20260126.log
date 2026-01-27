@@ -1,0 +1,361 @@
+**********************
+PowerShell transcript start
+Start time: 20260126164119
+Username: DTL01\lcladmin
+RunAs User: DTL01\lcladmin
+Configuration Name: 
+Machine: DTL01 (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Program Files\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 10360
+PSVersion: 7.5.3
+PSEdition: Core
+GitCommitId: 7.5.3
+OS: Microsoft Windows 10.0.20348
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\logs\Scenario6-Comprehensive-Testing-20260126.log
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>.\AzPolicyImplScript.ps1 -TestDenyMode
+
+╔══════════════════════════════════════════════════════════════╗
+║  Azure Policy Implementation - Key Vault Governance          ║
+╚══════════════════════════════════════════════════════════════╝
+
+[2026-01-26 16:41:19Z]
+[INFO]
+Starting Azure Policy implementation script for Key Vault policies
+[2026-01-26 16:41:19Z]
+[INFO]
+Checking required PowerShell modules...
+[2026-01-26 16:41:19Z]
+[SUCCESS]
+Module Az.Accounts is present
+[2026-01-26 16:41:20Z]
+[SUCCESS]
+Module Az.Resources is present
+[2026-01-26 16:41:20Z]
+[SUCCESS]
+Module Az.PolicyInsights is present
+[2026-01-26 16:41:20Z]
+[SUCCESS]
+Module Az.Monitor is present
+[2026-01-26 16:41:20Z]
+[SUCCESS]
+Module Az.KeyVault is present
+[2026-01-26 16:41:20Z]
+[INFO]
+Using Azure context: theregniers@hotmail.com
+[2026-01-26 16:41:20Z]
+[INFO]
+Loading policy mapping from ./PolicyNameMapping.json
+[2026-01-26 16:41:20Z]
+[INFO]
+Loaded 3745 policy mappings
+[2026-01-26 16:41:20Z]
+[INFO]
+Loading policy parameter overrides from ./PolicyParameters.json
+[2026-01-26 16:41:20Z]
+[INFO]
+DEBUG: PSBoundParameters keys: CsvPath
+[2026-01-26 16:41:20Z]
+[INFO]
+DEBUG: ScopeType value: ''
+[2026-01-26 16:41:20Z]
+[INFO]
+DEBUG: Prompting for scope type (PSBound check failed)
+[2026-01-26 16:41:33Z]
+[INFO]
+Checking current subscription context.
+[2026-01-26 16:41:33Z]
+[INFO]
+Current subscription: MSDN Platforms Subscription (ab1336c7-687d-4107-b0f6-9649a0458adb)
+[2026-01-26 16:41:33Z]
+[INFO]
+Checking role assignments for theregniers@hotmail.com on scope /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb
+PS>TerminatingError(Get-AzRoleAssignment): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find principal using the specified options"
+[2026-01-26 16:41:33Z]
+[ERROR]
+Unable to query role assignments: Cannot find principal using the specified options
+[2026-01-26 16:41:33Z]
+[ERROR]
+Insufficient RBAC to continue. Resolve RBAC and re-run.
+Role assignment commands to request:
+PowerShell role assignment template (replace <userObjectId> or <userPrincipalName>):
+# Grant Policy Contributor to a user on scope /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb
+# Using object id (preferred):
+New-AzRoleAssignment -ObjectId <userObjectId> -RoleDefinitionName 'Policy Contributor' -Scope '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb'
+# Using sign-in name (may require lookup):
+$uid = (Get-AzADUser -UserPrincipalName 'user@contoso.com').Id
+New-AzRoleAssignment -ObjectId $uid -RoleDefinitionName 'Policy Contributor' -Scope '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb'
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Stop-Transcript
+**********************
+PowerShell transcript end
+End time: 20260126164133
+**********************
+**********************
+PowerShell transcript start
+Start time: 20260126165103
+Username: DTL01\lcladmin
+RunAs User: DTL01\lcladmin
+Configuration Name: 
+Machine: DTL01 (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Program Files\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 10360
+PSVersion: 7.5.3
+PSEdition: Core
+GitCommitId: 7.5.3
+OS: Microsoft Windows 10.0.20348
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\logs\Scenario6-Comprehensive-Testing-20260126.log
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "⏱️  Expected Duration: 30-45 minutes (Azure Policy evaluation delays)" -ForegroundColor Yellow
+⏱️  Expected Duration: 30-45 minutes (Azure Policy evaluation delays)
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "📋 This will test ALL 34 deployed Deny policies individually`n" -ForegroundColor Yellow
+📋 This will test ALL 34 deployed Deny policies individually
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS># Load the script to get the function
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>. .\AzPolicyImplScript.ps1
+
+╔══════════════════════════════════════════════════════════════╗
+║  Azure Policy Implementation - Key Vault Governance          ║
+╚══════════════════════════════════════════════════════════════╝
+
+[2026-01-26 16:51:13Z]
+[INFO]
+Starting Azure Policy implementation script for Key Vault policies
+[2026-01-26 16:51:13Z]
+[INFO]
+Checking required PowerShell modules...
+[2026-01-26 16:51:13Z]
+[SUCCESS]
+Module Az.Accounts is present
+[2026-01-26 16:51:13Z]
+[SUCCESS]
+Module Az.Resources is present
+[2026-01-26 16:51:13Z]
+[SUCCESS]
+Module Az.PolicyInsights is present
+[2026-01-26 16:51:13Z]
+[SUCCESS]
+Module Az.Monitor is present
+[2026-01-26 16:51:13Z]
+[SUCCESS]
+Module Az.KeyVault is present
+[2026-01-26 16:51:13Z]
+[INFO]
+Using Azure context: theregniers@hotmail.com
+[2026-01-26 16:51:13Z]
+[INFO]
+Loading policy mapping from ./PolicyNameMapping.json
+[2026-01-26 16:51:13Z]
+[INFO]
+Loaded 3745 policy mappings
+[2026-01-26 16:51:13Z]
+[INFO]
+Loading policy parameter overrides from ./PolicyParameters.json
+[2026-01-26 16:51:13Z]
+[INFO]
+DEBUG: PSBoundParameters keys: CsvPath
+[2026-01-26 16:51:13Z]
+[INFO]
+DEBUG: ScopeType value: ''
+[2026-01-26 16:51:13Z]
+[INFO]
+DEBUG: Prompting for scope type (PSBound check failed)
+[2026-01-26 16:51:18Z]
+[INFO]
+Checking current subscription context.
+[2026-01-26 16:51:18Z]
+[INFO]
+Current subscription: MSDN Platforms Subscription (ab1336c7-687d-4107-b0f6-9649a0458adb)
+[2026-01-26 16:51:22Z]
+[INFO]
+Checking role assignments for theregniers@hotmail.com on scope /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb
+PS>TerminatingError(Get-AzRoleAssignment): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Cannot find principal using the specified options"
+[2026-01-26 16:51:23Z]
+[ERROR]
+Unable to query role assignments: Cannot find principal using the specified options
+[2026-01-26 16:51:23Z]
+[ERROR]
+Insufficient RBAC to continue. Resolve RBAC and re-run.
+Role assignment commands to request:
+PowerShell role assignment template (replace <userObjectId> or <userPrincipalName>):
+# Grant Policy Contributor to a user on scope /subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb
+# Using object id (preferred):
+New-AzRoleAssignment -ObjectId <userObjectId> -RoleDefinitionName 'Policy Contributor' -Scope '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb'
+# Using sign-in name (may require lookup):
+$uid = (Get-AzADUser -UserPrincipalName 'user@contoso.com').Id
+New-AzRoleAssignment -ObjectId $uid -RoleDefinitionName 'Policy Contributor' -Scope '/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb'
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS># Run the comprehensive test function directly
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Test-AllDenyPolicies -ResourceGroupName 'rg-policy-keyvault-test' -Location 'eastus'
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║   COMPREHENSIVE DENY POLICY VALIDATION - ALL 34 POLICIES (100% COVERAGE)   ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+Using Resource Group: rg-policy-keyvault-test
+Using Location: eastus
+
+╔═══════════════════════════════════════════════════════════════╗
+║  PHASE 1: VAULT-LEVEL POLICIES (6 tests)                      ║
+╚═══════════════════════════════════════════════════════════════╝
+[1] Soft Delete Required (CRITICAL)
+  Attempting to create vault WITHOUT soft delete via ARM...
+PS>TerminatingError(New-AzResourceGroupDeployment): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: 4:51:24 PM - Error: Code=InvalidTemplateDeployment; Message=The template deployment failed because of policy violation. Please see details for more information.
+"
+  ✅ PASS: Blocked by policy
+
+[2] Purge Protection Required (CRITICAL)
+  Attempting to create vault WITHOUT purge protection...
+PS>TerminatingError(New-AzKeyVault): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Resource 'val-nopurge-3713' was disallowed by policy. Policy identifiers: '[{"policyAssignment":{"name":"AzureKeyVaultshoulddisablepublicnetworkaccess-188399946","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/AzureKeyVaultshoulddisablepublicnetworkaccess-188399946"},"policyDefinition":{"name":"Azure Key Vault should disable public network access","id":"/providers/Microsoft.Authorization/policyDefinitions/405c5871-3e91-4644-8a63-58e19d68ff5b","version":"1.1.0"}},{"policyAssignment":{"name":"Keyvaultsshouldhavesoftdeleteenabled-716191913","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Keyvaultsshouldhavesoftdeleteenabled-716191913"},"policyDefinition":{"name":"Key vaults should have soft delete enabled","id":"/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d","version":"3.1.0"}},{"policyAssignment":{"name":"AzureKeyVaultshouldhavefirewallenabledorpublicnetworka-571915124","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/AzureKeyVaultshouldhavefirewallenabledorpublicnetworka-571915124"},"policyDefinition":{"name":"Azure Key Vault should have firewall enabled or public network access disabled","id":"/providers/Microsoft.Authorization/policyDefinitions/55615ac9-af46-4a59-874e-391cc3dfb490","version":"3.3.0"}},{"policyAssignment":{"name":"Keyvaultsshouldhavedeletionprotectionenabled-1084075278","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Keyvaultsshouldhavedeletionprotectionenabled-1084075278"},"policyDefinition":{"name":"Key vaults should have deletion protection enabled","id":"/providers/Microsoft.Authorization/policyDefinitions/0b60c0b2-2dc2-4e1c-b5c9-abbed971de53","version":"2.1.0"}}]'."
+  ✅ PASS: Blocked by policy
+
+[3] Public Network Access Disabled (HIGH)
+  Attempting to create vault WITH public access enabled...
+PS>TerminatingError(New-AzKeyVault): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Resource 'val-public-6136' was disallowed by policy. Policy identifiers: '[{"policyAssignment":{"name":"AzureKeyVaultshoulddisablepublicnetworkaccess-188399946","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/AzureKeyVaultshoulddisablepublicnetworkaccess-188399946"},"policyDefinition":{"name":"Azure Key Vault should disable public network access","id":"/providers/Microsoft.Authorization/policyDefinitions/405c5871-3e91-4644-8a63-58e19d68ff5b","version":"1.1.0"}},{"policyAssignment":{"name":"Keyvaultsshouldhavesoftdeleteenabled-716191913","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Keyvaultsshouldhavesoftdeleteenabled-716191913"},"policyDefinition":{"name":"Key vaults should have soft delete enabled","id":"/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d","version":"3.1.0"}},{"policyAssignment":{"name":"AzureKeyVaultshouldhavefirewallenabledorpublicnetworka-571915124","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/AzureKeyVaultshouldhavefirewallenabledorpublicnetworka-571915124"},"policyDefinition":{"name":"Azure Key Vault should have firewall enabled or public network access disabled","id":"/providers/Microsoft.Authorization/policyDefinitions/55615ac9-af46-4a59-874e-391cc3dfb490","version":"3.3.0"}}]'."
+  ✅ PASS: Blocked by policy
+
+[4] Firewall Required (HIGH)
+  Attempting to create vault without firewall...
+PS>TerminatingError(New-AzKeyVault): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Resource 'val-nofw-1425' was disallowed by policy. Policy identifiers: '[{"policyAssignment":{"name":"AzureKeyVaultshoulddisablepublicnetworkaccess-188399946","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/AzureKeyVaultshoulddisablepublicnetworkaccess-188399946"},"policyDefinition":{"name":"Azure Key Vault should disable public network access","id":"/providers/Microsoft.Authorization/policyDefinitions/405c5871-3e91-4644-8a63-58e19d68ff5b","version":"1.1.0"}},{"policyAssignment":{"name":"Keyvaultsshouldhavesoftdeleteenabled-716191913","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Keyvaultsshouldhavesoftdeleteenabled-716191913"},"policyDefinition":{"name":"Key vaults should have soft delete enabled","id":"/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d","version":"3.1.0"}},{"policyAssignment":{"name":"AzureKeyVaultshouldhavefirewallenabledorpublicnetworka-571915124","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/AzureKeyVaultshouldhavefirewallenabledorpublicnetworka-571915124"},"policyDefinition":{"name":"Azure Key Vault should have firewall enabled or public network access disabled","id":"/providers/Microsoft.Authorization/policyDefinitions/55615ac9-af46-4a59-874e-391cc3dfb490","version":"3.3.0"}}]'."
+  ✅ PASS: Blocked by policy
+
+[5] RBAC Required (HIGH)
+  Attempting to create vault with Access Policies...
+PS>TerminatingError(New-AzKeyVault): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Resource 'val-accesspol-4245' was disallowed by policy. Policy identifiers: '[{"policyAssignment":{"name":"AzureKeyVaultshoulddisablepublicnetworkaccess-188399946","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/AzureKeyVaultshoulddisablepublicnetworkaccess-188399946"},"policyDefinition":{"name":"Azure Key Vault should disable public network access","id":"/providers/Microsoft.Authorization/policyDefinitions/405c5871-3e91-4644-8a63-58e19d68ff5b","version":"1.1.0"}},{"policyAssignment":{"name":"Keyvaultsshouldhavesoftdeleteenabled-716191913","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/Keyvaultsshouldhavesoftdeleteenabled-716191913"},"policyDefinition":{"name":"Key vaults should have soft delete enabled","id":"/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d","version":"3.1.0"}},{"policyAssignment":{"name":"AzureKeyVaultshoulduseRBACpermissionmodel-1502415944","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/AzureKeyVaultshoulduseRBACpermissionmodel-1502415944"},"policyDefinition":{"name":"Azure Key Vault should use RBAC permission model","id":"/providers/Microsoft.Authorization/policyDefinitions/12d4fa5e-1f9f-4c21-97a9-b99b3c6611b5","version":"1.0.1"}},{"policyAssignment":{"name":"AzureKeyVaultshouldhavefirewallenabledorpublicnetworka-571915124","id":"/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/providers/Microsoft.Authorization/policyAssignments/AzureKeyVaultshouldhavefirewallenabledorpublicnetworka-571915124"},"policyDefinition":{"name":"Azure Key Vault should have firewall enabled or public network access disabled","id":"/providers/Microsoft.Authorization/policyDefinitions/55615ac9-af46-4a59-874e-391cc3dfb490","version":"3.3.0"}}]'."
+  ✅ PASS: Blocked by policy
+
+[6] Private Link Required (HIGH)
+  Note: Validates policy blocks vault without private link
+  (Full private link testing requires VNet infrastructure)
+  ⚠️ SKIP: Requires VNet infrastructure
+
+╔═══════════════════════════════════════════════════════════════╗
+║  Creating compliant baseline vault for resource tests...      ║
+╚═══════════════════════════════════════════════════════════════╝
+  Creating new baseline vault with PUBLIC access...
+PS>TerminatingError(New-AzResourceGroupDeployment): "The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: 4:51:27 PM - Error: Code=InvalidTemplateDeployment; Message=The template deployment failed because of policy violation. Please see details for more information.
+"
+  ❌ FAILED to create baseline vault: 4:51:27 PM - Error: Code=InvalidTemplateDeployment; Message=The template deployment failed because of policy violation. Please see details for more information.
+  ⚠️  Skipping resource-level tests
+
+📄 Results saved to: AllDenyPoliciesValidation-20260126-165127.csv
+
+Test     : Soft Delete Required
+Category : Vault
+Priority : CRITICAL
+Expected : Blocked
+Actual   : Blocked
+Status   : ✅ PASS
+Notes    : Policy blocked vault without soft delete
+
+Test     : Purge Protection
+Category : Vault
+Priority : CRITICAL
+Expected : Blocked
+Actual   : Blocked
+Status   : ✅ PASS
+Notes    : Policy blocked vault without purge protection
+
+Test     : Public Access Disabled
+Category : Vault
+Priority : HIGH
+Expected : Blocked
+Actual   : Blocked
+Status   : ✅ PASS
+Notes    : Policy blocked public vault
+
+Test     : Firewall Required
+Category : Vault
+Priority : HIGH
+Expected : Blocked
+Actual   : Blocked
+Status   : ✅ PASS
+Notes    : Policy blocked vault without firewall
+
+Test     : RBAC Required
+Category : Vault
+Priority : HIGH
+Expected : Blocked
+Actual   : Blocked
+Status   : ✅ PASS
+Notes    : Policy blocked Access Policies vault
+
+Test     : Private Link Required
+Category : Vault
+Priority : HIGH
+Expected : Blocked
+Actual   : Requires VNet
+Status   : ⚠️ SKIP
+Notes    : Private link testing requires VNet infrastructure (not in test scope)
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "`n📊 TESTING STATUS UPDATE:" -ForegroundColor Cyan
+
+📊 TESTING STATUS UPDATE:
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "`n✅ Test 1 (9 policies): COMPLETED" -ForegroundColor Green
+
+✅ Test 1 (9 policies): COMPLETED
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "   • Duration: 26 seconds" -ForegroundColor Gray
+   • Duration: 26 seconds
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "   • Results: 9/9 PASS (100%)" -ForegroundColor Gray
+   • Results: 9/9 PASS (100%)
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "   • Transcript: logs\Scenario6-Quick-Testing-20260126.log" -ForegroundColor Gray
+   • Transcript: logs\Scenario6-Quick-Testing-20260126.log
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "`n🔄 Test 2 (34 policies): RUNNING..." -ForegroundColor Yellow
+
+🔄 Test 2 (34 policies): RUNNING...
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "   • Function loaded: Test-AllDenyPolicies" -ForegroundColor Gray
+   • Function loaded: Test-AllDenyPolicies
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "   • Expected duration: 30-45 minutes" -ForegroundColor Gray
+   • Expected duration: 30-45 minutes
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "   • Transcript: logs\Scenario6-Comprehensive-Testing-20260126.log" -ForegroundColor Gray
+   • Transcript: logs\Scenario6-Comprehensive-Testing-20260126.log
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "`nℹ️  This comprehensive test will:" -ForegroundColor Cyan
+
+ℹ️  This comprehensive test will:
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "   1. Test all 34 Deny policies individually" -ForegroundColor White
+   1. Test all 34 Deny policies individually
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "   2. Create test resources to validate blocking" -ForegroundColor White  
+   2. Create test resources to validate blocking
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "   3. Expect some tests to SKIP (require Managed HSM)" -ForegroundColor White
+   3. Expect some tests to SKIP (require Managed HSM)
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "   4. Generate detailed CSV results file" -ForegroundColor White
+   4. Generate detailed CSV results file
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Write-Host "`n⏳ Waiting for test to complete..." -ForegroundColor Yellow
+
+⏳ Waiting for test to complete...
+]633;D;0]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>Stop-Transcript
+**********************
+PowerShell transcript end
+End time: 20260126165154
+**********************

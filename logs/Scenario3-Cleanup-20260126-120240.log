@@ -1,0 +1,95 @@
+**********************
+PowerShell transcript start
+Start time: 20260126120240
+Username: DTL01\lcladmin
+RunAs User: DTL01\lcladmin
+Configuration Name: 
+Machine: DTL01 (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Program Files\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 10360
+PSVersion: 7.5.3
+PSEdition: Core
+GitCommitId: 7.5.3
+OS: Microsoft Windows 10.0.20348
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\logs\Scenario3-Cleanup-20260126-120240.log
+
+╔════════════════════════════════════════════════════════════════╗
+║  CLEANUP: Removing Scenario 3 Policies (Name-based filter)   ║
+╚════════════════════════════════════════════════════════════════╝
+Getting all policy assignments...
+Total assignments: 47
+Filtering by Name patterns (Key, Secret, Certificate, Vault, HSM)...
+Found 46 policies to remove
+First 10 policies:
+  • Certificatesshouldnotexpirewithinthespecifiednumberofd-965064673
+  • Certificatesshouldbeissuedbythespecifiednonintegrated-1771020618
+  • ConfigureAzureKeyVaultstouseprivateDNSzones-2099322474
+  • Secretsshouldhavecontenttypeset-142310008
+  • AzureKeyVaultshoulddisablepublicnetworkaccess-426295805
+  • Secretsshouldhavethespecifiedmaximumvalidityperiod-205951509
+  • KeyVaultkeysshouldhaveanexpirationdate-63410575
+  • Keysshouldhavethespecifiedmaximumvalidityperiod-2108219349
+  • Keysshouldhavemorethanthespecifiednumberofdaysbeforee-1152642972
+  • Secretsshouldnotbeactiveforlongerthanthespecifiednumbe-322581668
+
+Proceeding with removal...
+  ✅ Certificatesshouldnotexpirewithinthespecifiednumberofd-965064673
+  ✅ Certificatesshouldbeissuedbythespecifiednonintegrated-1771020618
+  ✅ ConfigureAzureKeyVaultstouseprivateDNSzones-2099322474
+  ✅ Secretsshouldhavecontenttypeset-142310008
+  ✅ AzureKeyVaultshoulddisablepublicnetworkaccess-426295805
+  ✅ Secretsshouldhavethespecifiedmaximumvalidityperiod-205951509
+  ✅ KeyVaultkeysshouldhaveanexpirationdate-63410575
+  ✅ Keysshouldhavethespecifiedmaximumvalidityperiod-2108219349
+  ✅ Keysshouldhavemorethanthespecifiednumberofdaysbeforee-1152642972
+  ✅ Secretsshouldnotbeactiveforlongerthanthespecifiednumbe-322581668
+  ✅ Certificatesshoulduseallowedkeytypes-996959497
+  ✅ ResourcelogsinKeyVaultshouldbeenabled-473090250
+  ✅ PreviewAzureKeyVaultManagedHSMshoulduseprivatelink-1943804537
+  ✅ Certificatesshouldhavethespecifiedmaximumvalidityperio-825409140
+  ✅ PreviewAzureKeyVaultManagedHSMkeysusingRSAcryptography-913699663
+  ✅ KeysshouldbethespecifiedcryptographictypeRSAorEC-122055354
+  ✅ KeysshouldbebackedbyahardwaresecuritymoduleHSM-2078457181
+  ✅ Keysusingellipticcurvecryptographyshouldhavethespecifi-680331846
+  ✅ PreviewAzureKeyVaultManagedHSMkeysusingellipticcurvec-1244437150
+  ✅ DeployDiagnosticSettingsforKeyVaulttoEventHub-1149482669
+  ✅ DeployConfigurediagnosticsettingsforAzureKeyVaulttoLog-195278529
+  ✅ PreviewConfigureAzureKeyVaultManagedHSMtodisablepublic-601636078
+  ✅ ConfigureAzureKeyVaultswithprivateendpoints-2102988976
+  ✅ Certificatesshouldbeissuedbythespecifiedintegratedcert-139165285
+  ✅ Secretsshouldhavemorethanthespecifiednumberofdaysbefo-2017485023
+  ✅ CertificatesusingRSAcryptographyshouldhavethespecified-847369551
+  ✅ Configurekeyvaultstoenablefirewall-2012128270
+  ✅ DeployConfigurediagnosticsettingstoanEventHubtobeenab-1064465834
+  ✅ ResourcelogsinAzureKeyVaultManagedHSMshouldbeenabled-1196055254
+  ✅ PreviewConfigureAzureKeyVaultManagedHSMwithprivateend-1631398300
+  ✅ PreviewAzureKeyVaultManagedHSMkeysshouldhaveanexpirati-932217050
+  ✅ PreviewAzureKeyVaultManagedHSMshoulddisablepublicnetw-1400333232
+  ✅ AzureKeyVaultManagedHSMshouldhavepurgeprotectionenabl-1201343007
+  ✅ AzureKeyVaultshouldhavefirewallenabledorpublicnetworka-994389184
+  ✅ Certificatesshouldbeissuedbyoneofthespecifiednoninteg-1558232898
+  ✅ Keysshouldhavearotationpolicyensuringthattheirrotatio-1079515074
+  ✅ Keyvaultsshouldhavesoftdeleteenabled-2143777333
+  ✅ AzureKeyVaultsshoulduseprivatelink-1562085219
+  ✅ KeyVaultsecretsshouldhaveanexpirationdate-1085148118
+  ✅ PreviewAzureKeyVaultManagedHSMKeysshouldhavemorethanth-435529992
+  ✅ Keyvaultsshouldhavedeletionprotectionenabled-1938753780
+  ✅ AzureKeyVaultshoulduseRBACpermissionmodel-332127299
+  ✅ Certificatesshouldhavethespecifiedlifetimeactiontrigge-230438754
+  ✅ Certificatesusingellipticcurvecryptographyshouldhavea-1772336346
+  ✅ KeysusingRSAcryptographyshouldhaveaspecifiedminimumkey-165421748
+  ✅ Keysshouldnotbeactiveforlongerthanthespecifiednumbero-1268214429
+
+═══ CLEANUP SUMMARY ═══
+  Removed: 46
+  Failed: 0
+**********************
+PowerShell transcript end
+End time: 20260126120254
+**********************

@@ -1,0 +1,245 @@
+{
+  "Assignments": [
+    {
+      "IntendedAssignmentName": "Keysshouldnotbeactiveforlongerthanthespecifiednumbero-1296256806",
+      "Parameters": {
+        "maximumValidityInDays": 730,
+        "effect": "Audit"
+      },
+      "Status": "DryRun",
+      "Name": "Keys should not be active for longer than the specified number of days"
+    },
+    {
+      "Error": "Effect '' requires managed identity",
+      "Status": "Skipped",
+      "Name": "Deploy - Configure diagnostic settings for Azure Key Vault to Log Analytics workspace"
+    },
+    {
+      "Error": "Effect '' requires managed identity",
+      "Status": "Skipped",
+      "Name": "Configure Azure Key Vaults with private endpoints"
+    },
+    {
+      "Error": "Effect '' requires managed identity",
+      "Status": "Skipped",
+      "Name": "Configure Azure Key Vaults to use private DNS zones"
+    },
+    {
+      "Error": "Effect '' requires managed identity",
+      "Status": "Skipped",
+      "Name": "Deploy Diagnostic Settings for Key Vault to Event Hub"
+    },
+    {
+      "IntendedAssignmentName": "ResourcelogsinKeyVaultshouldbeenabled-1683835535",
+      "Parameters": {
+        "effect": "AuditIfNotExists",
+        "requiredRetentionDays": "30"
+      },
+      "Status": "DryRun",
+      "Name": "Resource logs in Key Vault should be enabled"
+    },
+    {
+      "IntendedAssignmentName": "KeyVaultkeysshouldhaveanexpirationdate-386037801",
+      "Parameters": {
+        "effect": "Audit"
+      },
+      "Status": "DryRun",
+      "Name": "Key Vault keys should have an expiration date"
+    },
+    {
+      "IntendedAssignmentName": "Keysshouldhavearotationpolicyensuringthattheirrotatio-1816322754",
+      "Parameters": {
+        "effect": "Audit",
+        "maximumDaysToRotate": 180
+      },
+      "Status": "DryRun",
+      "Name": "Keys should have a rotation policy ensuring that their rotation is scheduled within the specified number of days after creation."
+    },
+    {
+      "IntendedAssignmentName": "KeyVaultsecretsshouldhaveanexpirationdate-1232117220",
+      "Parameters": {
+        "effect": "Audit"
+      },
+      "Status": "DryRun",
+      "Name": "Key Vault secrets should have an expiration date"
+    },
+    {
+      "IntendedAssignmentName": "ResourcelogsinAzureKeyVaultManagedHSMshouldbeenabled-1874150632",
+      "Parameters": {
+        "effect": "AuditIfNotExists"
+      },
+      "Status": "DryRun",
+      "Name": "Resource logs in Azure Key Vault Managed HSM should be enabled"
+    },
+    {
+      "IntendedAssignmentName": "AzureKeyVaultshouldhavefirewallenabledorpublicnetwork-1396884516",
+      "Parameters": {
+        "allowedIPAddresses": [],
+        "effect": "Audit",
+        "forbiddenIPAddresses": []
+      },
+      "Status": "DryRun",
+      "Name": "Azure Key Vault should have firewall enabled or public network access disabled"
+    },
+    {
+      "Error": "Effect '' requires managed identity",
+      "Status": "Skipped",
+      "Name": "[Preview]: Configure Azure Key Vault Managed HSM with private endpoints"
+    },
+    {
+      "IntendedAssignmentName": "Secretsshouldhavethespecifiedmaximumvalidityperiod-1663466362",
+      "Parameters": {
+        "maximumValidityInDays": 1095,
+        "effect": "Audit"
+      },
+      "Status": "DryRun",
+      "Name": "Secrets should have the specified maximum validity period"
+    },
+    {
+      "IntendedAssignmentName": "Certificatesshouldbeissuedbyoneofthespecifiednonintegr-165973907",
+      "Parameters": {
+        "caCommonNames": [
+          "CN=ContosoCA",
+          "CN=InternalCA"
+        ],
+        "effect": "Audit"
+      },
+      "Status": "DryRun",
+      "Name": "Certificates should be issued by one of the specified non-integrated certificate authorities"
+    },
+    {
+      "IntendedAssignmentName": "KeysusingRSAcryptographyshouldhaveaspecifiedminimumkey-909744685",
+      "Parameters": {
+        "minimumRSAKeySize": 2048,
+        "effect": "Audit"
+      },
+      "Status": "DryRun",
+      "Name": "Keys using RSA cryptography should have a specified minimum key size"
+    },
+    {
+      "Error": "Effect '' requires managed identity",
+      "Status": "Skipped",
+      "Name": "Deploy - Configure diagnostic settings to an Event Hub to be enabled on Azure Key Vault Managed HSM"
+    },
+    {
+      "IntendedAssignmentName": "Secretsshouldhavemorethanthespecifiednumberofdaysbefo-1193127515",
+      "Parameters": {
+        "minimumDaysBeforeExpiration": 30,
+        "effect": "Audit"
+      },
+      "Status": "DryRun",
+      "Name": "Secrets should have more than the specified number of days before expiration"
+    },
+    {
+      "IntendedAssignmentName": "Keyvaultsshouldhavedeletionprotectionenabled-1439856846",
+      "Parameters": {
+        "effect": "Audit"
+      },
+      "Status": "DryRun",
+      "Name": "Key vaults should have deletion protection enabled"
+    },
+    {
+      "IntendedAssignmentName": "Keysshouldhavemorethanthespecifiednumberofdaysbeforeexp-12464927",
+      "Parameters": {
+        "minimumDaysBeforeExpiration": 30,
+        "effect": "Audit"
+      },
+      "Status": "DryRun",
+      "Name": "Keys should have more than the specified number of days before expiration"
+    },
+    {
+      "IntendedAssignmentName": "Keysshouldhavethespecifiedmaximumvalidityperiod-906231923",
+      "Parameters": {
+        "maximumValidityInDays": 1095,
+        "effect": "Audit"
+      },
+      "Status": "DryRun",
+      "Name": "Keys should have the specified maximum validity period"
+    },
+    {
+      "IntendedAssignmentName": "Certificatesshouldbeissuedbythespecifiednonintegratedc-500792775",
+      "Parameters": {
+        "caCommonName": "CN=ContosoCA",
+        "effect": "Audit"
+      },
+      "Status": "DryRun",
+      "Name": "Certificates should be issued by the specified non-integrated certificate authority"
+    },
+    {
+      "IntendedAssignmentName": "CertificatesusingRSAcryptographyshouldhavethespecifie-2031578458",
+      "Parameters": {
+        "minimumRSAKeySize": 2048,
+        "effect": "Audit"
+      },
+      "Status": "DryRun",
+      "Name": "Certificates using RSA cryptography should have the specified minimum key size"
+    },
+    {
+      "IntendedAssignmentName": "Certificatesshouldhavethespecifiedlifetimeactiontrigg-1761965968",
+      "Parameters": {
+        "minimumDaysBeforeExpiry": 30,
+        "maximumPercentageLife": 80,
+        "effect": "Audit"
+      },
+      "Status": "DryRun",
+      "Name": "Certificates should have the specified lifetime action triggers"
+    },
+    {
+      "Error": "Effect '' requires managed identity",
+      "Status": "Skipped",
+      "Name": "[Preview]: Configure Azure Key Vault Managed HSM to disable public network access"
+    },
+    {
+      "Error": "Effect '' requires managed identity",
+      "Status": "Skipped",
+      "Name": "Configure key vaults to enable firewall"
+    },
+    {
+      "IntendedAssignmentName": "Certificatesshouldnotexpirewithinthespecifiednumberof-2114192775",
+      "Parameters": {
+        "effect": "Audit",
+        "daysToExpire": 30
+      },
+      "Status": "DryRun",
+      "Name": "Certificates should not expire within the specified number of days"
+    },
+    {
+      "IntendedAssignmentName": "Secretsshouldnotbeactiveforlongerthanthespecifiednumb-1452013840",
+      "Parameters": {
+        "maximumValidityInDays": 730,
+        "effect": "Audit"
+      },
+      "Status": "DryRun",
+      "Name": "Secrets should not be active for longer than the specified number of days"
+    },
+    {
+      "IntendedAssignmentName": "Keyvaultsshouldhavesoftdeleteenabled-656701378",
+      "Parameters": {
+        "effect": "Audit"
+      },
+      "Status": "DryRun",
+      "Name": "Key vaults should have soft delete enabled"
+    },
+    {
+      "IntendedAssignmentName": "AzureKeyVaultshoulddisablepublicnetworkaccess-906277113",
+      "Parameters": {
+        "effect": "Audit"
+      },
+      "Status": "DryRun",
+      "Name": "Azure Key Vault should disable public network access"
+    },
+    {
+      "IntendedAssignmentName": "Certificatesshouldhavethespecifiedmaximumvalidityperio-407807336",
+      "Parameters": {
+        "maximumValidityInMonths": 36,
+        "effect": "Audit"
+      },
+      "Status": "DryRun",
+      "Name": "Certificates should have the specified maximum validity period"
+    }
+  ],
+  "Preview": true,
+  "Compliance": null,
+  "Verification": [],
+  "DryRun": true
+}

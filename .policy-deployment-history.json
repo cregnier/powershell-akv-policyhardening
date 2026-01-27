@@ -1,0 +1,65 @@
+{
+  "Scenario1": {
+    "Name": "DevTest Baseline (30 Policies)",
+    "Deployments": [
+      "@{Parameters=; Success=True; Mode=Actual; Timestamp=2026-01-22 17:11:17}",
+      "@{Parameters=; Success=True; Mode=Actual; Timestamp=2026-01-22 17:29:56}"
+    ]
+  },
+  "Scenario2": {
+    "Name": "DevTest Full (46 Policies)",
+    "Deployments": [
+      "@{Parameters=; Success=True; Mode=Actual; Timestamp=2026-01-22 17:47:56}"
+    ]
+  },
+  "Scenario3": {
+    "Name": "DevTest Auto-Remediation (46 Policies)",
+    "Deployments": [
+      "@{Parameters=; Success=True; Mode=Actual; Timestamp=2026-01-22 18:01:12}"
+    ]
+  },
+  "Scenario4": {
+    "Name": "Production Audit (46 Policies)",
+    "Deployments": [
+      "@{Parameters=; Success=True; Mode=Actual; Timestamp=2026-01-22 18:10:22}",
+      "@{Parameters=; Success=True; Mode=Actual; Timestamp=2026-01-22 18:16:24}"
+    ]
+  },
+  "Scenario5": {
+    "Name": "Production Deny (35 Policies)",
+    "Deployments": [
+      "@{Parameters=; Success=True; Mode=Actual; Timestamp=2026-01-22 18:18:22}",
+      "@{Mode=Preview; Parameters=; Success=True; Timestamp=2026-01-23 14:43:44}",
+      "@{Parameters=; Timestamp=2026-01-23 14:53:01; Success=True; Mode=Actual}",
+      "@{Success=True; Timestamp=2026-01-23 15:10:15; Mode=Actual; Parameters=}",
+      {
+        "Success": true,
+        "Timestamp": "2026-01-23 15:19:01",
+        "Mode": "Actual",
+        "Parameters": {
+          "ParameterFile": "C:\\Source\\powershell-akv-policyhardening\\PolicyParameters-Production-Deny.json",
+          "SkipRBACCheck": true
+        }
+      }
+    ]
+  },
+  "Scenario6": {
+    "Name": "Production Auto-Remediation (46 Policies)",
+    "Deployments": [
+      "@{Parameters=; Success=True; Mode=Actual; Timestamp=2026-01-22 18:22:02}"
+    ]
+  },
+  "Scenario7": {
+    "Name": "Resource Group Scope (30 Policies)",
+    "Deployments": [
+      "@{Parameters=; Success=True; Mode=Actual; Timestamp=2026-01-22 18:28:19}"
+    ]
+  },
+  "Scenario8": {
+    "Deployments": [
+      "@{Success=True; Timestamp=2026-01-22 18:43:37; Mode=Actual; Parameters=}",
+      "@{Success=True; Timestamp=2026-01-22 18:48:49; Mode=Actual; Parameters=}"
+    ],
+    "Name": "Management Group Scope (46 Policies)"
+  }
+}
