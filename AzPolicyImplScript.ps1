@@ -3838,6 +3838,9 @@ function Assign-Policy {
         # Determine if this is a PolicyDefinition or PolicySetDefinition
         $isPolicySet = $def.PSObject.Properties.Name -contains 'PolicySetDefinitionId'
         
+        # DEBUG: Log WhatIf parameter value
+        Write-Log "DEBUG: WhatIf parameter = '$WhatIf', Exists = $($existingAssignment -ne $null)" -Level 'INFO'
+        
         # WhatIf mode: Preview actions without making changes
         if ($WhatIf) {
             if ($existingAssignment) {
