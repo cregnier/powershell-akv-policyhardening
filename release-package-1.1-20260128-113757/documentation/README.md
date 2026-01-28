@@ -1,58 +1,27 @@
 # Azure Key Vault Policy Governance Framework
 
-**Version**: 1.1.0  
-**Release Date**: January 28, 2026  
-**Status**: Production Ready
-
-[![Testing Status](https://img.shields.io/badge/Tests-6%2F7_Scenarios_Validated-brightgreen)]() 
+[![Testing Status](https://img.shields.io/badge/Tests-25%2F34_Deny_PASS-brightgreen)]() 
 [![Policies Validated](https://img.shields.io/badge/Policies-46%2F46_Deployed-blue)]()
-[![MSDN Coverage](https://img.shields.io/badge/MSDN_Coverage-82.6%25-yellow)]()
-[![Last Updated](https://img.shields.io/badge/Updated-2026--01--28-blue)]()
+[![MSDN Coverage](https://img.shields.io/badge/MSDN_Coverage-74%25-yellow)]()
+[![Last Updated](https://img.shields.io/badge/Updated-2026--01--27-blue)]()
 [![VALUE-ADD](https://img.shields.io/badge/Value-%2460K%2Fyr-success)]()
 
-Comprehensive Azure Policy automation framework for deploying and managing **46 Azure Key Vault governance policies** across dev/test and production environments with comprehensive testing, compliance reporting, and auto-remediation capabilities.
+Comprehensive Azure Policy governance framework for securing and managing Azure Key Vault resources across enterprise environments.
 
 ---
 
-## 📋 Master Documentation Index
+## 📋 Table of Contents
 
-**START HERE** → This README provides the master index to all documentation.
-
-### Essential Reading (First-Time Users)
-
-| Order | Document | Purpose | Est. Time |
-|-------|----------|---------|-----------|
-| 1️⃣ | **This README** | Project overview and master index | 10 min |
-| 2️⃣ | **[QUICKSTART.md](QUICKSTART.md)** | Fast-track deployment guide (4 scenarios) | 15 min |
-| 3️⃣ | **[DEPLOYMENT-PREREQUISITES.md](DEPLOYMENT-PREREQUISITES.md)** | Setup requirements and installation | 20 min |
-| 4️⃣ | **Deploy Scenario 5** | Production Audit mode (safest first step) | 10 min |
-
-### Complete Documentation Suite
-
-#### Deployment Guides
-
-| Document | Purpose | When to Use |
-|----------|---------|-------------|
-| **[QUICKSTART.md](QUICKSTART.md)** | Fast-track guide with 4 key scenarios | First deployment |
-| **[DEPLOYMENT-WORKFLOW-GUIDE.md](DEPLOYMENT-WORKFLOW-GUIDE.md)** | Complete workflows for all 7 scenarios | Production planning |
-| **[SCENARIO-COMMANDS-REFERENCE.md](SCENARIO-COMMANDS-REFERENCE.md)** | All validated commands with examples | Need exact command syntax |
-| **[DEPLOYMENT-PREREQUISITES.md](DEPLOYMENT-PREREQUISITES.md)** | Complete setup requirements | Infrastructure setup |
-
-#### Reference Documentation
-
-| Document | Purpose | When to Use |
-|----------|---------|-------------|
-| **[POLICY-COVERAGE-MATRIX.md](POLICY-COVERAGE-MATRIX.md)** | 46 policies × 7 scenarios coverage analysis | Planning deployment strategy |
-| **[CLEANUP-EVERYTHING-GUIDE.md](CLEANUP-EVERYTHING-GUIDE.md)** | Complete cleanup procedures | Post-testing or rollback |
-| **[UNSUPPORTED-SCENARIOS.md](UNSUPPORTED-SCENARIOS.md)** | HSM & integrated CA limitations/enablement | Enterprise planning |
-| **[Comprehensive-Test-Plan.md](Comprehensive-Test-Plan.md)** | Full testing strategy and results | Validation before production |
-
-#### Test Results
-
-| Document | Purpose | When to Use |
-|----------|---------|-------------|
-| **[Scenario6-Final-Results.md](Scenario6-Final-Results.md)** | Production Deny mode validation results | Understanding MSDN limitations |
-| **[Scenario7-Final-Results.md](Scenario7-Final-Results.md)** | Auto-remediation deployment results | Planning remediation timeline |
+- [What is This Project?](#what-is-this-project)
+- [Who Should Use This?](#who-should-use-this)
+- [Why Use This Framework?](#why-use-this-framework)
+- [When to Deploy](#when-to-deploy)
+- [Where Does This Run?](#where-does-this-run)
+- [How to Get Started](#how-to-get-started)
+- [Testing & Validation](#testing--validation)
+- [Project Structure](#project-structure)
+- [Key Features](#key-features)
+- [Known Issues & Workarounds](#known-issues--workarounds)
 
 ---
 
@@ -97,10 +66,8 @@ This project provides **automated deployment, testing, and compliance monitoring
 - 🛡️ **Security Prevention**: 100% blocking of non-compliant resources at creation (Deny mode)
 - ⏱️ **Time Savings**: 135 hours/year (15 Key Vaults × 3 quarterly audits × 3 hours/audit)
 - 💰 **Cost Savings**: $60,000/year ($120/hr labor + $25K incident prevention)
-- 🚀 **Deployment Speed**: 98.2% faster (3.5 min vs. manual 3.5 hrs for 46 policies)
+- 🚀 **Deployment Speed**: 98.2% faster (45 sec vs. 42 min manual deployment)
 - ✅ **Compliance**: Meet SOC2, ISO27001, and industry security requirements
-
-**📊 Master Report**: See [MasterTestReport-20260127-143212.html](MasterTestReport-20260127-143212.html) for comprehensive results
 
 ---
 
@@ -117,17 +84,16 @@ Month 1: DevTest Testing (30-46 policies, Audit mode)
 
 Month 2: Production Audit (46 policies, Audit mode)
   ├─ Week 1: Production audit deployment
-  ├─ Week 2-3: Compliance monitoring (30 days)
+  ├─ Week 2-3: Compliance monitoring (14-30 days)
   └─ Week 4: Stakeholder review + approval
 
-Month 3: Production Enforcement (9 Tier 1 policies, Deny mode)
-  ├─ Week 1: Tier 1 Deny deployment (critical policies)
+Month 3: Production Enforcement (34 policies, Deny mode)
+  ├─ Week 1: Deny policy deployment (critical blocking)
   ├─ Week 2-4: Monitoring + adjustments
 
-Month 4+: Phased Enforcement (remaining policies)
-  ├─ Tier 2: Medium-impact policies
-  ├─ Tier 3: Low-impact policies
-  └─ Tier 4: Auto-remediation rollout
+Month 4+: Auto-Remediation Rollout (8 policies)
+  ├─ Week 1-2: Auto-remediation deployment
+  └─ Week 3-4: Monitoring automated fixes
 ```
 
 ---
@@ -157,9 +123,9 @@ Month 4+: Phased Enforcement (remaining policies)
 ### Quick Start (5 Minutes)
 
 ```powershell
-# 1. Clone repository
-git clone https://github.com/cregnier/powershell-akv-policyhardening.git
-cd powershell-akv-policyhardening
+# 1. Extract release package
+Expand-Archive -Path "azure-keyvault-policy-governance-1.1.1-FINAL.zip" -DestinationPath "C:\Azure\KeyVault-Policies"
+cd "C:\Azure\KeyVault-Policies"
 
 # 2. Install prerequisites
 Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
@@ -182,8 +148,8 @@ Set-AzContext -Subscription "<your-subscription-id>"
 
 - **[QUICKSTART.md](QUICKSTART.md)**: Step-by-step deployment guide
 - **[DEPLOYMENT-PREREQUISITES.md](DEPLOYMENT-PREREQUISITES.md)**: Requirements and permissions
-- **[TESTING-MAPPING.md](TESTING-MAPPING.md)**: Testing framework and workflow guide
-- **[PolicyParameters-QuickReference.md](PolicyParameters-QuickReference.md)**: Parameter file selection guide
+- **[DEPLOYMENT-WORKFLOW-GUIDE.md](DEPLOYMENT-WORKFLOW-GUIDE.md)**: All 5 deployment scenarios
+- **[SCENARIO-COMMANDS-REFERENCE.md](SCENARIO-COMMANDS-REFERENCE.md)**: Quick command reference
 
 ---
 
@@ -257,8 +223,8 @@ powershell-akv-policyhardening/
 ### 1. Automated Policy Deployment
 
 - **46 Built-in Policies**: All Azure Key Vault governance policies supported
-- **Parameter Files**: 6 pre-configured files for common scenarios
-- **Phased Rollout**: Support for Tier 1-4 deployment strategy
+- **Parameter Files**: 6 pre-configured files for all scenarios
+- **Phased Rollout**: DevTest → Production Audit → Production Deny → Auto-Remediation
 - **Dry Run Mode**: Test without making changes (`-WhatIf`)
 
 ### 2. Comprehensive Testing Framework
@@ -337,7 +303,7 @@ This project is licensed under the MIT License.
 ## 📞 Support
 
 - **Documentation**: See documentation files listed above
-- **Issues**: [GitHub Issues](https://github.com/cregnier/powershell-akv-policyhardening/issues)
+- **Troubleshooting**: Review [DEPLOYMENT-WORKFLOW-GUIDE.md](DEPLOYMENT-WORKFLOW-GUIDE.md) for common issues
 
 ---
 
@@ -354,6 +320,6 @@ This project is licensed under the MIT License.
 
 ---
 
-**Last Updated**: 2026-01-16  
-**Version**: 2.0  
+**Last Updated**: 2026-01-28  
+**Version**: 1.1.1  
 **Status**: Production Ready ✅

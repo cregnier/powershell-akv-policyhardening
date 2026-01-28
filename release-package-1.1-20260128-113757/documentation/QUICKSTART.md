@@ -1,7 +1,7 @@
 # Quick Start Guide - Azure Key Vault Policy Governance
 
-**Version**: 1.1.1  
-**Last Updated**: 2026-01-28  
+**Version**: 1.2.0
+**Last Updated**: 2026-01-28
 **Prerequisites Time**: 10 minutes  
 **Deployment Time**: 5 minutes  
 **Auto-Remediation Policies**: 8 (DeployIfNotExists + Modify effects)

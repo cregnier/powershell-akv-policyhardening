@@ -1,6 +1,10 @@
-# Todo List - Updated 2026-01-27 17:15 EOD
+# Todo List - Updated 2026-01-28 18:45
 
-## 🎯 CURRENT STATUS: Scenario 7 IN PROGRESS → Handoff to Tomorrow
+## 🎯 CURRENT STATUS: v1.2.0 Package Preparation - Documentation Cleanup
+
+**PRIORITY**: Complete all documentation cleanup tasks before creating v1.2.0-FINAL package
+**COMPLETED TODAY**: -WhatIf critical bug fix (argument parser missing entry)
+**REMAINING**: 51+ documentation cleanup items across 8 files
 
 **END OF DAY STATUS** (2026-01-27 17:15):
 - ✅ **8 tasks completed today**: Deployment, documentation, Master Report, script analysis
@@ -37,11 +41,98 @@
 
 ---
 
-## ⚠️ CRITICAL INFORMATION - READ FIRST
+## 📋 v1.2.0 Documentation Cleanup Tasks (51+ Items)
 
-### Policy Scope & Production Impact
+### PACKAGE-README.md (8 items)
+- [ ] 1. ✅ Release info already shows 1.2.0 (VERIFIED - no fix needed)
+- [ ] 2. ✅ Package version already shows 1.2.0 (VERIFIED - no fix needed)
+- [ ] 3. ✅ QUICKSTART.md already hyperlinked (VERIFIED - line 33)
+- [ ] 4. Update verification report reference from "RELEASE-1.1.0" to "RELEASE-1.2.0" (line 56)
+- [ ] 5. Break down DevTest scenarios 1-3 in deployment table if they are separate scenarios
+- [ ] 6. ✅ CLEANUP-EVERYTHING-GUIDE.md already hyperlinked (VERIFIED - line 106)
+- [ ] 7. ✅ Value-add metrics calculations already detailed (VERIFIED - lines 118-145)
+- [ ] 8. Verify all hyperlinks work correctly (comprehensive check)
 
-**CURRENT TESTING SCOPE**: **SUBSCRIPTION-WIDE** ⚠️
+### FILE-MANIFEST.md (3 items)
+- [ ] 9. Update package version number in title/header to 1.2.0
+- [ ] 10. Remove "enhanced" from Scripts section, "complete" from Documentation, and green checkmarks
+- [ ] 11. Update verification report reference from "RELEASE-1.1.0" to "RELEASE-1.2.0"
+
+### QUICKSTART.md (2 items)  
+- [ ] 12. Add breaking-impact warning column to Scenario 5 table (auto-remediation risks)
+- [ ] 13. Verify all scenario cross-reference links point to correct scenario numbers
+
+### README.md (9 items)
+- [ ] 14. Update git clone section per earlier chat history request (remove or revise clone instructions)
+- [ ] 15. Fix font inconsistency: TESTING-MAPPING.md and PolicyParameters-QuickReference.md
+- [ ] 16. Review "Testing & Validation" section - remove if Tier-based testing obsolete
+- [ ] 17. Remove "Phased Rollout: Tier 1-4 deployment strategy" if obsolete
+- [ ] 18. Fix font/style for items under "Comprehensive Test Documentation"
+- [ ] 19. Update or remove Tier-based testing references throughout document
+- [ ] 20. Fix "Code Location" line formatting/style
+- [ ] 21. Update version from "2.0" to "1.2.0" (multiple locations)
+- [ ] 22. Remove line: "Issues: GitHub Issues"
+
+### CLEANUP-EVERYTHING-GUIDE.md (12 items)
+- [ ] 23. Check if Cleanup-Workspace.ps1 script exists; remove reference if not needed
+- [ ] 24. Remove "Tonight's Recommendation" section with temporal "tonight" references
+- [ ] 25. Remove "OPTION 1: Keep everything overnight" guidance
+- [ ] 26. Remove "OPTION 2: Remove ONLY expensive infrastructure" overnight guidance
+- [ ] 27. Remove "Expected Tomorrow:" section with "tomorrow" references
+- [ ] 28. Remove agenda items about "tomorrow" unless future-facing support guidance
+- [ ] 29. Remove all "(Your Question)" text markers
+- [ ] 30. Convert Related Documentation section to hyperlinks
+- [ ] 31. Add timing guidance for future cleanup actions (when/how to cleanup after production use)
+- [ ] 32. Add steps/caveats for production cleanup scenarios
+- [ ] 33. Remove any other temporal "tonight"/"tomorrow" references
+- [ ] 34. Keep strategic guidance but remove session-specific advice
+
+### Comprehensive-Test-Plan.md (7 items)
+- [ ] 35. Update test matrix - remove "T#.#" Tier terminology if obsolete
+- [ ] 36. Remove "Test Execution Summary" section (should be in HTML reports, not plan)
+- [ ] 37. Update "Test Execution and Phases" to match current scenario-based methodology
+- [ ] 38. Verify MSDN subscription limitation #8 (blocked policy) - may be outdated
+- [ ] 39. Check if "Scenario6-Final-Results.md" reference is valid or should be removed
+- [ ] 40. Review "Test Summary" section - remove if not needed for release package
+- [ ] 41. Review "Next Steps" section - remove session-specific items
+
+### Cross-Cutting Tasks (8 items)
+- [ ] 42. **Master Report Script**: Decide if it adds value beyond scenario HTML reports; include with docs or remove all references
+- [ ] 43. **Multi-Subscription CSV**: Verify -SubscriptionMode All/CSV/Select works (code at lines 6133-6186)
+- [ ] 44. **-WhatIf Testing**: Test -WhatIf for Scenarios 2-5 (Scenario 1 already tested successfully)
+- [ ] 45. **Auto-Remediation Warnings**: Add user warnings + confirmations before deploying DINE/Modify policies
+- [ ] 46. **Exemption Documentation**: Review exemption process docs (currently in CLEANUP-EVERYTHING-GUIDE), ensure comprehensive
+- [ ] 47. **Release Package Contents**: Verify correct docs included with correct versions (not old package versions)
+- [ ] 48. **Manual Test Guidance**: Document how users can run one-off tests for secrets/policy management
+- [ ] 49. **Production Confirmation Prompts**: Ensure warnings exist before deploying breaking policies
+
+### DEPLOYMENT-PREREQUISITES.md (2 items)
+- [ ] 50. Verify DevTest-Full-Testing-Plan.md existence/naming (may be different name)
+- [ ] 51. Validate "Minimal File Set" folder structure matches actual release package structure
+
+---
+
+## 🚀 Work Plan
+
+**TODAY (Priority Items - Est. 2-3 hours)**:
+1. Fix all version number inconsistencies (1.1.0 → 1.2.0, 2.0 → 1.2.0)
+2. Remove temporal references ("tonight", "tomorrow", "Your Question")
+3. Add auto-remediation warnings (safety-critical)
+4. Test -WhatIf across scenarios 2-5
+5. Master Report script decision + implementation
+
+**TOMORROW (Remaining Items - Est. 1-2 hours)**:
+6. Fix formatting/font inconsistencies
+7. Verify/update all hyperlinks
+8. Remove obsolete Tier-based testing references
+9. Final release package verification
+10. Create v1.2.0-FINAL package
+
+---
+
+## ⚠️ PREVIOUS WORK (Scenario 7 - ON HOLD)
+
+**END OF DAY STATUS** (2026-01-27 17:15):
 - ✅ **What we deployed**: 46 policies at subscription scope
 - ⚠️ **What this affects**: ALL Key Vaults in subscription (not just test vaults)
 - 🔧 **Auto-remediation**: Will modify ALL non-compliant vaults in subscription

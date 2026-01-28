@@ -1,5 +1,26 @@
 # Azure Key Vault Policy Governance - AI Agent Instructions
 
+## File Modification Best Practices
+
+**CRITICAL**: Do NOT create files with suffixes like `-updated`, `-new`, `-v2`, etc.
+
+- ❌ WRONG: Create `QUICKSTART-UPDATED.md`, `QUICKSTART-NEW.md`, `file-v2.ps1`
+- ✅ CORRECT: Update `QUICKSTART.md` directly using replace_string_in_file or multi_replace_string_in_file
+
+**Rationale**: We use Git for version control. Creating duplicate files with suffixes creates confusion and requires manual cleanup. Always modify the original file directly.
+
+**Exceptions**: Only create suffixed files when explicitly requested by the user (e.g., "create a backup copy of X").
+
+## Work Progress Best Practices
+
+**CRITICAL**: Do NOT create summary/status markdown files during active development unless explicitly requested.
+
+- ❌ WRONG: Create `V1.2.0-STATUS.md`, `TESTING-SUMMARY.md`, `BUG-FIX-REPORT.md` after each change
+- ✅ CORRECT: Complete ALL todos first, then create summary documentation if requested
+- ✅ CORRECT: Update manage_todo_list tool to track progress internally
+
+**Rationale**: Focus on completing work rather than documenting in-progress status. Summary docs are only useful at completion milestones or when user explicitly requests status updates.
+
 ## Project Architecture
 
 This is an **Azure Policy automation framework** for deploying and managing 46 Azure Key Vault governance policies across dev/test and production environments. The project uses PowerShell for Azure Resource Manager policy assignments with comprehensive testing, compliance reporting, and auto-remediation capabilities.

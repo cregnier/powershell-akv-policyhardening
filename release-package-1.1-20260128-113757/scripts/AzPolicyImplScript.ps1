@@ -3838,31 +3838,6 @@ function Assign-Policy {
         # Determine if this is a PolicyDefinition or PolicySetDefinition
         $isPolicySet = $def.PSObject.Properties.Name -contains 'PolicySetDefinitionId'
         
-        # WhatIf mode: Preview actions without making changes
-        if ($WhatIf) {
-            if ($existingAssignment) {
-                Write-Host "  WhatIf: Would update existing policy assignment" -ForegroundColor Cyan
-                Write-Host "    Name: $assignmentName" -ForegroundColor Gray
-                Write-Host "    Scope: $Scope" -ForegroundColor Gray
-                Write-Host "    Mode: $Mode" -ForegroundColor Gray
-                Write-Host "    Parameters: $($parameters.Keys.Count) parameter(s)" -ForegroundColor Gray
-                if ($props.ContainsKey('IdentityType')) {
-                    Write-Host "    Identity: $($props['IdentityType']) - $($props['IdentityId'])" -ForegroundColor Gray
-                }
-                return @{Name=$DisplayName; Status='WhatIf-Update'; DefinitionType=($isPolicySet ? 'PolicySet' : 'Policy'); IsExisting=$true}
-            } else {
-                Write-Host "  WhatIf: Would create new policy assignment" -ForegroundColor Cyan
-                Write-Host "    Name: $assignmentName" -ForegroundColor Gray
-                Write-Host "    Scope: $Scope" -ForegroundColor Gray
-                Write-Host "    Mode: $Mode" -ForegroundColor Gray
-                Write-Host "    Parameters: $($parameters.Keys.Count) parameter(s)" -ForegroundColor Gray
-                if ($props.ContainsKey('IdentityType')) {
-                    Write-Host "    Identity: $($props['IdentityType']) - $($props['IdentityId'])" -ForegroundColor Gray
-                }
-                return @{Name=$DisplayName; Status='WhatIf-Create'; DefinitionType=($isPolicySet ? 'PolicySet' : 'Policy')}
-            }
-        }
-        
         # Use retry logic for the assignment
         if ($existingAssignment) {
             # UPDATE existing assignment with new parameters/mode
@@ -3898,6 +3873,18 @@ function Assign-Policy {
             Write-Log "Updated assignment $($assignment.PolicyAssignmentId)" -Level 'SUCCESS'
             return @{Name=$DisplayName; Status='Updated'; Assignment=$assignment; DefinitionType=($isPolicySet ? 'PolicySet' : 'Policy'); IsExisting=$true}
         } else {
+            # WhatIf mode: Preview what would be created
+            if ($WhatIf) {
+                Write-Host "  WhatIf: Would create new policy assignment" -ForegroundColor Cyan
+                Write-Host "    Name: $assignmentName" -ForegroundColor Gray
+                Write-Host "    Scope: $Scope" -ForegroundColor Gray
+                Write-Host "    Mode: $Mode" -ForegroundColor Gray
+                Write-Host "    Parameters: $($parameters.Keys.Count) parameter(s)" -ForegroundColor Gray
+                if ($props.ContainsKey('IdentityType')) {
+                    Write-Host "    Identity: $($props['IdentityType']) - $($props['IdentityId'])" -ForegroundColor Gray
+                }
+                return @{Name=$DisplayName; Status='WhatIf-Create'; DefinitionType=($isPolicySet ? 'PolicySet' : 'Policy')}
+            }
             
             # CREATE new assignment
             $assignment = Invoke-WithRetry -MaxRetries $MaxRetries -ScriptBlock {
@@ -6763,7 +6750,6 @@ if ($PSCommandPath -eq $MyInvocation.MyCommand.Path) {
             '^-ExemptionCategory$' { if ($i+1 -lt $args.Count) { $callParams['ExemptionCategory'] = $args[$i+1]; $i++ } }
             '^-Rollback$' { $callParams['Rollback'] = $true }
             '^-Force$' { $callParams['Force'] = $true }
-            '^-WhatIf$' { $callParams['WhatIf'] = $true }
         }
     }
     
