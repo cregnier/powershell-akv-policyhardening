@@ -3838,6 +3838,34 @@ function Assign-Policy {
         # Determine if this is a PolicyDefinition or PolicySetDefinition
         $isPolicySet = $def.PSObject.Properties.Name -contains 'PolicySetDefinitionId'
         
+        # DEBUG: Log WhatIf parameter value
+        Write-Log "DEBUG: WhatIf parameter = '$WhatIf', Exists = $($existingAssignment -ne $null)" -Level 'INFO'
+        
+        # WhatIf mode: Preview actions without making changes
+        if ($WhatIf) {
+            if ($existingAssignment) {
+                Write-Host "  WhatIf: Would update existing policy assignment" -ForegroundColor Cyan
+                Write-Host "    Name: $assignmentName" -ForegroundColor Gray
+                Write-Host "    Scope: $Scope" -ForegroundColor Gray
+                Write-Host "    Mode: $Mode" -ForegroundColor Gray
+                Write-Host "    Parameters: $($parameters.Keys.Count) parameter(s)" -ForegroundColor Gray
+                if ($props.ContainsKey('IdentityType')) {
+                    Write-Host "    Identity: $($props['IdentityType']) - $($props['IdentityId'])" -ForegroundColor Gray
+                }
+                return @{Name=$DisplayName; Status='WhatIf-Update'; DefinitionType=($isPolicySet ? 'PolicySet' : 'Policy'); IsExisting=$true}
+            } else {
+                Write-Host "  WhatIf: Would create new policy assignment" -ForegroundColor Cyan
+                Write-Host "    Name: $assignmentName" -ForegroundColor Gray
+                Write-Host "    Scope: $Scope" -ForegroundColor Gray
+                Write-Host "    Mode: $Mode" -ForegroundColor Gray
+                Write-Host "    Parameters: $($parameters.Keys.Count) parameter(s)" -ForegroundColor Gray
+                if ($props.ContainsKey('IdentityType')) {
+                    Write-Host "    Identity: $($props['IdentityType']) - $($props['IdentityId'])" -ForegroundColor Gray
+                }
+                return @{Name=$DisplayName; Status='WhatIf-Create'; DefinitionType=($isPolicySet ? 'PolicySet' : 'Policy')}
+            }
+        }
+        
         # Use retry logic for the assignment
         if ($existingAssignment) {
             # UPDATE existing assignment with new parameters/mode
@@ -3873,18 +3901,6 @@ function Assign-Policy {
             Write-Log "Updated assignment $($assignment.PolicyAssignmentId)" -Level 'SUCCESS'
             return @{Name=$DisplayName; Status='Updated'; Assignment=$assignment; DefinitionType=($isPolicySet ? 'PolicySet' : 'Policy'); IsExisting=$true}
         } else {
-            # WhatIf mode: Preview what would be created
-            if ($WhatIf) {
-                Write-Host "  WhatIf: Would create new policy assignment" -ForegroundColor Cyan
-                Write-Host "    Name: $assignmentName" -ForegroundColor Gray
-                Write-Host "    Scope: $Scope" -ForegroundColor Gray
-                Write-Host "    Mode: $Mode" -ForegroundColor Gray
-                Write-Host "    Parameters: $($parameters.Keys.Count) parameter(s)" -ForegroundColor Gray
-                if ($props.ContainsKey('IdentityType')) {
-                    Write-Host "    Identity: $($props['IdentityType']) - $($props['IdentityId'])" -ForegroundColor Gray
-                }
-                return @{Name=$DisplayName; Status='WhatIf-Create'; DefinitionType=($isPolicySet ? 'PolicySet' : 'Policy')}
-            }
             
             # CREATE new assignment
             $assignment = Invoke-WithRetry -MaxRetries $MaxRetries -ScriptBlock {
@@ -6070,11 +6086,38 @@ function Main {
         Write-Host "`nYou are deploying AUTO-REMEDIATION policies (DeployIfNotExists/Modify)" -ForegroundColor Yellow
         Write-Host "These policies will AUTOMATICALLY MODIFY existing resources:" -ForegroundColor Yellow
         
-        Write-Host "`n📋 What Will Happen:" -ForegroundColor Cyan
-        Write-Host "  • Creates private endpoints (may impact connectivity)" -ForegroundColor Gray
-        Write-Host "  • Enables firewall (may block access)" -ForegroundColor Gray
-        Write-Host "  • Disables public network access (may break apps)" -ForegroundColor Gray
-        Write-Host "  • Creates diagnostic settings (may increase costs)" -ForegroundColor Gray
+        Write-Host "`n📋 The 8 Auto-Remediation Policies That Will Deploy:" -ForegroundColor Cyan
+        Write-Host ""
+        Write-Host "  1. Configure Azure Key Vault Managed HSM with private endpoints (DINE)" -ForegroundColor White
+        Write-Host "     ⚠️  Creates private endpoints for HSMs | Cost: ~$7.30/month each" -ForegroundColor Yellow
+        Write-Host ""
+        Write-Host "  2. Deploy - Configure diagnostic settings to Event Hub for Managed HSM (DINE)" -ForegroundColor White
+        Write-Host "     ⚠️  Creates diagnostic settings | Cost: Event Hub ingress charges" -ForegroundColor Yellow
+        Write-Host ""
+        Write-Host "  3. Configure Azure Key Vaults to use private DNS zones (DINE)" -ForegroundColor White
+        Write-Host "     ⚠️  BREAKS: Public DNS resolution | Ensure VNet DNS configured first" -ForegroundColor Red
+        Write-Host ""
+        Write-Host "  4. Deploy Diagnostic Settings for Key Vault to Event Hub (DINE)" -ForegroundColor White
+        Write-Host "     ⚠️  Creates diagnostic settings | Cost: Event Hub charges" -ForegroundColor Yellow
+        Write-Host ""
+        Write-Host "  5. Deploy - Configure diagnostic settings for Key Vault to Log Analytics (DINE)" -ForegroundColor White
+        Write-Host "     ⚠️  Creates diagnostic settings | Cost: Log Analytics ingestion ~$2.30/GB" -ForegroundColor Yellow
+        Write-Host ""
+        Write-Host "  6. Configure Azure Key Vaults with private endpoints (DINE)" -ForegroundColor White
+        Write-Host "     ⚠️  Creates private endpoints | Cost: ~$7.30/month each" -ForegroundColor Yellow
+        Write-Host ""
+        Write-Host "  7. Configure Azure Key Vault Managed HSM to disable public network access (Modify)" -ForegroundColor White
+        Write-Host "     ⚠️  BREAKS: Public access to HSM | Ensure private endpoints configured first" -ForegroundColor Red
+        Write-Host ""
+        Write-Host "  8. Configure key vaults to enable firewall (Modify)" -ForegroundColor White
+        Write-Host "     ⚠️  BREAKS: Unrestricted access from all IPs | Add allowed IPs BEFORE deployment" -ForegroundColor Red
+        Write-Host ""
+        
+        Write-Host "💡 Recommended Mitigations:" -ForegroundColor Cyan
+        Write-Host "  • Whitelist IPs before enabling firewall policies" -ForegroundColor Gray
+        Write-Host "  • Configure VNet/subnet if using private endpoint policies" -ForegroundColor Gray
+        Write-Host "  • Review Event Hub and Log Analytics pricing" -ForegroundColor Gray
+        Write-Host "  • Create exemptions for vaults that should NOT be modified" -ForegroundColor Gray
         
         Write-Host "`n⏰ Timeline:" -ForegroundColor Cyan
         Write-Host "  • Policy assignment: Immediate" -ForegroundColor Gray
@@ -6110,18 +6153,20 @@ function Main {
         Write-Host "`n📚 Documentation:" -ForegroundColor Cyan
         Write-Host "  Review AUTO-REMEDIATION-GUIDE.md for complete details" -ForegroundColor Gray
         
-        Write-Host "`n🛑 User Choice:" -ForegroundColor Cyan
+        Write-Host "`n🛑 User Confirmation Required:" -ForegroundColor Cyan
         
         if (-not $Force) {
-            $continue = Read-Host "Do you want to deploy auto-remediation NOW or DEFER to later? (Now/Defer) [Defer]"
+            Write-Host "`nType 'YES' to proceed with auto-remediation deployment, or anything else to cancel:" -ForegroundColor Yellow
+            $continue = Read-Host "Confirm deployment"
             
-            if ($continue -ne 'Now' -and $continue -ne 'now' -and $continue -ne 'N' -and $continue -ne 'n') {
-                Write-Host "`n✅ Deployment deferred - you can deploy auto-remediation later when ready" -ForegroundColor Green
-                Write-Host "To deploy later, run the same command again or continue with other scenarios first" -ForegroundColor Gray
+            if ($continue -ne 'YES') {
+                Write-Host "`n✅ Deployment cancelled - you can deploy auto-remediation later when ready" -ForegroundColor Green
+                Write-Host "To deploy later, run the same command again after reviewing the impact warnings" -ForegroundColor Gray
+                Write-Host "Recommended: Test in DevTest environment first (PolicyParameters-DevTest-Full-Remediation.json)" -ForegroundColor Gray
                 exit 0
             }
         } else {
-            Write-Host "  ⚡ FORCE MODE: Bypassing interactive prompt (auto-remediation will proceed)" -ForegroundColor Yellow
+            Write-Host "  ⚡ FORCE MODE: Bypassing interactive confirmation (auto-remediation will proceed)" -ForegroundColor Yellow
         }
         
         Write-Host "`n✅ Proceeding with auto-remediation deployment..." -ForegroundColor Green
@@ -6750,6 +6795,7 @@ if ($PSCommandPath -eq $MyInvocation.MyCommand.Path) {
             '^-ExemptionCategory$' { if ($i+1 -lt $args.Count) { $callParams['ExemptionCategory'] = $args[$i+1]; $i++ } }
             '^-Rollback$' { $callParams['Rollback'] = $true }
             '^-Force$' { $callParams['Force'] = $true }
+            '^-WhatIf$' { $callParams['WhatIf'] = $true }
         }
     }
     
