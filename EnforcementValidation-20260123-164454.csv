@@ -1,2 +1,0 @@
-"Test","RiskLevel","Phase","Expected","Actual","Status","PolicyWorking","PolicyName","Notes"
-"Compliant Vault","BASELINE","All","Created","Blocked","❌ FAIL","False","Unknown","CRITICAL: Compliant vault blocked - Error: Cannot validate argument on parameter 'ResourceGroupName'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."

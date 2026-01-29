@@ -1,0 +1,41 @@
+========================================================================
+Sprint 1 Story 1.1 - Comprehensive Test Suite Summary
+========================================================================
+
+Test Run Date: 2026-01-29 11:24:33
+Account Type: MSA
+
+Account Information:
+  Account:      theregniers@hotmail.com
+  Account Type: User
+  Tenant:       21bd262e-3255-411e-8345-51102d9d9e9e
+  Subscription: MSDN Platforms Subscription
+
+Test Results:
+
+TestNumber TestName                    ExitCode Duration TranscriptFile              Status
+---------- --------                    -------- -------- --------------              ------
+         0 Prerequisites Check                1    20.03 Test0-Prerequisites-MSA.txt WARN
+         1 Subscription Inventory             0     4.29 Test1-Subscriptions-MSA.txt PASS
+         2 Key Vault Inventory                0    11.06 Test2-KeyVaults-MSA.txt     PASS
+         3 Policy Assignment Inventory        0     7.65 Test3-Policies-MSA.txt      PASS
+         4 Full Discovery (AutoRun)           0    54.79 Test4-FullDiscovery-MSA.txt PASS
+
+
+
+Summary:
+  Total Tests: 5
+  Passed:      4
+  Warnings:    1
+  Failed:      0
+  Duration:    110.72 seconds
+
+Output Files:
+  - Test0-Prerequisites-MSA.txt
+  - Test1-Subscriptions-MSA.txt
+  - Test2-KeyVaults-MSA.txt
+  - Test3-Policies-MSA.txt
+  - Test4-FullDiscovery-MSA.txt
+
+
+========================================================================

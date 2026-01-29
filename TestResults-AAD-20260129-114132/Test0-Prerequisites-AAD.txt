@@ -1,0 +1,112 @@
+**********************
+PowerShell transcript start
+Start time: 20260129114138
+Username: DTL01\lcladmin
+RunAs User: DTL01\lcladmin
+Configuration Name: 
+Machine: DTL01 (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Program Files\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 8684
+PSVersion: 7.5.3
+PSEdition: Core
+GitCommitId: 7.5.3
+OS: Microsoft Windows 10.0.20348
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\TestResults-AAD-20260129-114132\Test0-Prerequisites-AAD.txt
+[2026-01-29 11:41:38]
+Running: .\Test-DiscoveryPrerequisites.ps1 -Detailed
+[2026-01-29 11:41:38] [HEADER] =====================================================================
+[2026-01-29 11:41:38] [HEADER] Azure Environment Discovery - Prerequisites Validation
+[2026-01-29 11:41:38] [HEADER] Sprint 1, Story 1.1 - Environment Discovery & Baseline Assessment
+[2026-01-29 11:41:38] [HEADER] =====================================================================
+[2026-01-29 11:41:38] [INFO]
+[2026-01-29 11:41:38] [INFO] Supported Scenarios:
+[2026-01-29 11:41:38] [INFO]   1. MSDN subscription with guest MSA account (Owner role)
+[2026-01-29 11:41:38] [INFO]   2. Corporate AAD environment with AAD user (Reader+ role)
+[2026-01-29 11:41:38] [INFO]
+[2026-01-29 11:41:38] [HEADER] =====================================================================
+[2026-01-29 11:41:38] [HEADER] PHASE 1: Local Environment Checks
+[2026-01-29 11:41:38] [HEADER] =====================================================================
+[2026-01-29 11:41:38] [INFO] Checking PowerShell version...
+
+✓ PASS - PowerShell Version
+  Details: Current: 7.5.3, Required: 7.0 or higher
+[2026-01-29 11:41:38] [INFO] Checking Azure PowerShell modules...
+
+✓ PASS - Module: Az.Accounts
+  Details: Version: 5.3.0, Purpose: Azure authentication and context management
+
+✓ PASS - Module: Az.Resources
+  Details: Version: 8.1.0, Purpose: Resource and policy management
+
+✓ PASS - Module: Az.KeyVault
+  Details: Version: 6.3.2, Purpose: Key Vault inventory
+[2026-01-29 11:41:39] [INFO] 
+Checking optional modules...
+  ✓ Optional: Az.Monitor v6.0.3 - Diagnostic settings check (optional)
+[2026-01-29 11:41:39] [INFO]
+[2026-01-29 11:41:39] [HEADER] =====================================================================
+[2026-01-29 11:41:39] [HEADER] PHASE 2: Azure Connectivity Checks
+[2026-01-29 11:41:39] [HEADER] =====================================================================
+[2026-01-29 11:41:39] [INFO] Checking Azure connectivity...
+
+✓ PASS - Azure Connection
+  Details: Connected as: curtus.regnier@intel.com | Type: Corporate AAD User | Tenant: 46c98d88-e344-4ed4-8496-4ed7712e255d
+[2026-01-29 11:41:39] [INFO] Checking subscription access...
+
+✓ PASS - Subscription Access
+  Details: Accessible subscriptions: 838
+
+  Subscription Details:
+    - 1ci-preprod-metrics (dc8b9d9c-0cf9-446c-9177-12921182f54a) - State: Enabled
+    - 1ci-prod-metrics (9590a312-8cb4-433b-bf12-8897052f5d02) - State: Enabled
+    - 1Source Pre-Production (feff5c33-098d-41a4-b715-45431385fdb4) - State: Enabled
+    - 1Source1DB - IGBN (b6bebd3d-2ad2-4fd5-93c0-0986e7aa6928) - State: Enabled
+    - 1sourcegithub (81153935-ab16-4ce3-90c2-e47e2ad420e3) - State: Enabled
+    ... and 833 more
+[2026-01-29 11:41:40] [INFO] Checking RBAC permissions on subscriptions...
+
+✗ FAIL - RBAC Permissions (Sample: 1ci-preprod-metrics)
+  Details: Current roles: 
+. Required: Reader, Contributor, or Owner
+  Remediation: Contact subscription owner to grant Reader role: New-AzRoleAssignment -SignInName 'curtus.regnier@intel.com' -RoleDefinitionName 'Reader' -Scope '/subscriptions/dc8b9d9c-0cf9-446c-9177-12921182f54a'
+
+  Minimum Required Permissions for Discovery:
+    - Reader role at subscription scope (for inventory)
+    - Optional: User Access Administrator (for RBAC owner/contributor enumeration)
+
+  Minimum Required Permissions for Policy Deployment (Story 1.2):
+    - Contributor role at subscription scope
+    - Resource Policy Contributor role (or Owner)
+[2026-01-29 11:41:41] [INFO] Checking access to required Resource Providers...
+  ✓ Microsoft.KeyVault - Registered
+  ✓ Microsoft.PolicyInsights - Registered
+  ✓ Microsoft.Authorization - Registered
+
+✓ PASS - Resource Provider Access
+  Details: Checked sample subscription: 1ci-preprod-metrics
+[2026-01-29 11:41:55] [INFO]
+[2026-01-29 11:41:55] [HEADER] =====================================================================
+[2026-01-29 11:41:55] [HEADER] VALIDATION SUMMARY
+[2026-01-29 11:41:55] [HEADER] =====================================================================
+[2026-01-29 11:41:55] [INFO]
+[2026-01-29 11:41:55] [WARN] Checks Passed: 5 / 6
+  ✓ PASS - AzureConnection
+  ✓ PASS - AzureModules
+  ✓ PASS - ResourceProviderAccess
+  ✓ PASS - RBACPermissions
+  ✓ PASS - SubscriptionAccess
+  ✓ PASS - PowerShellVersion
+[2026-01-29 11:41:55] [INFO]
+[2026-01-29 11:41:55] [ERROR] ✗ Some prerequisites not met. Review failures above.
+[2026-01-29 11:41:55] [INFO]
+[2026-01-29 11:41:55] [WARN] Common Resolutions:
+**********************
+PowerShell transcript end
+End time: 20260129114155
+**********************
