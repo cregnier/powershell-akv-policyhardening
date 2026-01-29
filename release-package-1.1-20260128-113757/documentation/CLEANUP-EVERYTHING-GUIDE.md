@@ -18,23 +18,17 @@
 | **Local Reports** | HTML/JSON/CSV/MD files | 🟢 **FREE** (local disk only) | Manual deletion or Cleanup-Workspace.ps1 |
 | **Managed Identity** | id-policy-remediation | 🟢 **FREE** | **KEEP for production** |
 
-### Tonight's Recommendation
+### Cleanup Decision Guide
 
 ```powershell
-# OPTION 1: Keep everything overnight (SAFE - policies are FREE)
-# - Policy assignments: FREE
-# - Local reports: FREE
-# - Infrastructure: ~$0.10/night (Event Hub + Log Analytics minimal overnight cost)
-# - Resume tomorrow with all context intact
+# Evaluate your cleanup needs based on your deployment phase and cost concerns
+# - Policy assignments: FREE (no cleanup urgency)
+# - Local reports: FREE (cleanup optional, use Cleanup-Workspace.ps1 to archive)
+# - Infrastructure: ~$27-160/month (Event Hub + Log Analytics)
+# - Managed Identity: FREE (keep for production use)
 
-# OPTION 2: Remove ONLY expensive infrastructure (reduces cost to $0)
-.\Setup-AzureKeyVaultPolicyEnvironment.ps1 -CleanupFirst
-# Keeps: Policy assignments, managed identity, local reports
-# Removes: Event Hub, Log Analytics, VNet, Test Vaults
-# Tomorrow: Re-run setup script to recreate test environment
+# Recommendation: Choose based on next steps and infrastructure cost tolerance
 ```
-
-**RECOMMENDATION**: **Keep everything overnight** - infrastructure cost is minimal (~$0.10) and you preserve all test context.
 
 ---
 
@@ -72,7 +66,7 @@ Get-AzPolicyRemediation -Scope "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458
     Select-Object Name, ProvisioningState, @{N='ResourcesFixed';E={$_.DeploymentSummary.SuccessfulDeployments}}
 ```
 
-**Expected Tomorrow**:
+**Expected After Auto-Remediation**:
 - **8 remediation tasks** (one per DINE/Modify policy)
 - Will auto-configure ALL non-compliant Key Vaults in subscription
 - Auto-cleanup after 7 days (no manual action needed)
@@ -103,11 +97,11 @@ Get-AzPolicyRemediation -Scope "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458
 
 ## 🧹 Cleanup Methods
 
-### Method 1: Complete Teardown (Fresh Start Tomorrow)
+### Method 1: Complete Teardown (Fresh Start)
 
-**Use Case**: Want to start completely fresh tomorrow  
+**Use Case**: Want to start completely fresh in a future deployment  
 **Impact**: Removes EVERYTHING (infrastructure + policy assignments)  
-**Tomorrow**: Re-run setup script + redeploy policies (30-45 min setup time)
+**Future Setup**: Re-run setup script + redeploy policies (30-45 min setup time)
 
 ```powershell
 # Step 1: Remove all policy assignments
@@ -127,53 +121,53 @@ Write-Host "Removing managed identity (optional)..." -ForegroundColor Red
 Write-Host "Archiving old reports..." -ForegroundColor Yellow
 .\Cleanup-Workspace.ps1
 
-# Result: $0/month cost, complete fresh start tomorrow
+# Result: $0/month cost, complete fresh start for future deployments
 ```
 
 **Cost After Cleanup**: $0/month  
-**Tomorrow Setup Time**: 30-45 minutes (re-run setup + deploy policies)
+**Future Setup Time**: 30-45 minutes (re-run setup + deploy policies)
 
 ---
 
-### Method 2: Keep Policies, Remove Infrastructure (Recommended for Tonight)
+### Method 2: Keep Policies, Remove Infrastructure (Cost Reduction)
 
-**Use Case**: Preserve policy assignments and test context, reduce overnight costs  
+**Use Case**: Preserve policy assignments and test context, reduce infrastructure costs  
 **Impact**: Removes infrastructure only (Event Hub, Log Analytics, Test Vaults)  
-**Tomorrow**: Quick restart (5-10 min setup, policies still active)
+**Future Restart**: Quick restart (5-10 min setup, policies still active)
 
 ```powershell
 # Remove only test infrastructure (keeps policy assignments)
 .\Setup-AzureKeyVaultPolicyEnvironment.ps1 -CleanupFirst -SkipMonitoring
 
 # Result: Policy assignments still active, infrastructure removed
-# Tomorrow: Re-run setup script ONLY (policies remain assigned)
+# Future: Re-run setup script ONLY (policies remain assigned)
 ```
 
 **Cost After Cleanup**: $0/month  
-**Tomorrow Setup Time**: 5-10 minutes (re-run setup only)  
+**Future Setup Time**: 5-10 minutes (re-run setup only)  
 **Policy Status**: ACTIVE (still enforcing, but no test vaults to validate against)
 
 ---
 
-### Method 3: Keep Everything (Minimal Overnight Cost)
+### Method 3: Keep Everything (Preserve Deployment State)
 
-**Use Case**: Resume tomorrow exactly where you left off  
+**Use Case**: Continue deployment exactly where you left off  
 **Impact**: None - everything preserved  
-**Tomorrow**: Continue immediately from monitoring checkpoint
+**Future Actions**: Continue immediately from current checkpoint
 
 ```powershell
 # NO CLEANUP NEEDED
 # All resources remain active
-# Resume tomorrow with status check from todos.md
+# Resume immediately with status check as needed
 ```
 
-**Cost Tonight**: ~$0.10-0.50 (Event Hub + Log Analytics minimal overnight usage)  
-**Tomorrow Setup Time**: 0 minutes (continue immediately)  
-**Policy Status**: ACTIVE (remediation completes overnight)
+**Ongoing Cost**: ~$27-160/month (Event Hub + Log Analytics)  
+**Future Setup Time**: 0 minutes (continue immediately)  
+**Policy Status**: ACTIVE (remediation continues in background)
 
 ---
 
-## 🏭 Production Scoping Strategy (Your Question)
+## 🏭 Production Scoping Strategy
 
 ### Current Testing Scope vs Production Recommendations
 
@@ -353,77 +347,117 @@ Remove-AzResourceGroup -Name "rg-policy-remediation" -Force  # ⚠️ Only if no
    - More maintenance overhead
    - Less common in enterprise scenarios
 
-### Cost Breakdown (Overnight)
+### Cost Breakdown
 
-| Resource | Overnight Cost | Monthly Cost | Cleanup Impact |
-|----------|----------------|--------------|----------------|
+| Resource | Daily Cost | Monthly Cost | Cleanup Impact |
+|----------|------------|--------------|----------------|
 | Event Hub | ~$0.05-0.30 | $25-150 | 🔴 Remove to save |
 | Log Analytics | ~$0.05-0.20 | $2-10 | 🟡 Remove to save |
 | Key Vaults | ~$0.00 | $0.10 | 🟢 Negligible |
 | Policy Assignments | $0.00 | $0.00 | 🟢 FREE - keep |
 | Managed Identity | $0.00 | $0.00 | 🟢 FREE - keep for prod |
 | Local Reports | $0.00 | $0.00 | 🟢 FREE - archive if desired |
-| **TOTAL OVERNIGHT** | **~$0.10-0.50** | **$27-160** | **Keep all: $0.50** |
+| **TOTAL DAILY** | **~$0.10-0.50** | **$27-160** | **Keep all: $0.50/day** |
 
-### Tomorrow's Fresh Start Options
+### Future Deployment Options
 
 **Option A: Full Teardown (30-45 min setup)**
 ```powershell
-# Tonight: Complete cleanup
+# Step 1: Complete cleanup
 .\AzPolicyImplScript.ps1 -Rollback
 .\Setup-AzureKeyVaultPolicyEnvironment.ps1 -CleanupFirst
 
-# Tomorrow: Complete rebuild
+# Step 2: Complete rebuild
 .\Setup-AzureKeyVaultPolicyEnvironment.ps1
 .\AzPolicyImplScript.ps1 -ParameterFile .\PolicyParameters-Production-Remediation.json -PolicyMode Enforce -IdentityResourceId "..." -ScopeType Subscription
 ```
 
 **Option B: Infrastructure-Only Cleanup (5-10 min setup)**
 ```powershell
-# Tonight: Remove infrastructure only
+# Step 1: Remove infrastructure only
 .\Setup-AzureKeyVaultPolicyEnvironment.ps1 -CleanupFirst
 
-# Tomorrow: Quick restart
+# Step 2: Quick restart
 .\Setup-AzureKeyVaultPolicyEnvironment.ps1
 # Policies still active, just recreate test environment
 ```
 
 **Option C: Keep Everything (0 min setup)**
 ```powershell
-# Tonight: No cleanup
-# Cost: ~$0.10-0.50 overnight
+# No cleanup needed
+# Cost: ~$27-160/month
 
-# Tomorrow: Resume immediately
-# Run status check from todos.md
+# Resume immediately
+# Run status checks as needed
 ```
 
 ---
 
-## 🎯 Recommended Action for Tonight
+## 🎯 Cleanup Timing Recommendations
 
+### After DevTest Phase
 ```powershell
-# ═══════════════════════════════════════════════════════════════════
-# RECOMMENDED: Keep Everything Overnight
-# ═══════════════════════════════════════════════════════════════════
-# 
-# COST: ~$0.10-0.50 (minimal overnight Event Hub + Log Analytics usage)
-# BENEFIT: Zero setup time tomorrow, preserve all test context
-# REASON: Remediation cycle completes overnight, check results in AM
-# 
-# NO ACTION NEEDED TONIGHT!
-# ═══════════════════════════════════════════════════════════════════
+# When to cleanup: After validating all 46 policies in DevTest
+# Recommendation: Method 2 (keep policies, remove infrastructure)
+# Reason: Preserve policy assignments for production deployment
+# Next: Deploy to production subscription
+```
 
-# Tomorrow morning: Run status check from todos.md (lines 43-94)
+### After Production Audit Phase
+```powershell
+# When to cleanup: After 7-30 days of compliance monitoring
+# Recommendation: Keep infrastructure, may remove test vaults
+# Reason: Infrastructure needed for ongoing monitoring
+# Next: Enable Deny mode for critical policies
+```
+
+### After Production Enforcement
+```powershell
+# When to cleanup: Ongoing production deployment
+# Recommendation: Method 3 (keep everything)
+# Reason: Active policy enforcement requires infrastructure
+# Next: Monitor compliance and remediation tasks
+```
+
+### Production Cleanup Caveats
+
+⚠️ **CRITICAL**: Production cleanup is different from DevTest cleanup
+
+**What NOT to cleanup in Production**:
+- ❌ **Managed Identity**: Required for auto-remediation policies (8 policies)
+- ❌ **Event Hub**: Required for diagnostic log policies
+- ❌ **Log Analytics**: Required for monitoring policies
+- ❌ **Policy Assignments**: Active governance enforcement
+
+**What CAN be cleaned up safely**:
+- ✅ **Local Reports**: Archive old HTML/JSON/CSV reports using Cleanup-Workspace.ps1
+- ✅ **Test Vaults**: Remove dev/test Key Vaults if no longer needed
+- ✅ **Test Data**: Remove test secrets/keys/certificates
+
+**Production Infrastructure Exemptions**:
+If you need to exempt specific Key Vaults from certain policies:
+```powershell
+# Create exemption for specific vault
+.\AzPolicyImplScript.ps1 -CreateExemption `
+    -PolicyAssignmentName "KV-..." `
+    -ResourceId "/subscriptions/.../resourceGroups/.../providers/Microsoft.KeyVault/vaults/..." `
+    -ExemptionReason "Business justification here"
+
+# List all exemptions
+.\AzPolicyImplScript.ps1 -ListExemptions
+
+# Remove exemption
+.\AzPolicyImplScript.ps1 -RemoveExemption -ExemptionName "exemption-name"
 ```
 
 ---
 
 ## 📚 Related Documentation
 
-- **QUICKSTART.md**: Quick deployment guide  
-- **DEPLOYMENT-WORKFLOW-GUIDE.md**: Complete workflow reference  
-- **todos.md**: Tomorrow's monitoring checkpoint  
-- **CLEANUP-GUIDE.md**: Original cleanup guide (infrastructure only)
+- [QUICKSTART.md](QUICKSTART.md): Quick deployment guide  
+- [DEPLOYMENT-WORKFLOW-GUIDE.md](DEPLOYMENT-WORKFLOW-GUIDE.md): Complete workflow reference  
+- [SCENARIO-COMMANDS-REFERENCE.md](SCENARIO-COMMANDS-REFERENCE.md): Command reference  
+- CLEANUP-GUIDE.md: Original cleanup guide (infrastructure only)
 
 ---
 
