@@ -1,0 +1,1773 @@
+**********************
+PowerShell transcript start
+Start time: 20260129114230
+Username: DTL01\lcladmin
+RunAs User: DTL01\lcladmin
+Configuration Name: 
+Machine: DTL01 (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Program Files\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 8684
+PSVersion: 7.5.3
+PSEdition: Core
+GitCommitId: 7.5.3
+OS: Microsoft Windows 10.0.20348
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\TestResults-AAD-20260129-114132\Test1-Subscriptions-AAD.txt
+[2026-01-29 11:42:30]
+Running: .\Get-AzureSubscriptionInventory.ps1
+[2026-01-29 11:42:30] [INFO] === Azure Subscription Inventory Script ===
+[2026-01-29 11:42:30] [INFO] Sprint 1, Story 1.1 - Environment Discovery & Baseline Assessment
+[2026-01-29 11:42:30] [INFO]
+[2026-01-29 11:42:30] [SUCCESS] Connected to Azure as: curtus.regnier@intel.com
+[2026-01-29 11:42:30] [INFO] Tenant: 46c98d88-e344-4ed4-8496-4ed7712e255d
+[2026-01-29 11:42:30] [INFO] Retrieving all subscriptions in tenant...
+[2026-01-29 11:42:30] [SUCCESS] Found 838 subscription(s)
+[2026-01-29 11:42:30] [INFO] Processing subscription 1 of 838: 1ci-preprod-metrics
+[2026-01-29 11:42:32] [SUCCESS]   Completed
+[2026-01-29 11:42:32] [INFO] Processing subscription 2 of 838: 1ci-prod-metrics
+[2026-01-29 11:42:34] [SUCCESS]   Completed
+[2026-01-29 11:42:34] [INFO] Processing subscription 3 of 838: 1Source Pre-Production
+[2026-01-29 11:42:37] [SUCCESS]   Completed
+[2026-01-29 11:42:37] [INFO] Processing subscription 4 of 838: 1Source1DB - IGBN
+[2026-01-29 11:42:39] [SUCCESS]   Completed
+[2026-01-29 11:42:39] [INFO] Processing subscription 5 of 838: 1sourcegithub
+[2026-01-29 11:42:41] [SUCCESS]   Completed
+[2026-01-29 11:42:41] [INFO] Processing subscription 6 of 838: account-pulse-ai
+[2026-01-29 11:42:42] [SUCCESS]   Completed
+[2026-01-29 11:42:42] [INFO] Processing subscription 7 of 838: acehub
+[2026-01-29 11:42:43] [SUCCESS]   Completed
+[2026-01-29 11:42:43] [INFO] Processing subscription 8 of 838: ade-aide-pathfinding
+[2026-01-29 11:42:45] [SUCCESS]   Completed
+[2026-01-29 11:42:45] [INFO] Processing subscription 9 of 838: ADO_DevOps
+[2026-01-29 11:42:46] [SUCCESS]   Completed
+[2026-01-29 11:42:46] [INFO] Processing subscription 10 of 838: Advanced Analytics Infra Dev
+[2026-01-29 11:42:48] [SUCCESS]   Completed
+[2026-01-29 11:42:48] [INFO] Processing subscription 11 of 838: Advanced Analytics Platform PreProd
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:42:49] [SUCCESS]   Completed
+[2026-01-29 11:42:49] [INFO] Processing subscription 12 of 838: affected-processors
+[2026-01-29 11:42:51] [SUCCESS]   Completed
+[2026-01-29 11:42:51] [INFO] Processing subscription 13 of 838: affinity
+[2026-01-29 11:42:52] [SUCCESS]   Completed
+[2026-01-29 11:42:52] [INFO] Processing subscription 14 of 838: agenticbot-azure
+[2026-01-29 11:42:55] [SUCCESS]   Completed
+[2026-01-29 11:42:55] [INFO] Processing subscription 15 of 838: AI Debug Agent
+[2026-01-29 11:42:56] [SUCCESS]   Completed
+[2026-01-29 11:42:56] [INFO] Processing subscription 16 of 838: AI Solutions Group Co-Design LLM for Code
+[2026-01-29 11:42:59] [SUCCESS]   Completed
+[2026-01-29 11:42:59] [INFO] Processing subscription 17 of 838: Aim Dev
+[2026-01-29 11:43:00] [SUCCESS]   Completed
+[2026-01-29 11:43:00] [INFO] Processing subscription 18 of 838: AIM Prod
+[2026-01-29 11:43:01] [SUCCESS]   Completed
+[2026-01-29 11:43:01] [INFO] Processing subscription 19 of 838: Alloy-AI-Dev
+[2026-01-29 11:43:03] [SUCCESS]   Completed
+[2026-01-29 11:43:03] [INFO] Processing subscription 20 of 838: alt-g-aiaas
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:43:04] [SUCCESS]   Completed
+[2026-01-29 11:43:04] [INFO] Processing subscription 21 of 838: altera-1source
+[2026-01-29 11:43:06] [SUCCESS]   Completed
+[2026-01-29 11:43:06] [INFO] Processing subscription 22 of 838: altera-engos-engapps
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:43:08] [SUCCESS]   Completed
+[2026-01-29 11:43:08] [INFO] Processing subscription 23 of 838: altera-nga
+[2026-01-29 11:43:09] [SUCCESS]   Completed
+[2026-01-29 11:43:09] [INFO] Processing subscription 24 of 838: alteratestplatform
+[2026-01-29 11:43:11] [SUCCESS]   Completed
+[2026-01-29 11:43:11] [INFO] Processing subscription 25 of 838: AML
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:43:13] [SUCCESS]   Completed
+[2026-01-29 11:43:13] [INFO] Processing subscription 26 of 838: AnanthlabAzure
+[2026-01-29 11:43:14] [SUCCESS]   Completed
+[2026-01-29 11:43:14] [INFO] Processing subscription 27 of 838: Animate
+[2026-01-29 11:43:16] [SUCCESS]   Completed
+[2026-01-29 11:43:16] [INFO] Processing subscription 28 of 838: apim-dv-integrations
+[2026-01-29 11:43:17] [SUCCESS]   Completed
+[2026-01-29 11:43:17] [INFO] Processing subscription 29 of 838: APPI
+[2026-01-29 11:43:19] [SUCCESS]   Completed
+[2026-01-29 11:43:19] [INFO] Processing subscription 30 of 838: Application Security Posture Now
+[2026-01-29 11:43:20] [SUCCESS]   Completed
+[2026-01-29 11:43:20] [INFO] Processing subscription 31 of 838: AppliedML
+[2026-01-29 11:43:22] [SUCCESS]   Completed
+[2026-01-29 11:43:22] [INFO] Processing subscription 32 of 838: Arc Production
+[2026-01-29 11:43:23] [SUCCESS]   Completed
+[2026-01-29 11:43:23] [INFO] Processing subscription 33 of 838: Arc Staging
+[2026-01-29 11:43:25] [SUCCESS]   Completed
+[2026-01-29 11:43:25] [INFO] Processing subscription 34 of 838: Ask Intel
+[2026-01-29 11:43:27] [SUCCESS]   Completed
+[2026-01-29 11:43:27] [INFO] Processing subscription 35 of 838: Ask_OPEDA
+[2026-01-29 11:43:28] [SUCCESS]   Completed
+[2026-01-29 11:43:28] [INFO] Processing subscription 36 of 838: Ask_OPEDA_Prod
+[2026-01-29 11:43:30] [SUCCESS]   Completed
+[2026-01-29 11:43:30] [INFO] Processing subscription 37 of 838: askdme-imta
+[2026-01-29 11:43:31] [SUCCESS]   Completed
+[2026-01-29 11:43:31] [INFO] Processing subscription 38 of 838: askec-chatbot
+[2026-01-29 11:43:32] [SUCCESS]   Completed
+[2026-01-29 11:43:32] [INFO] Processing subscription 39 of 838: askinfosec-model-sub
+[2026-01-29 11:43:33] [SUCCESS]   Completed
+[2026-01-29 11:43:33] [INFO] Processing subscription 40 of 838: ATAI-MLPlatform
+[2026-01-29 11:43:35] [SUCCESS]   Completed
+[2026-01-29 11:43:35] [INFO] Processing subscription 41 of 838: attd-adts-webtools
+[2026-01-29 11:43:37] [SUCCESS]   Completed
+[2026-01-29 11:43:37] [INFO] Processing subscription 42 of 838: attd-catd-39568
+[2026-01-29 11:43:38] [SUCCESS]   Completed
+[2026-01-29 11:43:38] [INFO] Processing subscription 43 of 838: ATTDYield_AIML
+[2026-01-29 11:43:40] [SUCCESS]   Completed
+[2026-01-29 11:43:40] [INFO] Processing subscription 44 of 838: attribution
+[2026-01-29 11:43:41] [SUCCESS]   Completed
+[2026-01-29 11:43:41] [INFO] Processing subscription 45 of 838: Augmented Intelligence
+[2026-01-29 11:43:43] [SUCCESS]   Completed
+[2026-01-29 11:43:43] [INFO] Processing subscription 46 of 838: Aurora GenAI (POC)
+[2026-01-29 11:43:44] [SUCCESS]   Completed
+[2026-01-29 11:43:44] [INFO] Processing subscription 47 of 838: Aurora OpenAI
+[2026-01-29 11:43:45] [SUCCESS]   Completed
+[2026-01-29 11:43:45] [INFO] Processing subscription 48 of 838: AutoPylot
+[2026-01-29 11:43:46] [SUCCESS]   Completed
+[2026-01-29 11:43:46] [INFO] Processing subscription 49 of 838: Avaamo PowerBI Reporting
+[2026-01-29 11:43:48] [SUCCESS]   Completed
+[2026-01-29 11:43:48] [INFO] Processing subscription 50 of 838: AWSShankar
+WARNING: Selected subscription is in 'Warned' state.
+[2026-01-29 11:43:49] [SUCCESS]   Completed
+[2026-01-29 11:43:49] [INFO] Processing subscription 51 of 838: AXCA_Azure
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:43:51] [SUCCESS]   Completed
+[2026-01-29 11:43:51] [INFO] Processing subscription 52 of 838: AXG-GRO-OSPRay-Dev
+[2026-01-29 11:43:52] [SUCCESS]   Completed
+[2026-01-29 11:43:52] [INFO] Processing subscription 53 of 838: Axon
+[2026-01-29 11:43:54] [SUCCESS]   Completed
+[2026-01-29 11:43:54] [INFO] Processing subscription 54 of 838: Axon PreProd Discrete
+[2026-01-29 11:43:55] [SUCCESS]   Completed
+[2026-01-29 11:43:55] [INFO] Processing subscription 55 of 838: Axon Prod Discrete
+[2026-01-29 11:43:57] [SUCCESS]   Completed
+[2026-01-29 11:43:57] [INFO] Processing subscription 56 of 838: Axon-Preprod
+[2026-01-29 11:43:59] [SUCCESS]   Completed
+[2026-01-29 11:43:59] [INFO] Processing subscription 57 of 838: Axon-Sandbox
+[2026-01-29 11:44:00] [SUCCESS]   Completed
+[2026-01-29 11:44:00] [INFO] Processing subscription 58 of 838: az ags test
+[2026-01-29 11:44:01] [SUCCESS]   Completed
+[2026-01-29 11:44:01] [INFO] Processing subscription 59 of 838: AZ-AGS-Recreate
+[2026-01-29 11:44:02] [SUCCESS]   Completed
+[2026-01-29 11:44:02] [INFO] Processing subscription 60 of 838: azdocespoland
+[2026-01-29 11:44:04] [SUCCESS]   Completed
+[2026-01-29 11:44:04] [INFO] Processing subscription 61 of 838: azpsasdev
+[2026-01-29 11:44:05] [SUCCESS]   Completed
+[2026-01-29 11:44:05] [INFO] Processing subscription 62 of 838: Azure arcprime
+[2026-01-29 11:44:06] [SUCCESS]   Completed
+[2026-01-29 11:44:06] [INFO] Processing subscription 63 of 838: Azure Cluster HyperV Validation
+[2026-01-29 11:44:08] [SUCCESS]   Completed
+[2026-01-29 11:44:08] [INFO] Processing subscription 64 of 838: Azure learning
+[2026-01-29 11:44:09] [SUCCESS]   Completed
+[2026-01-29 11:44:09] [INFO] Processing subscription 65 of 838: Azure Log Analytics
+[2026-01-29 11:44:11] [SUCCESS]   Completed
+[2026-01-29 11:44:11] [INFO] Processing subscription 66 of 838: Azure Stack HCI - Virtualization Cluster
+[2026-01-29 11:44:12] [SUCCESS]   Completed
+[2026-01-29 11:44:12] [INFO] Processing subscription 67 of 838: Azure subscription 1
+[2026-01-29 11:44:14] [SUCCESS]   Completed
+[2026-01-29 11:44:14] [INFO] Processing subscription 68 of 838: Azure subscription 1
+[2026-01-29 11:44:15] [SUCCESS]   Completed
+[2026-01-29 11:44:15] [INFO] Processing subscription 69 of 838: Azure subscription 1
+[2026-01-29 11:44:16] [SUCCESS]   Completed
+[2026-01-29 11:44:16] [INFO] Processing subscription 70 of 838: Azure subscription 1
+[2026-01-29 11:44:19] [SUCCESS]   Completed
+[2026-01-29 11:44:19] [INFO] Processing subscription 71 of 838: Azure subscription 1
+[2026-01-29 11:44:21] [SUCCESS]   Completed
+[2026-01-29 11:44:21] [INFO] Processing subscription 72 of 838: Azure subscription 1
+[2026-01-29 11:44:22] [SUCCESS]   Completed
+[2026-01-29 11:44:22] [INFO] Processing subscription 73 of 838: Azure subscription 1
+[2026-01-29 11:44:23] [SUCCESS]   Completed
+[2026-01-29 11:44:23] [INFO] Processing subscription 74 of 838: Azure subscription 1
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:44:25] [SUCCESS]   Completed
+[2026-01-29 11:44:25] [INFO] Processing subscription 75 of 838: Azure subscription 1
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:44:27] [SUCCESS]   Completed
+[2026-01-29 11:44:27] [INFO] Processing subscription 76 of 838: Azure subscription 1
+WARNING: Selected subscription is in 'Warned' state.
+[2026-01-29 11:44:28] [SUCCESS]   Completed
+[2026-01-29 11:44:28] [INFO] Processing subscription 77 of 838: Azure subscription 1
+[2026-01-29 11:44:29] [SUCCESS]   Completed
+[2026-01-29 11:44:29] [INFO] Processing subscription 78 of 838: Azure subscription 1
+[2026-01-29 11:44:31] [SUCCESS]   Completed
+[2026-01-29 11:44:31] [INFO] Processing subscription 79 of 838: Azure subscription 1
+[2026-01-29 11:44:32] [SUCCESS]   Completed
+[2026-01-29 11:44:32] [INFO] Processing subscription 80 of 838: Azure subscription 1
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:44:33] [SUCCESS]   Completed
+[2026-01-29 11:44:33] [INFO] Processing subscription 81 of 838: Azure subscription 1
+[2026-01-29 11:44:35] [SUCCESS]   Completed
+[2026-01-29 11:44:35] [INFO] Processing subscription 82 of 838: Azure subscription 1
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:44:36] [SUCCESS]   Completed
+[2026-01-29 11:44:36] [INFO] Processing subscription 83 of 838: Azure subscription 1
+[2026-01-29 11:44:37] [SUCCESS]   Completed
+[2026-01-29 11:44:37] [INFO] Processing subscription 84 of 838: Azure subscription 1
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:44:40] [SUCCESS]   Completed
+[2026-01-29 11:44:40] [INFO] Processing subscription 85 of 838: Azure subscription 1
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:44:42] [SUCCESS]   Completed
+[2026-01-29 11:44:42] [INFO] Processing subscription 86 of 838: Azure subscription 1
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:44:43] [SUCCESS]   Completed
+[2026-01-29 11:44:43] [INFO] Processing subscription 87 of 838: Azure subscription 1
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:44:45] [SUCCESS]   Completed
+[2026-01-29 11:44:45] [INFO] Processing subscription 88 of 838: Azure subscription 1
+[2026-01-29 11:44:47] [SUCCESS]   Completed
+[2026-01-29 11:44:47] [INFO] Processing subscription 89 of 838: Azure TDX with SAP
+[2026-01-29 11:44:50] [SUCCESS]   Completed
+[2026-01-29 11:44:50] [INFO] Processing subscription 90 of 838: Azure Tech Acceptance
+[2026-01-29 11:44:51] [SUCCESS]   Completed
+[2026-01-29 11:44:51] [INFO] Processing subscription 91 of 838: Azure WAF Exploration
+[2026-01-29 11:44:53] [SUCCESS]   Completed
+[2026-01-29 11:44:53] [INFO] Processing subscription 92 of 838: AZURE_CloudRA
+[2026-01-29 11:44:55] [SUCCESS]   Completed
+[2026-01-29 11:44:55] [INFO] Processing subscription 93 of 838: azure-arc-hybrid-scvmm
+[2026-01-29 11:44:56] [SUCCESS]   Completed
+[2026-01-29 11:44:56] [INFO] Processing subscription 94 of 838: AZURE-BDIV-AUTO
+[2026-01-29 11:44:58] [SUCCESS]   Completed
+[2026-01-29 11:44:58] [INFO] Processing subscription 95 of 838: azure-neural-compressor
+[2026-01-29 11:44:59] [SUCCESS]   Completed
+[2026-01-29 11:44:59] [INFO] Processing subscription 96 of 838: azure-test-2025
+[2026-01-29 11:45:00] [SUCCESS]   Completed
+[2026-01-29 11:45:00] [INFO] Processing subscription 97 of 838: AzureAD B2C CD
+[2026-01-29 11:45:01] [SUCCESS]   Completed
+[2026-01-29 11:45:01] [INFO] Processing subscription 98 of 838: AzureAD B2C PP
+[2026-01-29 11:45:03] [SUCCESS]   Completed
+[2026-01-29 11:45:03] [INFO] Processing subscription 99 of 838: AzureAD B2C PR
+[2026-01-29 11:45:05] [SUCCESS]   Completed
+[2026-01-29 11:45:05] [INFO] Processing subscription 100 of 838: AzureAD B2C SB
+[2026-01-29 11:45:06] [SUCCESS]   Completed
+[2026-01-29 11:45:06] [INFO] Processing subscription 101 of 838: AzureOpenAIDevTest
+[2026-01-29 11:45:08] [SUCCESS]   Completed
+[2026-01-29 11:45:08] [INFO] Processing subscription 102 of 838: AzureOpenAIProd
+[2026-01-29 11:45:09] [SUCCESS]   Completed
+[2026-01-29 11:45:09] [INFO] Processing subscription 103 of 838: AzureTrialUse
+[2026-01-29 11:45:10] [SUCCESS]   Completed
+[2026-01-29 11:45:10] [INFO] Processing subscription 104 of 838: BCL Scalable Vector Search
+[2026-01-29 11:45:12] [SUCCESS]   Completed
+[2026-01-29 11:45:12] [INFO] Processing subscription 105 of 838: BCPEngineering
+[2026-01-29 11:45:14] [SUCCESS]   Completed
+[2026-01-29 11:45:14] [INFO] Processing subscription 106 of 838: BCPTSS-GK
+[2026-01-29 11:45:15] [SUCCESS]   Completed
+[2026-01-29 11:45:15] [INFO] Processing subscription 107 of 838: BCTSS
+[2026-01-29 11:45:17] [SUCCESS]   Completed
+[2026-01-29 11:45:17] [INFO] Processing subscription 108 of 838: BIS Sandbox
+[2026-01-29 11:45:18] [SUCCESS]   Completed
+[2026-01-29 11:45:18] [INFO] Processing subscription 109 of 838: Bleh 02
+[2026-01-29 11:45:20] [SUCCESS]   Completed
+[2026-01-29 11:45:20] [INFO] Processing subscription 110 of 838: BMGPBI
+[2026-01-29 11:45:21] [SUCCESS]   Completed
+[2026-01-29 11:45:21] [INFO] Processing subscription 111 of 838: Bob
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:45:22] [SUCCESS]   Completed
+[2026-01-29 11:45:22] [INFO] Processing subscription 112 of 838: boi-iao-jira-dtm
+[2026-01-29 11:45:24] [SUCCESS]   Completed
+[2026-01-29 11:45:24] [INFO] Processing subscription 113 of 838: boltzexecutive
+[2026-01-29 11:45:25] [SUCCESS]   Completed
+[2026-01-29 11:45:25] [INFO] Processing subscription 114 of 838: buc-smg-gos-prc-fcst
+[2026-01-29 11:45:27] [SUCCESS]   Completed
+[2026-01-29 11:45:27] [INFO] Processing subscription 115 of 838: BYOK DEV Azure
+[2026-01-29 11:45:28] [SUCCESS]   Completed
+[2026-01-29 11:45:28] [INFO] Processing subscription 116 of 838: BYOK DEV Azure 2
+[2026-01-29 11:45:29] [SUCCESS]   Completed
+[2026-01-29 11:45:29] [INFO] Processing subscription 117 of 838: CarPro
+[2026-01-29 11:45:31] [SUCCESS]   Completed
+[2026-01-29 11:45:31] [INFO] Processing subscription 118 of 838: CASE AMERICAS AZURE ACCOUNT
+[2026-01-29 11:45:33] [SUCCESS]   Completed
+[2026-01-29 11:45:33] [INFO] Processing subscription 119 of 838: CB-Azure-Marketplace
+[2026-01-29 11:45:35] [SUCCESS]   Completed
+[2026-01-29 11:45:35] [INFO] Processing subscription 120 of 838: cc-enabling
+[2026-01-29 11:45:36] [SUCCESS]   Completed
+[2026-01-29 11:45:36] [INFO] Processing subscription 121 of 838: CCD Azure
+[2026-01-29 11:45:38] [SUCCESS]   Completed
+[2026-01-29 11:45:38] [INFO] Processing subscription 122 of 838: CCE Global POCs
+[2026-01-29 11:45:39] [SUCCESS]   Completed
+[2026-01-29 11:45:39] [INFO] Processing subscription 123 of 838: CCE_Global_GAI
+[2026-01-29 11:45:41] [SUCCESS]   Completed
+[2026-01-29 11:45:41] [INFO] Processing subscription 124 of 838: CCID GenAI Projects
+[2026-01-29 11:45:42] [SUCCESS]   Completed
+[2026-01-29 11:45:42] [INFO] Processing subscription 125 of 838: CCVG-DPD TCE Intel Dist of Python and Intel DAAL testing
+[2026-01-29 11:45:44] [SUCCESS]   Completed
+[2026-01-29 11:45:44] [INFO] Processing subscription 126 of 838: CDA - Central Data Store - PreProd
+[2026-01-29 11:45:45] [SUCCESS]   Completed
+[2026-01-29 11:45:45] [INFO] Processing subscription 127 of 838: CDA - Central Data Store - Prod
+[2026-01-29 11:45:47] [SUCCESS]   Completed
+[2026-01-29 11:45:47] [INFO] Processing subscription 128 of 838: cda-dev1
+[2026-01-29 11:45:48] [SUCCESS]   Completed
+[2026-01-29 11:45:48] [INFO] Processing subscription 129 of 838: cda-m4
+[2026-01-29 11:45:49] [SUCCESS]   Completed
+[2026-01-29 11:45:49] [INFO] Processing subscription 130 of 838: cda-m7
+[2026-01-29 11:45:51] [SUCCESS]   Completed
+[2026-01-29 11:45:51] [INFO] Processing subscription 131 of 838: cdm-dev1-discrete
+[2026-01-29 11:45:52] [SUCCESS]   Completed
+[2026-01-29 11:45:52] [INFO] Processing subscription 132 of 838: CESGSW benchmarking
+[2026-01-29 11:45:53] [SUCCESS]   Completed
+[2026-01-29 11:45:53] [INFO] Processing subscription 133 of 838: CEXcode_server_patch_coordinator
+[2026-01-29 11:45:54] [SUCCESS]   Completed
+[2026-01-29 11:45:54] [INFO] Processing subscription 134 of 838: CGAI AI
+[2026-01-29 11:45:56] [SUCCESS]   Completed
+[2026-01-29 11:45:56] [INFO] Processing subscription 135 of 838: chai-discrete
+[2026-01-29 11:45:57] [SUCCESS]   Completed
+[2026-01-29 11:45:57] [INFO] Processing subscription 136 of 838: Charles Chu AI Product
+[2026-01-29 11:45:59] [SUCCESS]   Completed
+[2026-01-29 11:45:59] [INFO] Processing subscription 137 of 838: Charles_Chu AI POC
+[2026-01-29 11:46:00] [SUCCESS]   Completed
+[2026-01-29 11:46:00] [INFO] Processing subscription 138 of 838: Charles_Chu AI Product
+[2026-01-29 11:46:02] [SUCCESS]   Completed
+[2026-01-29 11:46:02] [INFO] Processing subscription 139 of 838: China Data Lake Dev
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:46:03] [SUCCESS]   Completed
+[2026-01-29 11:46:03] [INFO] Processing subscription 140 of 838: CIDaaS
+[2026-01-29 11:46:05] [SUCCESS]   Completed
+[2026-01-29 11:46:05] [INFO] Processing subscription 141 of 838: CIDaaS-PR
+[2026-01-29 11:46:06] [SUCCESS]   Completed
+[2026-01-29 11:46:06] [INFO] Processing subscription 142 of 838: CIMS Azure Dev Playground Discrete External
+[2026-01-29 11:46:07] [SUCCESS]   Completed
+[2026-01-29 11:46:07] [INFO] Processing subscription 143 of 838: CIMS Azure Dev Playground Hybrid Internal
+[2026-01-29 11:46:11] [SUCCESS]   Completed
+[2026-01-29 11:46:11] [INFO] Processing subscription 144 of 838: CJE-MCP-17759
+[2026-01-29 11:46:13] [SUCCESS]   Completed
+[2026-01-29 11:46:13] [INFO] Processing subscription 145 of 838: ClientMonitoringPOC
+[2026-01-29 11:46:14] [SUCCESS]   Completed
+[2026-01-29 11:46:14] [INFO] Processing subscription 146 of 838: Cloud application security MSDN DevTest
+[2026-01-29 11:46:15] [SUCCESS]   Completed
+[2026-01-29 11:46:15] [INFO] Processing subscription 147 of 838: Cloud Brokers - ASC Testing
+[2026-01-29 11:46:17] [SUCCESS]   Completed
+[2026-01-29 11:46:17] [INFO] Processing subscription 148 of 838: Cloud Brokers - Testing IGBN
+[2026-01-29 11:46:18] [SUCCESS]   Completed
+[2026-01-29 11:46:18] [INFO] Processing subscription 149 of 838: Cloud Native
+[2026-01-29 11:46:20] [SUCCESS]   Completed
+[2026-01-29 11:46:20] [INFO] Processing subscription 150 of 838: Cloud Solution Engineering
+[2026-01-29 11:46:21] [SUCCESS]   Completed
+[2026-01-29 11:46:21] [INFO] Processing subscription 151 of 838: cloudbroker-infosec
+[2026-01-29 11:46:22] [SUCCESS]   Completed
+[2026-01-29 11:46:22] [INFO] Processing subscription 152 of 838: CNB
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:46:24] [SUCCESS]   Completed
+[2026-01-29 11:46:24] [INFO] Processing subscription 153 of 838: Co-Design for MPE
+[2026-01-29 11:46:25] [SUCCESS]   Completed
+[2026-01-29 11:46:25] [INFO] Processing subscription 154 of 838: Co-Design for Validation
+[2026-01-29 11:46:27] [SUCCESS]   Completed
+[2026-01-29 11:46:27] [INFO] Processing subscription 155 of 838: CoDesign - code - hsd
+[2026-01-29 11:46:28] [SUCCESS]   Completed
+[2026-01-29 11:46:28] [INFO] Processing subscription 156 of 838: CoDesign-code-hsd-mai
+[2026-01-29 11:46:29] [SUCCESS]   Completed
+[2026-01-29 11:46:29] [INFO] Processing subscription 157 of 838: Cognitive Computing Research
+[2026-01-29 11:46:31] [SUCCESS]   Completed
+[2026-01-29 11:46:31] [INFO] Processing subscription 158 of 838: Commando
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:46:33] [SUCCESS]   Completed
+[2026-01-29 11:46:33] [INFO] Processing subscription 159 of 838: commissions
+[2026-01-29 11:46:34] [SUCCESS]   Completed
+[2026-01-29 11:46:34] [INFO] Processing subscription 160 of 838: Cooperstown 3
+[2026-01-29 11:46:35] [SUCCESS]   Completed
+[2026-01-29 11:46:35] [INFO] Processing subscription 161 of 838: CoreValTools IGBN
+[2026-01-29 11:46:37] [SUCCESS]   Completed
+[2026-01-29 11:46:37] [INFO] Processing subscription 162 of 838: corp-cda-m2
+[2026-01-29 11:46:38] [SUCCESS]   Completed
+[2026-01-29 11:46:38] [INFO] Processing subscription 163 of 838: corp-cda-m3
+[2026-01-29 11:46:39] [SUCCESS]   Completed
+[2026-01-29 11:46:39] [INFO] Processing subscription 164 of 838: corp-deo-dev1
+[2026-01-29 11:46:41] [SUCCESS]   Completed
+[2026-01-29 11:46:41] [INFO] Processing subscription 165 of 838: corp-deo-m2
+[2026-01-29 11:46:42] [SUCCESS]   Completed
+[2026-01-29 11:46:42] [INFO] Processing subscription 166 of 838: corp-deo-m3
+[2026-01-29 11:46:43] [SUCCESS]   Completed
+[2026-01-29 11:46:43] [INFO] Processing subscription 167 of 838: corp-deo-m4
+[2026-01-29 11:46:45] [SUCCESS]   Completed
+[2026-01-29 11:46:45] [INFO] Processing subscription 168 of 838: corp-finance-dev1
+[2026-01-29 11:46:46] [SUCCESS]   Completed
+[2026-01-29 11:46:46] [INFO] Processing subscription 169 of 838: corp-finance-m2
+[2026-01-29 11:46:47] [SUCCESS]   Completed
+[2026-01-29 11:46:47] [INFO] Processing subscription 170 of 838: corp-ltg-dev
+[2026-01-29 11:46:49] [SUCCESS]   Completed
+[2026-01-29 11:46:49] [INFO] Processing subscription 171 of 838: corp-ltg-m2
+[2026-01-29 11:46:50] [SUCCESS]   Completed
+[2026-01-29 11:46:50] [INFO] Processing subscription 172 of 838: corp-mdata-dev1
+[2026-01-29 11:46:51] [SUCCESS]   Completed
+[2026-01-29 11:46:51] [INFO] Processing subscription 173 of 838: corp-mdata-m2
+[2026-01-29 11:46:53] [SUCCESS]   Completed
+[2026-01-29 11:46:53] [INFO] Processing subscription 174 of 838: corp-sc-dev
+[2026-01-29 11:46:54] [SUCCESS]   Completed
+[2026-01-29 11:46:54] [INFO] Processing subscription 175 of 838: corp-sc-dev1
+[2026-01-29 11:46:56] [SUCCESS]   Completed
+[2026-01-29 11:46:56] [INFO] Processing subscription 176 of 838: Corporate Services Data Analytics
+[2026-01-29 11:46:59] [SUCCESS]   Completed
+[2026-01-29 11:46:59] [INFO] Processing subscription 177 of 838: Corporate Services Data lake
+[2026-01-29 11:47:00] [SUCCESS]   Completed
+[2026-01-29 11:47:00] [INFO] Processing subscription 178 of 838: Corporate Services Data Lake PreProd
+[2026-01-29 11:47:02] [SUCCESS]   Completed
+[2026-01-29 11:47:02] [INFO] Processing subscription 179 of 838: covalidator
+[2026-01-29 11:47:03] [SUCCESS]   Completed
+[2026-01-29 11:47:03] [INFO] Processing subscription 180 of 838: coveragelens-2025
+[2026-01-29 11:47:04] [SUCCESS]   Completed
+[2026-01-29 11:47:04] [INFO] Processing subscription 181 of 838: CP - Central Data Store - PreProd
+[2026-01-29 11:47:06] [SUCCESS]   Completed
+[2026-01-29 11:47:06] [INFO] Processing subscription 182 of 838: CP - Master Data - Dev
+[2026-01-29 11:47:07] [SUCCESS]   Completed
+[2026-01-29 11:47:07] [INFO] Processing subscription 183 of 838: cp-buc-workforce-prod
+[2026-01-29 11:47:09] [SUCCESS]   Completed
+[2026-01-29 11:47:09] [INFO] Processing subscription 184 of 838: cp-cda-dev1
+[2026-01-29 11:47:10] [SUCCESS]   Completed
+[2026-01-29 11:47:10] [INFO] Processing subscription 185 of 838: cp-cda-m4
+[2026-01-29 11:47:11] [SUCCESS]   Completed
+[2026-01-29 11:47:11] [INFO] Processing subscription 186 of 838: cp-cda-m7
+[2026-01-29 11:47:14] [SUCCESS]   Completed
+[2026-01-29 11:47:14] [INFO] Processing subscription 187 of 838: cp-cda-preprod-m1
+[2026-01-29 11:47:15] [SUCCESS]   Completed
+[2026-01-29 11:47:15] [INFO] Processing subscription 188 of 838: cp-cda-prod
+[2026-01-29 11:47:16] [SUCCESS]   Completed
+[2026-01-29 11:47:16] [INFO] Processing subscription 189 of 838: cp-cda-qa
+[2026-01-29 11:47:18] [SUCCESS]   Completed
+[2026-01-29 11:47:18] [INFO] Processing subscription 190 of 838: cp-csdatalake-preprod
+[2026-01-29 11:47:20] [SUCCESS]   Completed
+[2026-01-29 11:47:20] [INFO] Processing subscription 191 of 838: cp-csdatalake-prod
+[2026-01-29 11:47:21] [SUCCESS]   Completed
+[2026-01-29 11:47:21] [INFO] Processing subscription 192 of 838: cp-csdatalake-qa
+[2026-01-29 11:47:23] [SUCCESS]   Completed
+[2026-01-29 11:47:23] [INFO] Processing subscription 193 of 838: cp-deo-m1
+[2026-01-29 11:47:24] [SUCCESS]   Completed
+[2026-01-29 11:47:24] [INFO] Processing subscription 194 of 838: cp-deo-m7
+[2026-01-29 11:47:26] [SUCCESS]   Completed
+[2026-01-29 11:47:26] [INFO] Processing subscription 195 of 838: CP-DEO-PREPROD
+[2026-01-29 11:47:27] [SUCCESS]   Completed
+[2026-01-29 11:47:27] [INFO] Processing subscription 196 of 838: cp-deo-prod
+[2026-01-29 11:47:29] [SUCCESS]   Completed
+[2026-01-29 11:47:29] [INFO] Processing subscription 197 of 838: cp-deo-qa
+[2026-01-29 11:47:30] [SUCCESS]   Completed
+[2026-01-29 11:47:30] [INFO] Processing subscription 198 of 838: cp-ent-data-gov-dq-dev
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:47:32] [SUCCESS]   Completed
+[2026-01-29 11:47:32] [INFO] Processing subscription 199 of 838: cp-ent-data-gov-dq-prd
+[2026-01-29 11:47:34] [SUCCESS]   Completed
+[2026-01-29 11:47:34] [INFO] Processing subscription 200 of 838: cp-ent-data-gov-dq-qa
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:47:35] [SUCCESS]   Completed
+[2026-01-29 11:47:35] [INFO] Processing subscription 201 of 838: cp-finance-biz-prod
+[2026-01-29 11:47:36] [SUCCESS]   Completed
+[2026-01-29 11:47:36] [INFO] Processing subscription 202 of 838: CP-Finance-Dev
+[2026-01-29 11:47:38] [SUCCESS]   Completed
+[2026-01-29 11:47:38] [INFO] Processing subscription 203 of 838: cp-finance-m1
+[2026-01-29 11:47:40] [SUCCESS]   Completed
+[2026-01-29 11:47:40] [INFO] Processing subscription 204 of 838: cp-finance-m3
+[2026-01-29 11:47:42] [SUCCESS]   Completed
+[2026-01-29 11:47:42] [INFO] Processing subscription 205 of 838: cp-finance-m4
+[2026-01-29 11:47:44] [SUCCESS]   Completed
+[2026-01-29 11:47:44] [INFO] Processing subscription 206 of 838: cp-finance-m7
+[2026-01-29 11:47:47] [SUCCESS]   Completed
+[2026-01-29 11:47:47] [INFO] Processing subscription 207 of 838: cp-finance-prod
+[2026-01-29 11:47:49] [SUCCESS]   Completed
+[2026-01-29 11:47:49] [INFO] Processing subscription 208 of 838: cp-finance-qa
+[2026-01-29 11:47:50] [SUCCESS]   Completed
+[2026-01-29 11:47:50] [INFO] Processing subscription 209 of 838: cp-gsco-m7
+[2026-01-29 11:47:52] [SUCCESS]   Completed
+[2026-01-29 11:47:52] [INFO] Processing subscription 210 of 838: cp-gscoda-buc-m4
+[2026-01-29 11:47:53] [SUCCESS]   Completed
+[2026-01-29 11:47:53] [INFO] Processing subscription 211 of 838: cp-gscoda-buc-preprod
+[2026-01-29 11:47:54] [SUCCESS]   Completed
+[2026-01-29 11:47:54] [INFO] Processing subscription 212 of 838: cp-gscoda-buc-prod
+[2026-01-29 11:47:56] [SUCCESS]   Completed
+[2026-01-29 11:47:56] [INFO] Processing subscription 213 of 838: cp-ltg-dev1
+[2026-01-29 11:47:57] [SUCCESS]   Completed
+[2026-01-29 11:47:57] [INFO] Processing subscription 214 of 838: cp-ltg-m2
+[2026-01-29 11:47:59] [SUCCESS]   Completed
+[2026-01-29 11:47:59] [INFO] Processing subscription 215 of 838: cp-ltg-m4
+[2026-01-29 11:48:00] [SUCCESS]   Completed
+[2026-01-29 11:48:00] [INFO] Processing subscription 216 of 838: cp-ltg-m7
+[2026-01-29 11:48:02] [SUCCESS]   Completed
+[2026-01-29 11:48:02] [INFO] Processing subscription 217 of 838: cp-ltg-prod
+[2026-01-29 11:48:04] [SUCCESS]   Completed
+[2026-01-29 11:48:04] [INFO] Processing subscription 218 of 838: cp-ltg-qa
+[2026-01-29 11:48:05] [SUCCESS]   Completed
+[2026-01-29 11:48:05] [INFO] Processing subscription 219 of 838: cp-m2r-dev
+[2026-01-29 11:48:07] [SUCCESS]   Completed
+[2026-01-29 11:48:07] [INFO] Processing subscription 220 of 838: cp-m2r-dev1
+[2026-01-29 11:48:08] [SUCCESS]   Completed
+[2026-01-29 11:48:08] [INFO] Processing subscription 221 of 838: cp-m2r-m4
+[2026-01-29 11:48:09] [SUCCESS]   Completed
+[2026-01-29 11:48:09] [INFO] Processing subscription 222 of 838: cp-m2r-m7
+[2026-01-29 11:48:11] [SUCCESS]   Completed
+[2026-01-29 11:48:11] [INFO] Processing subscription 223 of 838: cp-m2r-prod
+[2026-01-29 11:48:12] [SUCCESS]   Completed
+[2026-01-29 11:48:12] [INFO] Processing subscription 224 of 838: cp-m2r-qa
+[2026-01-29 11:48:14] [SUCCESS]   Completed
+[2026-01-29 11:48:14] [INFO] Processing subscription 225 of 838: cp-mdata-m1
+[2026-01-29 11:48:15] [SUCCESS]   Completed
+[2026-01-29 11:48:15] [INFO] Processing subscription 226 of 838: cp-mdata-m3
+[2026-01-29 11:48:16] [SUCCESS]   Completed
+[2026-01-29 11:48:16] [INFO] Processing subscription 227 of 838: cp-mdata-m4
+[2026-01-29 11:48:18] [SUCCESS]   Completed
+[2026-01-29 11:48:18] [INFO] Processing subscription 228 of 838: cp-mdata-m7
+[2026-01-29 11:48:19] [SUCCESS]   Completed
+[2026-01-29 11:48:19] [INFO] Processing subscription 229 of 838: cp-mdata-prod
+[2026-01-29 11:48:20] [SUCCESS]   Completed
+[2026-01-29 11:48:20] [INFO] Processing subscription 230 of 838: cp-mdata-qa
+[2026-01-29 11:48:22] [SUCCESS]   Completed
+[2026-01-29 11:48:22] [INFO] Processing subscription 231 of 838: cp-sc-m4
+[2026-01-29 11:48:23] [SUCCESS]   Completed
+[2026-01-29 11:48:23] [INFO] Processing subscription 232 of 838: cp-sc-m7
+[2026-01-29 11:48:24] [SUCCESS]   Completed
+[2026-01-29 11:48:24] [INFO] Processing subscription 233 of 838: cp-schain-prod
+[2026-01-29 11:48:26] [SUCCESS]   Completed
+[2026-01-29 11:48:26] [INFO] Processing subscription 234 of 838: cp-schain-qa
+[2026-01-29 11:48:27] [SUCCESS]   Completed
+[2026-01-29 11:48:27] [INFO] Processing subscription 235 of 838: cp-workforce-dev
+[2026-01-29 11:48:28] [SUCCESS]   Completed
+[2026-01-29 11:48:28] [INFO] Processing subscription 236 of 838: cp-workforce-prod
+[2026-01-29 11:48:30] [SUCCESS]   Completed
+[2026-01-29 11:48:30] [INFO] Processing subscription 237 of 838: cp-workforce-qa
+[2026-01-29 11:48:32] [SUCCESS]   Completed
+[2026-01-29 11:48:32] [INFO] Processing subscription 238 of 838: CPDP CEE EIDE SOLVE Team
+[2026-01-29 11:48:33] [SUCCESS]   Completed
+[2026-01-29 11:48:33] [INFO] Processing subscription 239 of 838: CPS System Design Studio
+[2026-01-29 11:48:34] [SUCCESS]   Completed
+[2026-01-29 11:48:34] [INFO] Processing subscription 240 of 838: cps-agentic-hw-design
+[2026-01-29 11:48:35] [SUCCESS]   Completed
+[2026-01-29 11:48:35] [INFO] Processing subscription 241 of 838: cqsi_cqncloud
+[2026-01-29 11:48:37] [SUCCESS]   Completed
+[2026-01-29 11:48:37] [INFO] Processing subscription 242 of 838: Crypto Key Management Production AZURE
+[2026-01-29 11:48:38] [SUCCESS]   Completed
+[2026-01-29 11:48:38] [INFO] Processing subscription 243 of 838: csai_azr_test_discrete
+[2026-01-29 11:48:39] [SUCCESS]   Completed
+[2026-01-29 11:48:39] [INFO] Processing subscription 244 of 838: csai-azr-prod-int
+[2026-01-29 11:48:40] [SUCCESS]   Completed
+[2026-01-29 11:48:40] [INFO] Processing subscription 245 of 838: csai-azr-test-ex-hyb
+[2026-01-29 11:48:41] [SUCCESS]   Completed
+[2026-01-29 11:48:41] [INFO] Processing subscription 246 of 838: csai-azr-test-in-hyb
+[2026-01-29 11:48:43] [SUCCESS]   Completed
+[2026-01-29 11:48:43] [INFO] Processing subscription 247 of 838: csai-cloud-prod-azr
+[2026-01-29 11:48:44] [SUCCESS]   Completed
+[2026-01-29 11:48:44] [INFO] Processing subscription 248 of 838: csai-cloud-sw-xdr-prod
+[2026-01-29 11:48:45] [SUCCESS]   Completed
+[2026-01-29 11:48:45] [INFO] Processing subscription 249 of 838: CSE Azure Cloud
+[2026-01-29 11:48:46] [SUCCESS]   Completed
+[2026-01-29 11:48:46] [INFO] Processing subscription 250 of 838: cspbenchazure
+[2026-01-29 11:48:48] [SUCCESS]   Completed
+[2026-01-29 11:48:48] [INFO] Processing subscription 251 of 838: cst-ai-code-review
+[2026-01-29 11:48:49] [SUCCESS]   Completed
+[2026-01-29 11:48:49] [INFO] Processing subscription 252 of 838: Cumulus
+[2026-01-29 11:48:51] [SUCCESS]   Completed
+[2026-01-29 11:48:51] [INFO] Processing subscription 253 of 838: Customer Technical Training Azure Hosting
+[2026-01-29 11:48:52] [SUCCESS]   Completed
+[2026-01-29 11:48:52] [INFO] Processing subscription 254 of 838: cvm-tdx
+[2026-01-29 11:48:53] [SUCCESS]   Completed
+[2026-01-29 11:48:53] [INFO] Processing subscription 255 of 838: DAAL
+[2026-01-29 11:48:54] [SUCCESS]   Completed
+[2026-01-29 11:48:54] [INFO] Processing subscription 256 of 838: DARC
+[2026-01-29 11:48:56] [SUCCESS]   Completed
+[2026-01-29 11:48:56] [INFO] Processing subscription 257 of 838: darc-iao-18973
+[2026-01-29 11:48:59] [SUCCESS]   Completed
+[2026-01-29 11:48:59] [INFO] Processing subscription 258 of 838: DataProtection_DownloadSite
+[2026-01-29 11:49:00] [SUCCESS]   Completed
+[2026-01-29 11:49:00] [INFO] Processing subscription 259 of 838: dbaas_poc
+[2026-01-29 11:49:01] [SUCCESS]   Completed
+[2026-01-29 11:49:01] [INFO] Processing subscription 260 of 838: dcai-az-ext
+[2026-01-29 11:49:03] [SUCCESS]   Completed
+[2026-01-29 11:49:03] [INFO] Processing subscription 261 of 838: dcai-services-framework-validation-azure
+[2026-01-29 11:49:04] [SUCCESS]   Completed
+[2026-01-29 11:49:04] [INFO] Processing subscription 262 of 838: dcai-sol
+[2026-01-29 11:49:05] [SUCCESS]   Completed
+[2026-01-29 11:49:05] [INFO] Processing subscription 263 of 838: DCCompMarketing
+[2026-01-29 11:49:07] [SUCCESS]   Completed
+[2026-01-29 11:49:07] [INFO] Processing subscription 264 of 838: DCG XMR Azure
+[2026-01-29 11:49:08] [SUCCESS]   Completed
+[2026-01-29 11:49:08] [INFO] Processing subscription 265 of 838: ddg-agentic
+[2026-01-29 11:49:09] [SUCCESS]   Completed
+[2026-01-29 11:49:09] [INFO] Processing subscription 266 of 838: deapclouddev
+[2026-01-29 11:49:10] [SUCCESS]   Completed
+[2026-01-29 11:49:10] [INFO] Processing subscription 267 of 838: deapcloudprod
+[2026-01-29 11:49:11] [SUCCESS]   Completed
+[2026-01-29 11:49:11] [INFO] Processing subscription 268 of 838: Deep Learning Azure
+[2026-01-29 11:49:13] [SUCCESS]   Completed
+[2026-01-29 11:49:13] [INFO] Processing subscription 269 of 838: DEG_IMSG_AI_Initiative
+[2026-01-29 11:49:14] [SUCCESS]   Completed
+[2026-01-29 11:49:14] [INFO] Processing subscription 270 of 838: DEG_IMSG_AI_Initiative_PROD
+[2026-01-29 11:49:16] [SUCCESS]   Completed
+[2026-01-29 11:49:16] [INFO] Processing subscription 271 of 838: deloitte-genai-data
+[2026-01-29 11:49:17] [SUCCESS]   Completed
+[2026-01-29 11:49:17] [INFO] Processing subscription 272 of 838: demand-planning-cloud
+[2026-01-29 11:49:18] [SUCCESS]   Completed
+[2026-01-29 11:49:18] [INFO] Processing subscription 273 of 838: demandplanningcloud
+[2026-01-29 11:49:19] [SUCCESS]   Completed
+[2026-01-29 11:49:19] [INFO] Processing subscription 274 of 838: DEO Preprod
+[2026-01-29 11:49:21] [SUCCESS]   Completed
+[2026-01-29 11:49:21] [INFO] Processing subscription 275 of 838: DEO Prod
+[2026-01-29 11:49:22] [SUCCESS]   Completed
+[2026-01-29 11:49:22] [INFO] Processing subscription 276 of 838: DEO Sandbox
+[2026-01-29 11:49:23] [SUCCESS]   Completed
+[2026-01-29 11:49:23] [INFO] Processing subscription 277 of 838: deo-dev1
+[2026-01-29 11:49:25] [SUCCESS]   Completed
+[2026-01-29 11:49:25] [INFO] Processing subscription 278 of 838: deo-m4
+[2026-01-29 11:49:26] [SUCCESS]   Completed
+[2026-01-29 11:49:26] [INFO] Processing subscription 279 of 838: deo-m7
+[2026-01-29 11:49:28] [SUCCESS]   Completed
+[2026-01-29 11:49:28] [INFO] Processing subscription 280 of 838: Design and Quality Data Hub Prod
+[2026-01-29 11:49:29] [SUCCESS]   Completed
+[2026-01-29 11:49:29] [INFO] Processing subscription 281 of 838: design-agents
+[2026-01-29 11:49:30] [SUCCESS]   Completed
+[2026-01-29 11:49:30] [INFO] Processing subscription 282 of 838: Dev Hosting AI Sandbox
+[2026-01-29 11:49:32] [SUCCESS]   Completed
+[2026-01-29 11:49:32] [INFO] Processing subscription 283 of 838: Development - IPDS
+[2026-01-29 11:49:34] [SUCCESS]   Completed
+[2026-01-29 11:49:34] [INFO] Processing subscription 284 of 838: DFD_SSE_GAI_GUOMN
+[2026-01-29 11:49:35] [SUCCESS]   Completed
+[2026-01-29 11:49:35] [INFO] Processing subscription 285 of 838: dfx-agents
+[2026-01-29 11:49:36] [SUCCESS]   Completed
+[2026-01-29 11:49:36] [INFO] Processing subscription 286 of 838: dfxai
+[2026-01-29 11:49:37] [SUCCESS]   Completed
+[2026-01-29 11:49:37] [INFO] Processing subscription 287 of 838: Digital Platforms Solutions
+[2026-01-29 11:49:39] [SUCCESS]   Completed
+[2026-01-29 11:49:39] [INFO] Processing subscription 288 of 838: discovery-platform
+[2026-01-29 11:49:40] [SUCCESS]   Completed
+[2026-01-29 11:49:40] [INFO] Processing subscription 289 of 838: docpub-azure
+[2026-01-29 11:49:41] [SUCCESS]   Completed
+[2026-01-29 11:49:41] [INFO] Processing subscription 290 of 838: Document Locator
+[2026-01-29 11:49:43] [SUCCESS]   Completed
+[2026-01-29 11:49:43] [INFO] Processing subscription 291 of 838: Document Locator SB
+[2026-01-29 11:49:44] [SUCCESS]   Completed
+[2026-01-29 11:49:44] [INFO] Processing subscription 292 of 838: Dynatrace_Azure
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:49:45] [SUCCESS]   Completed
+[2026-01-29 11:49:45] [INFO] Processing subscription 293 of 838: EAD-EDQ-CDM-PREPROD
+[2026-01-29 11:49:47] [SUCCESS]   Completed
+[2026-01-29 11:49:47] [INFO] Processing subscription 294 of 838: EAD-EDQ-CDM-PREPROD-DISCRETE
+[2026-01-29 11:49:48] [SUCCESS]   Completed
+[2026-01-29 11:49:48] [INFO] Processing subscription 295 of 838: EAD-EDQ-CDM-PROD
+[2026-01-29 11:49:49] [SUCCESS]   Completed
+[2026-01-29 11:49:49] [INFO] Processing subscription 296 of 838: EAD-EDQ-CDM-PROD-DISCRETE
+[2026-01-29 11:49:51] [SUCCESS]   Completed
+[2026-01-29 11:49:51] [INFO] Processing subscription 297 of 838: EAD-EDQ-CDM-SANDBOX-DISCRETE
+[2026-01-29 11:49:52] [SUCCESS]   Completed
+[2026-01-29 11:49:52] [INFO] Processing subscription 298 of 838: EAD-EDQ-IPOS-NONPROD
+[2026-01-29 11:49:53] [SUCCESS]   Completed
+[2026-01-29 11:49:53] [INFO] Processing subscription 299 of 838: EAIG AI POC
+[2026-01-29 11:49:55] [SUCCESS]   Completed
+[2026-01-29 11:49:55] [INFO] Processing subscription 300 of 838: ece-ai
+[2026-01-29 11:49:56] [SUCCESS]   Completed
+[2026-01-29 11:49:56] [INFO] Processing subscription 301 of 838: ece-pae-llm
+[2026-01-29 11:49:57] [SUCCESS]   Completed
+[2026-01-29 11:49:57] [INFO] Processing subscription 302 of 838: ECND SW Engineering
+[2026-01-29 11:49:58] [SUCCESS]   Completed
+[2026-01-29 11:49:58] [INFO] Processing subscription 303 of 838: Eco-Spot Subscription
+[2026-01-29 11:50:00] [SUCCESS]   Completed
+[2026-01-29 11:50:00] [INFO] Processing subscription 304 of 838: ECVD Azure Media Benchmark
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:50:01] [SUCCESS]   Completed
+[2026-01-29 11:50:01] [INFO] Processing subscription 305 of 838: edge-insights
+[2026-01-29 11:50:03] [SUCCESS]   Completed
+[2026-01-29 11:50:03] [INFO] Processing subscription 306 of 838: Edgecsp
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:50:05] [SUCCESS]   Completed
+[2026-01-29 11:50:05] [INFO] Processing subscription 307 of 838: ediagnostics
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:50:08] [SUCCESS]   Completed
+[2026-01-29 11:50:08] [INFO] Processing subscription 308 of 838: ediscosearch
+[2026-01-29 11:50:10] [SUCCESS]   Completed
+[2026-01-29 11:50:10] [INFO] Processing subscription 309 of 838: ema-brasil
+[2026-01-29 11:50:11] [SUCCESS]   Completed
+[2026-01-29 11:50:11] [INFO] Processing subscription 310 of 838: ema-demo1-lapan
+[2026-01-29 11:50:12] [SUCCESS]   Completed
+[2026-01-29 11:50:12] [INFO] Processing subscription 311 of 838: EMA-SMG
+[2026-01-29 11:50:14] [SUCCESS]   Completed
+[2026-01-29 11:50:14] [INFO] Processing subscription 312 of 838: EmaAzureDevTesting
+[2026-01-29 11:50:16] [SUCCESS]   Completed
+[2026-01-29 11:50:16] [INFO] Processing subscription 313 of 838: embtriagebot
+[2026-01-29 11:50:17] [SUCCESS]   Completed
+[2026-01-29 11:50:17] [INFO] Processing subscription 314 of 838: Endpoint Management Assistant EMEAT
+[2026-01-29 11:50:18] [SUCCESS]   Completed
+[2026-01-29 11:50:18] [INFO] Processing subscription 315 of 838: Engineering Applications
+[2026-01-29 11:50:20] [SUCCESS]   Completed
+[2026-01-29 11:50:20] [INFO] Processing subscription 316 of 838: Enterprise Data Governance and Quality
+[2026-01-29 11:50:21] [SUCCESS]   Completed
+[2026-01-29 11:50:21] [INFO] Processing subscription 317 of 838: Enterprise Data Governance App Engg - Pre Prod
+[2026-01-29 11:50:23] [SUCCESS]   Completed
+[2026-01-29 11:50:23] [INFO] Processing subscription 318 of 838: Enterprise Data Governance App Engg - Prod
+[2026-01-29 11:50:25] [SUCCESS]   Completed
+[2026-01-29 11:50:25] [INFO] Processing subscription 319 of 838: Enterprise Dev/Test
+[2026-01-29 11:50:26] [SUCCESS]   Completed
+[2026-01-29 11:50:26] [INFO] Processing subscription 320 of 838: Enterprise Hosting Sandbox
+[2026-01-29 11:50:28] [SUCCESS]   Completed
+[2026-01-29 11:50:28] [INFO] Processing subscription 321 of 838: Enterprise Platforms-Data Platform
+[2026-01-29 11:50:29] [SUCCESS]   Completed
+[2026-01-29 11:50:29] [INFO] Processing subscription 322 of 838: Enterprise_Hosting_ECO_Spot
+[2026-01-29 11:50:31] [SUCCESS]   Completed
+[2026-01-29 11:50:31] [INFO] Processing subscription 323 of 838: enterprise-search
+[2026-01-29 11:50:32] [SUCCESS]   Completed
+[2026-01-29 11:50:32] [INFO] Processing subscription 324 of 838: EPG System Revenue
+[2026-01-29 11:50:33] [SUCCESS]   Completed
+[2026-01-29 11:50:33] [INFO] Processing subscription 325 of 838: EPG_SIE_CIM
+[2026-01-29 11:50:34] [SUCCESS]   Completed
+[2026-01-29 11:50:34] [INFO] Processing subscription 326 of 838: ethernet_fnic_ipu_azure_devops
+[2026-01-29 11:50:36] [SUCCESS]   Completed
+[2026-01-29 11:50:36] [INFO] Processing subscription 327 of 838: EUC Engineering Training
+[2026-01-29 11:50:37] [SUCCESS]   Completed
+[2026-01-29 11:50:37] [INFO] Processing subscription 328 of 838: Europe iBEMS account
+[2026-01-29 11:50:38] [SUCCESS]   Completed
+[2026-01-29 11:50:38] [INFO] Processing subscription 329 of 838: ezbotchatbot
+[2026-01-29 11:50:40] [SUCCESS]   Completed
+[2026-01-29 11:50:40] [INFO] Processing subscription 330 of 838: F28-TM2-BE-CSB Server
+[2026-01-29 11:50:41] [SUCCESS]   Completed
+[2026-01-29 11:50:41] [INFO] Processing subscription 331 of 838: Fabric-Capacity-ITAIS
+[2026-01-29 11:50:43] [SUCCESS]   Completed
+[2026-01-29 11:50:43] [INFO] Processing subscription 332 of 838: FAMBot
+[2026-01-29 11:50:44] [SUCCESS]   Completed
+[2026-01-29 11:50:44] [INFO] Processing subscription 333 of 838: FCE Development
+[2026-01-29 11:50:46] [SUCCESS]   Completed
+[2026-01-29 11:50:46] [INFO] Processing subscription 334 of 838: FCE Information Systems
+[2026-01-29 11:50:47] [SUCCESS]   Completed
+[2026-01-29 11:50:47] [INFO] Processing subscription 335 of 838: FCE Production
+[2026-01-29 11:50:49] [SUCCESS]   Completed
+[2026-01-29 11:50:49] [INFO] Processing subscription 336 of 838: File Transfer IFS (Pre-Prod)
+[2026-01-29 11:50:50] [SUCCESS]   Completed
+[2026-01-29 11:50:50] [INFO] Processing subscription 337 of 838: fin-dev1
+[2026-01-29 11:50:52] [SUCCESS]   Completed
+[2026-01-29 11:50:52] [INFO] Processing subscription 338 of 838: Finance Analytics
+[2026-01-29 11:50:53] [SUCCESS]   Completed
+[2026-01-29 11:50:53] [INFO] Processing subscription 339 of 838: Finance Analytics - IT Managed
+[2026-01-29 11:50:54] [SUCCESS]   Completed
+[2026-01-29 11:50:54] [INFO] Processing subscription 340 of 838: Finance PreProd
+[2026-01-29 11:50:56] [SUCCESS]   Completed
+[2026-01-29 11:50:56] [INFO] Processing subscription 341 of 838: Finance Sandbox
+[2026-01-29 11:50:57] [SUCCESS]   Completed
+[2026-01-29 11:50:57] [INFO] Processing subscription 342 of 838: fiv_copilot
+[2026-01-29 11:50:59] [SUCCESS]   Completed
+[2026-01-29 11:50:59] [INFO] Processing subscription 343 of 838: FIVCoPilot
+[2026-01-29 11:51:00] [SUCCESS]   Completed
+[2026-01-29 11:51:00] [INFO] Processing subscription 344 of 838: FleetAssistant
+[2026-01-29 11:51:02] [SUCCESS]   Completed
+[2026-01-29 11:51:02] [INFO] Processing subscription 345 of 838: FlexAgent
+[2026-01-29 11:51:03] [SUCCESS]   Completed
+[2026-01-29 11:51:03] [INFO] Processing subscription 346 of 838: fmoctoazure1
+[2026-01-29 11:51:05] [SUCCESS]   Completed
+[2026-01-29 11:51:05] [INFO] Processing subscription 347 of 838: fmsc-ma-data-eng-msfabric
+[2026-01-29 11:51:07] [SUCCESS]   Completed
+[2026-01-29 11:51:07] [INFO] Processing subscription 348 of 838: fnic_fw_ai_platform
+[2026-01-29 11:51:08] [SUCCESS]   Completed
+[2026-01-29 11:51:08] [INFO] Processing subscription 349 of 838: FNIC_SIE_Azure_devops
+[2026-01-29 11:51:10] [SUCCESS]   Completed
+[2026-01-29 11:51:10] [INFO] Processing subscription 350 of 838: foundry-secure-portal
+[2026-01-29 11:51:13] [SUCCESS]   Completed
+[2026-01-29 11:51:13] [INFO] Processing subscription 351 of 838: foundryservices-ext
+[2026-01-29 11:51:14] [SUCCESS]   Completed
+[2026-01-29 11:51:14] [INFO] Processing subscription 352 of 838: fscc-ai
+[2026-01-29 11:51:16] [SUCCESS]   Completed
+[2026-01-29 11:51:16] [INFO] Processing subscription 353 of 838: ftegpt
+[2026-01-29 11:51:17] [SUCCESS]   Completed
+[2026-01-29 11:51:17] [INFO] Processing subscription 354 of 838: Fusion and Aguila DevOps
+[2026-01-29 11:51:18] [SUCCESS]   Completed
+[2026-01-29 11:51:18] [INFO] Processing subscription 355 of 838: FWDev-GPT-Test
+[2026-01-29 11:51:20] [SUCCESS]   Completed
+[2026-01-29 11:51:20] [INFO] Processing subscription 356 of 838: G-AIaaS
+[2026-01-29 11:51:21] [SUCCESS]   Completed
+[2026-01-29 11:51:21] [INFO] Processing subscription 357 of 838: GEMS DA
+[2026-01-29 11:51:22] [SUCCESS]   Completed
+[2026-01-29 11:51:22] [INFO] Processing subscription 358 of 838: Generative AI in Architecture
+[2026-01-29 11:51:25] [SUCCESS]   Completed
+[2026-01-29 11:51:25] [INFO] Processing subscription 359 of 838: ghars
+[2026-01-29 11:51:27] [SUCCESS]   Completed
+[2026-01-29 11:51:27] [INFO] Processing subscription 360 of 838: GIER-app
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:51:28] [SUCCESS]   Completed
+[2026-01-29 11:51:28] [INFO] Processing subscription 361 of 838: gio-ai-its-hyb
+[2026-01-29 11:51:31] [SUCCESS]   Completed
+[2026-01-29 11:51:31] [INFO] Processing subscription 362 of 838: GitHub 1Source Billing
+[2026-01-29 11:51:32] [SUCCESS]   Completed
+[2026-01-29 11:51:32] [INFO] Processing subscription 363 of 838: github-oss-security
+[2026-01-29 11:51:34] [SUCCESS]   Completed
+[2026-01-29 11:51:34] [INFO] Processing subscription 364 of 838: Global Supply Chain Operations - PreProd
+[2026-01-29 11:51:35] [SUCCESS]   Completed
+[2026-01-29 11:51:35] [INFO] Processing subscription 365 of 838: glocloud
+[2026-01-29 11:51:36] [SUCCESS]   Completed
+[2026-01-29 11:51:36] [INFO] Processing subscription 366 of 838: GOTO
+[2026-01-29 11:51:37] [SUCCESS]   Completed
+[2026-01-29 11:51:38] [INFO] Processing subscription 367 of 838: Granulate Azure Production
+[2026-01-29 11:51:39] [SUCCESS]   Completed
+[2026-01-29 11:51:39] [INFO] Processing subscription 368 of 838: Granulate Azure Staging
+[2026-01-29 11:51:40] [SUCCESS]   Completed
+[2026-01-29 11:51:40] [INFO] Processing subscription 369 of 838: GSC SCES BIZ PROD
+[2026-01-29 11:51:41] [SUCCESS]   Completed
+[2026-01-29 11:51:41] [INFO] Processing subscription 370 of 838: GSC SCES Prod
+[2026-01-29 11:51:43] [SUCCESS]   Completed
+[2026-01-29 11:51:43] [INFO] Processing subscription 371 of 838: GSC_TestDev_Azure
+[2026-01-29 11:51:45] [SUCCESS]   Completed
+[2026-01-29 11:51:45] [INFO] Processing subscription 372 of 838: GSC-Production-Azure
+[2026-01-29 11:51:46] [SUCCESS]   Completed
+[2026-01-29 11:51:46] [INFO] Processing subscription 373 of 838: GSE CDA
+[2026-01-29 11:51:48] [SUCCESS]   Completed
+[2026-01-29 11:51:48] [INFO] Processing subscription 374 of 838: GSE CDA Integration
+[2026-01-29 11:51:50] [SUCCESS]   Completed
+[2026-01-29 11:51:50] [INFO] Processing subscription 375 of 838: GSE CDA Sandbox
+[2026-01-29 11:51:52] [SUCCESS]   Completed
+[2026-01-29 11:51:52] [INFO] Processing subscription 376 of 838: GSPO DevOps
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:51:55] [SUCCESS]   Completed
+[2026-01-29 11:51:55] [INFO] Processing subscription 377 of 838: gtax-sysval-ai
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:51:56] [SUCCESS]   Completed
+[2026-01-29 11:51:56] [INFO] Processing subscription 378 of 838: GTS Cloud Communication App
+[2026-01-29 11:51:59] [SUCCESS]   Completed
+[2026-01-29 11:51:59] [INFO] Processing subscription 379 of 838: HDMT-Azure
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:52:01] [SUCCESS]   Completed
+[2026-01-29 11:52:01] [INFO] Processing subscription 380 of 838: hosting-ai-sandbox
+[2026-01-29 11:52:02] [SUCCESS]   Completed
+[2026-01-29 11:52:02] [INFO] Processing subscription 381 of 838: HPC-Windows-DEV
+[2026-01-29 11:52:03] [SUCCESS]   Completed
+[2026-01-29 11:52:03] [INFO] Processing subscription 382 of 838: HPC-WindowsAutomation-Prod
+[2026-01-29 11:52:05] [SUCCESS]   Completed
+[2026-01-29 11:52:05] [INFO] Processing subscription 383 of 838: HRGS PSO Quality And Analytics
+[2026-01-29 11:52:06] [SUCCESS]   Completed
+[2026-01-29 11:52:06] [INFO] Processing subscription 384 of 838: hspe_sws_ada_mlops
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:52:09] [SUCCESS]   Completed
+[2026-01-29 11:52:09] [INFO] Processing subscription 385 of 838: HTR-Data Lake-PreProd
+[2026-01-29 11:52:10] [SUCCESS]   Completed
+[2026-01-29 11:52:10] [INFO] Processing subscription 386 of 838: IAM Microservices Internal
+[2026-01-29 11:52:11] [SUCCESS]   Completed
+[2026-01-29 11:52:11] [INFO] Processing subscription 387 of 838: IAM Microservices Internal PP
+[2026-01-29 11:52:13] [SUCCESS]   Completed
+[2026-01-29 11:52:13] [INFO] Processing subscription 388 of 838: IAM_Microservices
+[2026-01-29 11:52:15] [SUCCESS]   Completed
+[2026-01-29 11:52:15] [INFO] Processing subscription 389 of 838: IAO  BI Platform
+[2026-01-29 11:52:16] [SUCCESS]   Completed
+[2026-01-29 11:52:16] [INFO] Processing subscription 390 of 838: IAPM-AI
+[2026-01-29 11:52:18] [SUCCESS]   Completed
+[2026-01-29 11:52:18] [INFO] Processing subscription 391 of 838: iBEMS Azure
+[2026-01-29 11:52:20] [SUCCESS]   Completed
+[2026-01-29 11:52:20] [INFO] Processing subscription 392 of 838: iconsole
+[2026-01-29 11:52:21] [SUCCESS]   Completed
+[2026-01-29 11:52:21] [INFO] Processing subscription 393 of 838: ICS_Wi-Fi_Messenger
+[2026-01-29 11:52:23] [SUCCESS]   Completed
+[2026-01-29 11:52:23] [INFO] Processing subscription 394 of 838: ICS_WiFi_Messenger_DEV
+[2026-01-29 11:52:24] [SUCCESS]   Completed
+[2026-01-29 11:52:24] [INFO] Processing subscription 395 of 838: idaslakeloader
+[2026-01-29 11:52:25] [SUCCESS]   Completed
+[2026-01-29 11:52:25] [INFO] Processing subscription 396 of 838: IDC Azure
+[2026-01-29 11:52:26] [SUCCESS]   Completed
+[2026-01-29 11:52:26] [INFO] Processing subscription 397 of 838: IDC ISR G-AIaaS
+[2026-01-29 11:52:28] [SUCCESS]   Completed
+[2026-01-29 11:52:28] [INFO] Processing subscription 398 of 838: ideas-app
+[2026-01-29 11:52:29] [SUCCESS]   Completed
+[2026-01-29 11:52:29] [INFO] Processing subscription 399 of 838: IF - Central Data Store - PreProd
+[2026-01-29 11:52:31] [SUCCESS]   Completed
+[2026-01-29 11:52:31] [INFO] Processing subscription 400 of 838: IF M2R DEV
+[2026-01-29 11:52:32] [SUCCESS]   Completed
+[2026-01-29 11:52:32] [INFO] Processing subscription 401 of 838: IF M2R PROD
+[2026-01-29 11:52:33] [SUCCESS]   Completed
+[2026-01-29 11:52:33] [INFO] Processing subscription 402 of 838: IF M2R QA
+[2026-01-29 11:52:35] [SUCCESS]   Completed
+[2026-01-29 11:52:35] [INFO] Processing subscription 403 of 838: IF SC DEV
+[2026-01-29 11:52:36] [SUCCESS]   Completed
+[2026-01-29 11:52:36] [INFO] Processing subscription 404 of 838: if-cda-dev1
+[2026-01-29 11:52:40] [SUCCESS]   Completed
+[2026-01-29 11:52:40] [INFO] Processing subscription 405 of 838: if-cda-m2
+[2026-01-29 11:52:41] [SUCCESS]   Completed
+[2026-01-29 11:52:41] [INFO] Processing subscription 406 of 838: if-cda-m4
+[2026-01-29 11:52:43] [SUCCESS]   Completed
+[2026-01-29 11:52:43] [INFO] Processing subscription 407 of 838: if-cda-m7
+[2026-01-29 11:52:44] [SUCCESS]   Completed
+[2026-01-29 11:52:44] [INFO] Processing subscription 408 of 838: if-cda-qa
+[2026-01-29 11:52:45] [SUCCESS]   Completed
+[2026-01-29 11:52:45] [INFO] Processing subscription 409 of 838: IF-Central-Data-Store-Prod
+[2026-01-29 11:52:47] [SUCCESS]   Completed
+[2026-01-29 11:52:47] [INFO] Processing subscription 410 of 838: if-deo-dev1
+[2026-01-29 11:52:49] [SUCCESS]   Completed
+[2026-01-29 11:52:49] [INFO] Processing subscription 411 of 838: if-deo-m2
+[2026-01-29 11:52:50] [SUCCESS]   Completed
+[2026-01-29 11:52:50] [INFO] Processing subscription 412 of 838: if-deo-m4
+[2026-01-29 11:52:52] [SUCCESS]   Completed
+[2026-01-29 11:52:52] [INFO] Processing subscription 413 of 838: if-deo-m7
+[2026-01-29 11:52:53] [SUCCESS]   Completed
+[2026-01-29 11:52:53] [INFO] Processing subscription 414 of 838: IF-DEO-PREPROD
+[2026-01-29 11:52:54] [SUCCESS]   Completed
+[2026-01-29 11:52:54] [INFO] Processing subscription 415 of 838: if-deo-prod
+[2026-01-29 11:52:56] [SUCCESS]   Completed
+[2026-01-29 11:52:56] [INFO] Processing subscription 416 of 838: if-deo-qa
+[2026-01-29 11:52:57] [SUCCESS]   Completed
+[2026-01-29 11:52:57] [INFO] Processing subscription 417 of 838: if-finance-dev
+[2026-01-29 11:52:59] [SUCCESS]   Completed
+[2026-01-29 11:52:59] [INFO] Processing subscription 418 of 838: if-finance-dev1
+[2026-01-29 11:53:00] [SUCCESS]   Completed
+[2026-01-29 11:53:00] [INFO] Processing subscription 419 of 838: if-finance-m4
+[2026-01-29 11:53:02] [SUCCESS]   Completed
+[2026-01-29 11:53:02] [INFO] Processing subscription 420 of 838: if-finance-m7
+[2026-01-29 11:53:03] [SUCCESS]   Completed
+[2026-01-29 11:53:03] [INFO] Processing subscription 421 of 838: if-finance-prod
+[2026-01-29 11:53:04] [SUCCESS]   Completed
+[2026-01-29 11:53:04] [INFO] Processing subscription 422 of 838: if-finance-qa
+[2026-01-29 11:53:06] [SUCCESS]   Completed
+[2026-01-29 11:53:06] [INFO] Processing subscription 423 of 838: if-foundry-services
+[2026-01-29 11:53:07] [SUCCESS]   Completed
+[2026-01-29 11:53:07] [INFO] Processing subscription 424 of 838: if-foundryfac-preprod
+[2026-01-29 11:53:09] [SUCCESS]   Completed
+[2026-01-29 11:53:09] [INFO] Processing subscription 425 of 838: if-foundryfac-prod
+[2026-01-29 11:53:10] [SUCCESS]   Completed
+[2026-01-29 11:53:10] [INFO] Processing subscription 426 of 838: if-foundryfac-qa
+[2026-01-29 11:53:13] [SUCCESS]   Completed
+[2026-01-29 11:53:13] [INFO] Processing subscription 427 of 838: if-gsco-biz-zone-preprod
+[2026-01-29 11:53:16] [SUCCESS]   Completed
+[2026-01-29 11:53:16] [INFO] Processing subscription 428 of 838: if-gsco-biz-zone-prod
+[2026-01-29 11:53:17] [SUCCESS]   Completed
+[2026-01-29 11:53:17] [INFO] Processing subscription 429 of 838: if-m2r-dev1
+[2026-01-29 11:53:19] [SUCCESS]   Completed
+[2026-01-29 11:53:19] [INFO] Processing subscription 430 of 838: if-m2r-m2
+[2026-01-29 11:53:20] [SUCCESS]   Completed
+[2026-01-29 11:53:20] [INFO] Processing subscription 431 of 838: if-m2r-m4
+[2026-01-29 11:53:23] [SUCCESS]   Completed
+[2026-01-29 11:53:23] [INFO] Processing subscription 432 of 838: if-m2r-m7
+[2026-01-29 11:53:24] [SUCCESS]   Completed
+[2026-01-29 11:53:24] [INFO] Processing subscription 433 of 838: if-m2r-prod
+[2026-01-29 11:53:25] [SUCCESS]   Completed
+[2026-01-29 11:53:25] [INFO] Processing subscription 434 of 838: if-m2r-qa
+[2026-01-29 11:53:26] [SUCCESS]   Completed
+[2026-01-29 11:53:26] [INFO] Processing subscription 435 of 838: if-mdata-dev1
+[2026-01-29 11:53:28] [SUCCESS]   Completed
+[2026-01-29 11:53:28] [INFO] Processing subscription 436 of 838: if-mdata-m2
+[2026-01-29 11:53:30] [SUCCESS]   Completed
+[2026-01-29 11:53:30] [INFO] Processing subscription 437 of 838: if-mdata-m4
+[2026-01-29 11:53:32] [SUCCESS]   Completed
+[2026-01-29 11:53:32] [INFO] Processing subscription 438 of 838: if-mdata-m7
+[2026-01-29 11:53:33] [SUCCESS]   Completed
+[2026-01-29 11:53:33] [INFO] Processing subscription 439 of 838: if-mdata-qa
+[2026-01-29 11:53:35] [SUCCESS]   Completed
+[2026-01-29 11:53:35] [INFO] Processing subscription 440 of 838: if-sc-dev1
+[2026-01-29 11:53:36] [SUCCESS]   Completed
+[2026-01-29 11:53:36] [INFO] Processing subscription 441 of 838: if-sc-m2
+[2026-01-29 11:53:38] [SUCCESS]   Completed
+[2026-01-29 11:53:38] [INFO] Processing subscription 442 of 838: if-sc-m4
+[2026-01-29 11:53:39] [SUCCESS]   Completed
+[2026-01-29 11:53:39] [INFO] Processing subscription 443 of 838: if-sc-m7
+[2026-01-29 11:53:41] [SUCCESS]   Completed
+[2026-01-29 11:53:41] [INFO] Processing subscription 444 of 838: if-sc-qa
+[2026-01-29 11:53:42] [SUCCESS]   Completed
+[2026-01-29 11:53:42] [INFO] Processing subscription 445 of 838: if-schain-prod
+[2026-01-29 11:53:43] [SUCCESS]   Completed
+[2026-01-29 11:53:43] [INFO] Processing subscription 446 of 838: if-schain-qa
+[2026-01-29 11:53:45] [SUCCESS]   Completed
+[2026-01-29 11:53:45] [INFO] Processing subscription 447 of 838: IFL AI Lab Foundation Models
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:53:46] [SUCCESS]   Completed
+[2026-01-29 11:53:46] [INFO] Processing subscription 448 of 838: IFL IT - Azure Commercial
+[2026-01-29 11:53:47] [SUCCESS]   Completed
+[2026-01-29 11:53:47] [INFO] Processing subscription 449 of 838: ifportal30
+[2026-01-29 11:53:49] [SUCCESS]   Completed
+[2026-01-29 11:53:49] [INFO] Processing subscription 450 of 838: ifsdaops
+[2026-01-29 11:53:50] [SUCCESS]   Completed
+[2026-01-29 11:53:50] [INFO] Processing subscription 451 of 838: IGK Azure DevOps
+[2026-01-29 11:53:52] [SUCCESS]   Completed
+[2026-01-29 11:53:52] [INFO] Processing subscription 452 of 838: IHMP
+[2026-01-29 11:53:53] [SUCCESS]   Completed
+[2026-01-29 11:53:53] [INFO] Processing subscription 453 of 838: IL Azure OpenAI Services
+[2026-01-29 11:53:54] [SUCCESS]   Completed
+[2026-01-29 11:53:54] [INFO] Processing subscription 454 of 838: impartner
+[2026-01-29 11:53:56] [SUCCESS]   Completed
+[2026-01-29 11:53:56] [INFO] Processing subscription 455 of 838: infa-cdq-prod
+[2026-01-29 11:53:58] [SUCCESS]   Completed
+[2026-01-29 11:53:58] [INFO] Processing subscription 456 of 838: Informatica Cloud Data Quality
+[2026-01-29 11:53:59] [SUCCESS]   Completed
+[2026-01-29 11:53:59] [INFO] Processing subscription 457 of 838: Information Security - CORP
+[2026-01-29 11:54:00] [SUCCESS]   Completed
+[2026-01-29 11:54:00] [INFO] Processing subscription 458 of 838: Infosec GCR
+[2026-01-29 11:54:02] [SUCCESS]   Completed
+[2026-01-29 11:54:02] [INFO] Processing subscription 459 of 838: InfoSec_Storage
+[2026-01-29 11:54:03] [SUCCESS]   Completed
+[2026-01-29 11:54:03] [INFO] Processing subscription 460 of 838: infosec-azure-openai
+[2026-01-29 11:54:04] [SUCCESS]   Completed
+[2026-01-29 11:54:04] [INFO] Processing subscription 461 of 838: inop automation
+[2026-01-29 11:54:07] [SUCCESS]   Completed
+[2026-01-29 11:54:07] [INFO] Processing subscription 462 of 838: integ-agent
+[2026-01-29 11:54:09] [SUCCESS]   Completed
+[2026-01-29 11:54:09] [INFO] Processing subscription 463 of 838: Integrated3CRoadmap
+[2026-01-29 11:54:10] [SUCCESS]   Completed
+[2026-01-29 11:54:10] [INFO] Processing subscription 464 of 838: Intel Application Portfolio Management
+[2026-01-29 11:54:12] [SUCCESS]   Completed
+[2026-01-29 11:54:12] [INFO] Processing subscription 465 of 838: Intel CCG WCS ALM AI
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:54:13] [SUCCESS]   Completed
+[2026-01-29 11:54:13] [INFO] Processing subscription 466 of 838: Intel CCG WCS ALM AI Prod
+[2026-01-29 11:54:14] [SUCCESS]   Completed
+[2026-01-29 11:54:14] [INFO] Processing subscription 467 of 838: Intel DevCloud for the Edge Telemetry Platform
+[2026-01-29 11:54:16] [SUCCESS]   Completed
+[2026-01-29 11:54:16] [INFO] Processing subscription 468 of 838: Intel EMA
+[2026-01-29 11:54:17] [SUCCESS]   Completed
+[2026-01-29 11:54:17] [INFO] Processing subscription 469 of 838: Intel EMA CloudStart tool
+[2026-01-29 11:54:18] [SUCCESS]   Completed
+[2026-01-29 11:54:18] [INFO] Processing subscription 470 of 838: Intel Foundry - Master Data Dev
+[2026-01-29 11:54:20] [SUCCESS]   Completed
+[2026-01-29 11:54:20] [INFO] Processing subscription 471 of 838: Intel Foundry - Master Data Prod
+[2026-01-29 11:54:21] [SUCCESS]   Completed
+[2026-01-29 11:54:21] [INFO] Processing subscription 472 of 838: Intel Foundry - Master Data QA
+[2026-01-29 11:54:23] [SUCCESS]   Completed
+[2026-01-29 11:54:23] [INFO] Processing subscription 473 of 838: Intel Generative AI DevTest
+[2026-01-29 11:54:24] [SUCCESS]   Completed
+[2026-01-29 11:54:24] [INFO] Processing subscription 474 of 838: Intel Generative AI Prod
+[2026-01-29 11:54:25] [SUCCESS]   Completed
+[2026-01-29 11:54:25] [INFO] Processing subscription 475 of 838: Intel IT Hybrid Cloud Express Route IGBN
+[2026-01-29 11:54:26] [SUCCESS]   Completed
+[2026-01-29 11:54:26] [INFO] Processing subscription 476 of 838: Intel Machine Translation Framework
+[2026-01-29 11:54:28] [SUCCESS]   Completed
+[2026-01-29 11:54:28] [INFO] Processing subscription 477 of 838: Intel Retail Edge Program - IREP
+[2026-01-29 11:54:29] [SUCCESS]   Completed
+[2026-01-29 11:54:29] [INFO] Processing subscription 478 of 838: Intel Sparks Studios
+[2026-01-29 11:54:31] [SUCCESS]   Completed
+[2026-01-29 11:54:31] [INFO] Processing subscription 479 of 838: Intel Trust Authority NP
+[2026-01-29 11:54:32] [SUCCESS]   Completed
+[2026-01-29 11:54:32] [INFO] Processing subscription 480 of 838: Intel Trust Authority PRD
+[2026-01-29 11:54:33] [SUCCESS]   Completed
+[2026-01-29 11:54:33] [INFO] Processing subscription 481 of 838: Intel-ACS
+[2026-01-29 11:54:34] [SUCCESS]   Completed
+[2026-01-29 11:54:34] [INFO] Processing subscription 482 of 838: Intel-ACS-PreProd
+[2026-01-29 11:54:36] [SUCCESS]   Completed
+[2026-01-29 11:54:36] [INFO] Processing subscription 483 of 838: Intel-Cloudhelper_vPro_Demo
+[2026-01-29 11:54:37] [SUCCESS]   Completed
+[2026-01-29 11:54:37] [INFO] Processing subscription 484 of 838: intel-ema-demo-uk
+[2026-01-29 11:54:39] [SUCCESS]   Completed
+[2026-01-29 11:54:39] [INFO] Processing subscription 485 of 838: intel-gov-tech-preprod
+[2026-01-29 11:54:40] [SUCCESS]   Completed
+[2026-01-29 11:54:40] [INFO] Processing subscription 486 of 838: intel-gov-tech-prod
+[2026-01-29 11:54:42] [SUCCESS]   Completed
+[2026-01-29 11:54:42] [INFO] Processing subscription 487 of 838: intel-tiber-edge-dev
+[2026-01-29 11:54:43] [SUCCESS]   Completed
+[2026-01-29 11:54:43] [INFO] Processing subscription 488 of 838: Intel-TrustedSigning-Production
+[2026-01-29 11:54:45] [SUCCESS]   Completed
+[2026-01-29 11:54:45] [INFO] Processing subscription 489 of 838: intelfoundryprototype
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:54:46] [SUCCESS]   Completed
+[2026-01-29 11:54:46] [INFO] Processing subscription 490 of 838: intellibot
+[2026-01-29 11:54:47] [SUCCESS]   Completed
+[2026-01-29 11:54:47] [INFO] Processing subscription 491 of 838: intelligentfleetdemo
+[2026-01-29 11:54:49] [SUCCESS]   Completed
+[2026-01-29 11:54:49] [INFO] Processing subscription 492 of 838: IntelSaffron01
+[2026-01-29 11:54:51] [SUCCESS]   Completed
+[2026-01-29 11:54:51] [INFO] Processing subscription 493 of 838: intelscee
+[2026-01-29 11:54:52] [SUCCESS]   Completed
+[2026-01-29 11:54:52] [INFO] Processing subscription 494 of 838: Intune Automation
+[2026-01-29 11:54:54] [SUCCESS]   Completed
+[2026-01-29 11:54:54] [INFO] Processing subscription 495 of 838: IOTG ICE Solution Enabling Azure Test
+[2026-01-29 11:54:55] [SUCCESS]   Completed
+[2026-01-29 11:54:55] [INFO] Processing subscription 496 of 838: IOTG PL Azure Testing Grounds
+[2026-01-29 11:54:56] [SUCCESS]   Completed
+[2026-01-29 11:54:56] [INFO] Processing subscription 497 of 838: ip-finance-m4
+[2026-01-29 11:54:58] [SUCCESS]   Completed
+[2026-01-29 11:54:58] [INFO] Processing subscription 498 of 838: ip-finance-m7
+[2026-01-29 11:54:59] [SUCCESS]   Completed
+[2026-01-29 11:54:59] [INFO] Processing subscription 499 of 838: ip-m2r-m7
+[2026-01-29 11:55:00] [SUCCESS]   Completed
+[2026-01-29 11:55:00] [INFO] Processing subscription 500 of 838: ip-mdata-m4
+[2026-01-29 11:55:02] [SUCCESS]   Completed
+[2026-01-29 11:55:02] [INFO] Processing subscription 501 of 838: ipaas_staging_dev
+[2026-01-29 11:55:03] [SUCCESS]   Completed
+[2026-01-29 11:55:03] [INFO] Processing subscription 502 of 838: IPAS
+[2026-01-29 11:55:05] [SUCCESS]   Completed
+[2026-01-29 11:55:05] [INFO] Processing subscription 503 of 838: IPAS SR IMPACT AI Azure
+[2026-01-29 11:55:06] [SUCCESS]   Completed
+[2026-01-29 11:55:06] [INFO] Processing subscription 504 of 838: IPAS_OSR_GAI
+[2026-01-29 11:55:08] [SUCCESS]   Completed
+[2026-01-29 11:55:08] [INFO] Processing subscription 505 of 838: IPAS_S3_India_Azure
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:55:10] [SUCCESS]   Completed
+[2026-01-29 11:55:10] [INFO] Processing subscription 506 of 838: ipasbi
+[2026-01-29 11:55:11] [SUCCESS]   Completed
+[2026-01-29 11:55:11] [INFO] Processing subscription 507 of 838: ipg-dvm
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:55:12] [SUCCESS]   Completed
+[2026-01-29 11:55:12] [INFO] Processing subscription 508 of 838: ips-data-automation
+[2026-01-29 11:55:13] [SUCCESS]   Completed
+[2026-01-29 11:55:13] [INFO] Processing subscription 509 of 838: ipse-ipoc
+[2026-01-29 11:55:15] [SUCCESS]   Completed
+[2026-01-29 11:55:15] [INFO] Processing subscription 510 of 838: IPU system openAI
+[2026-01-29 11:55:17] [SUCCESS]   Completed
+[2026-01-29 11:55:17] [INFO] Processing subscription 511 of 838: IRCS Engineering
+[2026-01-29 11:55:19] [SUCCESS]   Completed
+[2026-01-29 11:55:19] [INFO] Processing subscription 512 of 838: iRed
+[2026-01-29 11:55:21] [SUCCESS]   Completed
+[2026-01-29 11:55:21] [INFO] Processing subscription 513 of 838: ISA-GenAI
+[2026-01-29 11:55:22] [SUCCESS]   Completed
+[2026-01-29 11:55:22] [INFO] Processing subscription 514 of 838: ISD Cloud Services
+[2026-01-29 11:55:24] [SUCCESS]   Completed
+[2026-01-29 11:55:24] [INFO] Processing subscription 515 of 838: ISecL
+[2026-01-29 11:55:25] [SUCCESS]   Completed
+[2026-01-29 11:55:25] [INFO] Processing subscription 516 of 838: Issue Resolution Tools - Validation BOT
+[2026-01-29 11:55:26] [SUCCESS]   Completed
+[2026-01-29 11:55:26] [INFO] Processing subscription 517 of 838: Issue Resolution Tools - Validation BOT - Prod
+[2026-01-29 11:55:28] [SUCCESS]   Completed
+[2026-01-29 11:55:28] [INFO] Processing subscription 518 of 838: ISV-Azure-1
+[2026-01-29 11:55:29] [SUCCESS]   Completed
+[2026-01-29 11:55:29] [INFO] Processing subscription 519 of 838: IT Azure Virtual Desktop
+[2026-01-29 11:55:30] [SUCCESS]   Completed
+[2026-01-29 11:55:30] [INFO] Processing subscription 520 of 838: IT Azure Virtual Desktop Images
+[2026-01-29 11:55:31] [SUCCESS]   Completed
+[2026-01-29 11:55:31] [INFO] Processing subscription 521 of 838: IT CDR AD Core-Azure
+[2026-01-29 11:55:33] [SUCCESS]   Completed
+[2026-01-29 11:55:33] [INFO] Processing subscription 522 of 838: IT Controls and Compliance - IaaS Security Control Stack
+[2026-01-29 11:55:34] [SUCCESS]   Completed
+[2026-01-29 11:55:34] [INFO] Processing subscription 523 of 838: IT DA LTG Dev
+[2026-01-29 11:55:36] [SUCCESS]   Completed
+[2026-01-29 11:55:36] [INFO] Processing subscription 524 of 838: IT DA LTG PROD
+[2026-01-29 11:55:37] [SUCCESS]   Completed
+[2026-01-29 11:55:37] [INFO] Processing subscription 525 of 838: IT DA LTG QA
+[2026-01-29 11:55:39] [SUCCESS]   Completed
+[2026-01-29 11:55:39] [INFO] Processing subscription 526 of 838: IT DA SC PreProd
+[2026-01-29 11:55:41] [SUCCESS]   Completed
+[2026-01-29 11:55:41] [INFO] Processing subscription 527 of 838: IT DA SC Prod
+[2026-01-29 11:55:42] [SUCCESS]   Completed
+[2026-01-29 11:55:42] [INFO] Processing subscription 528 of 838: IT Infomation Secuirty - Cloud Security POC
+[2026-01-29 11:55:44] [SUCCESS]   Completed
+[2026-01-29 11:55:44] [INFO] Processing subscription 529 of 838: IT Information Security - Cloud Security POC - Hybrid
+[2026-01-29 11:55:45] [SUCCESS]   Completed
+[2026-01-29 11:55:45] [INFO] Processing subscription 530 of 838: IT IoT
+[2026-01-29 11:55:48] [SUCCESS]   Completed
+[2026-01-29 11:55:48] [INFO] Processing subscription 531 of 838: IT Scan DataLake PROD
+[2026-01-29 11:55:50] [SUCCESS]   Completed
+[2026-01-29 11:55:50] [INFO] Processing subscription 532 of 838: IT-DWS-Resources
+[2026-01-29 11:55:52] [SUCCESS]   Completed
+[2026-01-29 11:55:52] [INFO] Processing subscription 533 of 838: it-pex-38747
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:55:53] [SUCCESS]   Completed
+[2026-01-29 11:55:53] [INFO] Processing subscription 534 of 838: itatintel-ai-tool
+[2026-01-29 11:55:55] [SUCCESS]   Completed
+[2026-01-29 11:55:55] [INFO] Processing subscription 535 of 838: itaward
+[2026-01-29 11:55:57] [SUCCESS]   Completed
+[2026-01-29 11:55:57] [INFO] Processing subscription 536 of 838: itclientema-cloud-dev
+[2026-01-29 11:55:59] [SUCCESS]   Completed
+[2026-01-29 11:55:59] [INFO] Processing subscription 537 of 838: ITS_EMA
+[2026-01-29 11:56:00] [SUCCESS]   Completed
+[2026-01-29 11:56:00] [INFO] Processing subscription 538 of 838: ive_psc
+[2026-01-29 11:56:02] [SUCCESS]   Completed
+[2026-01-29 11:56:02] [INFO] Processing subscription 539 of 838: JFLab_MSTeam_Apps
+[2026-01-29 11:56:03] [SUCCESS]   Completed
+[2026-01-29 11:56:03] [INFO] Processing subscription 540 of 838: jkshivani65
+[2026-01-29 11:56:04] [SUCCESS]   Completed
+[2026-01-29 11:56:04] [INFO] Processing subscription 541 of 838: jp-ema-poc
+[2026-01-29 11:56:06] [SUCCESS]   Completed
+[2026-01-29 11:56:06] [INFO] Processing subscription 542 of 838: LaaS
+[2026-01-29 11:56:07] [SUCCESS]   Completed
+[2026-01-29 11:56:07] [INFO] Processing subscription 543 of 838: LaaS cloud DevTest
+[2026-01-29 11:56:09] [SUCCESS]   Completed
+[2026-01-29 11:56:09] [INFO] Processing subscription 544 of 838: LaaS_Aquarius IGBN
+[2026-01-29 11:56:10] [SUCCESS]   Completed
+[2026-01-29 11:56:10] [INFO] Processing subscription 545 of 838: LaaS_Delve
+[2026-01-29 11:56:11] [SUCCESS]   Completed
+[2026-01-29 11:56:11] [INFO] Processing subscription 546 of 838: LaaS_Essence
+[2026-01-29 11:56:13] [SUCCESS]   Completed
+[2026-01-29 11:56:13] [INFO] Processing subscription 547 of 838: LaaS_Libra
+[2026-01-29 11:56:15] [SUCCESS]   Completed
+[2026-01-29 11:56:15] [INFO] Processing subscription 548 of 838: LaaS-2
+[2026-01-29 11:56:16] [SUCCESS]   Completed
+[2026-01-29 11:56:16] [INFO] Processing subscription 549 of 838: LATAM CCG TSS
+[2026-01-29 11:56:18] [SUCCESS]   Completed
+[2026-01-29 11:56:18] [INFO] Processing subscription 550 of 838: LEaP_Azure_Streaming
+[2026-01-29 11:56:19] [SUCCESS]   Completed
+[2026-01-29 11:56:19] [INFO] Processing subscription 551 of 838: legaltools-asklegal
+[2026-01-29 11:56:21] [SUCCESS]   Completed
+[2026-01-29 11:56:21] [INFO] Processing subscription 552 of 838: LLM for Natural Language Queries
+[2026-01-29 11:56:22] [SUCCESS]   Completed
+[2026-01-29 11:56:22] [INFO] Processing subscription 553 of 838: LMS AI Chatbot
+[2026-01-29 11:56:24] [SUCCESS]   Completed
+[2026-01-29 11:56:24] [INFO] Processing subscription 554 of 838: LR-CSP-POC-AZURE
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:56:25] [SUCCESS]   Completed
+[2026-01-29 11:56:25] [INFO] Processing subscription 555 of 838: LTD Training Automation
+[2026-01-29 11:56:27] [SUCCESS]   Completed
+[2026-01-29 11:56:27] [INFO] Processing subscription 556 of 838: M2R PreProd
+[2026-01-29 11:56:28] [SUCCESS]   Completed
+[2026-01-29 11:56:28] [INFO] Processing subscription 557 of 838: M2R Prod
+[2026-01-29 11:56:29] [SUCCESS]   Completed
+[2026-01-29 11:56:29] [INFO] Processing subscription 558 of 838: M2R QA
+[2026-01-29 11:56:31] [SUCCESS]   Completed
+[2026-01-29 11:56:31] [INFO] Processing subscription 559 of 838: m2r-dev1
+[2026-01-29 11:56:32] [SUCCESS]   Completed
+[2026-01-29 11:56:32] [INFO] Processing subscription 560 of 838: m2r-dr
+[2026-01-29 11:56:34] [SUCCESS]   Completed
+[2026-01-29 11:56:34] [INFO] Processing subscription 561 of 838: m2r-m4
+[2026-01-29 11:56:36] [SUCCESS]   Completed
+[2026-01-29 11:56:36] [INFO] Processing subscription 562 of 838: M2S-Product Matching Process-PreProd
+[2026-01-29 11:56:37] [SUCCESS]   Completed
+[2026-01-29 11:56:37] [INFO] Processing subscription 563 of 838: M365 CSE Hybrid Subscription
+[2026-01-29 11:56:39] [SUCCESS]   Completed
+[2026-01-29 11:56:39] [INFO] Processing subscription 564 of 838: madmacazure
+[2026-01-29 11:56:41] [SUCCESS]   Completed
+[2026-01-29 11:56:41] [INFO] Processing subscription 565 of 838: malcolmchanazure
+[2026-01-29 11:56:43] [SUCCESS]   Completed
+[2026-01-29 11:56:43] [INFO] Processing subscription 566 of 838: Master Data - PreProd
+[2026-01-29 11:56:45] [SUCCESS]   Completed
+[2026-01-29 11:56:45] [INFO] Processing subscription 567 of 838: Master Data - Prod
+[2026-01-29 11:56:46] [SUCCESS]   Completed
+[2026-01-29 11:56:46] [INFO] Processing subscription 568 of 838: Master Data Cloud - Sandbox
+[2026-01-29 11:56:47] [SUCCESS]   Completed
+[2026-01-29 11:56:47] [INFO] Processing subscription 569 of 838: master-data-ai
+[2026-01-29 11:56:48] [SUCCESS]   Completed
+[2026-01-29 11:56:48] [INFO] Processing subscription 570 of 838: master-data-ai-prod
+[2026-01-29 11:56:50] [SUCCESS]   Completed
+[2026-01-29 11:56:50] [INFO] Processing subscription 571 of 838: Maximo Application Suite (MAS)
+[2026-01-29 11:56:51] [SUCCESS]   Completed
+[2026-01-29 11:56:51] [INFO] Processing subscription 572 of 838: Maximo Application Suite Prod
+[2026-01-29 11:56:53] [SUCCESS]   Completed
+[2026-01-29 11:56:53] [INFO] Processing subscription 573 of 838: mdata-dev1
+[2026-01-29 11:56:54] [SUCCESS]   Completed
+[2026-01-29 11:56:54] [INFO] Processing subscription 574 of 838: mdata-m4
+[2026-01-29 11:56:55] [SUCCESS]   Completed
+[2026-01-29 11:56:55] [INFO] Processing subscription 575 of 838: mdata-m7
+[2026-01-29 11:56:57] [SUCCESS]   Completed
+[2026-01-29 11:56:57] [INFO] Processing subscription 576 of 838: mde-azure-dev
+[2026-01-29 11:56:59] [SUCCESS]   Completed
+[2026-01-29 11:56:59] [INFO] Processing subscription 577 of 838: mde-unison-prod
+[2026-01-29 11:57:01] [SUCCESS]   Completed
+[2026-01-29 11:57:01] [INFO] Processing subscription 578 of 838: mdi-isr
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:57:03] [SUCCESS]   Completed
+[2026-01-29 11:57:03] [INFO] Processing subscription 579 of 838: MenAndMiceAzure
+[2026-01-29 11:57:04] [SUCCESS]   Completed
+[2026-01-29 11:57:04] [INFO] Processing subscription 580 of 838: MFD Assistant
+[2026-01-29 11:57:05] [SUCCESS]   Completed
+[2026-01-29 11:57:05] [INFO] Processing subscription 581 of 838: MIchael_1_demo
+[2026-01-29 11:57:07] [SUCCESS]   Completed
+[2026-01-29 11:57:07] [INFO] Processing subscription 582 of 838: Microsoft Azure Enterprise
+[2026-01-29 11:57:08] [SUCCESS]   Completed
+[2026-01-29 11:57:08] [INFO] Processing subscription 583 of 838: Microsoft Azure Enterprise
+[2026-01-29 11:57:10] [SUCCESS]   Completed
+[2026-01-29 11:57:10] [INFO] Processing subscription 584 of 838: Microsoft Azure Enterprise
+[2026-01-29 11:57:11] [SUCCESS]   Completed
+[2026-01-29 11:57:11] [INFO] Processing subscription 585 of 838: Microsoft BI IGBN
+[2026-01-29 11:57:13] [SUCCESS]   Completed
+[2026-01-29 11:57:13] [INFO] Processing subscription 586 of 838: Microsoft Mesh Subscription
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:57:14] [SUCCESS]   Completed
+[2026-01-29 11:57:14] [INFO] Processing subscription 587 of 838: Microsoft Security Suite
+[2026-01-29 11:57:15] [SUCCESS]   Completed
+[2026-01-29 11:57:15] [INFO] Processing subscription 588 of 838: middleware-delivery
+[2026-01-29 11:57:17] [SUCCESS]   Completed
+[2026-01-29 11:57:17] [INFO] Processing subscription 589 of 838: mineral-river-preprod
+[2026-01-29 11:57:18] [SUCCESS]   Completed
+[2026-01-29 11:57:18] [INFO] Processing subscription 590 of 838: mineral-river-prod
+[2026-01-29 11:57:20] [SUCCESS]   Completed
+[2026-01-29 11:57:20] [INFO] Processing subscription 591 of 838: mlaas-ssmp
+[2026-01-29 11:57:21] [SUCCESS]   Completed
+[2026-01-29 11:57:21] [INFO] Processing subscription 592 of 838: MLCS_Azure
+[2026-01-29 11:57:23] [SUCCESS]   Completed
+[2026-01-29 11:57:23] [INFO] Processing subscription 593 of 838: MLOps pipelines
+[2026-01-29 11:57:24] [SUCCESS]   Completed
+[2026-01-29 11:57:24] [INFO] Processing subscription 594 of 838: MO_Automation_DEV
+[2026-01-29 11:57:25] [SUCCESS]   Completed
+[2026-01-29 11:57:25] [INFO] Processing subscription 595 of 838: MO_Automation_PROD
+[2026-01-29 11:57:27] [SUCCESS]   Completed
+[2026-01-29 11:57:27] [INFO] Processing subscription 596 of 838: MO_Automation_PROD_TS
+[2026-01-29 11:57:29] [SUCCESS]   Completed
+[2026-01-29 11:57:29] [INFO] Processing subscription 597 of 838: modelon
+[2026-01-29 11:57:30] [SUCCESS]   Completed
+[2026-01-29 11:57:30] [INFO] Processing subscription 598 of 838: MSO_MA_DISC_PROD
+[2026-01-29 11:57:31] [SUCCESS]   Completed
+[2026-01-29 11:57:31] [INFO] Processing subscription 599 of 838: MST - MTC - MTC DevOps Test Ground
+[2026-01-29 11:57:33] [SUCCESS]   Completed
+[2026-01-29 11:57:33] [INFO] Processing subscription 600 of 838: MST - MTC - Windows Based Development
+[2026-01-29 11:57:35] [SUCCESS]   Completed
+[2026-01-29 11:57:35] [INFO] Processing subscription 601 of 838: MyGPT
+[2026-01-29 11:57:36] [SUCCESS]   Completed
+[2026-01-29 11:57:36] [INFO] Processing subscription 602 of 838: mys-ai-pde123
+[2026-01-29 11:57:37] [SUCCESS]   Completed
+[2026-01-29 11:57:37] [INFO] Processing subscription 603 of 838: NCCG IPU system AZURE OPENAI service
+[2026-01-29 11:57:38] [SUCCESS]   Completed
+[2026-01-29 11:57:38] [INFO] Processing subscription 604 of 838: NCCG TECH SYS-INT SW
+[2026-01-29 11:57:40] [SUCCESS]   Completed
+[2026-01-29 11:57:40] [INFO] Processing subscription 605 of 838: NCIS
+[2026-01-29 11:57:41] [SUCCESS]   Completed
+[2026-01-29 11:57:41] [INFO] Processing subscription 606 of 838: Network-changes-ChatBoT
+[2026-01-29 11:57:43] [SUCCESS]   Completed
+[2026-01-29 11:57:43] [INFO] Processing subscription 607 of 838: New Production - IPDS
+[2026-01-29 11:57:44] [SUCCESS]   Completed
+[2026-01-29 11:57:44] [INFO] Processing subscription 608 of 838: New Production - IPDS Integration
+[2026-01-29 11:57:46] [SUCCESS]   Completed
+[2026-01-29 11:57:46] [INFO] Processing subscription 609 of 838: NEX ESPD AI Development
+[2026-01-29 11:57:47] [SUCCESS]   Completed
+[2026-01-29 11:57:47] [INFO] Processing subscription 610 of 838: nex-37413
+[2026-01-29 11:57:50] [SUCCESS]   Completed
+[2026-01-29 11:57:50] [INFO] Processing subscription 611 of 838: NEX-EPG-CIE-System-NVM-generator
+[2026-01-29 11:57:51] [SUCCESS]   Completed
+[2026-01-29 11:57:51] [INFO] Processing subscription 612 of 838: NEX-MAXIMUS
+[2026-01-29 11:57:52] [SUCCESS]   Completed
+[2026-01-29 11:57:52] [INFO] Processing subscription 613 of 838: Next Gen Quartus Development
+[2026-01-29 11:57:54] [SUCCESS]   Completed
+[2026-01-29 11:57:54] [INFO] Processing subscription 614 of 838: nextgenaskitchatbot
+[2026-01-29 11:57:57] [SUCCESS]   Completed
+[2026-01-29 11:57:57] [INFO] Processing subscription 615 of 838: nff-go
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:57:58] [SUCCESS]   Completed
+[2026-01-29 11:57:58] [INFO] Processing subscription 616 of 838: NSG Supply Chain and Capacity Planning
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:58:00] [SUCCESS]   Completed
+[2026-01-29 11:58:00] [INFO] Processing subscription 617 of 838: NUI WOS - Pay-As-You-Go Dev/Test(Converted to EA)
+[2026-01-29 11:58:02] [SUCCESS]   Completed
+[2026-01-29 11:58:02] [INFO] Processing subscription 618 of 838: Odin
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:58:03] [SUCCESS]   Completed
+[2026-01-29 11:58:03] [INFO] Processing subscription 619 of 838: OnDemandPoC
+[2026-01-29 11:58:05] [SUCCESS]   Completed
+[2026-01-29 11:58:05] [INFO] Processing subscription 620 of 838: Open AMT Cloud Toolkit Azure
+[2026-01-29 11:58:07] [SUCCESS]   Completed
+[2026-01-29 11:58:07] [INFO] Processing subscription 621 of 838: open-edge-ai
+[2026-01-29 11:58:09] [SUCCESS]   Completed
+[2026-01-29 11:58:09] [INFO] Processing subscription 622 of 838: openvino
+[2026-01-29 11:58:10] [SUCCESS]   Completed
+[2026-01-29 11:58:10] [INFO] Processing subscription 623 of 838: openvino_prod
+[2026-01-29 11:58:11] [SUCCESS]   Completed
+[2026-01-29 11:58:11] [INFO] Processing subscription 624 of 838: OPSW Resources
+[2026-01-29 11:58:13] [SUCCESS]   Completed
+[2026-01-29 11:58:13] [INFO] Processing subscription 625 of 838: optanemesc
+[2026-01-29 11:58:14] [SUCCESS]   Completed
+[2026-01-29 11:58:14] [INFO] Processing subscription 626 of 838: OSDT
+[2026-01-29 11:58:16] [SUCCESS]   Completed
+[2026-01-29 11:58:16] [INFO] Processing subscription 627 of 838: PACT Azure
+[2026-01-29 11:58:18] [SUCCESS]   Completed
+[2026-01-29 11:58:18] [INFO] Processing subscription 628 of 838: Pay-As-You-Go
+[2026-01-29 11:58:19] [SUCCESS]   Completed
+[2026-01-29 11:58:19] [INFO] Processing subscription 629 of 838: Pay-As-You-Go
+[2026-01-29 11:58:21] [SUCCESS]   Completed
+[2026-01-29 11:58:21] [INFO] Processing subscription 630 of 838: Pay-As-You-Go
+[2026-01-29 11:58:22] [SUCCESS]   Completed
+[2026-01-29 11:58:22] [INFO] Processing subscription 631 of 838: Pay-As-You-Go
+[2026-01-29 11:58:23] [SUCCESS]   Completed
+[2026-01-29 11:58:23] [INFO] Processing subscription 632 of 838: Pay-As-You-Go(Converted to EA)
+[2026-01-29 11:58:25] [SUCCESS]   Completed
+[2026-01-29 11:58:25] [INFO] Processing subscription 633 of 838: PBG_Market_AI
+[2026-01-29 11:58:26] [SUCCESS]   Completed
+[2026-01-29 11:58:26] [INFO] Processing subscription 634 of 838: PBG_Market_AI_IC_Dev
+[2026-01-29 11:58:28] [SUCCESS]   Completed
+[2026-01-29 11:58:28] [INFO] Processing subscription 635 of 838: PBG_Market_AI_IC_Prod
+[2026-01-29 11:58:29] [SUCCESS]   Completed
+[2026-01-29 11:58:29] [INFO] Processing subscription 636 of 838: PBG_Market_AI_Prod
+[2026-01-29 11:58:31] [SUCCESS]   Completed
+[2026-01-29 11:58:31] [INFO] Processing subscription 637 of 838: pbg-teamsbot-dev
+[2026-01-29 11:58:33] [SUCCESS]   Completed
+[2026-01-29 11:58:33] [INFO] Processing subscription 638 of 838: PCS HCI OSv2 testing
+[2026-01-29 11:58:34] [SUCCESS]   Completed
+[2026-01-29 11:58:34] [INFO] Processing subscription 639 of 838: PDEAssist
+[2026-01-29 11:58:36] [SUCCESS]   Completed
+[2026-01-29 11:58:36] [INFO] Processing subscription 640 of 838: pdf-smh-ip
+[2026-01-29 11:58:37] [SUCCESS]   Completed
+[2026-01-29 11:58:37] [INFO] Processing subscription 641 of 838: pe-discrete-preprod
+[2026-01-29 11:58:39] [SUCCESS]   Completed
+[2026-01-29 11:58:39] [INFO] Processing subscription 642 of 838: pe-discrete-prod
+[2026-01-29 11:58:42] [SUCCESS]   Completed
+[2026-01-29 11:58:42] [INFO] Processing subscription 643 of 838: peg-dcse
+[2026-01-29 11:58:43] [SUCCESS]   Completed
+[2026-01-29 11:58:43] [INFO] Processing subscription 644 of 838: Pega BPMS On Cloud-POC
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:58:45] [SUCCESS]   Completed
+[2026-01-29 11:58:45] [INFO] Processing subscription 645 of 838: pegpvpbiwrkspce
+[2026-01-29 11:58:46] [SUCCESS]   Completed
+[2026-01-29 11:58:46] [INFO] Processing subscription 646 of 838: peirama
+[2026-01-29 11:58:48] [SUCCESS]   Completed
+[2026-01-29 11:58:48] [INFO] Processing subscription 647 of 838: PESG_ChatGPT
+[2026-01-29 11:58:49] [SUCCESS]   Completed
+[2026-01-29 11:58:49] [INFO] Processing subscription 648 of 838: pesg-azure-hybrid
+[2026-01-29 11:58:50] [SUCCESS]   Completed
+[2026-01-29 11:58:50] [INFO] Processing subscription 649 of 838: Phoenix At Scale
+[2026-01-29 11:58:52] [SUCCESS]   Completed
+[2026-01-29 11:58:52] [INFO] Processing subscription 650 of 838: PID Azure Subscription for AI
+[2026-01-29 11:58:53] [SUCCESS]   Completed
+[2026-01-29 11:58:53] [INFO] Processing subscription 651 of 838: platform telemetry dev
+[2026-01-29 11:58:55] [SUCCESS]   Completed
+[2026-01-29 11:58:55] [INFO] Processing subscription 652 of 838: Platform Telemetry Preprod Discreet
+[2026-01-29 11:58:57] [SUCCESS]   Completed
+[2026-01-29 11:58:57] [INFO] Processing subscription 653 of 838: Platform Telemetry Prod Discreet
+[2026-01-29 11:58:58] [SUCCESS]   Completed
+[2026-01-29 11:58:58] [INFO] Processing subscription 654 of 838: Platform Telemetry Prod Hybrid
+[2026-01-29 11:58:59] [SUCCESS]   Completed
+[2026-01-29 11:58:59] [INFO] Processing subscription 655 of 838: Platform Telemetry Test Hybrid
+[2026-01-29 11:59:01] [SUCCESS]   Completed
+[2026-01-29 11:59:01] [INFO] Processing subscription 656 of 838: PME Generative AI Model Platform
+[2026-01-29 11:59:03] [SUCCESS]   Completed
+[2026-01-29 11:59:03] [INFO] Processing subscription 657 of 838: pmoxaim
+[2026-01-29 11:59:04] [SUCCESS]   Completed
+[2026-01-29 11:59:04] [INFO] Processing subscription 658 of 838: PoC for SFP Azure Cloud Applications
+[2026-01-29 11:59:05] [SUCCESS]   Completed
+[2026-01-29 11:59:05] [INFO] Processing subscription 659 of 838: pptd-sc
+[2026-01-29 11:59:09] [SUCCESS]   Completed
+[2026-01-29 11:59:09] [INFO] Processing subscription 660 of 838: prccdc
+[2026-01-29 11:59:10] [SUCCESS]   Completed
+[2026-01-29 11:59:10] [INFO] Processing subscription 661 of 838: Primavera
+[2026-01-29 11:59:12] [SUCCESS]   Completed
+[2026-01-29 11:59:12] [INFO] Processing subscription 662 of 838: primecode-server-fw
+[2026-01-29 11:59:13] [SUCCESS]   Completed
+[2026-01-29 11:59:13] [INFO] Processing subscription 663 of 838: PrismAI
+[2026-01-29 11:59:15] [SUCCESS]   Completed
+[2026-01-29 11:59:15] [INFO] Processing subscription 664 of 838: Product Engineering - PreProd
+[2026-01-29 11:59:17] [SUCCESS]   Completed
+[2026-01-29 11:59:17] [INFO] Processing subscription 665 of 838: Product Engineering - Prod
+[2026-01-29 11:59:18] [SUCCESS]   Completed
+[2026-01-29 11:59:18] [INFO] Processing subscription 666 of 838: Product Engineering Analytics Dev
+[2026-01-29 11:59:21] [SUCCESS]   Completed
+[2026-01-29 11:59:21] [INFO] Processing subscription 667 of 838: Product Engineering Analytics QA
+[2026-01-29 11:59:23] [SUCCESS]   Completed
+[2026-01-29 11:59:23] [INFO] Processing subscription 668 of 838: ProductHealth
+[2026-01-29 11:59:24] [SUCCESS]   Completed
+[2026-01-29 11:59:24] [INFO] Processing subscription 669 of 838: Production - IPDS
+[2026-01-29 11:59:26] [SUCCESS]   Completed
+[2026-01-29 11:59:26] [INFO] Processing subscription 670 of 838: Profisee
+[2026-01-29 11:59:27] [SUCCESS]   Completed
+[2026-01-29 11:59:27] [INFO] Processing subscription 671 of 838: Project Amber
+[2026-01-29 11:59:28] [SUCCESS]   Completed
+[2026-01-29 11:59:28] [INFO] Processing subscription 672 of 838: Project-WCS_SammurAI
+[2026-01-29 11:59:30] [SUCCESS]   Completed
+[2026-01-29 11:59:30] [INFO] Processing subscription 673 of 838: PSaS - Design Analysis LLM Workflows
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:59:31] [SUCCESS]   Completed
+[2026-01-29 11:59:31] [INFO] Processing subscription 674 of 838: PTK1 iBEMS SMART BUILDING
+[2026-01-29 11:59:33] [SUCCESS]   Completed
+[2026-01-29 11:59:33] [INFO] Processing subscription 675 of 838: PVAgenticTools
+[2026-01-29 11:59:35] [SUCCESS]   Completed
+[2026-01-29 11:59:35] [INFO] Processing subscription 676 of 838: QIRI - IGBN
+[2026-01-29 11:59:36] [SUCCESS]   Completed
+[2026-01-29 11:59:36] [INFO] Processing subscription 677 of 838: Qiri_PR_IAP_11062
+[2026-01-29 11:59:38] [SUCCESS]   Completed
+[2026-01-29 11:59:38] [INFO] Processing subscription 678 of 838: qnagenerator
+[2026-01-29 11:59:39] [SUCCESS]   Completed
+[2026-01-29 11:59:39] [INFO] Processing subscription 679 of 838: QRRTS
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:59:41] [SUCCESS]   Completed
+[2026-01-29 11:59:41] [INFO] Processing subscription 680 of 838: RBHEPOS1
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 11:59:42] [SUCCESS]   Completed
+[2026-01-29 11:59:42] [INFO] Processing subscription 681 of 838: RDSE Azure
+[2026-01-29 11:59:44] [SUCCESS]   Completed
+[2026-01-29 11:59:44] [INFO] Processing subscription 682 of 838: red-team-hybrid
+[2026-01-29 11:59:46] [SUCCESS]   Completed
+[2026-01-29 11:59:46] [INFO] Processing subscription 683 of 838: red-team-hybrid-intrnl
+[2026-01-29 11:59:49] [SUCCESS]   Completed
+[2026-01-29 11:59:49] [INFO] Processing subscription 684 of 838: repositories.intel.com
+[2026-01-29 11:59:51] [SUCCESS]   Completed
+[2026-01-29 11:59:51] [INFO] Processing subscription 685 of 838: revdevopsk8s
+[2026-01-29 11:59:53] [SUCCESS]   Completed
+[2026-01-29 11:59:53] [INFO] Processing subscription 686 of 838: Revenue AI
+[2026-01-29 11:59:56] [SUCCESS]   Completed
+[2026-01-29 11:59:56] [INFO] Processing subscription 687 of 838: Revenue AI Prod
+[2026-01-29 11:59:57] [SUCCESS]   Completed
+[2026-01-29 11:59:57] [INFO] Processing subscription 688 of 838: rewsreports
+[2026-01-29 11:59:58] [SUCCESS]   Completed
+[2026-01-29 11:59:58] [INFO] Processing subscription 689 of 838: RPS Project Translation
+[2026-01-29 12:00:00] [SUCCESS]   Completed
+[2026-01-29 12:00:00] [INFO] Processing subscription 690 of 838: s2e-35958
+[2026-01-29 12:00:02] [SUCCESS]   Completed
+[2026-01-29 12:00:02] [INFO] Processing subscription 691 of 838: saas-bi-oncloud-pbi
+[2026-01-29 12:00:04] [SUCCESS]   Completed
+[2026-01-29 12:00:04] [INFO] Processing subscription 692 of 838: sage-test-gen
+[2026-01-29 12:00:05] [SUCCESS]   Completed
+[2026-01-29 12:00:05] [INFO] Processing subscription 693 of 838: sai-psa
+[2026-01-29 12:00:07] [SUCCESS]   Completed
+[2026-01-29 12:00:07] [INFO] Processing subscription 694 of 838: sam
+[2026-01-29 12:00:09] [SUCCESS]   Completed
+[2026-01-29 12:00:09] [INFO] Processing subscription 695 of 838: sap-code-review-tool
+[2026-01-29 12:00:11] [SUCCESS]   Completed
+[2026-01-29 12:00:11] [INFO] Processing subscription 696 of 838: sas-bi-oncloud-pbi
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 12:00:12] [SUCCESS]   Completed
+[2026-01-29 12:00:12] [INFO] Processing subscription 697 of 838: SATG AI solutions prod
+[2026-01-29 12:00:14] [SUCCESS]   Completed
+[2026-01-29 12:00:14] [INFO] Processing subscription 698 of 838: SC Integration Delivery PreProd
+[2026-01-29 12:00:15] [SUCCESS]   Completed
+[2026-01-29 12:00:15] [INFO] Processing subscription 699 of 838: SCCM Cloud Management
+[2026-01-29 12:00:16] [SUCCESS]   Completed
+[2026-01-29 12:00:16] [INFO] Processing subscription 700 of 838: SCCM Dev
+[2026-01-29 12:00:18] [SUCCESS]   Completed
+[2026-01-29 12:00:18] [INFO] Processing subscription 701 of 838: SCDA Azure
+[2026-01-29 12:00:19] [SUCCESS]   Completed
+[2026-01-29 12:00:19] [INFO] Processing subscription 702 of 838: schain-dev1
+[2026-01-29 12:00:21] [SUCCESS]   Completed
+[2026-01-29 12:00:21] [INFO] Processing subscription 703 of 838: schain-m4
+[2026-01-29 12:00:23] [SUCCESS]   Completed
+[2026-01-29 12:00:23] [INFO] Processing subscription 704 of 838: schain-m7
+[2026-01-29 12:00:25] [SUCCESS]   Completed
+[2026-01-29 12:00:25] [INFO] Processing subscription 705 of 838: SCION_Azure
+[2026-01-29 12:00:26] [SUCCESS]   Completed
+[2026-01-29 12:00:26] [INFO] Processing subscription 706 of 838: scvalidationazure
+[2026-01-29 12:00:28] [SUCCESS]   Completed
+[2026-01-29 12:00:28] [INFO] Processing subscription 707 of 838: sdlessentials
+[2026-01-29 12:00:29] [SUCCESS]   Completed
+[2026-01-29 12:00:29] [INFO] Processing subscription 708 of 838: Secure File Transfer - Cloud PROD
+[2026-01-29 12:00:32] [SUCCESS]   Completed
+[2026-01-29 12:00:32] [INFO] Processing subscription 709 of 838: Secure File Transfer - Cloud QA
+[2026-01-29 12:00:35] [SUCCESS]   Completed
+[2026-01-29 12:00:35] [INFO] Processing subscription 710 of 838: semgrep-ai-poc
+[2026-01-29 12:00:37] [SUCCESS]   Completed
+[2026-01-29 12:00:37] [INFO] Processing subscription 711 of 838: SFIP AI POC
+[2026-01-29 12:00:38] [SUCCESS]   Completed
+[2026-01-29 12:00:38] [INFO] Processing subscription 712 of 838: SGX Azure Confidential Computing
+[2026-01-29 12:00:39] [SUCCESS]   Completed
+[2026-01-29 12:00:39] [INFO] Processing subscription 713 of 838: SGX NP
+[2026-01-29 12:00:41] [SUCCESS]   Completed
+[2026-01-29 12:00:41] [INFO] Processing subscription 714 of 838: SGX PRD
+[2026-01-29 12:00:42] [SUCCESS]   Completed
+[2026-01-29 12:00:42] [INFO] Processing subscription 715 of 838: shastandtm
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 12:00:44] [SUCCESS]   Completed
+[2026-01-29 12:00:44] [INFO] Processing subscription 716 of 838: sia-ptp-tools
+[2026-01-29 12:00:45] [SUCCESS]   Completed
+[2026-01-29 12:00:45] [INFO] Processing subscription 717 of 838: Skylight Ridge Dev
+[2026-01-29 12:00:47] [SUCCESS]   Completed
+[2026-01-29 12:00:47] [INFO] Processing subscription 718 of 838: skylightridge-prod
+[2026-01-29 12:00:48] [SUCCESS]   Completed
+[2026-01-29 12:00:48] [INFO] Processing subscription 719 of 838: SmartGPT
+[2026-01-29 12:00:50] [SUCCESS]   Completed
+[2026-01-29 12:00:50] [INFO] Processing subscription 720 of 838: smartsdbaiagent
+[2026-01-29 12:00:51] [SUCCESS]   Completed
+[2026-01-29 12:00:51] [INFO] Processing subscription 721 of 838: SMG AMERICAS CSA Azure
+[2026-01-29 12:00:53] [SUCCESS]   Completed
+[2026-01-29 12:00:53] [INFO] Processing subscription 722 of 838: SMG APAC EMEA CSA
+[2026-01-29 12:00:55] [SUCCESS]   Completed
+[2026-01-29 12:00:55] [INFO] Processing subscription 723 of 838: smg-25135
+[2026-01-29 12:00:58] [SUCCESS]   Completed
+[2026-01-29 12:00:58] [INFO] Processing subscription 724 of 838: smg-cdb
+[2026-01-29 12:01:00] [SUCCESS]   Completed
+[2026-01-29 12:01:00] [INFO] Processing subscription 725 of 838: smg-gss-buc-prod
+[2026-01-29 12:01:02] [SUCCESS]   Completed
+[2026-01-29 12:01:02] [INFO] Processing subscription 726 of 838: smg-gss-preprod
+[2026-01-29 12:01:04] [SUCCESS]   Completed
+[2026-01-29 12:01:04] [INFO] Processing subscription 727 of 838: smg-gss-prod
+[2026-01-29 12:01:06] [SUCCESS]   Completed
+[2026-01-29 12:01:06] [INFO] Processing subscription 728 of 838: smg-scp-ds-biz-zone
+[2026-01-29 12:01:08] [SUCCESS]   Completed
+[2026-01-29 12:01:08] [INFO] Processing subscription 729 of 838: smg1ai
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 12:01:10] [SUCCESS]   Completed
+[2026-01-29 12:01:10] [INFO] Processing subscription 730 of 838: smgoneai
+[2026-01-29 12:01:12] [SUCCESS]   Completed
+[2026-01-29 12:01:12] [INFO] Processing subscription 731 of 838: snic-ipu-ci
+[2026-01-29 12:01:13] [SUCCESS]   Completed
+[2026-01-29 12:01:13] [INFO] Processing subscription 732 of 838: Software Foundry Services
+[2026-01-29 12:01:16] [SUCCESS]   Completed
+[2026-01-29 12:01:16] [INFO] Processing subscription 733 of 838: Software Foundry Services - Hybrid
+[2026-01-29 12:01:17] [SUCCESS]   Completed
+[2026-01-29 12:01:17] [INFO] Processing subscription 734 of 838: spec2assertions
+[2026-01-29 12:01:19] [SUCCESS]   Completed
+[2026-01-29 12:01:19] [INFO] Processing subscription 735 of 838: sri_testing_machines
+[2026-01-29 12:01:20] [SUCCESS]   Completed
+[2026-01-29 12:01:20] [INFO] Processing subscription 736 of 838: staffbase
+[2026-01-29 12:01:22] [SUCCESS]   Completed
+[2026-01-29 12:01:22] [INFO] Processing subscription 737 of 838: STTD Azure DevOps
+[2026-01-29 12:01:25] [SUCCESS]   Completed
+[2026-01-29 12:01:25] [INFO] Processing subscription 738 of 838: sumanavenur
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 12:01:27] [SUCCESS]   Completed
+[2026-01-29 12:01:27] [INFO] Processing subscription 739 of 838: Supply Chain - Sandbox
+[2026-01-29 12:01:31] [SUCCESS]   Completed
+[2026-01-29 12:01:31] [INFO] Processing subscription 740 of 838: Suscripción de Visual Studio Professional
+[2026-01-29 12:01:33] [SUCCESS]   Completed
+[2026-01-29 12:01:33] [INFO] Processing subscription 741 of 838: swcenetbatch
+[2026-01-29 12:01:35] [SUCCESS]   Completed
+[2026-01-29 12:01:35] [INFO] Processing subscription 742 of 838: swfoundryservice-ext
+[2026-01-29 12:01:37] [SUCCESS]   Completed
+[2026-01-29 12:01:37] [INFO] Processing subscription 743 of 838: sys_catalyst
+[2026-01-29 12:01:38] [SUCCESS]   Completed
+[2026-01-29 12:01:38] [INFO] Processing subscription 744 of 838: sys_ctlab
+[2026-01-29 12:01:40] [SUCCESS]   Completed
+[2026-01-29 12:01:40] [INFO] Processing subscription 745 of 838: sys_phnx_azure
+[2026-01-29 12:01:41] [SUCCESS]   Completed
+[2026-01-29 12:01:41] [INFO] Processing subscription 746 of 838: sys-req-eng
+[2026-01-29 12:01:43] [SUCCESS]   Completed
+[2026-01-29 12:01:43] [INFO] Processing subscription 747 of 838: SystemHWDesign
+[2026-01-29 12:01:45] [SUCCESS]   Completed
+[2026-01-29 12:01:45] [INFO] Processing subscription 748 of 838: TalentQuery
+[2026-01-29 12:01:47] [SUCCESS]   Completed
+[2026-01-29 12:01:47] [INFO] Processing subscription 749 of 838: tbv-development
+[2026-01-29 12:01:48] [SUCCESS]   Completed
+[2026-01-29 12:01:48] [INFO] Processing subscription 750 of 838: TCM External Integration
+[2026-01-29 12:01:50] [SUCCESS]   Completed
+[2026-01-29 12:01:50] [INFO] Processing subscription 751 of 838: TCM STTD
+[2026-01-29 12:01:52] [SUCCESS]   Completed
+[2026-01-29 12:01:52] [INFO] Processing subscription 752 of 838: TD_ATA_GAI
+[2026-01-29 12:01:53] [SUCCESS]   Completed
+[2026-01-29 12:01:53] [INFO] Processing subscription 753 of 838: TDA
+[2026-01-29 12:01:55] [SUCCESS]   Completed
+[2026-01-29 12:01:55] [INFO] Processing subscription 754 of 838: TDQRGenAI
+[2026-01-29 12:01:56] [SUCCESS]   Completed
+[2026-01-29 12:01:56] [INFO] Processing subscription 755 of 838: TDT Hybrid
+[2026-01-29 12:01:58] [SUCCESS]   Completed
+[2026-01-29 12:01:58] [INFO] Processing subscription 756 of 838: telem-infra-sentinel
+[2026-01-29 12:02:00] [SUCCESS]   Completed
+[2026-01-29 12:02:00] [INFO] Processing subscription 757 of 838: telemetry
+[2026-01-29 12:02:02] [SUCCESS]   Completed
+[2026-01-29 12:02:02] [INFO] Processing subscription 758 of 838: Telemetry Based Validation - Pre-Production
+[2026-01-29 12:02:05] [SUCCESS]   Completed
+[2026-01-29 12:02:05] [INFO] Processing subscription 759 of 838: Telemetry Based Validation - Production
+[2026-01-29 12:02:07] [SUCCESS]   Completed
+[2026-01-29 12:02:07] [INFO] Processing subscription 760 of 838: TestMari
+[2026-01-29 12:02:08] [SUCCESS]   Completed
+[2026-01-29 12:02:08] [INFO] Processing subscription 761 of 838: TFS online MSFT Power BI
+[2026-01-29 12:02:10] [SUCCESS]   Completed
+[2026-01-29 12:02:10] [INFO] Processing subscription 762 of 838: thunderbolt-share
+[2026-01-29 12:02:12] [SUCCESS]   Completed
+[2026-01-29 12:02:12] [INFO] Processing subscription 763 of 838: Thunderbot Community
+[2026-01-29 12:02:13] [SUCCESS]   Completed
+[2026-01-29 12:02:13] [INFO] Processing subscription 764 of 838: TRACE
+[2026-01-29 12:02:15] [SUCCESS]   Completed
+[2026-01-29 12:02:15] [INFO] Processing subscription 765 of 838: TRACE Enterprise DEVTEST
+[2026-01-29 12:02:17] [SUCCESS]   Completed
+[2026-01-29 12:02:17] [INFO] Processing subscription 766 of 838: TraceAnalytics
+[2026-01-29 12:02:19] [SUCCESS]   Completed
+[2026-01-29 12:02:19] [INFO] Processing subscription 767 of 838: ttd-mongo-payer
+[2026-01-29 12:02:20] [SUCCESS]   Completed
+[2026-01-29 12:02:20] [INFO] Processing subscription 768 of 838: tts_data_generation
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 12:02:22] [SUCCESS]   Completed
+[2026-01-29 12:02:22] [INFO] Processing subscription 769 of 838: Turtle_Creek_Manageability
+[2026-01-29 12:02:24] [SUCCESS]   Completed
+[2026-01-29 12:02:24] [INFO] Processing subscription 770 of 838: uampoc-1
+[2026-01-29 12:02:25] [SUCCESS]   Completed
+[2026-01-29 12:02:25] [INFO] Processing subscription 771 of 838: UCC
+[2026-01-29 12:02:27] [SUCCESS]   Completed
+[2026-01-29 12:02:27] [INFO] Processing subscription 772 of 838: UiPath Development
+[2026-01-29 12:02:28] [SUCCESS]   Completed
+[2026-01-29 12:02:28] [INFO] Processing subscription 773 of 838: UiPath Finance CTT DevTest
+[2026-01-29 12:02:30] [SUCCESS]   Completed
+[2026-01-29 12:02:30] [INFO] Processing subscription 774 of 838: UiPath Finance CTT Prod
+[2026-01-29 12:02:33] [SUCCESS]   Completed
+[2026-01-29 12:02:33] [INFO] Processing subscription 775 of 838: UiPath Finance DevTest
+[2026-01-29 12:02:35] [SUCCESS]   Completed
+[2026-01-29 12:02:35] [INFO] Processing subscription 776 of 838: UiPath Finance Prod
+[2026-01-29 12:02:36] [SUCCESS]   Completed
+[2026-01-29 12:02:36] [INFO] Processing subscription 777 of 838: UiPath HR DevTest
+[2026-01-29 12:02:38] [SUCCESS]   Completed
+[2026-01-29 12:02:38] [INFO] Processing subscription 778 of 838: UiPath HR Prod
+[2026-01-29 12:02:40] [SUCCESS]   Completed
+[2026-01-29 12:02:40] [INFO] Processing subscription 779 of 838: UiPath IT DevTest
+[2026-01-29 12:02:42] [SUCCESS]   Completed
+[2026-01-29 12:02:42] [INFO] Processing subscription 780 of 838: UiPath IT Prod
+[2026-01-29 12:02:44] [SUCCESS]   Completed
+[2026-01-29 12:02:44] [INFO] Processing subscription 781 of 838: UiPath Legal DevTest
+[2026-01-29 12:02:46] [SUCCESS]   Completed
+[2026-01-29 12:02:46] [INFO] Processing subscription 782 of 838: UiPath Legal Prod
+[2026-01-29 12:02:47] [SUCCESS]   Completed
+[2026-01-29 12:02:47] [INFO] Processing subscription 783 of 838: UiPath Master
+[2026-01-29 12:02:49] [SUCCESS]   Completed
+[2026-01-29 12:02:49] [INFO] Processing subscription 784 of 838: UiPath SupplyChain DevTest
+[2026-01-29 12:02:51] [SUCCESS]   Completed
+[2026-01-29 12:02:51] [INFO] Processing subscription 785 of 838: UiPath SupplyChain Prod
+[2026-01-29 12:02:52] [SUCCESS]   Completed
+[2026-01-29 12:02:52] [INFO] Processing subscription 786 of 838: Unified Communications
+[2026-01-29 12:02:54] [SUCCESS]   Completed
+[2026-01-29 12:02:54] [INFO] Processing subscription 787 of 838: ValSolutions
+[2026-01-29 12:02:57] [SUCCESS]   Completed
+[2026-01-29 12:02:57] [INFO] Processing subscription 788 of 838: Vietnam Cafe Payment System
+[2026-01-29 12:02:59] [SUCCESS]   Completed
+[2026-01-29 12:02:59] [INFO] Processing subscription 789 of 838: virtiotgtest
+[2026-01-29 12:03:00] [SUCCESS]   Completed
+[2026-01-29 12:03:00] [INFO] Processing subscription 790 of 838: Virtual Technical Sales Assistant
+[2026-01-29 12:03:02] [SUCCESS]   Completed
+[2026-01-29 12:03:02] [INFO] Processing subscription 791 of 838: Visual Studio Enterprise Subscription
+[2026-01-29 12:03:04] [SUCCESS]   Completed
+[2026-01-29 12:03:04] [INFO] Processing subscription 792 of 838: Visual Studio Enterprise Subscription
+[2026-01-29 12:03:05] [SUCCESS]   Completed
+[2026-01-29 12:03:05] [INFO] Processing subscription 793 of 838: Visual Studio Enterprise Subscription
+[2026-01-29 12:03:06] [SUCCESS]   Completed
+[2026-01-29 12:03:06] [INFO] Processing subscription 794 of 838: Visual Studio Enterprise Subscription
+[2026-01-29 12:03:09] [SUCCESS]   Completed
+[2026-01-29 12:03:09] [INFO] Processing subscription 795 of 838: Visual Studio Enterprise Subscription
+[2026-01-29 12:03:11] [SUCCESS]   Completed
+[2026-01-29 12:03:11] [INFO] Processing subscription 796 of 838: Visual Studio Enterprise Subscription
+[2026-01-29 12:03:12] [SUCCESS]   Completed
+[2026-01-29 12:03:12] [INFO] Processing subscription 797 of 838: Visual Studio Enterprise Subscription
+[2026-01-29 12:03:14] [SUCCESS]   Completed
+[2026-01-29 12:03:14] [INFO] Processing subscription 798 of 838: Visual Studio Enterprise Subscription
+[2026-01-29 12:03:16] [SUCCESS]   Completed
+[2026-01-29 12:03:16] [INFO] Processing subscription 799 of 838: Visual Studio Enterprise Subscription
+[2026-01-29 12:03:17] [SUCCESS]   Completed
+[2026-01-29 12:03:17] [INFO] Processing subscription 800 of 838: Visual Studio Enterprise Subscription
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 12:03:20] [SUCCESS]   Completed
+[2026-01-29 12:03:20] [INFO] Processing subscription 801 of 838: Visual Studio Enterprise Subscription
+[2026-01-29 12:03:22] [SUCCESS]   Completed
+[2026-01-29 12:03:22] [INFO] Processing subscription 802 of 838: Visual Studio Enterprise Subscription
+[2026-01-29 12:03:23] [SUCCESS]   Completed
+[2026-01-29 12:03:23] [INFO] Processing subscription 803 of 838: Visual Studio Professional Subscription
+[2026-01-29 12:03:25] [SUCCESS]   Completed
+[2026-01-29 12:03:25] [INFO] Processing subscription 804 of 838: Visual Studio Professional Subscription
+[2026-01-29 12:03:27] [SUCCESS]   Completed
+[2026-01-29 12:03:27] [INFO] Processing subscription 805 of 838: Visual Studio Professional Subscription
+[2026-01-29 12:03:28] [SUCCESS]   Completed
+[2026-01-29 12:03:28] [INFO] Processing subscription 806 of 838: Visual Studio Professional Subscription
+[2026-01-29 12:03:31] [SUCCESS]   Completed
+[2026-01-29 12:03:31] [INFO] Processing subscription 807 of 838: Visual Studio Professional Subscription
+[2026-01-29 12:03:34] [SUCCESS]   Completed
+[2026-01-29 12:03:34] [INFO] Processing subscription 808 of 838: Visual Studio Professional Subscription
+[2026-01-29 12:03:36] [SUCCESS]   Completed
+[2026-01-29 12:03:36] [INFO] Processing subscription 809 of 838: Visual Studio Professional Subscription
+[2026-01-29 12:03:38] [SUCCESS]   Completed
+[2026-01-29 12:03:38] [INFO] Processing subscription 810 of 838: Visual Studio Professional Subscription
+[2026-01-29 12:03:40] [SUCCESS]   Completed
+[2026-01-29 12:03:40] [INFO] Processing subscription 811 of 838: Visual Studio Professional Subscription
+[2026-01-29 12:03:43] [SUCCESS]   Completed
+[2026-01-29 12:03:43] [INFO] Processing subscription 812 of 838: Visual Studio Professional Subscription
+[2026-01-29 12:03:45] [SUCCESS]   Completed
+[2026-01-29 12:03:45] [INFO] Processing subscription 813 of 838: Visual Studio Professional Subscription
+[2026-01-29 12:03:46] [SUCCESS]   Completed
+[2026-01-29 12:03:46] [INFO] Processing subscription 814 of 838: VLAB
+[2026-01-29 12:03:48] [SUCCESS]   Completed
+[2026-01-29 12:03:48] [INFO] Processing subscription 815 of 838: VROC License Generation & DSG Debug Log Decryptor
+[2026-01-29 12:03:49] [SUCCESS]   Completed
+[2026-01-29 12:03:49] [INFO] Processing subscription 816 of 838: VSTS
+[2026-01-29 12:03:51] [SUCCESS]   Completed
+[2026-01-29 12:03:51] [INFO] Processing subscription 817 of 838: VTaaS Dev-Azure
+[2026-01-29 12:03:53] [SUCCESS]   Completed
+[2026-01-29 12:03:53] [INFO] Processing subscription 818 of 838: WCD_Build_And_Test_Env_Azure
+[2026-01-29 12:03:54] [SUCCESS]   Completed
+[2026-01-29 12:03:54] [INFO] Processing subscription 819 of 838: WCS AI Code Reviewer
+[2026-01-29 12:03:56] [SUCCESS]   Completed
+[2026-01-29 12:03:56] [INFO] Processing subscription 820 of 838: WCS AI Sandbox
+[2026-01-29 12:03:57] [SUCCESS]   Completed
+[2026-01-29 12:03:57] [INFO] Processing subscription 821 of 838: WCS Azure DevOps
+[2026-01-29 12:03:59] [SUCCESS]   Completed
+[2026-01-29 12:03:59] [INFO] Processing subscription 822 of 838: wcs-avs-azure
+[2026-01-29 12:04:01] [SUCCESS]   Completed
+[2026-01-29 12:04:01] [INFO] Processing subscription 823 of 838: wcsbluexp
+[2026-01-29 12:04:02] [SUCCESS]   Completed
+[2026-01-29 12:04:02] [INFO] Processing subscription 824 of 838: wcsindiahackathonevt
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 12:04:04] [SUCCESS]   Completed
+[2026-01-29 12:04:04] [INFO] Processing subscription 825 of 838: webhook-external
+[2026-01-29 12:04:06] [SUCCESS]   Completed
+[2026-01-29 12:04:06] [INFO] Processing subscription 826 of 838: webhook-internal
+[2026-01-29 12:04:09] [SUCCESS]   Completed
+[2026-01-29 12:04:09] [INFO] Processing subscription 827 of 838: WebIQ
+[2026-01-29 12:04:12] [SUCCESS]   Completed
+[2026-01-29 12:04:12] [INFO] Processing subscription 828 of 838: weideng
+[2026-01-29 12:04:13] [SUCCESS]   Completed
+[2026-01-29 12:04:13] [INFO] Processing subscription 829 of 838: weideng1
+[2026-01-29 12:04:14] [SUCCESS]   Completed
+[2026-01-29 12:04:14] [INFO] Processing subscription 830 of 838: weideng2
+[2026-01-29 12:04:16] [SUCCESS]   Completed
+[2026-01-29 12:04:16] [INFO] Processing subscription 831 of 838: weideng3
+[2026-01-29 12:04:17] [SUCCESS]   Completed
+[2026-01-29 12:04:17] [INFO] Processing subscription 832 of 838: winds-eng-bi
+[2026-01-29 12:04:19] [SUCCESS]   Completed
+[2026-01-29 12:04:19] [INFO] Processing subscription 833 of 838: workerai
+[2026-01-29 12:04:20] [SUCCESS]   Completed
+[2026-01-29 12:04:20] [INFO] Processing subscription 834 of 838: Workforce PreProd
+[2026-01-29 12:04:23] [SUCCESS]   Completed
+[2026-01-29 12:04:23] [INFO] Processing subscription 835 of 838: Workforce Prod
+[2026-01-29 12:04:24] [SUCCESS]   Completed
+[2026-01-29 12:04:24] [INFO] Processing subscription 836 of 838: wosmeeazurestack MSA enterprise devtest
+[2026-01-29 12:04:25] [SUCCESS]   Completed
+[2026-01-29 12:04:25] [INFO] Processing subscription 837 of 838: XpuGaiAzureAccount
+[2026-01-29 12:04:27] [SUCCESS]   Completed
+[2026-01-29 12:04:27] [INFO] Processing subscription 838 of 838: Yield Systems
+[2026-01-29 12:04:28] [SUCCESS]   Completed
+[2026-01-29 12:04:28] [INFO]
+[2026-01-29 12:04:28] [INFO] Exporting inventory to: .\SubscriptionInventory-20260129-114230.csv
+[2026-01-29 12:04:28] [SUCCESS] Export completed successfully!
+[2026-01-29 12:04:28] [SUCCESS] Total subscriptions inventoried: 838
+[2026-01-29 12:04:28] [INFO]
+[2026-01-29 12:04:28] [INFO] === Summary Statistics ===
+[2026-01-29 12:04:28] [INFO] Enabled Subscriptions: 785
+[2026-01-29 12:04:28] [INFO] Disabled Subscriptions: 53
+[2026-01-29 12:04:28] [WARN] Errors: 0
+[2026-01-29 12:04:28] [INFO]
+[2026-01-29 12:04:28] [SUCCESS] Inventory complete! Review the output file for details.
+**********************
+PowerShell transcript end
+End time: 20260129120428
+**********************

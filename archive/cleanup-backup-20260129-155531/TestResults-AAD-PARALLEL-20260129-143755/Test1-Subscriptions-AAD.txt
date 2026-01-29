@@ -1,0 +1,123 @@
+**********************
+PowerShell transcript start
+Start time: 20260129143755
+Username: DTL01\lcladmin
+RunAs User: DTL01\lcladmin
+Configuration Name: 
+Machine: DTL01 (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Program Files\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 10136
+PSVersion: 7.5.3
+PSEdition: Core
+GitCommitId: 7.5.3
+OS: Microsoft Windows 10.0.20348
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\TestResults-AAD-PARALLEL-20260129-143755\Test1-Subscriptions-AAD.txt
+[2026-01-29 14:37:55] [INFO] === Azure Subscription Inventory Script ===
+[2026-01-29 14:37:55] [INFO] Sprint 1, Story 1.1 - Environment Discovery & Baseline Assessment
+[2026-01-29 14:37:55] [INFO]
+[2026-01-29 14:37:55] [SUCCESS] Connected to Azure as: curtus.regnier@intel.com
+[2026-01-29 14:37:55] [INFO] Tenant: 46c98d88-e344-4ed4-8496-4ed7712e255d
+[2026-01-29 14:37:55] [INFO] Retrieving all subscriptions in tenant...
+[2026-01-29 14:37:56] [SUCCESS] Found 838 subscription(s)
+[2026-01-29 14:37:56] [INFO] Processing subscription 1 of 838: 1ci-preprod-metrics
+[2026-01-29 14:37:57] [SUCCESS]   Completed
+[2026-01-29 14:37:57] [INFO] Processing subscription 2 of 838: 1ci-prod-metrics
+[2026-01-29 14:37:59] [SUCCESS]   Completed
+[2026-01-29 14:37:59] [INFO] Processing subscription 3 of 838: 1Source Pre-Production
+[2026-01-29 14:38:00] [SUCCESS]   Completed
+[2026-01-29 14:38:00] [INFO] Processing subscription 4 of 838: 1Source1DB - IGBN
+[2026-01-29 14:38:02] [SUCCESS]   Completed
+[2026-01-29 14:38:02] [INFO] Processing subscription 5 of 838: 1sourcegithub
+[2026-01-29 14:38:04] [SUCCESS]   Completed
+[2026-01-29 14:38:04] [INFO] Processing subscription 6 of 838: account-pulse-ai
+[2026-01-29 14:38:05] [SUCCESS]   Completed
+[2026-01-29 14:38:05] [INFO] Processing subscription 7 of 838: acehub
+[2026-01-29 14:38:07] [SUCCESS]   Completed
+[2026-01-29 14:38:07] [INFO] Processing subscription 8 of 838: ade-aide-pathfinding
+[2026-01-29 14:38:09] [SUCCESS]   Completed
+[2026-01-29 14:38:09] [INFO] Processing subscription 9 of 838: ADO_DevOps
+[2026-01-29 14:38:10] [SUCCESS]   Completed
+[2026-01-29 14:38:10] [INFO] Processing subscription 10 of 838: Advanced Analytics Infra Dev
+[2026-01-29 14:38:11] [SUCCESS]   Completed
+[2026-01-29 14:38:11] [INFO] Processing subscription 11 of 838: Advanced Analytics Platform PreProd
+WARNING: Selected subscription is in 'Disabled' state.
+[2026-01-29 14:38:13] [SUCCESS]   Completed
+[2026-01-29 14:38:13] [INFO] Processing subscription 12 of 838: affected-processors
+[2026-01-29 14:38:16] [SUCCESS]   Completed
+[2026-01-29 14:38:16] [INFO] Processing subscription 13 of 838: affinity
+[2026-01-29 14:38:17] [SUCCESS]   Completed
+[2026-01-29 14:38:17] [INFO] Processing subscription 14 of 838: agenticbot-azure
+[2026-01-29 14:38:19] [SUCCESS]   Completed
+[2026-01-29 14:38:19] [INFO] Processing subscription 15 of 838: AI Debug Agent
+[2026-01-29 14:38:22] [SUCCESS]   Completed
+[2026-01-29 14:38:22] [INFO] Processing subscription 16 of 838: AI Solutions Group Co-Design LLM for Code
+[2026-01-29 14:38:25] [SUCCESS]   Completed
+[2026-01-29 14:38:25] [INFO] Processing subscription 17 of 838: Aim Dev
+[2026-01-29 14:38:27] [SUCCESS]   Completed
+[2026-01-29 14:38:27] [INFO] Processing subscription 18 of 838: AIM Prod
+PS>TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+]633;D;1]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>.\Run-ParallelTests-Fast.ps1 -AccountType AAD
+
+========================================
+PARALLEL PROCESSING - FAST MODE
+========================================
+Skipping Test 1 (Subscription Inventory)
+Running only Tests 2-3 with parallel processing
+Output Folder: .\TestResults-AAD-PARALLEL-FAST-20260129-144022
+Start Time: 2026-01-29 14:40:22
+[Test 1/2] Running Key Vault Inventory with PARALLEL processing...
+  ThrottleLimit: 20 concurrent subscriptions
+  Expected: 3-5 minutes for 838 subscriptions
+Transcript started, output file is .\TestResults-AAD-PARALLEL-FAST-20260129-144022\Test2-KeyVaults-AAD-PARALLEL.txt
+[2026-01-29 14:40:22] [INFO] === Azure Key Vault Inventory Script ===
+[2026-01-29 14:40:22] [INFO] Sprint 1, Story 1.1 - Environment Discovery & Baseline Assessment
+[2026-01-29 14:40:22] [INFO]
+[2026-01-29 14:40:22] [SUCCESS] Connected to Azure as: curtus.regnier@intel.com
+[2026-01-29 14:40:22] [INFO] Tenant: 46c98d88-e344-4ed4-8496-4ed7712e255d
+[2026-01-29 14:40:22] [INFO] Retrieving all subscriptions in tenant...
+[2026-01-29 14:40:22] [SUCCESS] Found 838 subscription(s)
+[2026-01-29 14:40:22] [INFO] Using parallel processing with throttle limit: 20
+PS>TerminatingError(ForEach-Object): "A ForEach-Object -Parallel using variable cannot be a script block. Passed-in script block variables are not supported with ForEach-Object -Parallel, and can result in undefined behavior."
+>> TerminatingError(ForEach-Object): "A ForEach-Object -Parallel using variable cannot be a script block. Passed-in script block variables are not supported with ForEach-Object -Parallel, and can result in undefined behavior."
+>> TerminatingError(ForEach-Object): "A ForEach-Object -Parallel using variable cannot be a script block. Passed-in script block variables are not supported with ForEach-Object -Parallel, and can result in undefined behavior."
+>> TerminatingError(ForEach-Object): "A ForEach-Object -Parallel using variable cannot be a script block. Passed-in script block variables are not supported with ForEach-Object -Parallel, and can result in undefined behavior."
+A ForEach-Object -Parallel using variable cannot be a script block. Passed-in script block variables are not supported with ForEach-Object -Parallel, and can result in undefined behavior.
+ForEach-Object: C:\Source\powershell-akv-policyhardening\Get-KeyVaultInventory.ps1:203:35
+Line |
+ 203 |  … scriptions | ForEach-Object -ThrottleLimit $ThrottleLimit -Parallel {
+     |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | A ForEach-Object -Parallel using variable cannot be a script block. Passed-in script block variables are not supported with ForEach-Object -Parallel, and
+     | can result in undefined behavior.
+
+]633;D;1]633;A]633;P;Cwd=C:\x5cSource\x5cpowershell-akv-policyhardeningPS C:\Source\powershell-akv-policyhardening> ]633;B
+PS>.\Run-ParallelTests-Fast.ps1 -AccountType AAD
+
+========================================
+PARALLEL PROCESSING - FAST MODE
+========================================
+Skipping Test 1 (Subscription Inventory)
+Running only Tests 2-3 with parallel processing
+Output Folder: .\TestResults-AAD-PARALLEL-FAST-20260129-144114
+Start Time: 2026-01-29 14:41:14
+[Test 1/2] Running Key Vault Inventory with PARALLEL processing...
+  ThrottleLimit: 20 concurrent subscriptions
+  Expected: 3-5 minutes for 838 subscriptions
+Transcript started, output file is .\TestResults-AAD-PARALLEL-FAST-20260129-144114\Test2-KeyVaults-AAD-PARALLEL.txt
+[2026-01-29 14:41:14] [INFO] === Azure Key Vault Inventory Script ===
+[2026-01-29 14:41:14] [INFO] Sprint 1, Story 1.1 - Environment Discovery & Baseline Assessment
+[2026-01-29 14:41:14] [INFO]
+[2026-01-29 14:41:14] [SUCCESS] Connected to Azure as: curtus.regnier@intel.com
+[2026-01-29 14:41:14] [INFO] Tenant: 46c98d88-e344-4ed4-8496-4ed7712e255d
+[2026-01-29 14:41:14] [INFO] Retrieving all subscriptions in tenant...
+[2026-01-29 14:41:14] [SUCCESS] Found 838 subscription(s)
+[2026-01-29 14:41:14] [INFO] Using parallel processing with throttle limit: 20

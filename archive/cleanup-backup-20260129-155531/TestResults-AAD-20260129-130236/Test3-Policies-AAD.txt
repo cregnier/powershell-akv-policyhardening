@@ -1,0 +1,131 @@
+**********************
+PowerShell transcript start
+Start time: 20260129143149
+Username: DTL01\lcladmin
+RunAs User: DTL01\lcladmin
+Configuration Name: 
+Machine: DTL01 (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Program Files\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 10136
+PSVersion: 7.5.3
+PSEdition: Core
+GitCommitId: 7.5.3
+OS: Microsoft Windows 10.0.20348
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\TestResults-AAD-20260129-130236\Test3-Policies-AAD.txt
+[2026-01-29 14:31:49]
+Running: .\Get-PolicyAssignmentInventory.ps1
+[2026-01-29 14:31:49] [INFO] === Azure Policy Assignment Inventory Script ===
+[2026-01-29 14:31:49] [INFO] Sprint 1, Story 1.1 - Environment Discovery & Baseline Assessment
+[2026-01-29 14:31:49] [INFO]
+[2026-01-29 14:31:49] [SUCCESS] Connected to Azure as: curtus.regnier@intel.com
+[2026-01-29 14:31:49] [INFO] Tenant: 46c98d88-e344-4ed4-8496-4ed7712e255d
+[2026-01-29 14:31:49] [INFO] Retrieving all subscriptions in tenant...
+[2026-01-29 14:31:49] [SUCCESS] Found 838 subscription(s)
+[2026-01-29 14:31:49] [INFO] Processing subscription 1 of 838: 1ci-preprod-metrics
+[2026-01-29 14:31:51] [SUCCESS]   Found 42 policy assignment(s)
+[2026-01-29 14:31:51] [INFO]     Processing: Native Security – Forward Activity Logs to central EH
+[2026-01-29 14:31:51] [INFO]     Processing: Public network access should be disabled for PostgreSQL flexible servers
+[2026-01-29 14:31:52] [INFO]     Processing: Public network access should be disabled for MySQL servers
+[2026-01-29 14:31:52] [INFO]     Processing: Public network access should be disabled for MySQL flexible servers
+[2026-01-29 14:31:52] [INFO]     Processing: Public network access should be disabled for PostgreSQL servers
+[2026-01-29 14:31:52] [INFO]     Processing: Endpoint protection should be installed on your machines
+[2026-01-29 14:31:52] [INFO]     Processing: Wiz Key Vault access policy should exist
+[2026-01-29 14:31:52] [INFO]     Processing: Wiz Key Vault scanner firewall policy should exist
+[2026-01-29 14:31:52] [INFO]     Processing: Microsoft Azure Multi Factor Authentication Enforcement for Resource Write Actions
+[2026-01-29 14:31:52] [INFO]     Processing: Microsoft Azure Multi Factor Authentication Enforcement for Resource Delete Actions
+[2026-01-29 14:31:53] [INFO]     Processing: DenyHybridUseBenefit-v2
+[2026-01-29 14:31:53] [INFO]     Processing: [Preview]: Audit CIS Microsoft Azure Foundations Benchmark 1.1.0 recommendations and deploy specific supporting VM Extensions
+PS>TerminatingError(Get-AzPolicyDefinition_List): "Cannot bind argument to parameter 'SubscriptionId' because it is an empty array."
+>> TerminatingError(Invoke-Command): "Cannot bind argument to parameter 'SubscriptionId' because it is an empty array."
+>> TerminatingError(Invoke-Command): "Cannot bind argument to parameter 'SubscriptionId' because it is an empty array."
+[2026-01-29 14:31:58] [INFO]     Processing: [Preview]: Enable Monitoring in Azure Security Center
+PS>TerminatingError(Get-AzPolicyDefinition_List): "Cannot bind argument to parameter 'SubscriptionId' because it is an empty array."
+>> TerminatingError(Invoke-Command): "Cannot bind argument to parameter 'SubscriptionId' because it is an empty array."
+>> TerminatingError(Invoke-Command): "Cannot bind argument to parameter 'SubscriptionId' because it is an empty array."
+[2026-01-29 14:32:01] [INFO]     Processing: Deny Direct Owner Role on Subscriptions
+[2026-01-29 14:32:01] [INFO]     Processing: RDP/SSH access from the Internet should be blocked
+[2026-01-29 14:32:01] [INFO]     Processing: Network interfaces should not have public IPs
+[2026-01-29 14:32:01] [INFO]     Processing: FTP access from the Internet should be blocked
+[2026-01-29 14:32:02] [INFO]     Processing: Secure transfer to storage accounts should be enabled
+[2026-01-29 14:32:02] [INFO]     Processing: Public network access on Azure SQL Database should be disabled - CustomDeny
+[2026-01-29 14:32:02] [INFO]     Processing: [Preview]: Storage account public access should be disallowed
+[2026-01-29 14:32:02] [INFO]     Processing: WinRM access from the internet should be blocked
+[2026-01-29 14:32:02] [INFO]     Processing: All Azure subscriptions should have AGS owner group
+[2026-01-29 14:32:02] [INFO]     Processing: Storage accounts should have the specified minimum TLS version
+[2026-01-29 14:32:03] [INFO]     Processing: Azure SQL Database should be running TLS version 1.2 or newer
+[2026-01-29 14:32:03] [INFO]     Processing: App Service Environment should have TLS 1.0 and 1.1 disabled
+[2026-01-29 14:32:03] [INFO]     Processing: Azure Front Door Standard and Premium should be running minimum TLS version of 1.2
+[2026-01-29 14:32:03] [INFO]     Processing: Azure Synapse Workspace SQL Server should be running TLS version 1.2 or newer
+[2026-01-29 14:32:03] [INFO]     Processing: Modify storage accounts to use the specified minimum TLS version
+[2026-01-29 14:32:03] [INFO]     Processing: [Preview]: Audit ISO 27001:2013 controls and deploy specific VM Extensions to support audit requirements
+PS>TerminatingError(Get-AzPolicyDefinition_List): "Cannot bind argument to parameter 'SubscriptionId' because it is an empty array."
+>> TerminatingError(Invoke-Command): "Cannot bind argument to parameter 'SubscriptionId' because it is an empty array."
+>> TerminatingError(Invoke-Command): "Cannot bind argument to parameter 'SubscriptionId' because it is an empty array."
+[2026-01-29 14:32:05] [INFO]     Processing: [Preview]: Enable Data Protection Suite
+PS>TerminatingError(Get-AzPolicyDefinition_List): "Cannot bind argument to parameter 'SubscriptionId' because it is an empty array."
+>> TerminatingError(Invoke-Command): "Cannot bind argument to parameter 'SubscriptionId' because it is an empty array."
+>> TerminatingError(Invoke-Command): "Cannot bind argument to parameter 'SubscriptionId' because it is an empty array."
+[2026-01-29 14:32:47] [INFO]     Processing: Deploy export to Event Hub for Microsoft Defender for Cloud data
+[2026-01-29 14:32:48] [INFO]     Processing: Cognitive Services accounts to disable public network access - Custom Deny
+[2026-01-29 14:32:48] [INFO]     Processing: Disable Defender for Servers
+[2026-01-29 14:32:48] [INFO]     Processing: Disable Defender for Containers
+[2026-01-29 14:32:48] [INFO]     Processing: Custom Deny - Enable Defender for Container
+[2026-01-29 14:32:48] [INFO]     Processing: Custom Deny - Enable Defender for Server
+[2026-01-29 14:32:49] [INFO]     Processing: Deny Function Apps without managed identity
+[2026-01-29 14:32:50] [INFO]     Processing: Deny-GatewayLoadBalancer-Change-On-External-LB
+[2026-01-29 14:32:50] [INFO]     Processing: Wiz Key Vault scanner firewall policy should exist
+[2026-01-29 14:32:50] [INFO]     Processing: Wiz Key Vault access policy should exist
+[2026-01-29 14:32:50] [INFO]     Processing: Defender for SQL Servers on Machines provisioning (subscription: dc8b9d9c-0cf9-446c-9177-12921182f54a)
+PS>TerminatingError(Get-AzPolicyDefinition_List): "Cannot bind argument to parameter 'SubscriptionId' because it is an empty array."
+>> TerminatingError(Invoke-Command): "Cannot bind argument to parameter 'SubscriptionId' because it is an empty array."
+>> TerminatingError(Invoke-Command): "Cannot bind argument to parameter 'SubscriptionId' because it is an empty array."
+[2026-01-29 14:32:52] [INFO]     Processing: ASC DataProtection (subscription: dc8b9d9c-0cf9-446c-9177-12921182f54a)
+PS>TerminatingError(Get-AzPolicyDefinition_List): "Cannot bind argument to parameter 'SubscriptionId' because it is an empty array."
+>> TerminatingError(Invoke-Command): "Cannot bind argument to parameter 'SubscriptionId' because it is an empty array."
+>> TerminatingError(Invoke-Command): "Cannot bind argument to parameter 'SubscriptionId' because it is an empty array."
+[2026-01-29 14:32:52] [INFO] Processing subscription 2 of 838: 1ci-prod-metrics
+[2026-01-29 14:32:54] [SUCCESS]   Found 43 policy assignment(s)
+[2026-01-29 14:32:54] [INFO]     Processing: Native Security – Forward Activity Logs to central EH
+[2026-01-29 14:32:54] [INFO]     Processing: Public network access should be disabled for PostgreSQL flexible servers
+[2026-01-29 14:32:54] [INFO]     Processing: Public network access should be disabled for MySQL servers
+[2026-01-29 14:32:54] [INFO]     Processing: Public network access should be disabled for MySQL flexible servers
+[2026-01-29 14:32:54] [INFO]     Processing: Public network access should be disabled for PostgreSQL servers
+[2026-01-29 14:32:54] [INFO]     Processing: Endpoint protection should be installed on your machines
+[2026-01-29 14:32:54] [INFO]     Processing: Wiz Key Vault access policy should exist
+[2026-01-29 14:32:54] [INFO]     Processing: Wiz Key Vault scanner firewall policy should exist
+[2026-01-29 14:32:55] [INFO]     Processing: Microsoft Azure Multi Factor Authentication Enforcement for Resource Write Actions
+[2026-01-29 14:32:55] [INFO]     Processing: Microsoft Azure Multi Factor Authentication Enforcement for Resource Delete Actions
+[2026-01-29 14:32:55] [INFO]     Processing: DenyHybridUseBenefit-v2
+[2026-01-29 14:32:55] [INFO]     Processing: Deploy export to Event Hub for Microsoft Defender for Cloud data
+[2026-01-29 14:32:55] [INFO]     Processing: Azure Cosmos DB accounts should have firewall rules
+[2026-01-29 14:32:55] [INFO]     Processing: Cognitive Services accounts to disable public network access - Custom Deny
+[2026-01-29 14:32:56] [INFO]     Processing: Disable Defender for Containers
+[2026-01-29 14:32:56] [INFO]     Processing: Disable Defender for Servers
+[2026-01-29 14:32:56] [INFO]     Processing: Custom Deny - Enable Defender for Container
+[2026-01-29 14:32:56] [INFO]     Processing: Custom Deny - Enable Defender for Server
+[2026-01-29 14:32:56] [INFO]     Processing: Deny Function Apps without managed identity
+[2026-01-29 14:32:56] [INFO]     Processing: Deny-GatewayLoadBalancer-Change-On-External-LB
+[2026-01-29 14:32:56] [INFO]     Processing: Wiz Key Vault access policy should exist
+[2026-01-29 14:32:57] [INFO]     Processing: Wiz Key Vault scanner firewall policy should exist
+[2026-01-29 14:32:57] [INFO]     Processing: Storage accounts should have the specified minimum TLS version
+[2026-01-29 14:32:57] [INFO]     Processing: Azure SQL Database should be running TLS version 1.2 or newer
+[2026-01-29 14:32:57] [INFO]     Processing: App Service Environment should have TLS 1.0 and 1.1 disabled
+[2026-01-29 14:32:57] [INFO]     Processing: Azure Front Door Standard and Premium should be running minimum TLS version of 1.2
+[2026-01-29 14:32:58] [INFO]     Processing: Azure Synapse Workspace SQL Server should be running TLS version 1.2 or newer
+[2026-01-29 14:32:58] [INFO]     Processing: Modify storage accounts to use the specified minimum TLS version
+[2026-01-29 14:32:58] [INFO]     Processing: [Preview]: Audit CIS Microsoft Azure Foundations Benchmark 1.1.0 recommendations and deploy specific supporting VM Extensions
+PS>TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+**********************
+PowerShell transcript end
+End time: 20260129143301
+**********************

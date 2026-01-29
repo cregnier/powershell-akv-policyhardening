@@ -121,25 +121,13 @@ function Test-KeyVaultRelated {
 function Get-PolicyDefinitionDetails {
     param([string]$PolicyDefinitionId)
     
-    try {
-        $definition = Get-AzPolicyDefinition -Id $PolicyDefinitionId -ErrorAction SilentlyContinue
-        if ($definition) {
-            return @{
-                DisplayName = $definition.Properties.DisplayName
-                Description = $definition.Properties.Description
-                PolicyType  = $definition.Properties.PolicyType
-                Mode        = $definition.Properties.Mode
-                Category    = $definition.Properties.Metadata.category
-            }
-        }
-    }
-    catch {
-        # Silently handle errors - may not have access to definition
-    }
+    # Skip policy definition lookup to avoid interactive prompts
+    # Policy assignment data already contains the most critical information
+    # Definition details are optional enrichment that can cause authentication issues
     
     return @{
-        DisplayName = 'Unable to retrieve'
-        Description = 'Unable to retrieve'
+        DisplayName = 'Not retrieved (avoided interactive prompt)'
+        Description = 'Not retrieved (avoided interactive prompt)'
         PolicyType  = 'Unknown'
         Mode        = 'Unknown'
         Category    = 'Unknown'
@@ -206,12 +194,12 @@ if (-not (Test-AzureConnection)) {
 # Get subscriptions to scan
 if ($SubscriptionIds) {
     Write-Log "Scanning specified subscriptions: $($SubscriptionIds.Count)" -Level 'INFO'
-    $subscriptions = $SubscriptionIds | ForEach-Object { Get-AzSubscription -SubscriptionId $_ }
+    $subscriptions = @($SubscriptionIds | ForEach-Object { Get-AzSubscription -SubscriptionId $_ })
 }
 else {
     Write-Log "Retrieving all subscriptions in tenant..." -Level 'INFO'
     try {
-        $subscriptions = Get-AzSubscription -ErrorAction Stop
+        $subscriptions = @(Get-AzSubscription -ErrorAction Stop)
         Write-Log "Found $($subscriptions.Count) subscription(s)" -Level 'SUCCESS'
     }
     catch {

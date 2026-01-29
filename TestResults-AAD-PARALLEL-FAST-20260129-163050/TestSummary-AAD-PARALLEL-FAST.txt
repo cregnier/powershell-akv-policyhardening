@@ -1,0 +1,26 @@
+========================================
+PARALLEL PROCESSING TEST SUMMARY - FAST MODE
+========================================
+Account Type: AAD
+Test Date: 2026-01-29 16:47:28
+Output Folder: .\TestResults-AAD-PARALLEL-FAST-20260129-163050
+
+TEST RESULTS:
+-------------
+Test 2 (Key Vaults PARALLEL): PASS - Duration: 03:54
+Test 3 (Policies):           PASS - Duration: 12:42
+
+Total Duration: 16:37
+
+NOTE: Test 1 (Subscription Inventory) was skipped in fast mode
+
+PERFORMANCE:
+-----------
+Test 2 uses parallel processing with ThrottleLimit=20
+Expected speedup: 10-20x faster than sequential processing
+For 838 subscriptions, expected time: 3-5 minutes vs 60+ minutes sequential
+
+CSV FILES GENERATED:
+--------------------
+- KeyVaultInventory-AAD-PARALLEL-20260129-163050.csv
+- PolicyAssignmentInventory-AAD-20260129-163445.csv

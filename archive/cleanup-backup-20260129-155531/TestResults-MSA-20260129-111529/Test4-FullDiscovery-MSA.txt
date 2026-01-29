@@ -1,0 +1,303 @@
+**********************
+PowerShell transcript start
+Start time: 20260129111709
+Username: DTL01\lcladmin
+RunAs User: DTL01\lcladmin
+Configuration Name: 
+Machine: DTL01 (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Program Files\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 8684
+PSVersion: 7.5.3
+PSEdition: Core
+GitCommitId: 7.5.3
+OS: Microsoft Windows 10.0.20348
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\TestResults-MSA-20260129-111529\Test4-FullDiscovery-MSA.txt
+[2026-01-29 11:17:09]
+Running: .\Start-EnvironmentDiscovery.ps1 -AutoRun
+
+NOTE: AutoRun mode will pause between phases for review.
+      Press any key when prompted to continue to next phase.
+
+[2026-01-29 11:17:09] [INFO] Auto-run mode enabled - starting full discovery...
+[2026-01-29 11:17:09] [HEADER] Starting Full (Detailed) Discovery...
+[2026-01-29 11:17:09] [INFO] Phase 1/3: Subscription Inventory
+[2026-01-29 11:17:09] [HEADER] Starting Subscription Inventory...
+WARNING: Unable to acquire token for tenant '28a0fe2d-1db4-4c3e-9a58-142d0f38e709' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+WARNING: Unable to acquire token for tenant '93298d06-3fff-4626-8e13-397bf9bd4c30' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+WARNING: Unable to acquire token for tenant '218094f2-2976-4255-a15c-4008e6c8a18b' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+[2026-01-29 11:17:09] [SUCCESS] Found 3 subscription(s)
+[2026-01-29 11:17:09] [INFO] Processing 1 / 3: MSDN Platforms Subscription
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+[2026-01-29 11:17:13] [INFO] Processing 2 / 3: Azure subscription 1
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+[2026-01-29 11:17:14] [WARN]   Skipping - subscription in different tenant (MFA required or no access)
+[2026-01-29 11:17:14] [INFO] Processing 3 / 3: Pay-As-You-Go
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+[2026-01-29 11:17:15] [WARN]   Skipping - subscription in different tenant (MFA required or no access)
+[2026-01-29 11:17:15] [SUCCESS] Exported full inventory to: .\Discovery-20260129-111709\SubscriptionInventory.csv
+[2026-01-29 11:17:15] [SUCCESS] Exported template format to: .\Discovery-20260129-111709\subscriptions-template.csv
+[2026-01-29 11:17:15] [SUCCESS] Subscription inventory complete!
+[2026-01-29 11:17:15] [INFO] Summary: 1 enabled / 1 total subscriptions
+
+Press any key to return to menu...
+[2026-01-29 11:17:26] [INFO] Phase 2/3: Key Vault Inventory
+[2026-01-29 11:17:26] [HEADER] Starting Key Vault Inventory...
+[2026-01-29 11:17:26] [INFO] === Azure Key Vault Inventory Script ===
+[2026-01-29 11:17:26] [INFO] Sprint 1, Story 1.1 - Environment Discovery & Baseline Assessment
+[2026-01-29 11:17:26] [INFO]
+[2026-01-29 11:17:26] [SUCCESS] Connected to Azure as: theregniers@hotmail.com
+[2026-01-29 11:17:26] [INFO] Tenant: 21bd262e-3255-411e-8345-51102d9d9e9e
+[2026-01-29 11:17:26] [INFO] Retrieving all subscriptions in tenant...
+WARNING: Unable to acquire token for tenant '28a0fe2d-1db4-4c3e-9a58-142d0f38e709' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+WARNING: Unable to acquire token for tenant '93298d06-3fff-4626-8e13-397bf9bd4c30' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+WARNING: Unable to acquire token for tenant '218094f2-2976-4255-a15c-4008e6c8a18b' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+[2026-01-29 11:17:27] [SUCCESS] Found 3 subscription(s)
+[2026-01-29 11:17:27] [INFO] Processing subscription 1 of 3: MSDN Platforms Subscription
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+[2026-01-29 11:17:27] [SUCCESS]   Found 9 Key Vault(s)
+[2026-01-29 11:17:27] [INFO]     Processing: TestAKV-SM
+WARNING: Upcoming breaking changes in the cmdlet 'Get-AzDiagnosticSetting' :
+- The output type 'Microsoft.Azure.PowerShell.Cmdlets.Monitor.DiagnosticSetting.Models.Api20210501Preview.IDiagnosticSettingsResource' is changing
+- The following properties in the output type are being deprecated : 'Log' 'Metric'
+- The following properties are being added to the output type : 'Log' 'Metric'
+- Change description : The types of the properties Log and Metric will be changed from single object or fixed array to 'List'. 
+- This change will take effect on '11/3/2025'- The change is expected to take effect from Az version : '15.0.0'
+- The change is expected to take effect from version : '7.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+[2026-01-29 11:17:28] [INFO]     Processing: kv-ok-1820486r
+WARNING: Upcoming breaking changes in the cmdlet 'Get-AzDiagnosticSetting' :
+- The output type 'Microsoft.Azure.PowerShell.Cmdlets.Monitor.DiagnosticSetting.Models.Api20210501Preview.IDiagnosticSettingsResource' is changing
+- The following properties in the output type are being deprecated : 'Log' 'Metric'
+- The following properties are being added to the output type : 'Log' 'Metric'
+- Change description : The types of the properties Log and Metric will be changed from single object or fixed array to 'List'. 
+- This change will take effect on '11/3/2025'- The change is expected to take effect from Az version : '15.0.0'
+- The change is expected to take effect from version : '7.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+[2026-01-29 11:17:29] [INFO]     Processing: kv-no-purge-1820486r
+WARNING: Upcoming breaking changes in the cmdlet 'Get-AzDiagnosticSetting' :
+- The output type 'Microsoft.Azure.PowerShell.Cmdlets.Monitor.DiagnosticSetting.Models.Api20210501Preview.IDiagnosticSettingsResource' is changing
+- The following properties in the output type are being deprecated : 'Log' 'Metric'
+- The following properties are being added to the output type : 'Log' 'Metric'
+- Change description : The types of the properties Log and Metric will be changed from single object or fixed array to 'List'. 
+- This change will take effect on '11/3/2025'- The change is expected to take effect from Az version : '15.0.0'
+- The change is expected to take effect from version : '7.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+[2026-01-29 11:17:31] [INFO]     Processing: kv-no-diag-1820486r
+WARNING: Upcoming breaking changes in the cmdlet 'Get-AzDiagnosticSetting' :
+- The output type 'Microsoft.Azure.PowerShell.Cmdlets.Monitor.DiagnosticSetting.Models.Api20210501Preview.IDiagnosticSettingsResource' is changing
+- The following properties in the output type are being deprecated : 'Log' 'Metric'
+- The following properties are being added to the output type : 'Log' 'Metric'
+- Change description : The types of the properties Log and Metric will be changed from single object or fixed array to 'List'. 
+- This change will take effect on '11/3/2025'- The change is expected to take effect from Az version : '15.0.0'
+- The change is expected to take effect from version : '7.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+[2026-01-29 11:17:32] [INFO]     Processing: kv-accesspolicy-1820486r
+WARNING: Upcoming breaking changes in the cmdlet 'Get-AzDiagnosticSetting' :
+- The output type 'Microsoft.Azure.PowerShell.Cmdlets.Monitor.DiagnosticSetting.Models.Api20210501Preview.IDiagnosticSettingsResource' is changing
+- The following properties in the output type are being deprecated : 'Log' 'Metric'
+- The following properties are being added to the output type : 'Log' 'Metric'
+- Change description : The types of the properties Log and Metric will be changed from single object or fixed array to 'List'. 
+- This change will take effect on '11/3/2025'- The change is expected to take effect from Az version : '15.0.0'
+- The change is expected to take effect from version : '7.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+[2026-01-29 11:17:33] [INFO]     Processing: kv-rbac-1820486r
+WARNING: Upcoming breaking changes in the cmdlet 'Get-AzDiagnosticSetting' :
+- The output type 'Microsoft.Azure.PowerShell.Cmdlets.Monitor.DiagnosticSetting.Models.Api20210501Preview.IDiagnosticSettingsResource' is changing
+- The following properties in the output type are being deprecated : 'Log' 'Metric'
+- The following properties are being added to the output type : 'Log' 'Metric'
+- Change description : The types of the properties Log and Metric will be changed from single object or fixed array to 'List'. 
+- This change will take effect on '11/3/2025'- The change is expected to take effect from Az version : '15.0.0'
+- The change is expected to take effect from version : '7.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+[2026-01-29 11:17:33] [INFO]     Processing: kv-netrestrict-1820486r
+WARNING: Upcoming breaking changes in the cmdlet 'Get-AzDiagnosticSetting' :
+- The output type 'Microsoft.Azure.PowerShell.Cmdlets.Monitor.DiagnosticSetting.Models.Api20210501Preview.IDiagnosticSettingsResource' is changing
+- The following properties in the output type are being deprecated : 'Log' 'Metric'
+- The following properties are being added to the output type : 'Log' 'Metric'
+- Change description : The types of the properties Log and Metric will be changed from single object or fixed array to 'List'. 
+- This change will take effect on '11/3/2025'- The change is expected to take effect from Az version : '15.0.0'
+- The change is expected to take effect from version : '7.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+[2026-01-29 11:17:34] [INFO]     Processing: kv-weakaccess-1820486r
+WARNING: Upcoming breaking changes in the cmdlet 'Get-AzDiagnosticSetting' :
+- The output type 'Microsoft.Azure.PowerShell.Cmdlets.Monitor.DiagnosticSetting.Models.Api20210501Preview.IDiagnosticSettingsResource' is changing
+- The following properties in the output type are being deprecated : 'Log' 'Metric'
+- The following properties are being added to the output type : 'Log' 'Metric'
+- Change description : The types of the properties Log and Metric will be changed from single object or fixed array to 'List'. 
+- This change will take effect on '11/3/2025'- The change is expected to take effect from Az version : '15.0.0'
+- The change is expected to take effect from version : '7.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+[2026-01-29 11:17:34] [INFO]     Processing: kv-expired-1820486r
+WARNING: Upcoming breaking changes in the cmdlet 'Get-AzDiagnosticSetting' :
+- The output type 'Microsoft.Azure.PowerShell.Cmdlets.Monitor.DiagnosticSetting.Models.Api20210501Preview.IDiagnosticSettingsResource' is changing
+- The following properties in the output type are being deprecated : 'Log' 'Metric'
+- The following properties are being added to the output type : 'Log' 'Metric'
+- Change description : The types of the properties Log and Metric will be changed from single object or fixed array to 'List'. 
+- This change will take effect on '11/3/2025'- The change is expected to take effect from Az version : '15.0.0'
+- The change is expected to take effect from version : '7.0.0'
+Note : Go to https://aka.ms/azps-changewarnings for steps to suppress this breaking change warning, and other information on breaking changes in Azure PowerShell.
+[2026-01-29 11:17:35] [INFO] Processing subscription 2 of 3: Azure subscription 1
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+[2026-01-29 11:17:36] [WARN]   Skipping - subscription in different tenant (MFA required or no access)
+[2026-01-29 11:17:36] [INFO] Processing subscription 3 of 3: Pay-As-You-Go
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+[2026-01-29 11:17:37] [WARN]   Skipping - subscription in different tenant (MFA required or no access)
+[2026-01-29 11:17:37] [INFO]
+[2026-01-29 11:17:37] [INFO] Exporting inventory to: .\Discovery-20260129-111709\KeyVaultInventory.csv
+[2026-01-29 11:17:37] [SUCCESS] Export completed successfully!
+[2026-01-29 11:17:37] [SUCCESS] Total Key Vaults inventoried: 9
+[2026-01-29 11:17:37] [INFO]
+[2026-01-29 11:17:37] [INFO] === Summary Statistics ===
+[2026-01-29 11:17:37] [INFO] Total Subscriptions Scanned: 3
+[2026-01-29 11:17:37] [INFO] Total Key Vaults Found: 9
+[2026-01-29 11:17:37] [INFO]
+[2026-01-29 11:17:37] [INFO] === Compliance Snapshot ===
+[2026-01-29 11:17:37] [INFO] Soft Delete Enabled: 9 / 9 (100%)
+[2026-01-29 11:17:37] [INFO] Purge Protection Enabled: 8 / 9 (88.89%)
+[2026-01-29 11:17:37] [INFO] RBAC Authorization Enabled: 9 / 9 (100%)
+[2026-01-29 11:17:37] [INFO] Public Network Access Disabled: 0 / 9 (0%)
+[2026-01-29 11:17:37] [INFO] Private Endpoints Configured: 0 / 9 (0%)
+[2026-01-29 11:17:37] [INFO]
+[2026-01-29 11:17:37] [SUCCESS] Inventory complete! Review the output file for details.
+
+Press any key to return to menu...
+[2026-01-29 11:17:47] [INFO] Phase 3/3: Policy Assignment Inventory
+[2026-01-29 11:17:47] [HEADER] Starting Policy Assignment Inventory...
+[2026-01-29 11:17:47] [INFO] === Azure Policy Assignment Inventory Script ===
+[2026-01-29 11:17:47] [INFO] Sprint 1, Story 1.1 - Environment Discovery & Baseline Assessment
+[2026-01-29 11:17:47] [INFO]
+[2026-01-29 11:17:47] [SUCCESS] Connected to Azure as: theregniers@hotmail.com
+[2026-01-29 11:17:47] [INFO] Tenant: 21bd262e-3255-411e-8345-51102d9d9e9e
+[2026-01-29 11:17:47] [INFO] Retrieving all subscriptions in tenant...
+WARNING: Unable to acquire token for tenant '28a0fe2d-1db4-4c3e-9a58-142d0f38e709' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+WARNING: Unable to acquire token for tenant '93298d06-3fff-4626-8e13-397bf9bd4c30' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+WARNING: Unable to acquire token for tenant '218094f2-2976-4255-a15c-4008e6c8a18b' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+[2026-01-29 11:17:47] [SUCCESS] Found 3 subscription(s)
+[2026-01-29 11:17:47] [INFO] Processing subscription 1 of 3: MSDN Platforms Subscription
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+[2026-01-29 11:17:48] [SUCCESS]   Found 31 policy assignment(s)
+[2026-01-29 11:17:48] [INFO]     Processing: Microsoft Azure region access restriction blocking West Europe region
+[2026-01-29 11:17:49] [INFO]     Processing:
+[2026-01-29 11:17:49] [INFO]     Processing:
+[2026-01-29 11:17:49] [INFO]     Processing:
+[2026-01-29 11:17:49] [INFO]     Processing:
+[2026-01-29 11:17:49] [INFO]     Processing:
+[2026-01-29 11:17:49] [INFO]     Processing:
+[2026-01-29 11:17:49] [INFO]     Processing:
+[2026-01-29 11:17:49] [INFO]     Processing:
+[2026-01-29 11:17:50] [INFO]     Processing:
+[2026-01-29 11:17:50] [INFO]     Processing:
+[2026-01-29 11:17:50] [INFO]     Processing:
+[2026-01-29 11:17:50] [INFO]     Processing:
+[2026-01-29 11:17:50] [INFO]     Processing:
+[2026-01-29 11:17:50] [INFO]     Processing:
+[2026-01-29 11:17:50] [INFO]     Processing:
+[2026-01-29 11:17:51] [INFO]     Processing:
+[2026-01-29 11:17:51] [INFO]     Processing:
+[2026-01-29 11:17:51] [INFO]     Processing:
+[2026-01-29 11:17:51] [INFO]     Processing:
+[2026-01-29 11:17:51] [INFO]     Processing:
+[2026-01-29 11:17:51] [INFO]     Processing:
+[2026-01-29 11:17:51] [INFO]     Processing:
+[2026-01-29 11:17:51] [INFO]     Processing:
+[2026-01-29 11:17:51] [INFO]     Processing:
+[2026-01-29 11:17:52] [INFO]     Processing:
+[2026-01-29 11:17:52] [INFO]     Processing:
+[2026-01-29 11:17:52] [INFO]     Processing:
+[2026-01-29 11:17:52] [INFO]     Processing:
+[2026-01-29 11:17:52] [INFO]     Processing:
+[2026-01-29 11:17:52] [INFO]     Processing:
+[2026-01-29 11:17:52] [INFO] Processing subscription 2 of 3: Azure subscription 1
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+[2026-01-29 11:17:54] [WARN]   Skipping - subscription in different tenant (MFA required or no access)
+[2026-01-29 11:17:54] [INFO] Processing subscription 3 of 3: Pay-As-You-Go
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 28a0fe2d-1db4-4c3e-9a58-142d0f38e709. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 28a0fe2d-1db4-4c3e-9a58-142d0f38e709'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 93298d06-3fff-4626-8e13-397bf9bd4c30. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 93298d06-3fff-4626-8e13-397bf9bd4c30'.'
+WARNING: Unable to acquire token for tenant '' with error 'Authentication failed against tenant 218094f2-2976-4255-a15c-4008e6c8a18b. User interaction is required. This may be due to the conditional access policy settings such as multi-factor authentication (MFA). If you need to access subscriptions in that tenant, please rerun 'Connect-AzAccount' with additional parameter '-TenantId 218094f2-2976-4255-a15c-4008e6c8a18b'.'
+[2026-01-29 11:17:55] [WARN]   Skipping - subscription in different tenant (MFA required or no access)
+[2026-01-29 11:17:55] [INFO]
+[2026-01-29 11:17:55] [INFO] Exporting inventory to: .\Discovery-20260129-111709\PolicyAssignmentInventory.csv
+[2026-01-29 11:17:55] [SUCCESS] Export completed successfully!
+[2026-01-29 11:17:55] [SUCCESS] Total policy assignments inventoried: 31
+[2026-01-29 11:17:55] [INFO]
+[2026-01-29 11:17:55] [INFO] === Summary Statistics ===
+[2026-01-29 11:17:55] [INFO] Total Subscriptions Scanned: 3
+[2026-01-29 11:17:55] [INFO] Total Policy Assignments Found: 31
+[2026-01-29 11:17:55] [INFO]
+[2026-01-29 11:17:55] [INFO] === Scope Breakdown ===
+[2026-01-29 11:17:55] [INFO] Subscription Scope: 30
+[2026-01-29 11:17:55] [INFO] Resource Group Scope: 0
+[2026-01-29 11:17:55] [INFO] Management Group Scope: 1
+[2026-01-29 11:17:55] [INFO]
+[2026-01-29 11:17:55] [INFO] === Enforcement Mode ===
+[2026-01-29 11:17:55] [INFO] Enforced (Default): 1
+[2026-01-29 11:17:55] [INFO] Not Enforced (DoNotEnforce): 30
+[2026-01-29 11:17:55] [INFO]
+[2026-01-29 11:17:55] [INFO] === Top 10 Policy Categories ===
+[2026-01-29 11:17:55] [INFO] Unknown: 31
+[2026-01-29 11:17:55] [INFO]
+[2026-01-29 11:17:55] [SUCCESS] Inventory complete! Review the output file for details.
+
+Press any key to return to menu...
+[2026-01-29 11:17:58] [INFO] Generating consolidated report...
+[2026-01-29 11:17:58] [SUCCESS] Consolidated report saved: .\Discovery-20260129-111709\DiscoveryReport.txt
+
+===================================================================
+Azure Environment Discovery - Consolidated Report
+Sprint 1, Story 1.1 - Environment Discovery & Baseline Assessment
+===================================================================
+
+Generated: 2026-01-29 11:17:58
+Mode: Full (Detailed) Discovery
+
+Output Directory: .\Discovery-20260129-111709
+
+Files Generated:
+  ✓ SubscriptionInventory.csv
+  ✓ KeyVaultInventory.csv
+  ✓ PolicyAssignmentInventory.csv
+  ✓ subscriptions-template.csv (compatible format)
+
+===================================================================
+Next Steps:
+===================================================================
+
+1. Review all CSV files in Excel
+2. Update subscriptions-template.csv with Environment tags and Notes
+3. Fill out Stakeholder-Contact-Template.csv
+4. Update Risk-Register-Template.csv
+5. Proceed to Sprint 1, Story 1.2 - Pilot Environment Setup
+
+===================================================================
+[2026-01-29 11:17:58] [SUCCESS] Full discovery complete! All files in: .\Discovery-20260129-111709
+
+Press any key to return to menu...
+**********************
+PowerShell transcript end
+End time: 20260129111759
+**********************

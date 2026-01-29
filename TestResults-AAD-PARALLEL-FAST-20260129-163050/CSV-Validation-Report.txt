@@ -1,0 +1,71 @@
+========================================
+CSV DATA QUALITY VALIDATION REPORT
+========================================
+Test Date: 2026-01-29 17:17:01
+Script Version: 1.0.0
+
+KEY VAULT INVENTORY CSV:
+  File: .\TestResults-AAD-PARALLEL-FAST-20260129-163050\KeyVaultInventory-AAD-PARALLEL-20260129-163050.csv
+  Total Records: 82
+  File Size: 40.8 KB
+  
+  CRITICAL FIELD VALIDATION:
+  ✅ KeyVaultName: 0 null records (PASS)
+  ✅ Location: 0 null records (PASS)
+  ✅ ResourceGroupName: 0 null records (PASS)
+  ✅ SubscriptionName: 0 null records (PASS)
+  
+  COMPLIANCE STATISTICS:
+  - Soft Delete Enabled: 81 vaults (98.8%)
+  - Purge Protection Enabled: 27 vaults (32.9%)
+  - RBAC Authorization Enabled: 69 vaults (84.1%)
+  - Public Network Disabled: 17 vaults (20.7%)
+  - Private Endpoints Configured: 0 vaults (0%)
+
+  TOP 10 LOCATIONS:
+    westus2: 43 vaults
+    westus: 27 vaults
+    eastus: 3 vaults
+    eastus2: 3 vaults
+    westcentralus: 3 vaults
+    West US 2: 2 vaults
+    northeurope: 1 vaults
+
+
+POLICY ASSIGNMENT INVENTORY CSV:
+  File: .\TestResults-AAD-PARALLEL-FAST-20260129-163050\PolicyAssignmentInventory-AAD-20260129-163445.csv
+  Total Records: 34642
+  File Size: 27.1 MB
+  
+  CRITICAL FIELD VALIDATION:
+  ✅ AssignmentName: 0 null records (PASS)
+  ⚠️  DisplayName: 286 null records (0.8%) (may be built-in policies)
+  ✅ Scope: 0 null records (PASS)
+  
+  SCOPE BREAKDOWN:
+  - Subscription Scope: 2550 assignments (7.4%)
+  - Management Group Scope: 32092 assignments (92.6%)
+  - Resource Group Scope: 0 assignments (0%)
+  
+  ENFORCEMENT MODE:
+  - Enforced (Default): 34632 assignments (100%)
+  - Not Enforced (DoNotEnforce): 10 assignments (0%)
+  
+  KEY VAULT POLICIES:
+  - Total Key Vault-Related: 3225 assignments
+  - Unique Policy Types: 5
+
+VALIDATION SUMMARY:
+  ✅ All critical fields validated successfully
+  ⚠️  WARNINGS: 1
+  
+
+
+WARNINGS:
+  - INFO: 286 policy records (0.8%) missing DisplayName (likely built-in policies)
+
+
+OVERALL STATUS: PASS (with warnings)
+
+========================================
+Report generated: 2026-01-29 17:17:01

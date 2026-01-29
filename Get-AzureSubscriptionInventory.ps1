@@ -155,7 +155,7 @@ if (-not (Test-AzureConnection)) {
 # Get all subscriptions
 Write-Log "Retrieving all subscriptions in tenant..." -Level 'INFO'
 try {
-    $subscriptions = Get-AzSubscription -ErrorAction Stop
+    $subscriptions = @(Get-AzSubscription -ErrorAction Stop)
     Write-Log "Found $($subscriptions.Count) subscription(s)" -Level 'SUCCESS'
 }
 catch {

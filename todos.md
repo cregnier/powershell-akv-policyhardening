@@ -1,8 +1,87 @@
-# Todo List - v1.2.0 Release Preparation
+# Todo List - Sprint 1 & v1.2.0 Release
 
-**Updated**: 2026-01-28 18:50  
-**Status**: Documentation Cleanup in Progress  
-**Completed Today**: -WhatIf critical bug fix (AzPolicyImplScript.ps1 line 6770)
+**Updated**: 2026-01-29 17:15  
+**Status**: Sprint 1 Task 1.1 Inventory Work + v1.2.0 Documentation Cleanup  
+**Completed Today**: CSV bug fix (98.9% corruption), AAD inventory re-run (82 KVs), Secret mgmt gap analysis
+
+---
+
+## 🎯 SPRINT 1 TASK 1.1: Environment Discovery & Baseline Assessment
+
+**User Story**: Conduct comprehensive discovery of all Azure subscriptions to establish deployment scope and baseline compliance state.
+
+**Acceptance Criteria**: ✅ Complete inventory of all Azure subscriptions and Key Vault resources delivered in documented format (Excel/CSV with subscription IDs, resource counts, owners, environments)
+
+### ✅ COMPLETED TODAY (January 29, 2026)
+
+**Inventory & Data Gathering**:
+- [x] **AAD Account Tests**: Ran Test 2 (Key Vaults) + Test 3 (Policies) successfully
+- [x] **CSV Data Quality**: Fixed 98.9% corruption bug in Get-KeyVaultInventory.ps1
+- [x] **Key Vault Inventory**: 82 vaults discovered across 838 subscriptions (100% valid data)
+- [x] **Policy Inventory**: 34,642 policy assignments (99.2% valid data)
+- [x] **Compliance Baseline**: Soft Delete 98.8%, Purge Protection 32.9%, RBAC 84.1%
+- [x] **Secret Management Gap Analysis**: Discovered 0/20 secret/cert/key policies deployed (CRITICAL)
+- [x] **Existing Policies**: Identified 3,225 KV-related assignments (Wiz scanner)
+- [x] **Location Distribution**: westus2 (52%), westus (33%), eastus/eastus2 (15%)
+- [x] **Bug Fixes**: Get-KeyVaultInventory.ps1 (4 changes) + Validate-CSVDataQuality.ps1 (482 lines)
+- [x] **Documentation**: 5 new files (bug reports, policy matrix, impact analysis)
+
+**MSA Account Tests** (Completed Earlier This Week):
+- [x] **MSA Account Tests**: Ran comprehensive Test 0-4 (all passed)
+- [x] **Subscription Count**: 838 subscriptions total (same for both accounts)
+- [x] **Test Framework**: Validated Run-ComprehensiveTests.ps1 + Run-ParallelTests-Fast.ps1
+
+### ⏳ PENDING - SPRINT 1 TASK 1.1 COMPLETION
+
+**Priority 1: Complete AAD Account Test Coverage** (OPTIONAL but recommended for baseline):
+- [ ] **Run AAD Comprehensive Tests**: Execute Run-ComprehensiveTests.ps1 -AccountType AAD
+  - Adds Test 0 (Prerequisites/RBAC validation)
+  - Adds Test 1 (Subscription inventory as standalone CSV)
+  - Adds Test 4 (Full discovery - combined Test 2+3)
+  - **Estimated Time**: 30 minutes
+  - **Value**: Complete 5-test baseline matching MSA tests (documentation completeness)
+  - **Risk**: LOW - We already have production data from Test 2+3
+  - **User Decision Needed**: Run for complete baseline or skip (current data sufficient)?
+
+**Priority 2: Pre-requisites Documentation Review**:
+- [ ] **Review DEPLOYMENT-PREREQUISITES.md**: Verify it matches Sprint 1 needs
+  - Current file: 717 lines, covers Azure permissions, modules, parameter files
+  - **Question**: Does this meet user's earlier request for pre-reqs .md file?
+  - **Action Needed**: Confirm if additional pre-reqs doc needed OR update existing file
+  - **User Decision Needed**: Is current DEPLOYMENT-PREREQUISITES.md sufficient?
+
+**Priority 3: Stakeholder & Environment Documentation** (Sprint 1 deliverables):
+- [ ] **Create Stakeholder Contact List**: Cloud Brokers, Cyber Defense, subscription owners
+  - Input: Need stakeholder names/contacts from Intel team
+  - Output: STAKEHOLDER-CONTACTS.md with team matrix
+  - **Blocker**: Requires user input (Intel organizational knowledge)
+  
+- [ ] **Create Gap Analysis Report**: What's missing vs what's needed
+  - Based on: 82 KVs found, 0/20 secret policies, 32.9% purge protection, 20.7% private network
+  - Output: SPRINT1-GAP-ANALYSIS.md
+  - **Status**: Can be created from existing data
+  
+- [ ] **Create Risk Register**: Unknowns, dependencies, blockers
+  - Based on: Secret expiration risk, purge protection gap, public network exposure
+  - Output: SPRINT1-RISK-REGISTER.md
+  - **Status**: Can be created from existing data
+
+**Priority 4: Subscription Inventory Enhancement**:
+- [ ] **Create Subscription Owners Mapping**: Link 838 subscriptions to business owners
+  - Input: Requires Intel organizational data
+  - Output: SUBSCRIPTION-OWNERS.md or enhanced CSV
+  - **Blocker**: Requires user input (Intel organizational knowledge)
+  
+- [ ] **Environment Classification**: Tag subscriptions as Dev/Test/Prod
+  - Current: 838 subscriptions, unknown environment split
+  - Output: Enhanced CSV with Environment column
+  - **Method**: Parse subscription names or user-provided mapping
+
+**Priority 5: Workspace Cleanup** (remaining items):
+- [ ] **Service Principal Testing**: Complete SP tests (deferred due to terminal issues)
+  - Test: Run-ParallelTests-Fast.ps1 -AccountType ServicePrincipal
+  - **Blocker**: Terminal instability needs resolution
+  - **Estimated Time**: 20 minutes (if terminal stable)
 
 ---
 

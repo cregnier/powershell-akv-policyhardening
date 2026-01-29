@@ -1,0 +1,46 @@
+**********************
+PowerShell transcript start
+Start time: 20260129150203
+Username: DTL01\lcladmin
+RunAs User: DTL01\lcladmin
+Configuration Name: 
+Machine: DTL01 (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\lcladmin\.vscode\extensions\ms-vscode.powershell-2025.4.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2025.4.0' -BundledModulesPath 'c:\Users\lcladmin\.vscode\extensions\ms-vscode.powershell-2025.4.0\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2025.4.0
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Warning' -LogPath 'c:\Users\lcladmin\AppData\Roaming\Code\logs\20260129T093508\window1\exthost\ms-vscode.powershell' -SessionDetailsPath 'c:\Users\lcladmin\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-7828-672935.json' -FeatureFlags @() 
+Process ID: 5128
+PSVersion: 7.5.3
+PSEdition: Core
+GitCommitId: 7.5.3
+OS: Microsoft Windows 10.0.20348
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\TestResults-AAD-PARALLEL-FAST-20260129-150202\Test3-Policies-AAD.txt
+[2026-01-29 15:02:03] [INFO] === Azure Policy Assignment Inventory Script ===
+[2026-01-29 15:02:03] [INFO] Sprint 1, Story 1.1 - Environment Discovery & Baseline Assessment
+[2026-01-29 15:02:03] [INFO]
+[2026-01-29 15:02:03] [SUCCESS] Connected to Azure as: theregniers@hotmail.com
+[2026-01-29 15:02:03] [INFO] Tenant: 21bd262e-3255-411e-8345-51102d9d9e9e
+[2026-01-29 15:02:03] [INFO] Retrieving all subscriptions in tenant...
+WARNING: Unable to acquire token for tenant '21bd262e-3255-411e-8345-51102d9d9e9e' with error 'SharedTokenCacheCredential authentication unavailable. No account matching the specified username: theregniers@hotmail.com tenantId: 21bd262e-3255-411e-8345-51102d9d9e9e was found in the cache.'
+WARNING: Unable to acquire token for tenant '21bd262e-3255-411e-8345-51102d9d9e9e' with error 'SharedTokenCacheCredential authentication unavailable. No account matching the specified username: theregniers@hotmail.com tenantId: 21bd262e-3255-411e-8345-51102d9d9e9e was found in the cache.'
+WARNING: Unable to acquire token for tenant '86c9b61f-b736-4f90-a59f-2af69cf195df' with error 'SharedTokenCacheCredential authentication unavailable. No account matching the specified username: theregniers@hotmail.com tenantId: 86c9b61f-b736-4f90-a59f-2af69cf195df was found in the cache.'
+WARNING: Unable to acquire token for tenant 'ed9c8353-c3e2-4121-aa7f-d6777eaeb17d' with error 'SharedTokenCacheCredential authentication unavailable. No account matching the specified username: theregniers@hotmail.com tenantId: ed9c8353-c3e2-4121-aa7f-d6777eaeb17d was found in the cache.'
+[2026-01-29 15:02:03] [SUCCESS] Found 0 subscription(s)
+[2026-01-29 15:02:03] [INFO]
+[2026-01-29 15:02:03] [INFO] Exporting inventory to: .\TestResults-AAD-PARALLEL-FAST-20260129-150202\PolicyAssignmentInventory-AAD-20260129-150203.csv
+[2026-01-29 15:02:03] [WARN] No policy assignments found in scanned subscriptions!
+[2026-01-29 15:02:03] [INFO] Creating empty CSV file with headers...
+[2026-01-29 15:02:03] [INFO]
+[2026-01-29 15:02:03] [SUCCESS] Inventory complete! Review the output file for details.
+**********************
+PowerShell transcript end
+End time: 20260129150203
+**********************

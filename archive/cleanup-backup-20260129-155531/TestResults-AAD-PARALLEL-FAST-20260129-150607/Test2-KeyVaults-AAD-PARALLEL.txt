@@ -1,0 +1,406 @@
+**********************
+PowerShell transcript start
+Start time: 20260129150607
+Username: DTL01\lcladmin
+RunAs User: DTL01\lcladmin
+Configuration Name: 
+Machine: DTL01 (Microsoft Windows NT 10.0.20348.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "c:\Program Files\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 4056
+PSVersion: 7.5.3
+PSEdition: Core
+GitCommitId: 7.5.3
+OS: Microsoft Windows 10.0.20348
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is .\TestResults-AAD-PARALLEL-FAST-20260129-150607\Test2-KeyVaults-AAD-PARALLEL.txt
+[2026-01-29 15:06:08] [INFO] === Azure Key Vault Inventory Script ===
+[2026-01-29 15:06:08] [INFO] Sprint 1, Story 1.1 - Environment Discovery & Baseline Assessment
+[2026-01-29 15:06:08] [INFO]
+[2026-01-29 15:06:08] [SUCCESS] Connected to Azure as: curtus.regnier@intel.com
+[2026-01-29 15:06:08] [INFO] Tenant: 46c98d88-e344-4ed4-8496-4ed7712e255d
+[2026-01-29 15:06:08] [INFO] Retrieving all subscriptions in tenant...
+[2026-01-29 15:06:09] [SUCCESS] Found 838 subscription(s)
+[2026-01-29 15:06:09] [INFO] Using parallel processing with throttle limit: 20
+[2026-01-29 15:06:09] [INFO] Processing 838 subscriptions with 20 concurrent threads...
+[PROGRESS] 1/838 subscriptions (0.1%) | Key Vaults found: 1
+[PROGRESS] 2/838 subscriptions (0.2%) | Key Vaults found: 2
+[PROGRESS] 3/838 subscriptions (0.4%) | Key Vaults found: 6
+[PROGRESS] 4/838 subscriptions (0.5%) | Key Vaults found: 10
+[PROGRESS] 5/838 subscriptions (0.6%) | Key Vaults found: 14
+[PROGRESS] 6/838 subscriptions (0.7%) | Key Vaults found: 18
+[PROGRESS] 7/838 subscriptions (0.8%) | Key Vaults found: 22
+[PROGRESS] 8/838 subscriptions (1%) | Key Vaults found: 26
+[PROGRESS] 9/838 subscriptions (1.1%) | Key Vaults found: 30
+[PROGRESS] 10/838 subscriptions (1.2%) | Key Vaults found: 32
+[PROGRESS] 11/838 subscriptions (1.3%) | Key Vaults found: 34
+[PROGRESS] 12/838 subscriptions (1.4%) | Key Vaults found: 38
+[PROGRESS] 13/838 subscriptions (1.6%) | Key Vaults found: 40
+[PROGRESS] 14/838 subscriptions (1.7%) | Key Vaults found: 43
+[PROGRESS] 15/838 subscriptions (1.8%) | Key Vaults found: 47
+[PROGRESS] 16/838 subscriptions (1.9%) | Key Vaults found: 50
+[PROGRESS] 17/838 subscriptions (2%) | Key Vaults found: 52
+[PROGRESS] 18/838 subscriptions (2.1%) | Key Vaults found: 55
+[PROGRESS] 19/838 subscriptions (2.3%) | Key Vaults found: 59
+[PROGRESS] 20/838 subscriptions (2.4%) | Key Vaults found: 63
+[PROGRESS] 21/838 subscriptions (2.5%) | Key Vaults found: 67
+[PROGRESS] 22/838 subscriptions (2.6%) | Key Vaults found: 69
+[PROGRESS] 23/838 subscriptions (2.7%) | Key Vaults found: 71
+[PROGRESS] 24/838 subscriptions (2.9%) | Key Vaults found: 73
+[PROGRESS] 25/838 subscriptions (3%) | Key Vaults found: 75
+[PROGRESS] 26/838 subscriptions (3.1%) | Key Vaults found: 77
+[PROGRESS] 27/838 subscriptions (3.2%) | Key Vaults found: 79
+[PROGRESS] 28/838 subscriptions (3.3%) | Key Vaults found: 81
+[PROGRESS] 29/838 subscriptions (3.5%) | Key Vaults found: 86
+[PROGRESS] 30/838 subscriptions (3.6%) | Key Vaults found: 87
+[PROGRESS] 31/838 subscriptions (3.7%) | Key Vaults found: 102
+[PROGRESS] 32/838 subscriptions (3.8%) | Key Vaults found: 107
+[PROGRESS] 33/838 subscriptions (3.9%) | Key Vaults found: 112
+[PROGRESS] 34/838 subscriptions (4.1%) | Key Vaults found: 113
+[PROGRESS] 35/838 subscriptions (4.2%) | Key Vaults found: 114
+[PROGRESS] 36/838 subscriptions (4.3%) | Key Vaults found: 115
+[PROGRESS] 37/838 subscriptions (4.4%) | Key Vaults found: 116
+[PROGRESS] 38/838 subscriptions (4.5%) | Key Vaults found: 118
+[PROGRESS] 39/838 subscriptions (4.7%) | Key Vaults found: 120
+[PROGRESS] 40/838 subscriptions (4.8%) | Key Vaults found: 122
+[PROGRESS] 41/838 subscriptions (4.9%) | Key Vaults found: 124
+[PROGRESS] 42/838 subscriptions (5%) | Key Vaults found: 126
+[PROGRESS] 43/838 subscriptions (5.1%) | Key Vaults found: 128
+[PROGRESS] 44/838 subscriptions (5.3%) | Key Vaults found: 131
+[PROGRESS] 45/838 subscriptions (5.4%) | Key Vaults found: 134
+[PROGRESS] 46/838 subscriptions (5.5%) | Key Vaults found: 139
+[PROGRESS] 47/838 subscriptions (5.6%) | Key Vaults found: 146
+[PROGRESS] 48/838 subscriptions (5.7%) | Key Vaults found: 149
+[PROGRESS] 49/838 subscriptions (5.8%) | Key Vaults found: 153
+[PROGRESS] 50/838 subscriptions (6%) | Key Vaults found: 155
+[PROGRESS] 51/838 subscriptions (6.1%) | Key Vaults found: 161
+[PROGRESS] 52/838 subscriptions (6.2%) | Key Vaults found: 167
+[PROGRESS] 53/838 subscriptions (6.3%) | Key Vaults found: 170
+[PROGRESS] 54/838 subscriptions (6.4%) | Key Vaults found: 198
+[PROGRESS] 55/838 subscriptions (6.6%) | Key Vaults found: 226
+[PROGRESS] 56/838 subscriptions (6.7%) | Key Vaults found: 232
+[PROGRESS] 57/838 subscriptions (6.8%) | Key Vaults found: 234
+[PROGRESS] 58/838 subscriptions (6.9%) | Key Vaults found: 236
+[PROGRESS] 59/838 subscriptions (7%) | Key Vaults found: 238
+[PROGRESS] 60/838 subscriptions (7.2%) | Key Vaults found: 244
+[PROGRESS] 61/838 subscriptions (7.3%) | Key Vaults found: 246
+[PROGRESS] 62/838 subscriptions (7.4%) | Key Vaults found: 248
+[PROGRESS] 63/838 subscriptions (7.5%) | Key Vaults found: 258
+[PROGRESS] 64/838 subscriptions (7.6%) | Key Vaults found: 268
+[PROGRESS] 65/838 subscriptions (7.8%) | Key Vaults found: 277
+[PROGRESS] 66/838 subscriptions (7.9%) | Key Vaults found: 279
+[PROGRESS] 67/838 subscriptions (8%) | Key Vaults found: 281
+[PROGRESS] 68/838 subscriptions (8.1%) | Key Vaults found: 287
+[PROGRESS] 69/838 subscriptions (8.2%) | Key Vaults found: 295
+[PROGRESS] 70/838 subscriptions (8.4%) | Key Vaults found: 305
+[PROGRESS] 71/838 subscriptions (8.5%) | Key Vaults found: 308
+[PROGRESS] 72/838 subscriptions (8.6%) | Key Vaults found: 334
+[PROGRESS] 73/838 subscriptions (8.7%) | Key Vaults found: 339
+[PROGRESS] 74/838 subscriptions (8.8%) | Key Vaults found: 344
+[PROGRESS] 75/838 subscriptions (8.9%) | Key Vaults found: 347
+[PROGRESS] 76/838 subscriptions (9.1%) | Key Vaults found: 352
+[PROGRESS] 77/838 subscriptions (9.2%) | Key Vaults found: 355
+[PROGRESS] 78/838 subscriptions (9.3%) | Key Vaults found: 357
+[PROGRESS] 79/838 subscriptions (9.4%) | Key Vaults found: 365
+[PROGRESS] 80/838 subscriptions (9.5%) | Key Vaults found: 369
+[PROGRESS] 81/838 subscriptions (9.7%) | Key Vaults found: 373
+[PROGRESS] 82/838 subscriptions (9.8%) | Key Vaults found: 376
+[PROGRESS] 83/838 subscriptions (9.9%) | Key Vaults found: 379
+[PROGRESS] 84/838 subscriptions (10%) | Key Vaults found: 383
+[PROGRESS] 85/838 subscriptions (10.1%) | Key Vaults found: 389
+[PROGRESS] 86/838 subscriptions (10.3%) | Key Vaults found: 392
+[PROGRESS] 87/838 subscriptions (10.4%) | Key Vaults found: 395
+[PROGRESS] 88/838 subscriptions (10.5%) | Key Vaults found: 398
+[PROGRESS] 89/838 subscriptions (10.6%) | Key Vaults found: 406
+[PROGRESS] 90/838 subscriptions (10.7%) | Key Vaults found: 408
+[PROGRESS] 91/838 subscriptions (10.9%) | Key Vaults found: 412
+[PROGRESS] 92/838 subscriptions (11%) | Key Vaults found: 421
+[PROGRESS] 93/838 subscriptions (11.1%) | Key Vaults found: 432
+[PROGRESS] 94/838 subscriptions (11.2%) | Key Vaults found: 441
+[PROGRESS] 95/838 subscriptions (11.3%) | Key Vaults found: 450
+[PROGRESS] 96/838 subscriptions (11.5%) | Key Vaults found: 458
+[PROGRESS] 97/838 subscriptions (11.6%) | Key Vaults found: 467
+[PROGRESS] 98/838 subscriptions (11.7%) | Key Vaults found: 468
+[PROGRESS] 99/838 subscriptions (11.8%) | Key Vaults found: 472
+[PROGRESS] 100/838 subscriptions (11.9%) | Key Vaults found: 475
+[PROGRESS] 101/838 subscriptions (12.1%) | Key Vaults found: 479
+[PROGRESS] 102/838 subscriptions (12.2%) | Key Vaults found: 482
+[PROGRESS] 103/838 subscriptions (12.3%) | Key Vaults found: 486
+[PROGRESS] 104/838 subscriptions (12.4%) | Key Vaults found: 493
+[PROGRESS] 105/838 subscriptions (12.5%) | Key Vaults found: 497
+[PROGRESS] 106/838 subscriptions (12.6%) | Key Vaults found: 504
+[PROGRESS] 107/838 subscriptions (12.8%) | Key Vaults found: 508
+[PROGRESS] 108/838 subscriptions (12.9%) | Key Vaults found: 511
+[PROGRESS] 109/838 subscriptions (13%) | Key Vaults found: 529
+[PROGRESS] 110/838 subscriptions (13.1%) | Key Vaults found: 543
+[PROGRESS] 111/838 subscriptions (13.2%) | Key Vaults found: 544
+[PROGRESS] 112/838 subscriptions (13.4%) | Key Vaults found: 545
+[PROGRESS] 113/838 subscriptions (13.5%) | Key Vaults found: 559
+[PROGRESS] 114/838 subscriptions (13.6%) | Key Vaults found: 560
+[PROGRESS] 115/838 subscriptions (13.7%) | Key Vaults found: 561
+[PROGRESS] 116/838 subscriptions (13.8%) | Key Vaults found: 562
+[PROGRESS] 117/838 subscriptions (14%) | Key Vaults found: 563
+[PROGRESS] 118/838 subscriptions (14.1%) | Key Vaults found: 564
+[PROGRESS] 119/838 subscriptions (14.2%) | Key Vaults found: 565
+[PROGRESS] 120/838 subscriptions (14.3%) | Key Vaults found: 566
+[PROGRESS] 121/838 subscriptions (14.4%) | Key Vaults found: 567
+[PROGRESS] 122/838 subscriptions (14.6%) | Key Vaults found: 568
+[PROGRESS] 123/838 subscriptions (14.7%) | Key Vaults found: 569
+[PROGRESS] 124/838 subscriptions (14.8%) | Key Vaults found: 570
+[PROGRESS] 125/838 subscriptions (14.9%) | Key Vaults found: 571
+[PROGRESS] 126/838 subscriptions (15%) | Key Vaults found: 573
+[PROGRESS] 127/838 subscriptions (15.2%) | Key Vaults found: 575
+[PROGRESS] 128/838 subscriptions (15.3%) | Key Vaults found: 577
+[PROGRESS] 129/838 subscriptions (15.4%) | Key Vaults found: 578
+[PROGRESS] 130/838 subscriptions (15.5%) | Key Vaults found: 579
+[PROGRESS] 131/838 subscriptions (15.6%) | Key Vaults found: 580
+[PROGRESS] 132/838 subscriptions (15.8%) | Key Vaults found: 581
+[PROGRESS] 133/838 subscriptions (15.9%) | Key Vaults found: 584
+[PROGRESS] 134/838 subscriptions (16%) | Key Vaults found: 587
+[PROGRESS] 135/838 subscriptions (16.1%) | Key Vaults found: 590
+[PROGRESS] 136/838 subscriptions (16.2%) | Key Vaults found: 608
+[PROGRESS] 137/838 subscriptions (16.3%) | Key Vaults found: 626
+[PROGRESS] 138/838 subscriptions (16.5%) | Key Vaults found: 644
+[PROGRESS] 139/838 subscriptions (16.6%) | Key Vaults found: 652
+[PROGRESS] 140/838 subscriptions (16.7%) | Key Vaults found: 660
+[PROGRESS] 141/838 subscriptions (16.8%) | Key Vaults found: 668
+[PROGRESS] 142/838 subscriptions (16.9%) | Key Vaults found: 676
+[PROGRESS] 143/838 subscriptions (17.1%) | Key Vaults found: 684
+[PROGRESS] 144/838 subscriptions (17.2%) | Key Vaults found: 685
+[PROGRESS] 145/838 subscriptions (17.3%) | Key Vaults found: 686
+[PROGRESS] 146/838 subscriptions (17.4%) | Key Vaults found: 687
+[PROGRESS] 147/838 subscriptions (17.5%) | Key Vaults found: 697
+[PROGRESS] 148/838 subscriptions (17.7%) | Key Vaults found: 699
+[PROGRESS] 149/838 subscriptions (17.8%) | Key Vaults found: 699
+[PROGRESS] 150/838 subscriptions (17.9%) | Key Vaults found: 709
+[PROGRESS] 151/838 subscriptions (18%) | Key Vaults found: 709
+[PROGRESS] 152/838 subscriptions (18.1%) | Key Vaults found: 710
+[PROGRESS] 153/838 subscriptions (18.3%) | Key Vaults found: 711
+[PROGRESS] 154/838 subscriptions (18.4%) | Key Vaults found: 714
+[PROGRESS] 155/838 subscriptions (18.5%) | Key Vaults found: 717
+[PROGRESS] 156/838 subscriptions (18.6%) | Key Vaults found: 720
+[PROGRESS] 157/838 subscriptions (18.7%) | Key Vaults found: 723
+[PROGRESS] 158/838 subscriptions (18.9%) | Key Vaults found: 726
+[PROGRESS] 159/838 subscriptions (19%) | Key Vaults found: 729
+[PROGRESS] 160/838 subscriptions (19.1%) | Key Vaults found: 732
+[PROGRESS] 161/838 subscriptions (19.2%) | Key Vaults found: 751
+[PROGRESS] 162/838 subscriptions (19.3%) | Key Vaults found: 770
+[PROGRESS] 163/838 subscriptions (19.5%) | Key Vaults found: 772
+[PROGRESS] 164/838 subscriptions (19.6%) | Key Vaults found: 774
+[PROGRESS] 165/838 subscriptions (19.7%) | Key Vaults found: 779
+[PROGRESS] 166/838 subscriptions (19.8%) | Key Vaults found: 784
+[PROGRESS] 167/838 subscriptions (19.9%) | Key Vaults found: 787
+[PROGRESS] 168/838 subscriptions (20%) | Key Vaults found: 790
+[PROGRESS] 169/838 subscriptions (20.2%) | Key Vaults found: 795
+[PROGRESS] 170/838 subscriptions (20.3%) | Key Vaults found: 800
+[PROGRESS] 171/838 subscriptions (20.4%) | Key Vaults found: 805
+[PROGRESS] 172/838 subscriptions (20.5%) | Key Vaults found: 808
+[PROGRESS] 173/838 subscriptions (20.6%) | Key Vaults found: 810
+[PROGRESS] 174/838 subscriptions (20.8%) | Key Vaults found: 815
+[PROGRESS] 175/838 subscriptions (20.9%) | Key Vaults found: 839
+[PROGRESS] 176/838 subscriptions (21%) | Key Vaults found: 844
+[PROGRESS] 177/838 subscriptions (21.1%) | Key Vaults found: 846
+[PROGRESS] 178/838 subscriptions (21.2%) | Key Vaults found: 851
+[PROGRESS] 179/838 subscriptions (21.4%) | Key Vaults found: 853
+[PROGRESS] 180/838 subscriptions (21.5%) | Key Vaults found: 855
+[PROGRESS] 181/838 subscriptions (21.6%) | Key Vaults found: 860
+[PROGRESS] 182/838 subscriptions (21.7%) | Key Vaults found: 862
+[PROGRESS] 183/838 subscriptions (21.8%) | Key Vaults found: 865
+[PROGRESS] 184/838 subscriptions (22%) | Key Vaults found: 867
+[PROGRESS] 185/838 subscriptions (22.1%) | Key Vaults found: 869
+[PROGRESS] 186/838 subscriptions (22.2%) | Key Vaults found: 888
+[PROGRESS] 187/838 subscriptions (22.3%) | Key Vaults found: 892
+[PROGRESS] 188/838 subscriptions (22.4%) | Key Vaults found: 916
+[PROGRESS] 189/838 subscriptions (22.6%) | Key Vaults found: 940
+[PROGRESS] 190/838 subscriptions (22.7%) | Key Vaults found: 951
+[PROGRESS] 191/838 subscriptions (22.8%) | Key Vaults found: 956
+[PROGRESS] 192/838 subscriptions (22.9%) | Key Vaults found: 961
+[PROGRESS] 193/838 subscriptions (23%) | Key Vaults found: 966
+[PROGRESS] 194/838 subscriptions (23.2%) | Key Vaults found: 985
+[PROGRESS] 195/838 subscriptions (23.3%) | Key Vaults found: 1004
+[PROGRESS] 196/838 subscriptions (23.4%) | Key Vaults found: 1023
+[PROGRESS] 197/838 subscriptions (23.5%) | Key Vaults found: 1028
+[PROGRESS] 198/838 subscriptions (23.6%) | Key Vaults found: 1033
+[PROGRESS] 199/838 subscriptions (23.7%) | Key Vaults found: 1040
+[PROGRESS] 200/838 subscriptions (23.9%) | Key Vaults found: 1051
+[PROGRESS] 201/838 subscriptions (24%) | Key Vaults found: 1070
+[PROGRESS] 202/838 subscriptions (24.1%) | Key Vaults found: 1077
+[PROGRESS] 203/838 subscriptions (24.2%) | Key Vaults found: 1084
+[PROGRESS] 204/838 subscriptions (24.3%) | Key Vaults found: 1091
+[PROGRESS] 205/838 subscriptions (24.5%) | Key Vaults found: 1092
+[PROGRESS] 206/838 subscriptions (24.6%) | Key Vaults found: 1093
+[PROGRESS] 207/838 subscriptions (24.7%) | Key Vaults found: 1094
+[PROGRESS] 208/838 subscriptions (24.8%) | Key Vaults found: 1095
+[PROGRESS] 209/838 subscriptions (24.9%) | Key Vaults found: 1102
+[PROGRESS] 210/838 subscriptions (25.1%) | Key Vaults found: 1104
+[PROGRESS] 211/838 subscriptions (25.2%) | Key Vaults found: 1106
+[PROGRESS] 212/838 subscriptions (25.3%) | Key Vaults found: 1116
+[PROGRESS] 213/838 subscriptions (25.4%) | Key Vaults found: 1118
+[PROGRESS] 214/838 subscriptions (25.5%) | Key Vaults found: 1125
+[PROGRESS] 215/838 subscriptions (25.7%) | Key Vaults found: 1130
+[PROGRESS] 216/838 subscriptions (25.8%) | Key Vaults found: 1134
+[PROGRESS] 217/838 subscriptions (25.9%) | Key Vaults found: 1136
+[PROGRESS] 218/838 subscriptions (26%) | Key Vaults found: 1155
+[PROGRESS] 219/838 subscriptions (26.1%) | Key Vaults found: 1156
+[PROGRESS] 220/838 subscriptions (26.3%) | Key Vaults found: 1157
+[PROGRESS] 221/838 subscriptions (26.4%) | Key Vaults found: 1158
+[PROGRESS] 222/838 subscriptions (26.5%) | Key Vaults found: 1175
+[PROGRESS] 223/838 subscriptions (26.6%) | Key Vaults found: 1180
+[PROGRESS] 224/838 subscriptions (26.7%) | Key Vaults found: 1185
+[PROGRESS] 225/838 subscriptions (26.8%) | Key Vaults found: 1199
+[PROGRESS] 226/838 subscriptions (27%) | Key Vaults found: 1218
+[PROGRESS] 227/838 subscriptions (27.1%) | Key Vaults found: 1235
+[PROGRESS] 228/838 subscriptions (27.2%) | Key Vaults found: 1241
+[PROGRESS] 229/838 subscriptions (27.3%) | Key Vaults found: 1247
+[PROGRESS] 230/838 subscriptions (27.4%) | Key Vaults found: 1250
+[PROGRESS] 231/838 subscriptions (27.6%) | Key Vaults found: 1254
+[PROGRESS] 232/838 subscriptions (27.7%) | Key Vaults found: 1259
+[PROGRESS] 233/838 subscriptions (27.8%) | Key Vaults found: 1264
+[PROGRESS] 234/838 subscriptions (27.9%) | Key Vaults found: 1269
+[PROGRESS] 235/838 subscriptions (28%) | Key Vaults found: 1281
+[PROGRESS] 236/838 subscriptions (28.2%) | Key Vaults found: 1289
+[PROGRESS] 237/838 subscriptions (28.3%) | Key Vaults found: 1297
+[PROGRESS] 238/838 subscriptions (28.4%) | Key Vaults found: 1305
+[PROGRESS] 239/838 subscriptions (28.5%) | Key Vaults found: 1313
+[PROGRESS] 240/838 subscriptions (28.6%) | Key Vaults found: 1321
+[PROGRESS] 241/838 subscriptions (28.8%) | Key Vaults found: 1333
+[PROGRESS] 242/838 subscriptions (28.9%) | Key Vaults found: 1338
+[PROGRESS] 243/838 subscriptions (29%) | Key Vaults found: 1372
+[PROGRESS] 244/838 subscriptions (29.1%) | Key Vaults found: 1378
+[PROGRESS] 245/838 subscriptions (29.2%) | Key Vaults found: 1384
+[PROGRESS] 246/838 subscriptions (29.4%) | Key Vaults found: 1390
+[PROGRESS] 247/838 subscriptions (29.5%) | Key Vaults found: 1392
+[PROGRESS] 248/838 subscriptions (29.6%) | Key Vaults found: 1394
+[PROGRESS] 249/838 subscriptions (29.7%) | Key Vaults found: 1396
+[PROGRESS] 250/838 subscriptions (29.8%) | Key Vaults found: 1403
+[PROGRESS] 251/838 subscriptions (30%) | Key Vaults found: 1410
+[PROGRESS] 252/838 subscriptions (30.1%) | Key Vaults found: 1417
+[PROGRESS] 253/838 subscriptions (30.2%) | Key Vaults found: 1418
+[PROGRESS] 254/838 subscriptions (30.3%) | Key Vaults found: 1432
+[PROGRESS] 255/838 subscriptions (30.4%) | Key Vaults found: 1433
+[PROGRESS] 256/838 subscriptions (30.5%) | Key Vaults found: 1434
+[PROGRESS] 257/838 subscriptions (30.7%) | Key Vaults found: 1437
+[PROGRESS] 258/838 subscriptions (30.8%) | Key Vaults found: 1438
+[PROGRESS] 259/838 subscriptions (30.9%) | Key Vaults found: 1439
+[PROGRESS] 260/838 subscriptions (31%) | Key Vaults found: 1440
+[PROGRESS] 261/838 subscriptions (31.1%) | Key Vaults found: 1441
+[PROGRESS] 262/838 subscriptions (31.3%) | Key Vaults found: 1463
+[PROGRESS] 263/838 subscriptions (31.4%) | Key Vaults found: 1476
+[PROGRESS] 264/838 subscriptions (31.5%) | Key Vaults found: 1477
+[PROGRESS] 265/838 subscriptions (31.6%) | Key Vaults found: 1478
+[PROGRESS] 266/838 subscriptions (31.7%) | Key Vaults found: 1479
+[PROGRESS] 267/838 subscriptions (31.9%) | Key Vaults found: 1492
+[PROGRESS] 268/838 subscriptions (32%) | Key Vaults found: 1505
+[PROGRESS] 269/838 subscriptions (32.1%) | Key Vaults found: 1544
+[PROGRESS] 270/838 subscriptions (32.2%) | Key Vaults found: 1557
+[PROGRESS] 271/838 subscriptions (32.3%) | Key Vaults found: 1570
+[PROGRESS] 272/838 subscriptions (32.5%) | Key Vaults found: 1573
+[PROGRESS] 273/838 subscriptions (32.6%) | Key Vaults found: 1576
+[PROGRESS] 274/838 subscriptions (32.7%) | Key Vaults found: 1579
+[PROGRESS] 275/838 subscriptions (32.8%) | Key Vaults found: 1582
+[PROGRESS] 276/838 subscriptions (32.9%) | Key Vaults found: 1585
+[PROGRESS] 277/838 subscriptions (33.1%) | Key Vaults found: 1624
+[PROGRESS] 278/838 subscriptions (33.2%) | Key Vaults found: 1626
+[PROGRESS] 279/838 subscriptions (33.3%) | Key Vaults found: 1627
+[PROGRESS] 280/838 subscriptions (33.4%) | Key Vaults found: 1628
+[PROGRESS] 281/838 subscriptions (33.5%) | Key Vaults found: 1630
+[PROGRESS] 282/838 subscriptions (33.7%) | Key Vaults found: 1631
+[PROGRESS] 283/838 subscriptions (33.8%) | Key Vaults found: 1632
+[PROGRESS] 283/838 subscriptions (33.8%) | Key Vaults found: 1633
+[PROGRESS] 284/838 subscriptions (33.9%) | Key Vaults found: 1634
+[PROGRESS] 285/838 subscriptions (34%) | Key Vaults found: 1635
+[PROGRESS] 286/838 subscriptions (34.1%) | Key Vaults found: 1636
+[PROGRESS] 287/838 subscriptions (34.2%) | Key Vaults found: 1637
+[PROGRESS] 288/838 subscriptions (34.4%) | Key Vaults found: 1638
+[PROGRESS] 289/838 subscriptions (34.5%) | Key Vaults found: 1648
+[PROGRESS] 290/838 subscriptions (34.6%) | Key Vaults found: 1688
+[PROGRESS] 291/838 subscriptions (34.7%) | Key Vaults found: 1689
+[PROGRESS] 292/838 subscriptions (34.8%) | Key Vaults found: 1690
+[PROGRESS] 293/838 subscriptions (35%) | Key Vaults found: 1700
+[PROGRESS] 294/838 subscriptions (35.1%) | Key Vaults found: 1705
+[PROGRESS] 295/838 subscriptions (35.2%) | Key Vaults found: 1706
+[PROGRESS] 296/838 subscriptions (35.3%) | Key Vaults found: 1707
+[PROGRESS] 297/838 subscriptions (35.4%) | Key Vaults found: 1711
+[PROGRESS] 298/838 subscriptions (35.6%) | Key Vaults found: 1714
+[PROGRESS] 299/838 subscriptions (35.7%) | Key Vaults found: 1717
+[PROGRESS] 300/838 subscriptions (35.8%) | Key Vaults found: 1735
+[PROGRESS] 301/838 subscriptions (35.9%) | Key Vaults found: 1753
+[PROGRESS] 302/838 subscriptions (36%) | Key Vaults found: 1754
+[PROGRESS] 303/838 subscriptions (36.2%) | Key Vaults found: 1755
+[PROGRESS] 304/838 subscriptions (36.3%) | Key Vaults found: 1756
+[PROGRESS] 305/838 subscriptions (36.4%) | Key Vaults found: 1761
+[PROGRESS] 306/838 subscriptions (36.5%) | Key Vaults found: 1766
+[PROGRESS] 307/838 subscriptions (36.6%) | Key Vaults found: 1771
+[PROGRESS] 308/838 subscriptions (36.8%) | Key Vaults found: 1772
+[PROGRESS] 309/838 subscriptions (36.9%) | Key Vaults found: 1777
+[PROGRESS] 310/838 subscriptions (37%) | Key Vaults found: 1782
+[PROGRESS] 311/838 subscriptions (37.1%) | Key Vaults found: 1787
+[PROGRESS] 312/838 subscriptions (37.2%) | Key Vaults found: 1792
+[PROGRESS] 313/838 subscriptions (37.4%) | Key Vaults found: 1806
+[PROGRESS] 314/838 subscriptions (37.5%) | Key Vaults found: 1811
+[PROGRESS] 315/838 subscriptions (37.6%) | Key Vaults found: 1812
+[PROGRESS] 316/838 subscriptions (37.7%) | Key Vaults found: 1813
+[PROGRESS] 317/838 subscriptions (37.8%) | Key Vaults found: 1827
+[PROGRESS] 318/838 subscriptions (37.9%) | Key Vaults found: 1841
+[PROGRESS] 319/838 subscriptions (38.1%) | Key Vaults found: 1904
+[PROGRESS] 320/838 subscriptions (38.2%) | Key Vaults found: 1906
+[PROGRESS] 321/838 subscriptions (38.3%) | Key Vaults found: 1908
+[PROGRESS] 322/838 subscriptions (38.4%) | Key Vaults found: 1910
+[PROGRESS] 323/838 subscriptions (38.5%) | Key Vaults found: 1912
+[PROGRESS] 324/838 subscriptions (38.7%) | Key Vaults found: 1914
+[PROGRESS] 325/838 subscriptions (38.8%) | Key Vaults found: 1916
+[PROGRESS] 326/838 subscriptions (38.9%) | Key Vaults found: 1918
+[PROGRESS] 327/838 subscriptions (39%) | Key Vaults found: 1920
+[PROGRESS] 328/838 subscriptions (39.1%) | Key Vaults found: 1922
+[PROGRESS] 329/838 subscriptions (39.3%) | Key Vaults found: 1924
+[PROGRESS] 330/838 subscriptions (39.4%) | Key Vaults found: 1926
+[PROGRESS] 331/838 subscriptions (39.5%) | Key Vaults found: 1929
+[PROGRESS] 333/838 subscriptions (39.7%) | Key Vaults found: 1931
+[PROGRESS] 332/838 subscriptions (39.6%) | Key Vaults found: 1933
+[PROGRESS] 334/838 subscriptions (39.9%) | Key Vaults found: 1996
+[PROGRESS] 335/838 subscriptions (40%) | Key Vaults found: 2001
+[PROGRESS] 336/838 subscriptions (40.1%) | Key Vaults found: 2003
+[PROGRESS] 337/838 subscriptions (40.2%) | Key Vaults found: 2007
+[PROGRESS] 338/838 subscriptions (40.3%) | Key Vaults found: 2070
+[PROGRESS] 339/838 subscriptions (40.5%) | Key Vaults found: 2072
+[PROGRESS] 340/838 subscriptions (40.6%) | Key Vaults found: 2074
+[PROGRESS] 341/838 subscriptions (40.7%) | Key Vaults found: 2075
+[PROGRESS] 342/838 subscriptions (40.8%) | Key Vaults found: 2076
+[PROGRESS] 343/838 subscriptions (40.9%) | Key Vaults found: 2077
+[PROGRESS] 344/838 subscriptions (41.1%) | Key Vaults found: 2078
+[PROGRESS] 345/838 subscriptions (41.2%) | Key Vaults found: 2079
+[PROGRESS] 346/838 subscriptions (41.3%) | Key Vaults found: 2080
+[PROGRESS] 347/838 subscriptions (41.4%) | Key Vaults found: 2081
+[PROGRESS] 348/838 subscriptions (41.5%) | Key Vaults found: 2082
+[PROGRESS] 349/838 subscriptions (41.6%) | Key Vaults found: 2083
+[PROGRESS] 350/838 subscriptions (41.8%) | Key Vaults found: 2085
+[PROGRESS] 351/838 subscriptions (41.9%) | Key Vaults found: 2089
+[PROGRESS] 352/838 subscriptions (42%) | Key Vaults found: 2094
+[PROGRESS] 353/838 subscriptions (42.1%) | Key Vaults found: 2099
+[PROGRESS] 354/838 subscriptions (42.2%) | Key Vaults found: 2100
+[2026-01-29 15:08:50] [SUCCESS] Parallel processing complete. Total Key Vaults found: 2110
+[2026-01-29 15:08:50] [INFO]
+[2026-01-29 15:08:50] [INFO] Exporting inventory to: .\TestResults-AAD-PARALLEL-FAST-20260129-150607\KeyVaultInventory-AAD-PARALLEL-20260129-150607.csv
+[2026-01-29 15:08:50] [SUCCESS] Export completed successfully!
+[2026-01-29 15:08:50] [SUCCESS] Total Key Vaults inventoried: 2110
+[2026-01-29 15:08:50] [INFO]
+[2026-01-29 15:08:50] [INFO] === Summary Statistics ===
+[2026-01-29 15:08:50] [INFO] Total Subscriptions Scanned: 838
+[2026-01-29 15:08:50] [INFO] Total Key Vaults Found: 2110
+[2026-01-29 15:08:50] [INFO]
+[2026-01-29 15:08:50] [INFO] === Compliance Snapshot ===
+[2026-01-29 15:08:50] [INFO] Soft Delete Enabled: 33 / 2110 (1.56%)
+[2026-01-29 15:08:50] [INFO] Purge Protection Enabled: 9 / 2110 (0.43%)
+[2026-01-29 15:08:50] [INFO] RBAC Authorization Enabled: 16 / 2110 (0.76%)
+[2026-01-29 15:08:50] [INFO] Public Network Access Disabled: 3 / 2110 (0.14%)
+[2026-01-29 15:08:50] [INFO] Private Endpoints Configured: 0 / 2110 (0%)
+[2026-01-29 15:08:50] [INFO]
+[2026-01-29 15:08:50] [SUCCESS] Inventory complete! Review the output file for details.
+**********************
+PowerShell transcript end
+End time: 20260129150850
+**********************

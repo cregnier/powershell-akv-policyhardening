@@ -1,0 +1,40 @@
+{
+  "_comment": "Tier 1: Low-Impact Security Policies - Deny Mode (Month 2)",
+  "_description": "9 policies with Deny enforcement. Deploy only after Audit mode shows <5% violations.",
+  "_timeline": "Month 2: Deny mode → Month 3: Full enforcement",
+  "_prerequisites": "Audit mode deployed for 30 days, violation rate <5%, stakeholders notified",
+  "_reference": "See ProductionRolloutPlan.md - Tier 1 section",
+  
+  "Key vaults should have soft delete enabled": {
+    "effect": "Deny"
+  },
+  "Key vaults should have deletion protection enabled": {
+    "effect": "Deny"
+  },
+  "Azure Key Vault should use RBAC permission model": {
+    "effect": "Deny"
+  },
+  "Azure Key Vault should have firewall enabled or public network access disabled": {
+    "allowedIPAddresses": ["0.0.0.0/0"],
+    "forbiddenIPAddresses": [],
+    "effect": "Deny"
+  },
+  "Key Vault keys should have an expiration date": {
+    "effect": "Deny"
+  },
+  "Key Vault secrets should have an expiration date": {
+    "effect": "Deny"
+  },
+  "Certificates should have the specified maximum validity period": {
+    "maximumValidityInMonths": 12,
+    "effect": "Deny"
+  },
+  "Keys using RSA cryptography should have a specified minimum key size": {
+    "minimumRSAKeySize": 2048,
+    "effect": "Deny"
+  },
+  "Certificates should not expire within the specified number of days": {
+    "daysToExpire": 30,
+    "effect": "Deny"
+  }
+}
