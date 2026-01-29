@@ -1,0 +1,4 @@
+SubscriptionId,SubscriptionName,Environment,Notes
+12345678-1234-1234-1234-123456789012,Production-Sub-1,Production,Primary production subscription
+23456789-2345-2345-2345-234567890123,Production-Sub-2,Production,Secondary production subscription
+34567890-3456-3456-3456-345678901234,Dev-Test-Sub,Development,Development and testing subscription
