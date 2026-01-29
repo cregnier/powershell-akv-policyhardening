@@ -595,7 +595,7 @@ if ($missingPolicies.Count -eq 0) {
 2. Request production subscription access
 3. Accept 74% validation (config review provides confidence for remaining 26%)
 
-**Documentation**: See [Scenario6-Final-Results.md](Scenario6-Final-Results.md) for complete analysis
+**Documentation**: See Scenario6-Final-Results.md for complete dev/test limitations analysis
 
 ---
 
@@ -631,11 +631,17 @@ if ($missingPolicies.Count -eq 0) {
 
 ---
 
-## Next Steps
+## Future Deployment Steps
 
-1. ✅ Wait for remediation cycle completion (~31 minutes remaining as of 14:39)
-2. ⏳ Check remediation task status (Get-AzPolicyRemediation)
-3. ⏳ Regenerate compliance report (expect 60-80% compliance improvement)
-4. ⏳ Create Scenario7-Final-Results.md with remediation impact
-5. ⏳ Validate all compliance dashboards and HTML reports
-6. ⏳ Create final deployment package for production rollout
+1. Monitor remediation task completion (30-60 minutes after auto-remediation deployment)
+2. Check remediation task status using: `Get-AzPolicyRemediation`
+3. Regenerate compliance report to verify improvements (expect 60-80% compliance gain)
+4. Document remediation impact in deployment logs
+5. Validate all compliance dashboards and HTML reports
+6. Create final deployment package for production rollout
+
+**For Production Deployments**:
+- Follow phased rollout: Audit → Deny → Auto-Remediation
+- Allow 7-30 days of Audit monitoring before enabling Deny mode
+- Test critical Deny policies in non-production first
+- Use exemptions for business-justified exceptions

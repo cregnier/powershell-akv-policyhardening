@@ -52,7 +52,7 @@
 - **CLEANUP-EVERYTHING-GUIDE.md**: Cleanup procedures [View](documentation/CLEANUP-EVERYTHING-GUIDE.md)
 - **UNSUPPORTED-SCENARIOS.md**: HSM & integrated CA limitations [View](documentation/UNSUPPORTED-SCENARIOS.md)
 - **Comprehensive-Test-Plan.md**: Full testing strategy [View](documentation/Comprehensive-Test-Plan.md)
-- **RELEASE-1.1.1-SUMMARY.md**: Package changes and verification details [View](documentation/RELEASE-1.1.1-SUMMARY.md)
+- **RELEASE-1.2.0-SUMMARY.md**: Package changes and verification details [View](documentation/RELEASE-1.2.0-SUMMARY.md)
 
 ### Parameter Files (parameters/)
 - **PolicyParameters-DevTest.json**: Scenarios 1-3 (30 policies Audit)

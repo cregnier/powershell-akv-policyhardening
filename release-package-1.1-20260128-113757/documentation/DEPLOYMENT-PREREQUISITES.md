@@ -286,20 +286,32 @@ When `-SkipRBACCheck` is used:
 |------|-----------|---------|
 | **PolicyImplementationConfig.json** | ⚪ Optional | Pre-configured settings (subscription ID, managed identity, etc.) |
 | **DefinitionListExport.csv** | ⚪ Optional | Policy definition reference (auto-generated) |
-| **DevTest-Full-Testing-Plan.md** | ⚪ Optional | Testing guidance |
+| **Comprehensive-Test-Plan.md** | ⚪ Optional | Testing strategy and phases |
 
 ### Minimal File Set
 
-**For a new computer, copy these files:**
+**For a new deployment, the minimum files needed:**
 
 ```
-📁 PolicyDeployment/
-├── AzPolicyImplScript.ps1
-├── PolicyParameters-DevTest.json
-└── PolicyParameters-Production.json
+📁 azure-keyvault-policy-governance-1.2.0/
+├── 📁 scripts/
+│   ├── AzPolicyImplScript.ps1
+│   └── Setup-AzureKeyVaultPolicyEnvironment.ps1
+├── 📁 parameters/
+│   ├── PolicyParameters-DevTest.json
+│   ├── PolicyParameters-DevTest-Full.json
+│   ├── PolicyParameters-Production.json
+│   └── PolicyParameters-Production-Deny.json
+├── 📁 reference-data/
+│   ├── DefinitionListExport.csv
+│   ├── PolicyNameMapping.json
+│   └── PolicyImplementationConfig.json
+└── 📁 documentation/
+    ├── QUICKSTART.md
+    └── DEPLOYMENT-PREREQUISITES.md
 ```
 
-**That's it!** The script will create other files as needed.
+**Note**: The actual release package structure matches this layout. All scripts auto-generate additional files as needed (logs, reports, etc.).
 
 ---
 

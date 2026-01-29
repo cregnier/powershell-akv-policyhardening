@@ -175,9 +175,9 @@ Set-AzContext -Subscription "<your-subscription-id>"
 - ✅ **100% HTML Validation**: All compliance reports structurally correct
 
 **Comprehensive Test Documentation**:
-- [FINAL-TEST-SUMMARY.md](FINAL-TEST-SUMMARY.md) - Complete test results with evidence
-- [TESTING-MAPPING.md](TESTING-MAPPING.md) - Testing framework and terminology
-- [Comprehensive-Test-Plan.md](Comprehensive-Test-Plan.md) - Original test plan
+- FINAL-TEST-SUMMARY.md - Complete test results with evidence
+- TESTING-MAPPING.md - Testing framework and terminology
+- Comprehensive-Test-Plan.md - Original test plan
 
 ---
 
@@ -265,7 +265,7 @@ powershell-akv-policyhardening/
 
 **Workaround**: Use ARM template deployment for compliant vaults (implemented in test function).
 
-**Code Location**: `AzPolicyImplScript.ps1` - Test-ProductionEnforcement, Test 4
+**Code Location**: AzPolicyImplScript.ps1 - Test-ProductionEnforcement, Test 4
 
 ---
 
@@ -273,7 +273,7 @@ powershell-akv-policyhardening/
 
 **Previous Issue**: Manual tests required for keys, secrets, certificates policies.
 
-**Resolution**: Added automated tests in version 2.0 (2026-01-16):
+**Resolution**: Added automated tests in version 1.2.0 (2026-01-16):
 - Test 5: Key expiration enforcement
 - Test 6: Secret expiration enforcement
 - Test 7: RSA key minimum size (2048-bit)
@@ -321,5 +321,5 @@ This project is licensed under the MIT License.
 ---
 
 **Last Updated**: 2026-01-28  
-**Version**: 1.1.1  
+**Version**: 1.2.0  
 **Status**: Production Ready ✅
