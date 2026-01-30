@@ -1,0 +1,3 @@
+"PolicyName","Deployments","Category"
+"Key Vault secrets should have an expiration date","2","Key"
+"Key Vault keys should have an expiration date","2","Key"

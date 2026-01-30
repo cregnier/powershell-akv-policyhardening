@@ -1,0 +1,8 @@
+"Count","Name"
+"1610","Wiz Key Vault access policy should exist"
+"1610","Wiz Key Vault scanner firewall policy should exist"
+"2","Key Vault keys should have an expiration date"
+"2","Key Vault secrets should have an expiration date"
+"1","[Custom] Mandatory Keyvault Secret Tags"
+"1","Azure Key Vault should disable public network access"
+"1","Function apps should have Client Certificates (Incoming client certificates) enabled"

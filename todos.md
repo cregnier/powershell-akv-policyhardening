@@ -144,7 +144,7 @@
 - [x] **Key Vault Inventory**: 82 vaults discovered across 838 subscriptions (100% valid data)
 - [x] **Policy Inventory**: 34,642 policy assignments (99.2% valid data)
 - [x] **Compliance Baseline**: Soft Delete 98.8%, Purge Protection 32.9%, RBAC 84.1%
-- [x] **Secret Management Gap Analysis**: Discovered 0/20 secret/cert/key policies deployed (CRITICAL)
+- [x] **Secret Management Gap Analysis**: Discovered 0/30 secret/cert/key policies deployed (CRITICAL - 8 secrets + 9 certs + 13 keys)
 - [x] **Existing Policies**: Identified 3,225 KV-related assignments (Wiz scanner)
 - [x] **Location Distribution**: westus2 (52%), westus (33%), eastus/eastus2 (15%)
 - [x] **Bug Fixes**: Get-KeyVaultInventory.ps1 (4 changes) + Validate-CSVDataQuality.ps1 (482 lines)
@@ -181,7 +181,7 @@
   - **Blocker**: Requires user input (Intel organizational knowledge)
   
 - [ ] **Create Gap Analysis Report**: What's missing vs what's needed
-  - Based on: 82 KVs found, 0/20 secret policies, 32.9% purge protection, 20.7% private network
+  - Based on: 82 KVs found, 0/30 secret/cert/key policies (8+9+13), 32.9% purge protection, 20.7% private network
   - Output: SPRINT1-GAP-ANALYSIS.md
   - **Status**: Can be created from existing data
   

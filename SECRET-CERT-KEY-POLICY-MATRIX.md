@@ -231,6 +231,6 @@ $identityId = "/subscriptions/ab1336c7-687d-4107-b0f6-9649a0458adb/resourcegroup
 ---
 
 **Document Created**: January 29, 2026  
-**Total Policies**: 20 secret/certificate/key lifecycle policies  
+**Total Policies**: 30 secret/certificate/key lifecycle policies (8 secrets + 9 certs + 13 keys)  
 **Deployment Priority**: 🔴 CRITICAL (0% coverage across 2,156 vaults)  
 **Next Action**: Deploy Phase 1 expiration monitoring policies this week

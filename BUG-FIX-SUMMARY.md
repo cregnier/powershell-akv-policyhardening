@@ -206,7 +206,7 @@ New CSV: 24 records, 0 empty (0.0% corrupt)
    - Fix instructions
 
 3. **SECRET-CERT-KEY-POLICY-MATRIX.md**
-   - 20 secret/certificate/key lifecycle policies
+   - 30 secret/certificate/key lifecycle policies (8 secrets + 9 certs + 13 keys including HSM)
    - Policy categories and use cases
    - Deployment recommendations
 
@@ -227,7 +227,7 @@ New CSV: 24 records, 0 empty (0.0% corrupt)
 - 🔐 **Keys**: 8 policies (expiration, validity, rotation, HSM backing, key sizes)
 - 🔒 **Managed HSM**: 4 policies (preview - HSM-specific expiration/key requirements)
 
-**Current Deployment**: ❌ 0 out of 20 policies deployed (0% coverage)
+**Current Deployment**: ❌ 0 out of 30 S/C/K policies deployed (0% coverage - 8 secrets + 9 certs + 13 keys)
 
 **Risk**: 🔴 CRITICAL - 2,156 Key Vaults have zero monitoring for secret/certificate/key expiration
 
